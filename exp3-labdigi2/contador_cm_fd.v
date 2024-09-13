@@ -13,8 +13,8 @@
  */
 
 module contador_cm_fd #(
-    parameter R = 10,  // razão de clocks por cm
-    parameter N = 4    // teto(log2(R)) 
+    parameter R = 2941,  // razão de clocks por cm (2941 ciclos para um clock de 50MHz)
+    parameter N = 12    // teto(log2(R)=11.52)
 ) (
     input wire        clock,
     input wire        pulso,
