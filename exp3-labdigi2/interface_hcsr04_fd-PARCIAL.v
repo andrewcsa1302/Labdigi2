@@ -32,7 +32,7 @@ module interface_hcsr04_fd (
         .largura(500) 
     ) U1 (
         .clock (clock  ),
-        .reset (/* completar */),
+        .reset (reset),
         .gera  (/* completar */),
         .para  (/* completar */), 
         .pulso (/* completar */),

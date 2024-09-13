@@ -59,18 +59,6 @@ module interface_hcsr04_uc (
         endcase
     end
 
-    /*     
-    input wire       clock,
-    input wire       reset,
-    input wire       medir,
-    input wire       echo,
-    input wire       fim_medida,
-
-    output reg       zera,
-    output reg       gera,
-    output reg       registra,
-    output reg       pronto, */
-
     // Saídas de controle
     always @(*) begin
         case (Eatual)

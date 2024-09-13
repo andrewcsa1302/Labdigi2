@@ -8,211 +8,211 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2
+dC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2
 vcontador_bcd_3digitos
-Z1 !s110 1726198482
+Z0 !s110 1726252959
 !i10b 1
 !s100 zW<M=cLMB`1^LR818CPz@1
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I=f:7U80ZRM5eOUdX:_iJn0
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-R0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2
 Z4 w1726192737
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos.v
-!i122 0
+!i122 17
 L0 14 45
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1726198481.000000
+Z6 !s108 1726252959.000000
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos.v|
 !i113 1
-Z6 o-work work
-Z7 tCvgOpt 0
+Z7 o-work work
+Z8 tCvgOpt 0
 vcontador_bcd_3digitos_tb
-R1
+R0
 !i10b 1
 !s100 >G77f5g<Fh:7]=^gbPEK60
-R2
+R1
 IM<=LaaTTooHjZFdG46[K23
+R2
 R3
-R0
 R4
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos_tb.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos_tb.v
-!i122 1
+!i122 18
 L0 15 44
 R5
 r1
 !s85 0
 31
-Z8 !s108 1726198482.000000
+R6
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos_tb.v|
 !i113 1
-R6
 R7
+R8
 vcontador_cm
-R1
+R0
 !i10b 1
 !s100 Z=GRK8>lf<3Z^N70hXgWb3
-R2
+R1
 I]Ez`h?b04=WYL0?18H^Jn1
+R2
 R3
-R0
 w1726195024
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm.v
-!i122 2
+!i122 19
 L0 15 53
 R5
 r1
 !s85 0
 31
-R8
+R6
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm.v|
 !i113 1
-R6
 R7
+R8
 vcontador_cm_fd
-R1
+Z9 !s110 1726252960
 !i10b 1
 !s100 9z:hOmjF1^IOO@WIP1TLZ0
-R2
+R1
 IdgiQ@MoLUJV3dIooiUof@2
+R2
 R3
-R0
 w1726196125
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_fd.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_fd.v
-!i122 3
+!i122 20
 L0 15 43
 R5
 r1
 !s85 0
 31
-R8
+R6
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_fd.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_fd.v|
 !i113 1
-R6
 R7
+R8
 vcontador_cm_tb
-R1
+R9
 !i10b 1
 !s100 G5YI<BZ95J0FQV[:TFcQS3
-R2
+R1
 I>hQ2;`^nj]oSh@lEAd0TU3
+R2
 R3
-R0
 R4
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v
-!i122 4
+!i122 21
 L0 17 93
 R5
 r1
 !s85 0
 31
-R8
+Z10 !s108 1726252960.000000
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v|
 !i113 1
-R6
 R7
+R8
 vcontador_cm_uc
-!s110 1726198579
+!s110 1726254563
 !i10b 1
-!s100 k<h<53N@3VhR:T_^>Y:8d0
+!s100 U@@C>a:V]Pd]g@jCZ;n<V0
+R1
+I>e[n9[mlU^1GFn[:VcLjY3
 R2
-I=[dlAmz[BSmQ>GFj9@2U62
 R3
-R0
-w1726198565
-8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_uc.v
-FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_uc.v
-!i122 7
+w1726254553
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc-PARCIAL.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc-PARCIAL.v
+!i122 26
 L0 16 53
 R5
 r1
 !s85 0
 31
-!s108 1726198579.000000
-!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_uc.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_uc.v|
+!s108 1726254562.000000
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc-PARCIAL.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc-PARCIAL.v|
 !i113 1
-R6
 R7
+R8
 vcontador_m
-R1
+R9
 !i10b 1
 !s100 UMcO@8h3ZmBO;NMlhg]fW2
-R2
+R1
 I^::LUeX4nLMWU2cODSgE23
+R2
 R3
-R0
 R4
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m.v
-!i122 5
+!i122 22
 L0 16 38
 R5
 r1
 !s85 0
 31
-R8
+R10
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m.v|
 !i113 1
-R6
 R7
+R8
 vcontador_m_tb
-R1
+R9
 !i10b 1
 !s100 ^]2Z3a3Z@EeJ9EC0GU_<;2
-R2
+R1
 I4dMa30dbX20Yi4hN15J<h0
+R2
 R3
-R0
 R4
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m_tb.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m_tb.v
-!i122 6
+!i122 23
 L0 17 89
 R5
 r1
 !s85 0
 31
-R8
+R10
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m_tb.v|
 !i113 1
-R6
 R7
+R8
 vinterface_hcsr04_uc
-!s110 1726199418
+R9
 !i10b 1
 !s100 3NJk0TH[=@040ZXnemFdA3
-R2
+R1
 IN`I0ZAX7V`NNEGA8Q8>7^1
+R2
 R3
-R0
 w1726196809
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/interface_hcsr04_uc-PARCIAL.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/interface_hcsr04_uc-PARCIAL.v
-!i122 8
+!i122 24
 L0 14 101
 R5
 r1
 !s85 0
 31
-!s108 1726199418.000000
+R10
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/interface_hcsr04_uc-PARCIAL.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/interface_hcsr04_uc-PARCIAL.v|
 !i113 1
-R6
 R7
+R8
