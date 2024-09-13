@@ -1,0 +1,425 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2
+vcontador_bcd_3digitos
+Z0 !s110 1726257424
+!i10b 1
+!s100 zW<M=cLMB`1^LR818CPz@1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IXG[LH0;GG0hae4X^Q6Y`E1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/simulation
+Z4 w1726192737
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_bcd_3digitos.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_bcd_3digitos.v
+!i122 0
+L0 14 45
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1726257424.000000
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_bcd_3digitos.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_bcd_3digitos.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+vcontador_bcd_3digitos_tb
+R0
+!i10b 1
+!s100 >G77f5g<Fh:7]=^gbPEK60
+R1
+Iz3Y@OH<o9B`:HiknT[P5>3
+R2
+R3
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_bcd_3digitos_tb.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_bcd_3digitos_tb.v
+!i122 1
+L0 15 44
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_bcd_3digitos_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_bcd_3digitos_tb.v|
+!i113 1
+R7
+R8
+vcontador_cm
+R0
+!i10b 1
+!s100 Z=GRK8>lf<3Z^N70hXgWb3
+R1
+IN@WOH::ek3gPUBLDAofmF3
+R2
+R3
+w1726195024
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm.v
+!i122 2
+L0 15 53
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm.v|
+!i113 1
+R7
+R8
+vcontador_cm_fd
+Z9 !s110 1726257425
+!i10b 1
+!s100 9z:hOmjF1^IOO@WIP1TLZ0
+R1
+IOaF]6ZN=lanXQoP4d?fom2
+R2
+R3
+w1726196125
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_fd.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_fd.v
+!i122 3
+L0 15 43
+R5
+r1
+!s85 0
+31
+Z10 !s108 1726257425.000000
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_fd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_fd.v|
+!i113 1
+R7
+R8
+vcontador_cm_tb
+R9
+!i10b 1
+!s100 G5YI<BZ95J0FQV[:TFcQS3
+R1
+ICLjE[WPYL>^M88lXT9EPc3
+R2
+R3
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_tb.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_tb.v
+!i122 4
+L0 17 93
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_tb.v|
+!i113 1
+R7
+R8
+vcontador_cm_uc
+R9
+!i10b 1
+!s100 U@@C>a:V]Pd]g@jCZ;n<V0
+R1
+INfbP[imGQS>5WUKK8fcbM3
+R2
+R3
+w1726254553
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc.v
+!i122 5
+L0 16 53
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc.v|
+!i113 1
+R7
+R8
+vcontador_m
+R9
+!i10b 1
+!s100 UMcO@8h3ZmBO;NMlhg]fW2
+R1
+I2@05eAUSH83fQ_LEMm[Zh0
+R2
+R3
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_m.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_m.v
+!i122 6
+L0 16 38
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_m.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_m.v|
+!i113 1
+R7
+R8
+vcontador_m_tb
+R9
+!i10b 1
+!s100 ^]2Z3a3Z@EeJ9EC0GU_<;2
+R1
+IhXNn]X3c`KIUKoRn?e0dK3
+R2
+R3
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_m_tb.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_m_tb.v
+!i122 7
+L0 17 89
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_m_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_m_tb.v|
+!i113 1
+R7
+R8
+vedge_detector
+R9
+!i10b 1
+!s100 AEDYJD37[Ybb^@2QMVV>20
+R1
+IBD4ALAGb5hT8K8_@82ajW1
+R2
+R3
+w1726231929
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/edge_detector.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/edge_detector.v
+!i122 8
+L0 19 23
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/edge_detector.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/edge_detector.v|
+!i113 1
+R7
+R8
+vexp3_sensor
+R9
+!i10b 1
+!s100 zW6DV6Xkj=jSfCz[mBSPc3
+R1
+IL4hA1nGUf:mzJ09PfEhjf3
+R2
+R3
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/exp3_sensor.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/exp3_sensor.v
+!i122 9
+L0 16 69
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/exp3_sensor.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/exp3_sensor.v|
+!i113 1
+R7
+R8
+vgerador_pulso
+R9
+!i10b 1
+!s100 PN;zX2Df@oZK[mW<TPVFA2
+R1
+IVGmk7c?U0a]BCoZjEb[Aa0
+R2
+R3
+w1726232747
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/gerador_pulso.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/gerador_pulso.v
+!i122 10
+L0 14 72
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/gerador_pulso.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/gerador_pulso.v|
+!i113 1
+R7
+R8
+vgerador_pulso_tb
+R9
+!i10b 1
+!s100 YT;932PM=N2=CEN`XF3e11
+R1
+I7Po[^LzUA]LW]5UUGciPK3
+R2
+R3
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/gerador_pulso_tb.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/gerador_pulso_tb.v
+!i122 11
+L0 15 61
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/gerador_pulso_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/gerador_pulso_tb.v|
+!i113 1
+R7
+R8
+vhexa7seg
+Z11 !s110 1726257426
+!i10b 1
+!s100 :20kA`7`L0gDF2=JFj`=l2
+R1
+INjC7Z2D``d>AJ`EEkC4Y?2
+R2
+R3
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/hexa7seg.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/hexa7seg.v
+!i122 12
+L0 22 38
+R5
+r1
+!s85 0
+31
+Z12 !s108 1726257426.000000
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/hexa7seg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/hexa7seg.v|
+!i113 1
+R7
+R8
+vinterface_hcsr04
+R11
+!i10b 1
+!s100 QP75b`0g?0oF69@JGZ;=Y0
+R1
+IKXC]Q;?;IbZfL:22L=eVT2
+R2
+R3
+w1726232823
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04.v
+!i122 13
+L0 13 50
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04.v|
+!i113 1
+R7
+R8
+vinterface_hcsr04_fd
+Z13 !s110 1726262864
+!i10b 1
+!s100 JY4900G1?YLJmIGHck;QF3
+R1
+IZh<3j;S`LEA>cAm4lSd4Z3
+R2
+R3
+w1726262624
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_fd.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_fd.v
+!i122 19
+L0 14 55
+R5
+r1
+!s85 0
+31
+Z14 !s108 1726262864.000000
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_fd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_fd.v|
+!i113 1
+R7
+R8
+vinterface_hcsr04_tb
+R11
+!i10b 1
+!s100 GnfXg=7`714;KB=zW?H]12
+R1
+I7N^dY>mAZ^ICYljYlHgN82
+R2
+R3
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v
+!i122 15
+L0 17 96
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v|
+!i113 1
+R7
+R8
+vinterface_hcsr04_uc
+R13
+!i10b 1
+!s100 68?mn4zg;5Lg`P6VidzAF2
+R1
+I36EWNP>9X^;4n1??mcGdP2
+R2
+R3
+w1726262551
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_uc.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_uc.v
+!i122 20
+L0 14 69
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_uc.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_uc.v|
+!i113 1
+R7
+R8
+vregistrador_n
+R11
+!i10b 1
+!s100 c33QzNOWDW9lh[K4:od@l2
+R1
+I4oVNQH0^`_?3UodgkBBWd1
+R2
+R3
+w1726192738
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/registrador_n.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/registrador_n.v
+!i122 17
+L0 17 20
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/registrador_n.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/registrador_n.v|
+!i113 1
+R7
+R8

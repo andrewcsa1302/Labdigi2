@@ -59,33 +59,13 @@ module interface_hcsr04_uc (
         endcase
     end
 
-    // Saídas de controle
+    // Saidas de controle
     always @(*) begin
-        case (Eatual)
-            preparacao: zera = 1'b1;
-
-            envia_trigger: begin
-                zera = 1'b0;
-                gera = 1'b1;
-            end
-
-            espera_echo: begin
-                gera = 1'b0;
-            end
-            
-            armazenamento: begin
-                registra = 1'b1;
-            end
-
-            final_medida: begin
-                registra = 1'b0;
-                pronto = 1'b1;
-            end
-
-            default:    zera = 1'b0;
-        endcase
-
-        /* completar para outras saidas */
+        zera        = (Eatual == preparacao)? 1'b1 : 1'b0;
+        pronto      = (Eatual == fim_medida)? 1'b1 : 1'b0;
+        gera        = (Eatual == envia_trigger)? 1'b1 : 1'b0;
+        registra    = (Eatual == armazenamento)? 1'b1 : 1'b0;
+        pronto      = (Eatual == final_medida)? 1'b1 : 1'b0; 
 
         case (Eatual)
             inicial:       db_estado = 4'b0000;

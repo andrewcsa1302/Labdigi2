@@ -31,12 +31,12 @@ module interface_hcsr04_fd (
     gerador_pulso #(
         .largura(500) 
     ) U1 (
-        .clock (clock  ),
-        .reset (reset),
-        .gera  (/* completar */),
-        .para  (/* completar */), 
-        .pulso (/* completar */),
-        .pronto(/* completar */)
+        .clock (clock),
+        .reset (zera),
+        .gera  (gera),
+        .para  (1'b0 ), 
+        .pulso (trigger),
+        .pronto()
     );
 
     // (U2) medida em cm (R=2941 clocks)
@@ -44,25 +44,25 @@ module interface_hcsr04_fd (
         .R(2941), 
         .N(12)
     ) U2 (
-        .clock  (clock         ),
-        .reset  (/* completar */),
-        .pulso  (/* completar */),
+        .clock  (clock),
+        .reset  (zera),
+        .pulso  (pulso),
         .digito2(s_medida[11:8]),
         .digito1(s_medida[7:4] ),
         .digito0(s_medida[3:0] ),
-        .fim    (/* completar */),
-        .pronto (/* completar */)
+        .fim    (fim),
+        .pronto (fim_medida)
     );
 
     // (U3) registrador
     registrador_n #(
         .N(12)
     ) U3 (
-        .clock  (clock    ),
-        .clear  (/* completar */),
-        .enable (/* completar */),
+        .clock  (clock),
+        .clear  (reset),
+        .enable (registra),
         .D      (s_medida ),
-        .Q      (/* completar */)
+        .Q      (distancia)
     );
 
-endmodule
+endmodule   
