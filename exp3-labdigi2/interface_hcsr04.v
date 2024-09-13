@@ -45,6 +45,7 @@ module interface_hcsr04 (
     // Fluxo de dados
     interface_hcsr04_fd U2 (
         .clock     (clock       ),
+        .reset     (reset       ),
         .pulso     (echo        ), 
         .zera      (s_zera      ),
         .gera      (s_gera      ),

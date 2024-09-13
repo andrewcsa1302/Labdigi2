@@ -13,6 +13,7 @@
  
 module interface_hcsr04_fd (
     input wire         clock,
+    input wire         reset,
     input wire         pulso,
     input wire         zera,
     input wire         gera,
