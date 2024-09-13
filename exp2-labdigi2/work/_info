@@ -1,0 +1,293 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2
+vcontador_m
+Z1 !s110 1725659055
+!i10b 1
+!s100 VJJg7lYlSfI_lZo<hzC9d1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IH?QS0>fa;ZE1jZFCo?D0]2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1725563968
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/contador_m.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/contador_m.v
+!i122 19
+L0 17 38
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1725659055.000000
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/contador_m.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/contador_m.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+vcontador_m_tb
+R1
+!i10b 1
+!s100 ^]2Z3a3Z@EeJ9EC0GU_<;2
+R2
+I[8BF;=enzZWzcek?jd^LK2
+R3
+R0
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/contador_m_tb.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/contador_m_tb.v
+!i122 20
+L0 17 89
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/contador_m_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/contador_m_tb.v|
+!i113 1
+R7
+R8
+vdeslocador_n
+R1
+!i10b 1
+!s100 ekUiQZ6Ef_XO5Z3[98`6X2
+R2
+IEm;@mgiGnhn:Ra>OhfX=21
+R3
+R0
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/deslocador_n.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/deslocador_n.v
+!i122 21
+L0 15 31
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/deslocador_n.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/deslocador_n.v|
+!i113 1
+R7
+R8
+vedge_detector
+R1
+!i10b 1
+!s100 AEDYJD37[Ybb^@2QMVV>20
+R2
+IcJg?VdoNhDmbgn3=Oj:jk2
+R3
+R0
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/edge_detector.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/edge_detector.v
+!i122 22
+L0 19 23
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/edge_detector.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/edge_detector.v|
+!i113 1
+R7
+R8
+vhexa7seg
+R1
+!i10b 1
+!s100 :20kA`7`L0gDF2=JFj`=l2
+R2
+Iafen1zA^:`Ql5f`?>MKAD0
+R3
+R0
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/hexa7seg.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/hexa7seg.v
+!i122 23
+L0 22 38
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/hexa7seg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/hexa7seg.v|
+!i113 1
+R7
+R8
+vtx_serial_7N2
+R1
+!i10b 1
+!s100 dkCg9TDW9G1im]RlYYN]n3
+R2
+I[3;EX_V^UQRRj^ZKjBW3e3
+R3
+R0
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2.v
+!i122 24
+L0 5 101
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2.v|
+!i113 1
+R7
+R8
+ntx_serial_7@n2
+vtx_serial_7N2_fd
+R1
+!i10b 1
+!s100 bM5kgMcI6CdTJ:DziJ`Oe1
+R2
+IZZP3jI1KI`kVRG?oRa_R11
+R3
+R0
+w1725648115
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2_fd.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2_fd.v
+!i122 25
+Z9 L0 5 53
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2_fd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2_fd.v|
+!i113 1
+R7
+R8
+ntx_serial_7@n2_fd
+vtx_serial_7N2_tb
+Z10 !s110 1725659056
+!i10b 1
+!s100 GUPQZF<83:Ymiozb??<R<3
+R2
+I?_GCc^a6SDGcO=;J_4PlO3
+R3
+R0
+w1725563954
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2_tb.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2_tb.v
+!i122 26
+Z11 L0 7 89
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7N2_tb.v|
+!i113 1
+R7
+R8
+ntx_serial_7@n2_tb
+vtx_serial_7O1
+Z12 !s110 1725648473
+!i10b 1
+!s100 RS^G^T<iaU8I?:0;NVQQ[0
+R2
+IZZEIPeOEle[VMl17RPZgC0
+R3
+R0
+w1725648314
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1.v
+!i122 14
+L0 1 101
+R5
+r1
+!s85 0
+31
+Z13 !s108 1725648473.000000
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1.v|
+!i113 1
+R7
+R8
+ntx_serial_7@o1
+vtx_serial_7O1_fd
+!s110 1725656450
+!i10b 1
+!s100 j9LboW5WfS0PLV6fEj5gG0
+R2
+IH[nJ;LUE4?]lWOF4LJg;?2
+R3
+R0
+w1725656439
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1_fd.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1_fd.v
+!i122 18
+R9
+R5
+r1
+!s85 0
+31
+!s108 1725656450.000000
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1_fd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1_fd.v|
+!i113 1
+R7
+R8
+ntx_serial_7@o1_fd
+vtx_serial_7O1_tb
+R12
+!i10b 1
+!s100 cz3:`G2Hh1<hGlV]e[KCC3
+R2
+I:6HZ;OL0m8ASad8[RY>Y_0
+R3
+R0
+w1725648371
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1_tb.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1_tb.v
+!i122 16
+R11
+R5
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_7O1_tb.v|
+!i113 1
+R7
+R8
+ntx_serial_7@o1_tb
+vtx_serial_uc
+R10
+!i10b 1
+!s100 E8o;>OLQ7g9]zZBKTLi@h3
+R2
+ISmUERgEbHeHfTF[MImOTA2
+R3
+R0
+R4
+8C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_uc.v
+FC:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_uc.v
+!i122 27
+L0 16 64
+R5
+r1
+!s85 0
+31
+!s108 1725659056.000000
+!s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_uc.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp2-labdigi2/tx_serial_uc.v|
+!i113 1
+R7
+R8
