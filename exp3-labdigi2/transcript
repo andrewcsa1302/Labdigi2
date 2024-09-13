@@ -1,0 +1,63 @@
+# Reading pref.tcl
+# vsim -gui . 
+# Start time: 00:33:14 on Sep 13,2024
+# ** Error (suppressible): (vsim-19) Failed to access library '' at "".
+# Invalid argument. (errno = EINVAL)
+# Error loading design
+# End time: 00:33:15 on Sep 13,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# Loading project contador-teste
+# Compile of contador_bcd_3digitos.v was successful.
+# Compile of contador_bcd_3digitos_tb.v was successful.
+# Compile of contador_cm.v was successful.
+# Compile of contador_cm_fd.v was successful.
+# Compile of contador_cm_tb.v was successful.
+# Compile of contador_cm_uc.v failed with 5 errors.
+# Compile of contador_m.v was successful.
+# Compile of contador_m_tb.v was successful.
+# 8 compiles, 1 failed with 5 errors.
+# Compile of contador_cm_uc.v was successful.
+vsim -gui work.contador_cm_tb
+# vsim -gui work.contador_cm_tb 
+# Start time: 00:36:36 on Sep 13,2024
+# Loading work.contador_cm_tb
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+add wave -position insertpoint  \
+sim:/contador_cm_tb/pulso_in \
+sim:/contador_cm_tb/digito0_out \
+sim:/contador_cm_tb/digito1_out \
+sim:/contador_cm_tb/digito2_out \
+sim:/contador_cm_tb/fim_out \
+sim:/contador_cm_tb/pronto_out \
+sim:/contador_cm_tb/caso \
+sim:/contador_cm_tb/larguraPulso
+add wave -position insertpoint  \
+sim:/contador_cm_tb/dut/UC/conta_bcd
+add wave -position insertpoint  \
+sim:/contador_cm_tb/dut/UC/Eatual
+run -all
+# Inicio das simulacoes...
+# Caso de teste 1: 5882us
+# Fim do caso 1
+# Caso de teste 2: 5899us
+# Fim do caso 2
+# Caso de teste 3: 4353us
+# Fim do caso 3
+# Caso de teste 4: 4399us
+# Fim do caso 4
+# Fim das simulacoes
+# ** Note: $stop    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v(106)
+#    Time: 22635110 ns  Iteration: 0  Instance: /contador_cm_tb
+# Break in Module contador_cm_tb at C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v line 106
+stop
+sto
+# ambiguous command name "sto": stop stopIndProgressBar stop_image
+break
+# invoked "break" outside of a loop
+# Compile of interface_hcsr04_uc-PARCIAL.v was successful.
+# End time: 00:50:49 on Sep 13,2024, Elapsed time: 0:14:13
+# Errors: 0, Warnings: 8
