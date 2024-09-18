@@ -13,33 +13,35 @@
  * --------------------------------------------------------------------------
  */
  
-module exp3_sensor (
+module exp4_trena (
     input wire        clock,
     input wire        reset,
-    input wire        medir,
+    input wire        mensurar,
     input wire        echo,
     output wire       trigger,
-    output wire [6:0] hex0,
-    output wire [6:0] hex1,
-    output wire [6:0] hex2,
+    output wire       saida_serial,
+    output wire [6:0] medida0,
+    output wire [6:0] medida1,
+    output wire [6:0] medida2,
     output wire       pronto,
-    output wire       db_medir,
+    output wire       db_mensurar,
     output wire       db_echo,
     output wire       db_trigger,
     output wire [6:0] db_estado
 );
 
     // Sinais internos
-    wire        s_medir  ;
+    wire        s_mensurar;
     wire        s_trigger;
     wire [11:0] s_medida ;
     wire [3:0]  s_estado ;
+
 
     // Circuito de interface com sensor
     interface_hcsr04 INT (
         .clock    (clock    ),
         .reset    (reset    ),
-        .medir    (s_medir  ),
+        .mensurar (s_mensurar),
         .echo     (echo     ),
         .trigger  (s_trigger),
         .medida   (s_medida ),
@@ -47,26 +49,46 @@ module exp3_sensor (
         .db_estado(s_estado )
     );
 
+    // NÃO SEI SE FAZ SENTIDO ISSO!!! PODE SER INSTANCIANDO O SAIDA_SERIAL QUE CUIDE INTERNAMENTE DA LÓGICA
+    // Circuito de transmissão serial
+    // Precisa instanciar um mux para passar um dado por vez e o hashtag
+    // Precisa converter cada dígito BCD para ASCII, juntando com [0011] na frente
+
+
+    tx_serial_7O1 serial (
+        .clock           ( clock        ),
+        .reset           ( reset        ),
+        .partida         ( s_mensurar   ),
+        .dados_ascii     ( s_dado_ascii ),
+        .saida_serial    ( saida_serial ),
+        .pronto          ( s_serial_pronto ),
+        .db_clock        (              ), // Porta aberta (desconectada)
+        .db_tick         (              ), // Porta aberta (desconectada)
+        .db_partida      (              ), // Porta aberta (desconectada)
+        .db_saida_serial (              ), // Porta aberta (desconectada)
+        .db_estado       (              )  // Porta aberta (desconectada)
+    );
+
     // Displays para medida (4 dígitos BCD)
     hexa7seg H0 (
         .hexa   (s_medida[3:0]), 
-        .display(hex0         )
+        .display(medida0      )
     );
     hexa7seg H1 (
         .hexa   (s_medida[7:4]), 
-        .display(hex1         )
+        .display(medida1      )
     );
     hexa7seg H2 (
         .hexa   (s_medida[11:8]), 
-        .display(hex2          )
+        .display(medida2       )
     );
 
-    // Trata entrada medir (considerando borda de subida)
+    // Trata entrada mensurar (considerando borda de subida)
     edge_detector DB (
         .clock(clock  ),
         .reset(reset  ),
-        .sinal(medir  ), 
-        .pulso(s_medir)
+        .sinal(mensurar  ), 
+        .pulso(s_mensurar)
     );
 
     // Sinais de saída
@@ -77,8 +99,9 @@ module exp3_sensor (
         .hexa   (s_estado ), 
         .display(db_estado)
     );
-    assign db_echo    = echo;
-    assign db_trigger = s_trigger;
-    assign db_medir   = medir;
+
+    assign db_echo      = echo;
+    assign db_trigger   = s_trigger;
+    assign db_mensurar  = mensurar;
 
 endmodule
