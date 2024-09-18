@@ -76,6 +76,9 @@ module gerador_pulso #(
                 prox_estado = parado;
                 pronto = 1;
             end
+            default: begin
+                prox_estado = parado;
+            end
         endcase
     end
 

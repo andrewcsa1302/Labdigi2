@@ -1,0 +1,297 @@
+# Reading pref.tcl
+# vsim -gui . 
+# Start time: 15:40:42 on Sep 13,2024
+# ** Error (suppressible): (vsim-19) Failed to access library '' at "".
+# Invalid argument. (errno = EINVAL)
+# Error loading design
+# End time: 15:40:42 on Sep 13,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Loading project contador-teste
+# Compile of contador_bcd_3digitos.v was successful.
+# Compile of contador_bcd_3digitos_tb.v was successful.
+# Compile of contador_cm.v was successful.
+# Compile of contador_cm_fd.v was successful.
+# Compile of contador_cm_tb.v was successful.
+# Compile of contador_m.v was successful.
+# Compile of contador_m_tb.v was successful.
+# Compile of interface_hcsr04_uc-PARCIAL.v was successful.
+# 8 compiles, 1 failed with no errors.
+# Compile of contador_bcd_3digitos.v was successful.
+# Compile of contador_bcd_3digitos_tb.v was successful.
+# Compile of contador_cm.v was successful.
+# Compile of contador_cm_fd.v was successful.
+# Compile of contador_cm_tb.v was successful.
+# Compile of contador_m.v was successful.
+# Compile of contador_m_tb.v was successful.
+# Compile of interface_hcsr04_uc-PARCIAL.v was successful.
+# Compile of contador_cm_uc-PARCIAL.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.contador_cm_tb
+# vsim -gui work.contador_cm_tb 
+# Start time: 15:42:57 on Sep 13,2024
+# Loading work.contador_cm_tb
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+add wave -position insertpoint  \
+sim:/contador_cm_tb/clock_in \
+sim:/contador_cm_tb/pulso_in \
+sim:/contador_cm_tb/digito0_out \
+sim:/contador_cm_tb/digito1_out \
+sim:/contador_cm_tb/digito2_out \
+sim:/contador_cm_tb/fim_out \
+sim:/contador_cm_tb/pronto_out \
+sim:/contador_cm_tb/caso
+add wave -position insertpoint  \
+sim:/contador_cm_tb/dut/UC/zera_tick \
+sim:/contador_cm_tb/dut/UC/conta_tick \
+sim:/contador_cm_tb/dut/UC/zera_bcd \
+sim:/contador_cm_tb/dut/UC/conta_bcd \
+sim:/contador_cm_tb/dut/UC/Eatual
+run -all
+# Inicio das simulacoes...
+# Caso de teste 1: 5882us
+# Fim do caso 1
+# Caso de teste 2: 5899us
+# Fim do caso 2
+# Caso de teste 3: 4353us
+# Fim do caso 3
+# Caso de teste 4: 4399us
+# Fim do caso 4
+# Fim das simulacoes
+# ** Note: $stop    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v(106)
+#    Time: 22635110 ns  Iteration: 0  Instance: /contador_cm_tb
+# Break in Module contador_cm_tb at C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v line 106
+# Can't move the Now cursor.
+add wave -position insertpoint  \
+sim:/contador_cm_tb/dut/FD/U1/clock
+add wave -position insertpoint  \
+sim:/contador_cm_tb/dut/FD/U1/meio
+add wave -position insertpoint  \
+sim:/contador_cm_tb/dut/FD/U2/conta
+stop 
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Inicio das simulacoes...
+# Caso de teste 1: 5882us
+# Fim do caso 1
+# Caso de teste 2: 5899us
+# Fim do caso 2
+# Caso de teste 3: 4353us
+# Fim do caso 3
+# Caso de teste 4: 4399us
+# Fim do caso 4
+# Fim das simulacoes
+# ** Note: $stop    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v(106)
+#    Time: 22635110 ns  Iteration: 0  Instance: /contador_cm_tb
+# Break in Module contador_cm_tb at C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v line 106
+add wave -position insertpoint  \
+sim:/contador_cm_tb/dut/FD/tick
+add wave -position insertpoint  \
+sim:/contador_cm_tb/dut/FD/conta_tick
+add wave -position insertpoint  \
+sim:/contador_cm_tb/dut/FD/conta_bcd
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Inicio das simulacoes...
+# Caso de teste 1: 5882us
+# Fim do caso 1
+# Caso de teste 2: 5899us
+# Fim do caso 2
+# Caso de teste 3: 4353us
+# Fim do caso 3
+# Caso de teste 4: 4399us
+# Fim do caso 4
+# Fim das simulacoes
+# ** Note: $stop    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v(106)
+#    Time: 22635110 ns  Iteration: 0  Instance: /contador_cm_tb
+# Break in Module contador_cm_tb at C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v line 106
+# Compile of contador_cm_uc-PARCIAL.v was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.contador_cm_uc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Inicio das simulacoes...
+# Caso de teste 1: 5882us
+# Fim do caso 1
+# Caso de teste 2: 5899us
+# Fim do caso 2
+# Caso de teste 3: 4353us
+# Fim do caso 3
+# Caso de teste 4: 4399us
+# Fim do caso 4
+# Fim das simulacoes
+# ** Note: $stop    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v(106)
+#    Time: 22635110 ns  Iteration: 0  Instance: /contador_cm_tb
+# Break in Module contador_cm_tb at C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v line 106
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/wave-contador-cm
+quit sim 
+# unknown switch: sim
+quit
+quit vsim
+# unknown switch: vsim
+quit sim
+# unknown switch: sim
+quit -sim
+# End time: 16:55:53 on Sep 13,2024, Elapsed time: 1:12:56
+# Errors: 0, Warnings: 5
+# reading C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini
+# Loading project interface-sim
+# Compile of contador_bcd_3digitos.v was successful.
+# Compile of contador_bcd_3digitos_tb.v was successful.
+# Compile of contador_cm.v was successful.
+# Compile of contador_cm_fd.v was successful.
+# Compile of contador_cm_tb.v was successful.
+# Compile of contador_cm_uc.v was successful.
+# Compile of contador_m.v was successful.
+# Compile of contador_m_tb.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of exp3_sensor.v was successful.
+# Compile of gerador_pulso.v was successful.
+# Compile of gerador_pulso_tb.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of interface_hcsr04.v was successful.
+# Compile of interface_hcsr04_fd-PARCIAL.v was successful.
+# Compile of interface_hcsr04_tb.v was successful.
+# Compile of interface_hcsr04_uc-PARCIAL.v was successful.
+# Compile of registrador_n.v was successful.
+# 18 compiles, 0 failed with no errors.
+vsim -gui work.interface_hcsr04_tb
+# vsim -gui work.interface_hcsr04_tb 
+# Start time: 16:57:25 on Sep 13,2024
+# Loading work.interface_hcsr04_tb
+# Loading work.interface_hcsr04
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+# Loading work.gerador_pulso
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+# Loading work.registrador_n
+add wave -position insertpoint  \
+sim:/interface_hcsr04_tb/clock_in \
+sim:/interface_hcsr04_tb/reset_in \
+sim:/interface_hcsr04_tb/medir_in \
+sim:/interface_hcsr04_tb/echo_in \
+sim:/interface_hcsr04_tb/trigger_out \
+sim:/interface_hcsr04_tb/medida_out \
+sim:/interface_hcsr04_tb/pronto_out
+add wave -position insertpoint  \
+sim:/interface_hcsr04_tb/db_estado_out \
+sim:/interface_hcsr04_tb/caso
+add wave -position insertpoint  \
+sim:/interface_hcsr04_tb/dut/s_zera \
+sim:/interface_hcsr04_tb/dut/s_gera \
+sim:/interface_hcsr04_tb/dut/s_registra \
+sim:/interface_hcsr04_tb/dut/s_fim_medida \
+sim:/interface_hcsr04_tb/dut/s_medida
+add wave -position insertpoint  \
+sim:/interface_hcsr04_tb/dut/U2/distancia
+run -all
+# Inicio das simulacoes
+# Caso de teste 1: 5882us
+# Fim do caso 1
+# Caso de teste 2: 5899us
+# Fim do caso 2
+# Caso de teste 3: 4353us
+# Fim do caso 3
+# Caso de teste 4: 4399us
+# Fim do caso 4
+# Fim das simulacoes
+# ** Note: $stop    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v(109)
+#    Time: 22635500 ns  Iteration: 0  Instance: /interface_hcsr04_tb
+# Break in Module interface_hcsr04_tb at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v line 109
+# Compile of interface_hcsr04_uc-PARCIAL.v failed with 1 errors.
+# Compile of interface_hcsr04_uc-PARCIAL.v was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.interface_hcsr04_uc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Inicio das simulacoes
+# Caso de teste 1: 5882us
+# Fim do caso 1
+# Caso de teste 2: 5899us
+# Fim do caso 2
+# Caso de teste 3: 4353us
+# Fim do caso 3
+# Caso de teste 4: 4399us
+# Fim do caso 4
+# Fim das simulacoes
+# ** Note: $stop    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v(109)
+#    Time: 22635670 ns  Iteration: 0  Instance: /interface_hcsr04_tb
+# Break in Module interface_hcsr04_tb at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v line 109
+# Compile of interface_hcsr04_fd.v was successful.
+# Compile of interface_hcsr04_uc.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Inicio das simulacoes
+# Caso de teste 1: 5882us
+# Fim do caso 1
+# Caso de teste 2: 5899us
+# Fim do caso 2
+# Caso de teste 3: 4353us
+# Fim do caso 3
+# Caso de teste 4: 4399us
+# Fim do caso 4
+# Fim das simulacoes
+# ** Note: $stop    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v(109)
+#    Time: 22635670 ns  Iteration: 0  Instance: /interface_hcsr04_tb
+# Break in Module interface_hcsr04_tb at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v line 109
+restart
+add wave -position insertpoint  \
+sim:/interface_hcsr04_tb/dut/clock \
+sim:/interface_hcsr04_tb/dut/reset \
+sim:/interface_hcsr04_tb/dut/medir \
+sim:/interface_hcsr04_tb/dut/echo \
+sim:/interface_hcsr04_tb/dut/trigger \
+sim:/interface_hcsr04_tb/dut/medida \
+sim:/interface_hcsr04_tb/dut/pronto \
+sim:/interface_hcsr04_tb/dut/db_estado \
+sim:/interface_hcsr04_tb/dut/s_zera \
+sim:/interface_hcsr04_tb/dut/s_gera \
+sim:/interface_hcsr04_tb/dut/s_registra \
+sim:/interface_hcsr04_tb/dut/s_fim_medida \
+sim:/interface_hcsr04_tb/dut/s_medida
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Inicio das simulacoes
+# Caso de teste 1: 5882us
+# Fim do caso 1
+# Caso de teste 2: 5899us
+# Fim do caso 2
+# Caso de teste 3: 4353us
+# Fim do caso 3
+# Caso de teste 4: 4399us
+# Fim do caso 4
+# Fim das simulacoes
+# ** Note: $stop    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v(109)
+#    Time: 22635670 ns  Iteration: 0  Instance: /interface_hcsr04_tb
+# Break in Module interface_hcsr04_tb at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/interface_hcsr04_tb.v line 109
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/wave-interface

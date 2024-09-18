@@ -49,7 +49,7 @@ module contador_cm_uc (
             inicial:        Eprox = pulso ? preparacao : inicial;
             preparacao:     Eprox = espera_tick;
             espera_tick:    Eprox = pulso ? (tick? conta : espera_tick) : fim;
-            conta:          Eprox = pulso ? conta : fim;
+            conta:          Eprox = pulso ? espera_tick : fim;
             fim:            Eprox = inicial;
             default: 
                 Eprox = inicial;

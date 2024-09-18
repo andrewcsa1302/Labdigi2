@@ -1,23 +1,16 @@
-C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/interface_hcsr04_uc-PARCIAL.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/interface_hcsr04_uc-PARCIAL.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module interface_hcsr04_uc
-
-Top level modules:
-	interface_hcsr04_uc
-
-} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_uc.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_uc.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module contador_cm_uc
-
-Top level modules:
-	contador_cm_uc
-
-} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos_tb.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos_tb.v
+C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos_tb.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos_tb.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module contador_bcd_3digitos_tb
 
 Top level modules:
 	contador_bcd_3digitos_tb
+
+} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/interface_hcsr04_uc-PARCIAL.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/interface_hcsr04_uc-PARCIAL.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module interface_hcsr04_uc
+
+Top level modules:
+	interface_hcsr04_uc
 
 } {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -26,19 +19,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	contador_cm
 
-} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m.v
+} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc-PARCIAL.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp3-labdigi2/contador_cm_uc-PARCIAL.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module contador_m
+-- Compiling module contador_cm_uc
 
 Top level modules:
-	contador_m
-
-} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module contador_cm_tb
-
-Top level modules:
-	contador_cm_tb
+	contador_cm_uc
 
 } {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_fd.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_fd.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -47,12 +33,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	contador_cm_fd
 
-} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m_tb.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m_tb.v
+} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_cm_tb.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module contador_m_tb
+-- Compiling module contador_cm_tb
 
 Top level modules:
-	contador_m_tb
+	contador_cm_tb
+
+} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module contador_m
+
+Top level modules:
+	contador_m
 
 } {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_bcd_3digitos.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -60,5 +53,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	contador_bcd_3digitos
+
+} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m_tb.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3635/Laboratorio-de-Sistemas-Digitais/exp3-labdigi2/contador_m_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module contador_m_tb
+
+Top level modules:
+	contador_m_tb
 
 } {} {}}
