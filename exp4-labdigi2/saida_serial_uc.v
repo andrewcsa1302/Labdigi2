@@ -1,27 +1,28 @@
 module saida_serial_uc ( 
-    input      clock    ,
-    input      reset    ,
-    input      inicio  ,
-    input      fim      ,
-    output reg zera     ,
-    output reg conta    ,
-    output reg pronto   ,
+    input      clock            ,
+    input      reset            ,
+    input      inicio           ,
+    input      serial_enviado   ,
+    output reg [1:0] selecao_mux,
+    output reg pronto           ,
     output reg [3:0] db_estado
 );
+    // Chave seletora para o mux
+    reg [1:0] selecao_mux; // precisa inicializar
 
-
-    // TODA UC ESTÁ SEM FAZER, PRECISA COMEÇAR 
-
-
-    // Estados da UC
-    parameter inicial     = 4'b0000; 
-    parameter preparacao  = 4'b0001; 
-    parameter espera      = 4'b0011; 
-    parameter transmissao = 4'b0111; 
-    parameter final_tx    = 4'b1111;
-
-    // Variaveis de estado
+    // Estados
     reg [3:0] Eatual, Eprox;
+
+    parameter inicial        = 4'b0000;
+    parameter transmite_0    = 4'b0001;
+    parameter incrementa_0   = 4'b0010;
+    parameter transmite_1    = 4'b0011;
+    parameter incrementa_1   = 4'b0100;
+    parameter transmite_2    = 4'b0101;
+    parameter incrementa_2   = 4'b0110;
+    parameter transmite_3    = 4'b0111;
+    parameter fim            = 4'b1000;
+
 
     // Memoria de estado
     always @(posedge clock or posedge reset) begin
@@ -31,35 +32,32 @@ module saida_serial_uc (
             Eatual <= Eprox;
     end
 
-    // Logica de proximo estado
-    always @* begin
+    // Lógica de próximo estado
+    always @(*) begin
         case (Eatual)
-            inicial     : Eprox = partida ? preparacao : inicial;
-            preparacao  : Eprox = espera;
-            espera      : Eprox = tick ? transmissao : ( fim ? final_tx : espera );
-            transmissao : Eprox = fim ? final_tx : espera;
-            final_tx    : Eprox = inicial;
-            default     : Eprox = inicial;
+            inicial:        Eprox = inicio ?           transmite_0  : inicial;
+            transmite_0:    Eprox = serial_enviado?    incrementa_0 : transmite_0;
+            incrementa_0:   Eprox = transmite_1;
+            transmite_1:    Eprox = serial_enviado?    incrementa_1 : transmite_1;
+            incrementa_1:   Eprox = transmite_2;
+            transmite_2:    Eprox = serial_enviado?    incrementa_2 : transmite_2;
+            incrementa_2:   Eprox = transmite_3;
+            transmite_3:    Eprox = serial_enviado?    fim          : transmite_3;
+            fim:            Eprox = inicial;            
+            default:        Eprox = inicial;
         endcase
     end
 
     // Logica de saida (maquina de Moore)
     always @* begin
-        carrega = (Eatual == preparacao) ? 1'b1 : 1'b0;
-        zera    = (Eatual == preparacao) ? 1'b1 : 1'b0;
-        desloca = (Eatual == transmissao) ? 1'b1 : 1'b0;
-        conta   = (Eatual == transmissao) ? 1'b1 : 1'b0;
-        pronto  = (Eatual == final_tx) ? 1'b1 : 1'b0;
-
-        // Saida de depuracao (estado)
-        case (Eatual)
-            inicial     : db_estado = 4'b0000; // 0
-            preparacao  : db_estado = 4'b0001; // 1
-            espera      : db_estado = 4'b0011; // 3
-            transmissao : db_estado = 4'b0111; // 7
-            final_tx    : db_estado = 4'b1111; // F
-            default     : db_estado = 4'b1110; // E
-        endcase
+        selecao_mux = (Eatual == transmite_0) ? 2'b00 :
+                      (Eatual == transmite_1) ? 2'b01 :
+                      (Eatual == transmite_2) ? 2'b10 :
+                      (Eatual == transmite_3) ? 2'b11 :
+                                                2'b00 ; // Isso vai dar problema
+        pronto = (Eatual == fim) ? 1'b1 : 1'b0;
     end
+
+    assign db_estado = Eatual;
 
 endmodule

@@ -10,51 +10,35 @@ module saida_serial (
     output [6:0] db_estado          
 );
 
-    // Circuito de transmissão serial
-    // Precisa instanciar um mux para passar um dado por vez e o hashtag
-    // Precisa converter cada dígito BCD para ASCII, juntando com [0011] na frente
 
-    // Sinais internos
-    wire [6:0]  s_dado_ascii;
-    wire        s_serial_pronto;
-
-    // Precisa passar certo os inouts de cada módulo
-
-    // fluxo de dados
-    saida_serial_fd U1_FD (
-        .clock        ( clock          ),
-        .reset        ( s_reset        ),
-        .zera         ( s_zera         ),
-        .conta        ( s_conta        ),
-        .carrega      ( s_carrega      ),
-        .desloca      ( s_desloca      ),
-        .dados_ascii  ( dados_ascii    ),
-        .saida_serial ( s_saida_serial ),
-        .fim          ( s_fim          )
+    saida_serial_fd serial_fd (
+        .clock        ( clock        ),
+        .reset        ( reset        ),
+        .proximo      ( conta        ),
+        .conta        ( carrega      ),
+        .carrega      ( desloca      ),
+        .dados_ascii  ( s_dado_ascii_0),
+        .saida_serial ( saida_serial ),
+        .fim          ( fim          )
     );
 
-
-    // unidade de controle
-    saida_serial_uc U2_UC (
-        .clock     ( clock        ),
-        .reset     ( s_reset      ),
-        .partida   ( s_partida_ed ),
-        .tick      ( s_tick       ),
-        .fim       ( s_fim        ),
-        .zera      ( s_zera       ),
-        .conta     ( s_conta      ),
-        .carrega   ( s_carrega    ),
-        .desloca   ( s_desloca    ),
-        .pronto    ( pronto       ),
-        .db_estado ( s_estado     )
+    saida_serial_uc serial_uc (
+        .clock           ( clock          ),
+        .reset           ( reset          ),
+        .inicio          ( proximo        ),
+        .serial_enviado  ( s_serial_pronto),
+        .selecao_mux     ( selecao_mux    ),
+        .pronto          ( pronto         ),
+        .db_estado       ( db_estado      )
     );
+
 
     // saida serial
     assign saida_serial = s_saida_serial;
 
     // depuracao
     assign db_saida_serial = s_saida_serial;
-    assign db_inicio        = inicio;
+    assign db_inicio       = inicio;
 
     // hexa0
     hexa7seg HEX0 ( 
