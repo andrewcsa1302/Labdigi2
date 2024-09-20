@@ -1,22 +1,19 @@
  module saida_serial_fd (
-    input        clock        ,
-    input        reset        ,
-    input        proximo      , // Para mandar pegar o proximo digito 
-    input        conta        ,
-    input        carrega      ,
-    input        desloca      ,
-    input  [6:0] dados_ascii  ,
-    output       saida_serial ,
-    output       fim
+    input  wire      clock        ,
+    input  wire      reset        ,
+    input  wire      proximo      , // Para mandar pegar o proximo digito 
+    input  wire [1:0] selecao_mux ,
+    input  wire [11:0] dados      ,
+    output wire      saida_serial ,
+    output wire      serial_pronto      
 );
 
     // Sinais internos
-    wire        s_serial_pronto;
-    wire [6:0]  s_dado_transmitido;
     wire [6:0]  s_dado_ascii_0;
     wire [6:0]  s_dado_ascii_1;
     wire [6:0]  s_dado_ascii_2;
     wire [6:0]  s_hashtag;
+    wire [6:0]  s_saida_mux;
 
     // # em hexa: 23H = 0010 0011
     assign s_hashtag = 7'b0010011;
@@ -31,10 +28,10 @@
     tx_serial_7O1 serial (
         .clock           ( clock          ),
         .reset           ( reset          ),
-        .partida         ( inicio         ),
+        .partida         ( proximo        ),
         .dados_ascii     ( s_saida_mux    ),
-        .saida_serial    ( saida_serial   ),
-        .pronto          ( s_serial_pronto),
+        .saida_serial    ( saida_serial   ), // nao esta sendo usado assign
+        .pronto          ( serial_pronto  ),
         .db_clock        (                ), // Porta aberta (desconectada)
         .db_tick         (                ), // Porta aberta (desconectada)
         .db_partida      (                ), // Porta aberta (desconectada)
@@ -51,8 +48,5 @@
         .SEL    ( selecao_mux     ),
         .MUX_OUT( s_saida_mux     )
     );
-    
-    // Saida serial do transmissor
-    assign saida_serial = ;
   
 endmodule
