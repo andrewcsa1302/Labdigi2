@@ -12,7 +12,7 @@ module saida_serial (
 
     wire s_serial_pronto;
     wire s_proximo;
-    wire s_selecao_mux;
+    wire [1:0] s_selecao_mux;
     wire s_saida_serial;
     
     saida_serial_fd serial_fd (
