@@ -40,7 +40,7 @@
     );
 
     // Mux para passar um dado por vez e o hashtag
-    mux_4x1_n #(4) dut (
+    mux_4x1_n #(7) dut (
         .D3     ( s_hashtag       ),
         .D2     ( s_dado_ascii_2  ),
         .D1     ( s_dado_ascii_1  ),
