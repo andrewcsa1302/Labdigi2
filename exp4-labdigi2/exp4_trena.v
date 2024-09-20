@@ -35,6 +35,7 @@ module exp4_trena (
     wire        s_trigger;
     wire [11:0] s_medida ;
     wire [3:0]  s_estado ;
+    wire        s_medida_pronta;
 
 
     // Circuito de interface com sensor
@@ -45,7 +46,7 @@ module exp4_trena (
         .echo     (echo     ),
         .trigger  (s_trigger),
         .medida   (s_medida ),
-        .pronto   (pronto   ),
+        .pronto   (s_medida_pronta),
         .db_estado(s_estado )
     );
 
@@ -54,19 +55,27 @@ module exp4_trena (
     // Precisa instanciar um mux para passar um dado por vez e o hashtag
     // Precisa converter cada dígito BCD para ASCII, juntando com [0011] na frente
 
-
-    tx_serial_7O1 serial (
-        .clock           ( clock        ),
-        .reset           ( reset        ),
-        .partida         ( s_mensurar   ),
-        .dados_ascii     ( s_dado_ascii ),
-        .saida_serial    ( saida_serial ),
-        .pronto          ( s_serial_pronto ),
-        .db_clock        (              ), // Porta aberta (desconectada)
-        .db_tick         (              ), // Porta aberta (desconectada)
-        .db_partida      (              ), // Porta aberta (desconectada)
-        .db_saida_serial (              ), // Porta aberta (desconectada)
-        .db_estado       (              )  // Porta aberta (desconectada)
+//     module saida_serial (
+//     input        clock           ,
+//     input        reset           ,
+//     input        inicio          , 
+//     input [11:0] dados           ,
+//     output       saida_serial    ,
+//     output       pronto          ,
+//     output       db_inicio       ,
+//     output       db_saida_serial ,
+//     output [6:0] db_estado          
+// );
+    saida_serial serial (
+        .clock          ( clock          ),
+        .reset          ( reset          ),
+        .inicio         ( s_medida_pronta),
+        .dados          ( s_medida       ),
+        .saida_serial   ( saida_serial   ),
+        .pronto         ( pronto         ),
+        .db_inicio      (                ),
+        .db_saida_serial (               ),
+        .db_estado       (               )
     );
 
     // Displays para medida (4 dígitos BCD)
