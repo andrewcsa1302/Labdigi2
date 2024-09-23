@@ -1,0 +1,298 @@
+# Reading pref.tcl
+# do exp4_trena_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_uc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:34 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_uc.v 
+# -- Compiling module tx_serial_uc
+# 
+# Top level modules:
+# 	tx_serial_uc
+# End time: 22:51:34 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1_fd.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:34 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1_fd.v 
+# -- Compiling module tx_serial_7O1_fd
+# 
+# Top level modules:
+# 	tx_serial_7O1_fd
+# End time: 22:51:34 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:34 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1.v 
+# -- Compiling module tx_serial_7O1
+# 
+# Top level modules:
+# 	tx_serial_7O1
+# End time: 22:51:34 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_uc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:34 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_uc.v 
+# -- Compiling module saida_serial_uc
+# 
+# Top level modules:
+# 	saida_serial_uc
+# End time: 22:51:34 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_fd.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:34 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_fd.v 
+# -- Compiling module saida_serial_fd
+# 
+# Top level modules:
+# 	saida_serial_fd
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial.v 
+# -- Compiling module saida_serial
+# 
+# Top level modules:
+# 	saida_serial
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/registrador_n.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/registrador_n.v 
+# -- Compiling module registrador_n
+# 
+# Top level modules:
+# 	registrador_n
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/mux_4x1_n.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/mux_4x1_n.v 
+# -- Compiling module mux_4x1_n
+# 
+# Top level modules:
+# 	mux_4x1_n
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_uc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_uc.v 
+# -- Compiling module interface_hcsr04_uc
+# 
+# Top level modules:
+# 	interface_hcsr04_uc
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_fd.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_fd.v 
+# -- Compiling module interface_hcsr04_fd
+# 
+# Top level modules:
+# 	interface_hcsr04_fd
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04.v 
+# -- Compiling module interface_hcsr04
+# 
+# Top level modules:
+# 	interface_hcsr04
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/hexa7seg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/hexa7seg.v 
+# -- Compiling module hexa7seg
+# 
+# Top level modules:
+# 	hexa7seg
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/gerador_pulso.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/gerador_pulso.v 
+# -- Compiling module gerador_pulso
+# 
+# Top level modules:
+# 	gerador_pulso
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/exp4_trena.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/exp4_trena.v 
+# -- Compiling module exp4_trena
+# 
+# Top level modules:
+# 	exp4_trena
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/edge_detector.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/edge_detector.v 
+# -- Compiling module edge_detector
+# 
+# Top level modules:
+# 	edge_detector
+# End time: 22:51:35 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/deslocador_n.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:35 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/deslocador_n.v 
+# -- Compiling module deslocador_n
+# 
+# Top level modules:
+# 	deslocador_n
+# End time: 22:51:36 on Sep 22,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_m.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:36 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_m.v 
+# -- Compiling module contador_m
+# 
+# Top level modules:
+# 	contador_m
+# End time: 22:51:36 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_uc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:36 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_uc.v 
+# -- Compiling module contador_cm_uc
+# 
+# Top level modules:
+# 	contador_cm_uc
+# End time: 22:51:36 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_fd.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:36 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_fd.v 
+# -- Compiling module contador_cm_fd
+# 
+# Top level modules:
+# 	contador_cm_fd
+# End time: 22:51:36 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:36 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm.v 
+# -- Compiling module contador_cm
+# 
+# Top level modules:
+# 	contador_cm
+# End time: 22:51:36 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_bcd_3digitos.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:36 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_bcd_3digitos.v 
+# -- Compiling module contador_bcd_3digitos
+# 
+# Top level modules:
+# 	contador_bcd_3digitos
+# End time: 22:51:36 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2 {C:/Users/pptel/Labdigi2/exp4-labdigi2/tb_exp4_trena.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:51:36 on Sep 22,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2" C:/Users/pptel/Labdigi2/exp4-labdigi2/tb_exp4_trena.v 
+# -- Compiling module tb_exp4_trena
+# 
+# Top level modules:
+# 	tb_exp4_trena
+# End time: 22:51:36 on Sep 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_exp4_trena
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_exp4_trena 
+# Start time: 22:51:36 on Sep 22,2024
+# Loading work.tb_exp4_trena
+# Loading work.exp4_trena
+# Loading work.interface_hcsr04
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+# Loading work.gerador_pulso
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+# Loading work.registrador_n
+# Loading work.saida_serial
+# Loading work.saida_serial_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.mux_4x1_n
+# Loading work.saida_serial_uc
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time: 0 | Reset: 1 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: xxxxxxx | Medida1: xxxxxxx | Medida2: xxxxxxx
+# Time: 2000000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: xxxxxxx | Medida1: xxxxxxx | Medida2: xxxxxxx
+# Time: 102000000 | Reset: 0 | Mensurar: 1 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: xxxxxxx | Medida1: xxxxxxx | Medida2: xxxxxxx
+# Time: 102030000 | Reset: 0 | Mensurar: 1 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1000000
+# Time: 102070000 | Reset: 0 | Mensurar: 1 | Echo: 0 | Trigger: 1 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1000000
+# Time: 102100000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 1 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1000000
+# Time: 112070000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1000000
+# Time: 502100000 | Reset: 0 | Mensurar: 0 | Echo: 1 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1000000
+# Time: 6384100000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1000000
+# Time: 6384150000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6392930000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6436330000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6453690000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6462370000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6488530000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6531930000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6549290000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6557970000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6584130000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6592810000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6601490000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6627530000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6644890000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6662250000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6679730000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6688410000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6705770000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6723130000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6731810000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 0 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6757850000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6766570000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 1 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
+# Time: 6766590000 | Reset: 0 | Mensurar: 0 | Echo: 0 | Trigger: 0 | Saida Serial: 1 | Pronto: 0 | Medida0: 1000000 | Medida1: 1000000 | Medida2: 1111001
