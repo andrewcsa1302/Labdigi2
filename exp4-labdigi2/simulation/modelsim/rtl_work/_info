@@ -1,0 +1,541 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/pptel/Labdigi2/exp4-labdigi2/simulation/modelsim
+vcontador_bcd_3digitos
+Z1 !s110 1727056296
+!i10b 1
+!s100 <^UI=CGojd5P<hV7RJ>3<1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I9X18YoKFkdfRcElb7BUPW0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1727026126
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_bcd_3digitos.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/contador_bcd_3digitos.v
+!i122 20
+L0 14 45
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1727056296.000000
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_bcd_3digitos.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_bcd_3digitos.v|
+!i113 1
+Z7 o-vlog01compat -work work
+Z8 !s92 -vlog01compat -work work +incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2
+Z9 tCvgOpt 0
+vcontador_cm
+R1
+!i10b 1
+!s100 >]fFY1e==[1j[mIEHkTcD3
+R2
+IQJVH2d;kN5i;]VEVJkWSn2
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm.v
+!i122 19
+L0 15 53
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm.v|
+!i113 1
+R7
+R8
+R9
+vcontador_cm_fd
+R1
+!i10b 1
+!s100 nCa7Og5L<Tj;ZPWI1]WUQ1
+R2
+IM[>EdjRM7NKFHhd^H]o^H0
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_fd.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_fd.v
+!i122 18
+L0 15 43
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_fd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_fd.v|
+!i113 1
+R7
+R8
+R9
+vcontador_cm_uc
+R1
+!i10b 1
+!s100 1eohNJ:zNT^ZKn`f82C1L0
+R2
+I4nG=OX1ASHgb=:UE:>aZi0
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_uc.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_uc.v
+!i122 17
+L0 16 53
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_uc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_cm_uc.v|
+!i113 1
+R7
+R8
+R9
+vcontador_m
+R1
+!i10b 1
+!s100 OlC:diTTl?WLK4kQa`SF81
+R2
+IljSfBPekQBdhIDD^Ubg^W1
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_m.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/contador_m.v
+!i122 16
+L0 16 38
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_m.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/contador_m.v|
+!i113 1
+R7
+R8
+R9
+vdeslocador_n
+R1
+!i10b 1
+!s100 ;dQ`^2^_dFVJFiWBcXhWF1
+R2
+IXVhedCQ75^AJ1:XO2CAaW1
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/deslocador_n.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/deslocador_n.v
+!i122 15
+L0 15 31
+R5
+r1
+!s85 0
+31
+Z10 !s108 1727056295.000000
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/deslocador_n.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/deslocador_n.v|
+!i113 1
+R7
+R8
+R9
+vedge_detector
+Z11 !s110 1727056295
+!i10b 1
+!s100 HONc`3DYN?oT0WzL?@;`U3
+R2
+I=<a1cF3Rm8jIK`V?m=eGP2
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/edge_detector.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/edge_detector.v
+!i122 14
+L0 19 23
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/edge_detector.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/edge_detector.v|
+!i113 1
+R7
+R8
+R9
+vexp4_trena
+R11
+!i10b 1
+!s100 oKP?D9V5;3bFEh>jOP;lW1
+R2
+Idln4[80hBmDZSWP^L:9>71
+R3
+R0
+w1727046041
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/exp4_trena.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/exp4_trena.v
+!i122 13
+L0 16 101
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/exp4_trena.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/exp4_trena.v|
+!i113 1
+R7
+R8
+R9
+vgerador_pulso
+R11
+!i10b 1
+!s100 mMQo7:ojCR_RHajZ7D=^z0
+R2
+I87<[[>XY5?oY:V0437O4@2
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/gerador_pulso.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/gerador_pulso.v
+!i122 12
+L0 14 72
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/gerador_pulso.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/gerador_pulso.v|
+!i113 1
+R7
+R8
+R9
+vhexa7seg
+R11
+!i10b 1
+!s100 En:DNl:fD8H^<k:<7TenN2
+R2
+I[F6eV`mHd^KZ[h>^5zmB10
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/hexa7seg.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/hexa7seg.v
+!i122 11
+L0 22 38
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/hexa7seg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/hexa7seg.v|
+!i113 1
+R7
+R8
+R9
+vinterface_hcsr04
+R11
+!i10b 1
+!s100 fISe:JG=<S[Q:7RjXj=j41
+R2
+IWaV9iYFhW6K[l1PE[4Uo;1
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04.v
+!i122 10
+L0 13 50
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04.v|
+!i113 1
+R7
+R8
+R9
+vinterface_hcsr04_fd
+R11
+!i10b 1
+!s100 B3hA;O7WS`nNcb6n=2_BN3
+R2
+I7PMWlWjD9co:Fa@ziHY431
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_fd.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_fd.v
+!i122 9
+L0 14 55
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_fd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_fd.v|
+!i113 1
+R7
+R8
+R9
+vinterface_hcsr04_uc
+R11
+!i10b 1
+!s100 S14]e?8dM]VY1YUQfT2M^1
+R2
+IUi[[6HB3ZU;6>O8PEVSNh2
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_uc.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_uc.v
+!i122 8
+L0 14 69
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_uc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/interface_hcsr04_uc.v|
+!i113 1
+R7
+R8
+R9
+vmux_4x1_n
+R11
+!i10b 1
+!s100 mb6d=C[__<57k6UKFBS4^0
+R2
+IKBIZh<>RX`R@nIBl6FYh21
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/mux_4x1_n.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/mux_4x1_n.v
+!i122 7
+L0 17 18
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/mux_4x1_n.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/mux_4x1_n.v|
+!i113 1
+R7
+R8
+R9
+vregistrador_n
+R11
+!i10b 1
+!s100 D5Sh>b;z23[i7h72P_Xha0
+R2
+I[9V9_=Uo>Y[IV?f:b462Z3
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/registrador_n.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/registrador_n.v
+!i122 6
+L0 17 20
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/registrador_n.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/registrador_n.v|
+!i113 1
+R7
+R8
+R9
+vsaida_serial
+R11
+!i10b 1
+!s100 0lDkUE:XY<7BKP5NDfXn00
+R2
+IiWG89Y_2VQUmfXN^K4oVh2
+R3
+R0
+Z12 w1727037670
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial.v
+!i122 5
+L0 1 45
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial.v|
+!i113 1
+R7
+R8
+R9
+vsaida_serial_fd
+R11
+!i10b 1
+!s100 KkYV[24G0dDAYoUfjVh5M1
+R2
+Iz<o4BLmNYK4JHkolJZ5dN1
+R3
+R0
+R12
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_fd.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_fd.v
+!i122 4
+L0 1 52
+R5
+r1
+!s85 0
+31
+Z13 !s108 1727056294.000000
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_fd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_fd.v|
+!i113 1
+R7
+R8
+R9
+vsaida_serial_uc
+Z14 !s110 1727056294
+!i10b 1
+!s100 GleRD5`6WLbP6R5HAjQ[f1
+R2
+I]hgW=R<oz]a2G`M4Yh5JS2
+R3
+R0
+w1727056251
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_uc.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_uc.v
+!i122 3
+L0 1 69
+R5
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_uc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/saida_serial_uc.v|
+!i113 1
+R7
+R8
+R9
+vtb_exp4_trena
+R1
+!i10b 1
+!s100 L>]N@>5A8WWz3Y@eOn1G@2
+R2
+IZB^Z:n5zaTiYljR`Vb<Z83
+R3
+R0
+w1727050430
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/tb_exp4_trena.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/tb_exp4_trena.v
+!i122 21
+L0 3 79
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/tb_exp4_trena.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/tb_exp4_trena.v|
+!i113 1
+R7
+R8
+R9
+vtx_serial_7O1
+R14
+!i10b 1
+!s100 ;j9ngoOG6ABZ0dPIIle2E3
+R2
+IonG1V?G>j[PNz`<dkl^]40
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1.v
+!i122 2
+L0 1 101
+R5
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1.v|
+!i113 1
+R7
+R8
+R9
+ntx_serial_7@o1
+vtx_serial_7O1_fd
+R14
+!i10b 1
+!s100 =oSoTBH@n3]C?Eb7J38l<1
+R2
+IJ90zXVm3];c?SV5S0cCNJ0
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1_fd.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1_fd.v
+!i122 1
+L0 5 53
+R5
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1_fd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_7O1_fd.v|
+!i113 1
+R7
+R8
+R9
+ntx_serial_7@o1_fd
+vtx_serial_uc
+R14
+!i10b 1
+!s100 @nWRPSYhEfjIg;DI>abBA2
+R2
+IeEEDekMVg<jmNz`=4gCWl3
+R3
+R0
+R4
+8C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_uc.v
+FC:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_uc.v
+!i122 0
+L0 16 64
+R5
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_uc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/pptel/Labdigi2/exp4-labdigi2|C:/Users/pptel/Labdigi2/exp4-labdigi2/tx_serial_uc.v|
+!i113 1
+R7
+R8
+R9
