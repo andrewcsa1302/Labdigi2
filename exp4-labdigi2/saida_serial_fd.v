@@ -16,7 +16,7 @@
     wire [6:0]  s_saida_mux;
 
     // # em hexa: 23H = 0010 0011
-    assign s_hashtag = 7'b0010011;
+    assign s_hashtag = 7'b0100011;
 
     // Converter cada dígito BCD para ASCII, juntando com [0011] na frente
     assign s_dado_ascii_0 = {3'b011, dados[3:0]};
@@ -42,9 +42,9 @@
     // Mux para passar um dado por vez e o hashtag
     mux_4x1_n #(7) dut (
         .D3     ( s_hashtag       ),
-        .D2     ( s_dado_ascii_2  ),
+        .D2     ( s_dado_ascii_0  ),
         .D1     ( s_dado_ascii_1  ),
-        .D0     ( s_dado_ascii_0  ),
+        .D0     ( s_dado_ascii_2  ),
         .SEL    ( selecao_mux     ),
         .MUX_OUT( s_saida_mux     )
     );
