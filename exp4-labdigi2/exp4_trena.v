@@ -42,7 +42,7 @@ module exp4_trena (
     interface_hcsr04 INT (
         .clock    (clock    ),
         .reset    (reset    ),
-        .mensurar (s_mensurar),
+        .medir (s_mensurar),
         .echo     (echo     ),
         .trigger  (s_trigger),
         .medida   (s_medida ),
