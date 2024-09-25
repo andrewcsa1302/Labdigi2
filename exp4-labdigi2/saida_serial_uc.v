@@ -11,16 +11,16 @@ module saida_serial_uc (
     // Estados
     reg [3:0] Eatual, Eprox;
 
-    parameter inicial        = 4'b0000;
-    parameter start   = 4'b1111;
-    parameter transmite_centena    = 4'b0001;
-    parameter incrementa_1   = 4'b0010;
-    parameter transmite_dezena    = 4'b0011;
-    parameter incrementa_2   = 4'b0100;
-    parameter transmite_unidade    = 4'b0101;
-    parameter incrementa_3   = 4'b0110;
-    parameter transmite_hashtag    = 4'b0111;
-    parameter fim            = 4'b1000;
+    parameter inicial               = 4'b0000;
+    parameter start                 = 4'b1111;
+    parameter transmite_centena     = 4'b0001;
+    parameter incrementa_1          = 4'b0010;
+    parameter transmite_dezena      = 4'b0011;
+    parameter incrementa_2          = 4'b0100;
+    parameter transmite_unidade     = 4'b0101;
+    parameter incrementa_3          = 4'b0110;
+    parameter transmite_hashtag     = 4'b0111;
+    parameter fim                   = 4'b1000;
 
 
     // Memoria de estado
@@ -34,7 +34,7 @@ module saida_serial_uc (
     // Lógica de próximo estado
     always @(*) begin
         case (Eatual)
-            inicial:                Eprox = inicio ?           start        : inicial;
+            inicial:                Eprox = inicio ?           start  : inicial;
             start:                  Eprox = transmite_centena;
             transmite_centena:      Eprox = serial_enviado?    incrementa_1 : transmite_centena;
             incrementa_1:           Eprox = transmite_dezena;
@@ -54,7 +54,7 @@ module saida_serial_uc (
                       (Eatual == transmite_dezena) ? 2'b01 :
                       (Eatual == transmite_unidade) ? 2'b10 :
                       (Eatual == transmite_hashtag) ? 2'b11 :
-                                                2'b00 ;
+                                                2'b11 ; // Isso vai dar problema
         pronto = (Eatual == fim) ? 1'b1 : 1'b0;
 
         proximo = (Eatual == start) ||

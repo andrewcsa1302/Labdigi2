@@ -36,13 +36,15 @@ module exp4_trena (
     wire [11:0] s_medida ;
     wire [3:0]  s_estado ;
     wire        s_medida_pronta;
-
+	wire 		s_mensurar_negado;
+	 
+	assign s_mensurar_negado = ~mensurar;
 
     // Circuito de interface com sensor
     interface_hcsr04 INT (
         .clock    (clock    ),
         .reset    (reset    ),
-        .medir (s_mensurar),
+        .medir 	  (s_mensurar),
         .echo     (echo     ),
         .trigger  (s_trigger),
         .medida   (s_medida ),
@@ -96,7 +98,7 @@ module exp4_trena (
     edge_detector DB (
         .clock(clock  ),
         .reset(reset  ),
-        .sinal(mensurar  ), 
+        .sinal(s_mensurar_negado  ), 
         .pulso(s_mensurar)
     );
 
@@ -111,6 +113,6 @@ module exp4_trena (
 
     assign db_echo      = echo;
     assign db_trigger   = s_trigger;
-    assign db_mensurar  = mensurar;
+    assign db_mensurar  = s_mensurar_negado;
 
 endmodule
