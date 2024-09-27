@@ -2,9 +2,11 @@
     input  wire      clock        ,
     input  wire      reset        ,
     input  wire      proximo      , // Para mandar pegar o proximo digito 
-    input  wire [1:0] selecao_mux ,
+    input  wire      zera_contador,
+    input  wire      conta_contador,
     input  wire [11:0] dados      ,
     output wire      saida_serial ,
+    output wire      fim_contador,
     output wire      serial_pronto      
 );
 
@@ -14,6 +16,8 @@
     wire [6:0]  s_dado_ascii_2;
     wire [6:0]  s_hashtag;
     wire [6:0]  s_saida_mux;
+
+    wire [1:0]  s_selecao_mux;
 
     // # em hexa: 23H = 0010 0011
     assign s_hashtag = 7'b0100011;
@@ -30,7 +34,7 @@
         .reset           ( reset          ),
         .partida         ( proximo        ),
         .dados_ascii     ( s_saida_mux    ),
-        .saida_serial    ( saida_serial   ), // nao esta sendo usado assign
+        .saida_serial    ( saida_serial   ),
         .pronto          ( serial_pronto  ),
         .db_clock        (                ), // Porta aberta (desconectada)
         .db_tick         (                ), // Porta aberta (desconectada)
@@ -39,13 +43,29 @@
         .db_estado       (                )  // Porta aberta (desconectada)
     );
 
+    // Contador para direcionar a selecao do mux
+    contador_m #(
+        .M (4), 
+        .N (2)
+    ) U1 (
+        .clock   (clock           ),
+        .zera_as (1'b0            ),
+        .zera_s  (zera_contador   ),
+        .conta   (conta_contador  ),
+        .Q       (s_selecao_mux   ), 
+        .fim     (fim_contador    ), 
+        .meio    (                  )
+    );
+
+
+
     // Mux para passar um dado por vez e o hashtag
     mux_4x1_n #(7) dut (
         .D3     ( s_hashtag       ),
         .D2     ( s_dado_ascii_0  ),
         .D1     ( s_dado_ascii_1  ),
         .D0     ( s_dado_ascii_2  ),
-        .SEL    ( selecao_mux     ),
+        .SEL    ( s_selecao_mux   ),
         .MUX_OUT( s_saida_mux     )
     );
   

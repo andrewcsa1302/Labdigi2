@@ -14,25 +14,33 @@ module saida_serial (
     wire s_proximo;
     wire [1:0] s_selecao_mux;
     wire s_saida_serial;
+    wire s_fim_contador;
+    wire s_conta_contador;
+    wire s_zera_contador;
     
+
     saida_serial_fd serial_fd (
-        .clock          ( clock        ),
-        .reset          ( reset        ),
-        .proximo        ( s_proximo     ),
-        .selecao_mux    ( s_selecao_mux ),
-        .dados          ( dados         ),
-        .saida_serial   ( s_saida_serial ),
-        .serial_pronto  ( s_serial_pronto )
+        .clock          ( clock            ),
+        .reset          ( reset            ),
+        .proximo        ( s_proximo        ),
+        .zera_contador  ( s_zera_contador  ),
+        .conta_contador ( s_conta_contador ),
+        .dados          ( dados            ),
+        .saida_serial   ( s_saida_serial   ),
+        .fim_contador   ( s_fim_contador   ),
+        .serial_pronto  ( s_serial_pronto  )
     );
 
     saida_serial_uc serial_uc (
-        .clock           ( clock          ),
-        .reset           ( reset          ),
-        .inicio          ( inicio         ),
-        .serial_enviado  ( s_serial_pronto),
-        .selecao_mux     ( s_selecao_mux   ),
-        .proximo         ( s_proximo      ),
-        .pronto          ( pronto         )
+        .clock           ( clock           ),
+        .reset           ( reset           ),
+        .inicio          ( inicio          ),
+        .serial_enviado  ( s_serial_pronto ),
+        .fim_contador    ( s_fim_contador  ),
+        .zera_contador   ( s_zera_contador ),
+        .conta_contador  ( s_conta_contador),
+        .proximo         ( s_proximo       ),
+        .pronto          ( pronto          )
     );
     
     // saida serial

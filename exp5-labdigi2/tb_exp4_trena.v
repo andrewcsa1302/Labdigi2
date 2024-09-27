@@ -66,7 +66,7 @@ module tb_exp4_trena;
         echo = 0; // Finaliza o eco
 
         // Esperar um pouco para observar os resultados
-        #500000000;
+        #50000000;
 
         // Fim do teste
         $stop; // Para simulação
