@@ -5,7 +5,7 @@ module controle_servo (
  output wire controle,
  output wire db_reset,
  output wire [2:0] db_posicao,
- output wire db_controle,
+ output wire db_controle
 );
 
 circuito_pwm #(    // valores adaptados para o servo motor
@@ -17,7 +17,7 @@ circuito_pwm #(    // valores adaptados para o servo motor
     .largura_100 (77850),
 	 .largura_101 (88550),
 	 .largura_110 (99300),
-	 .largura_111 (110000),
+	 .largura_111 (110000)
 ) pwm (
     .clock (clock),
     .reset (reset),

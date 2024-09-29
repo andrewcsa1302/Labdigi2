@@ -21,7 +21,7 @@ module circuito_pwm #(    // valores default
 	 parameter largura_100   = 77850,
 	 parameter largura_101   = 88550,
 	 parameter largura_110   = 99300,
-	 parameter largura_111   = 110000,
+	 parameter largura_111   = 110000
 ) (
     input        clock,
     input        reset,
@@ -36,7 +36,7 @@ always @(posedge clock or posedge reset) begin
     if (reset) begin
         contagem <= 0;
         pwm <= 0;
-        largura_pwm <= largura_00; // Valor inicial da largura do pulso
+        largura_pwm <= largura_000; // Valor inicial da largura do pulso
     end else begin
         // Saída PWM
         pwm <= (contagem < largura_pwm);
