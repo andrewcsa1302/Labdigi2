@@ -3,6 +3,7 @@ module saida_serial (
     input        reset           ,
     input        inicio          , 
     input [11:0] dados           ,
+    input [23:0] angulos         ,
     output       saida_serial    ,
     output       pronto          ,
     output       db_inicio       ,
@@ -26,6 +27,7 @@ module saida_serial (
         .zera_contador  ( s_zera_contador  ),
         .conta_contador ( s_conta_contador ),
         .dados          ( dados            ),
+        .angulos        ( angulos          ),
         .saida_serial   ( s_saida_serial   ),
         .fim_contador   ( s_fim_contador   ),
         .serial_pronto  ( s_serial_pronto  )

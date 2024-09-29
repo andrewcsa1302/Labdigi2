@@ -1,5 +1,5 @@
 module mux_8x1_n #(
-    parameter BITS = 4
+    parameter BITS = 7
 ) (
     input  [BITS-1:0] D7,
     input  [BITS-1:0] D6,

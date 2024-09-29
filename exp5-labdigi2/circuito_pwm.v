@@ -49,10 +49,10 @@ always @(posedge clock or posedge reset) begin
                 3'b001: largura_pwm <= largura_001;
                 3'b010: largura_pwm <= largura_010;
                 3'b011: largura_pwm <= largura_011;
-					 3'b100: largura_pwm <= largura_100;
-					 3'b101: largura_pwm <= largura_101;
-					 3'b110: largura_pwm <= largura_110;
-					 3'b111: largura_pwm <= largura_111;
+                3'b100: largura_pwm <= largura_100;
+                3'b101: largura_pwm <= largura_101;
+                3'b110: largura_pwm <= largura_110;
+                3'b111: largura_pwm <= largura_111;
                 default: largura_pwm <= largura_000; // Valor padrão
             endcase
         end else begin

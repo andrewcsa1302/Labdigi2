@@ -5,27 +5,42 @@
     input  wire      zera_contador,
     input  wire      conta_contador,
     input  wire [11:0] dados      ,
+    input  wire [23:0] angulos    ,
     output wire      saida_serial ,
-    output wire      fim_contador,
+    output wire      fim_contador ,
     output wire      serial_pronto      
 );
 
     // Sinais internos
-    wire [6:0]  s_dado_ascii_0;
-    wire [6:0]  s_dado_ascii_1;
-    wire [6:0]  s_dado_ascii_2;
-    wire [6:0]  s_hashtag;
     wire [6:0]  s_saida_mux;
+    wire [2:0]  s_selecao_mux;
 
-    wire [1:0]  s_selecao_mux;
+    // Sinais para passar medida e #
+    wire [6:0]  s_dado_ascii_unidade;
+    wire [6:0]  s_dado_ascii_dezena;
+    wire [6:0]  s_dado_ascii_centena;
+    wire [6:0]  s_hashtag;
+
+    // Converter cada dígito BCD para ASCII, juntando com [0011] na frente
+    assign s_dado_ascii_unidade = {3'b011, dados[3:0]};
+    assign s_dado_ascii_dezena = {3'b011, dados[7:4]};
+    assign s_dado_ascii_centena = {3'b011, dados[11:8]};
 
     // # em hexa: 23H = 0010 0011
     assign s_hashtag = 7'b0100011;
 
-    // Converter cada dígito BCD para ASCII, juntando com [0011] na frente
-    assign s_dado_ascii_0 = {3'b011, dados[3:0]};
-    assign s_dado_ascii_1 = {3'b011, dados[7:4]};
-    assign s_dado_ascii_2 = {3'b011, dados[11:8]};
+    // Sinais para passar cada digito do angulo e virgula
+    wire [6:0]  s_angulo_centena;
+    wire [6:0]  s_angulo_dezena;
+    wire [6:0]  s_angulo_unidade;
+    wire [6:0]  s_virgula;
+
+    assign s_angulo_centena = angulos[23:16];
+    assign s_angulo_centena = angulos[15:8];
+    assign s_angulo_centena = angulos[7:0];
+
+    // , em hexa: 2CH = 0010 1100
+    assign s_virgula = 7'b0101100;
 
 
     // Modulo de transmissao serial
@@ -45,8 +60,8 @@
 
     // Contador para direcionar a selecao do mux
     contador_m #(
-        .M (4), 
-        .N (2)
+        .M (8), 
+        .N (3)
     ) U1 (
         .clock   (clock           ),
         .zera_as (1'b0            ),
@@ -54,19 +69,21 @@
         .conta   (conta_contador  ),
         .Q       (s_selecao_mux   ), 
         .fim     (fim_contador    ), 
-        .meio    (                  )
+        .meio    (                ) // Porta aberta (desconectada)
     );
 
 
-
-    // Mux para passar um dado por vez e o hashtag
-    mux_4x1_n #(7) dut (
-        .D3     ( s_hashtag       ),
-        .D2     ( s_dado_ascii_0  ),
-        .D1     ( s_dado_ascii_1  ),
-        .D0     ( s_dado_ascii_2  ),
+    mux_8x1_n #(7) mux (
+        .D7     ( s_hashtag       ),
+        .D6     ( s_dado_ascii_centena),
+        .D5     ( s_dado_ascii_dezena ),
+        .D4     ( s_dado_ascii_unidade),
+        .D3     ( s_virgula       ),
+        .D2     ( s_angulo_unidade  ),
+        .D1     ( s_angulo_dezena  ),
+        .D0     ( s_angulo_centena  ),
         .SEL    ( s_selecao_mux   ),
         .MUX_OUT( s_saida_mux     )
     );
-  
+    
 endmodule
