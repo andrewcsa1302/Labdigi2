@@ -8,10 +8,10 @@ module sonar #(parameter TIMER = 100000000)
     output wire       saida_serial,
     output wire       pwm,
     output wire       fim_posicao,
-    output wire       db_estado_sonar
+    output wire [6:0] db_estado_sonar
 );
 
-    wire s_inicio_giro;
+    wire s_gira_servo;
     wire s_inicio_medir;
     wire s_fim_1s;
     wire s_fim_2s;
@@ -22,8 +22,10 @@ module sonar #(parameter TIMER = 100000000)
     wire s_db_mensurar;
     wire s_db_echo;
     wire s_db_trigger;
-    wire s_db_estado;
+    wire [3:0] s_db_estado;
     wire s_transmite_dado;
+    wire s_conta_posicao;
+    wire s_conta_timer;
 
 
     sonar_fd #(
@@ -32,7 +34,7 @@ module sonar #(parameter TIMER = 100000000)
         .clock(clock),
         .reset(reset),
         .mensurar(ligar),
-        .inicio_giro(s_inicio_giro),
+        .inicio_giro(s_gira_servo),
         .inicio_medir(s_inicio_medir),
         .echo(echo),
         .trigger(trigger),
@@ -40,10 +42,12 @@ module sonar #(parameter TIMER = 100000000)
         .pwm (pwm),
         .fim_1s(s_fim_1s),
         .fim_2s(s_fim_2s),
-        .medida0(),
-        .medida1(),
-        .medida2(),
+        .medida0 (),
+        .medida1 (),
+        .medida2 (),
         .pronto(), // serial enviado
+        .conta_posicao (s_conta_posicao),
+        .conta_timer(s_conta_timer),
         .db_mensurar(),
         .db_echo(),
         .db_trigger(),
@@ -58,8 +62,10 @@ module sonar #(parameter TIMER = 100000000)
         .fim_1s(s_fim_1s),
         .fim_2s(s_fim_2s),
         .db_estado(s_db_estado),
-        .inicio_giro(s_inicio_giro),
+        .move_servo(s_gira_servo),
         .inicio_medir(s_inicio_medir),
+        .conta_posicao (s_conta_posicao),
+        .conta_timer(s_conta_timer),
         .fim_posicao(fim_posicao)
     );
 
