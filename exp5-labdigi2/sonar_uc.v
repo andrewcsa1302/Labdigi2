@@ -4,9 +4,11 @@ module sonar_uc (
     input reset,
     input fim_1s,
     input fim_2s,
-    output reg db_estado,
-    output reg inicio_giro,
+    output reg [3:0] db_estado,
+    output reg move_servo,
     output reg inicio_medir,
+    output reg conta_posicao,
+    output reg conta_timer,
     output reg fim_posicao
 );
 
@@ -16,10 +18,9 @@ module sonar_uc (
     parameter inicial       = 4'b0000;
     parameter preparacao    = 4'b0001;
     parameter envia_trigger = 4'b0010;
-    parameter trigger       = 4'b0011;
-    parameter envia_giro 	= 4'b0100;
-    parameter giro          = 4'b0101;
-    parameter final_medida  = 4'b0110;
+    parameter espera_timer  = 4'b0011;
+    parameter gira_servo 	= 4'b0100;
+    parameter final_medida  = 4'b0101;
 	 
 	 
 	always @(posedge clock, posedge reset) begin
@@ -34,10 +35,9 @@ module sonar_uc (
         case (Eatual)
             inicial:        Eprox = mensurar ? preparacao : inicial;
             preparacao:     Eprox = envia_trigger;
-            envia_trigger:  Eprox = trigger;
-            trigger:        Eprox = fim_2s ? envia_giro : trigger;
-            envia_giro:     Eprox = giro;
-            giro:           Eprox = fim_1s ? final_medida : envia_giro;
+            envia_trigger:  Eprox = espera_timer;
+            espera_timer:   Eprox = fim_2s ? gira_servo : espera_timer;
+            gira_servo:     Eprox = final_medida;
             final_medida:   Eprox = inicial;
             default: 
                 Eprox = inicial;
@@ -46,18 +46,19 @@ module sonar_uc (
 	 
 	 // Saidas de controle
     always @(*) begin
-        inicio_giro  = (Eatual == envia_giro)? 1'b1 : 1'b0;
+        move_servo  = (Eatual == gira_servo)? 1'b1 : 1'b0;
         inicio_medir = (Eatual == envia_trigger)? 1'b1 : 1'b0;
         fim_posicao  = (Eatual == final_medida)? 1'b1 : 1'b0;
+        conta_posicao = (Eatual == final_medida)? 1'b1 : 1'b0;
+        conta_timer = (Eatual == espera_timer)? 1'b1 : 1'b0;
 		 
     case (Eatual)
         inicial:       db_estado = 4'b0000;
         preparacao:    db_estado = 4'b0001;
         envia_trigger: db_estado = 4'b0010;
-        trigger:       db_estado = 4'b0011;
-        envia_giro:    db_estado = 4'b0100;
-        giro:          db_estado = 4'b0101;
-        final_medida:  db_estado = 4'b0110;
+        espera_timer:  db_estado = 4'b0011;
+        gira_servo:    db_estado = 4'b0100;
+        final_medida:  db_estado = 4'b0101;
         default:       db_estado = 4'b0000;
     endcase
 
