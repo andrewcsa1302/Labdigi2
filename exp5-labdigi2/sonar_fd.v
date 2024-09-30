@@ -3,21 +3,23 @@ module sonar_fd #(parameter MODULO_TIMER = 100000000)
     input wire        clock,
     input wire        reset,
     input wire        mensurar,
+    input wire        conta_posicao, 
     input wire        inicio_giro,
     input wire        inicio_medir,
     input wire        echo,
+    input wire        conta_timer,
     output wire       trigger,
     output wire       saida_serial,
     output wire       pwm,
     output wire		  fim_1s,
     output wire       fim_2s,
-    output wire [6:0] medida0,
-    output wire [6:0] medida1,
-    output wire [6:0] medida2,
     output wire       pronto,
     output wire       db_mensurar,
     output wire       db_echo,
     output wire       db_trigger,
+    output wire [6:0] medida0,
+    output wire [6:0] medida1,
+    output wire [6:0] medida2,
     output wire [6:0] db_estado
 );
 
@@ -74,23 +76,9 @@ module sonar_fd #(parameter MODULO_TIMER = 100000000)
         .clock(clock),
         .zera_as(1'b0),
         .zera_s(reset),
-        .conta(inicio_medir),
+        .conta(conta_timer),
         .Q(),
         .fim(fim_2s),
-        .meio()
-    );
-
-    //conta 1s pelo giro
-    contador_m #(
-        .M(MODULO_TIMER/2),
-        .N(28)
-    )contador_1s(
-        .clock(clock),
-        .zera_as(1'b0),
-        .zera_s(reset),
-        .conta(inicio_giro),
-        .Q(),
-        .fim(fim_1s),
         .meio()
     );
 
@@ -105,20 +93,18 @@ module sonar_fd #(parameter MODULO_TIMER = 100000000)
         .db_controle()
 );
 
-    // Define posição do servo
-    contadorg_updown_m #(
-        .M(8),  // Módulo do contador
-        .N(3)   // Número de bits de saída
-    ) contador_posicao (
-        .clock(clock),
-        .zera_as(1'b0),
-        .zera_s(reset),
-        .conta(inicio_giro),
-        .Q(s_posicao),
-        .inicio(),
-        .fim(),
-        .meio(),
-        .direcao()
+    // Define posição do servo motor
+    contador_m #(
+        .M(8),
+        .N(3)
+    )contador_posicao(
+        .clock      ( clock         ),
+        .zera_as    ( 1'b0          ),
+        .zera_s     ( reset         ),
+        .conta      ( conta_posicao ),
+        .Q          ( s_posicao     ),
+        .fim        (               ),
+        .meio       (               )
     );
 
 
