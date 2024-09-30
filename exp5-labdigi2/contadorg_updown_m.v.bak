@@ -51,10 +51,7 @@ module contadorg_updown_m #(
 
     // Output assignments
     assign Q = IQ;
-
-		always @(*) begin
-				direcao = dir;
-		end
+    assign direcao = dir;
 
     always @(*) begin // Combinational logic for inicio, fim, and meio
         inicio = (IQ == 0);

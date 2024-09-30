@@ -36,8 +36,8 @@
     wire [6:0]  s_virgula;
 
     assign s_angulo_centena = angulos[23:16];
-    assign s_angulo_dezena = angulos[15:8];
-    assign s_angulo_unidade = angulos[7:0];
+    assign s_angulo_centena = angulos[15:8];
+    assign s_angulo_centena = angulos[7:0];
 
     // , em hexa: 2CH = 0010 1100
     assign s_virgula = 7'b0101100;
