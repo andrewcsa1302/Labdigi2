@@ -27,7 +27,7 @@ module sonar_tb;
     
     // Instanciação do DUT
     sonar #(
-        .TIMER(250_000) // 5ms
+        .TIMER(250) // 5ms/1000
     ) DUT (
         .clock(clock),
         .reset(reset),

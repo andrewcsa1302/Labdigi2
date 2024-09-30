@@ -33,6 +33,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	contador_cm_fd
 
+} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp5-labdigi2/sonar.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp5-labdigi2/sonar.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module sonar
+
+Top level modules:
+	sonar
+
 } {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp5-labdigi2/rom_angulos_8x24.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/exp5-labdigi2/rom_angulos_8x24.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module rom_angulos_8x24
