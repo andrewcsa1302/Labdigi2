@@ -1,0 +1,9 @@
+# Reading pref.tcl
+# vsim -gui . 
+# Start time: 11:59:45 on Sep 26,2024
+# ** Error (suppressible): (vsim-19) Failed to access library '' at "".
+# Invalid argument. (errno = EINVAL)
+# Error loading design
+# End time: 11:59:46 on Sep 26,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# Loading project teste-sonar
