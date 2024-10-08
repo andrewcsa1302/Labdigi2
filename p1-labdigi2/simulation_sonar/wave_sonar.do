@@ -11,10 +11,10 @@ add wave -noupdate -color {Orange Red} -height 35 /sonar_tb_certo/fim_posicao
 add wave -noupdate -height 35 /sonar_tb_certo/DUT/uc/Eatual
 add wave -noupdate -height 35 -radix hexadecimal /sonar_tb_certo/DUT/fd/serial/dados
 add wave -noupdate -height 35 -radix ascii /sonar_tb_certo/DUT/fd/serial/angulos
-add wave -noupdate -height 35 /sonar_tb_certo/movimento
+add wave -noupdate -color {Sky Blue} -height 35 /sonar_tb_certo/movimento
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {109043975 ns} 0} {{Cursor 2} {0 ns} 0}
-quietly wave cursor active 2
+WaveRestoreCursors {{Cursor 2} {192548975 ns} 0}
+quietly wave cursor active 1
 configure wave -namecolwidth 242
 configure wave -valuecolwidth 48
 configure wave -justifyvalue left
@@ -29,4 +29,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits us
 update
-WaveRestoreZoom {0 ns} {113991869 ns}
+WaveRestoreZoom {0 ns} {530284304 ns}
