@@ -123,22 +123,48 @@ registrador_4 reg_carona_origem(
 
 
 //RAM
+// ANTIGAMENTE ERA ASSIM A ATRIBUIÇÃO DE VALORES NA RAM
+// MAS AGORA O ENDEREÇO (QUE HOJE É DESTINO_OBJETO) É SÓ [1:0]
+// GUARDA NESSA ORDEM: EH_ORIGEM, TIPO_OBJETO, ORIGEM_OBJETO, DESTINO_OBJETO
+// 
+// sync_ram_16x4_mod fila_ram(
+//     .clk                        (clock),
+//     .we                         (enableRAM),
+//     .data                       (mux1),
+//     .addrSecundario             (addrSecundario), //valor para teste
+//     .addrSecundarioAnterior     (addrSecundarioAnterior),
+//     .addr                       (4'b0000),
+//     .shift                      (shift),
+//     .weT                        (enableTopRAM),
+//     .fit                        (fit),
+//     .clear                      (reset),
+//     .q                          (proxParada),
+//     .saidaSecundaria            (saidaSecundaria),
+//     .saidaSecundariaAnterior    (saidaSecundariaAnterior)
+// );
 
-sync_ram_16x4_mod fila_ram(
-    .clk                        (clock),
-    .we                         (enableRAM),
-    .data                       (mux1),
-    .addrSecundario             (addrSecundario), //valor para teste
-    .addrSecundarioAnterior     (addrSecundarioAnterior),
-    .addr                       (4'b0000),
-    .shift                      (shift),
-    .weT                        (enableTopRAM),
-    .fit                        (fit),
-    .clear                      (reset),
-    .q                          (proxParada),
-    .saidaSecundaria            (saidaSecundaria),
-    .saidaSecundariaAnterior    (saidaSecundariaAnterior)
-);
+
+    sync_ram_16x7_mod duut (
+        .clk(clk),
+        .we(we),
+        .in_eh_origem(in_eh_origem),
+        .in_tipo_objeto(in_tipo_objeto),
+        .in_origem_objeto(in_origem_objeto),
+        .in_destino_objeto(in_destino_objeto),
+        .addrSecundarioAnterior(addrSecAnt),
+        .addrSecundario(addrSec),
+        .addr(addr),
+        .shift(shift),
+        .weT(weT),
+        .fit(fit),
+        .clear(clear),
+        .saidaSecundaria(saidaSecundaria),
+        .saidaSecundariaAnterior(saidaSecundariaAnterior),
+        .eh_origem(eh_origem),
+        .tipo_objeto(tipo_objeto),
+        .origem_objeto(origem_objeto),
+        .destino_objeto(destino_objeto)
+    );
 
 
 // detector de bordas

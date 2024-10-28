@@ -19,7 +19,7 @@ module tb_ram_mod;
     wire [1:0] origem_objeto;
     wire [1:0] destino_objeto;
 
-    sync_ram_16x4_mod duut (
+    sync_ram_16x7_mod duut (
         .clk(clk),
         .we(we),
         .in_eh_origem(in_eh_origem),
@@ -96,7 +96,7 @@ module tb_ram_mod;
         #4;
         weT = 0;
 
-        // Teste 5. Fit
+        // Teste 6. Fit
         addrSec = 1;
         in_eh_origem = 1'b1;
         in_tipo_objeto = 2'b11;
