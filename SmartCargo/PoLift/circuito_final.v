@@ -5,7 +5,7 @@ module circuito_final(
     input [3:0]destinoBot,
     input [3:0]sensoresNeg,
     input reset, 
-	 input emergencia,
+	input emergencia,
     output dbQuintoBitEstado,
     output db_iniciar,
 	output db_clock,
