@@ -28,6 +28,7 @@ module interface_hcsr04 (
     wire        s_fim_medida;
     wire        s_fim_loop;
     wire [1:0]  s_medida;
+    wire        s_inicia_loop;
 
     // Unidade de controle
     interface_hcsr04_uc U1 (
@@ -41,7 +42,8 @@ module interface_hcsr04 (
         .gera      (s_gera      ),
         .registra  (s_registra  ),
         .pronto    (pronto      ),
-        .db_estado (db_estado   )
+        .db_estado (db_estado   ),
+        .inicia_loop(s_inicia_loop)
     );
 
     // Fluxo de dados
@@ -56,7 +58,8 @@ module interface_hcsr04 (
         .trigger   (trigger     ),
         .fim       (            ),  // (desconectado)
         .andar     (s_medida    ),
-        .fim_loop  (s_fim_loop  )
+        .fim_loop  (s_fim_loop  ),
+        .inicia_loop (s_inicia_loop)
     );
 
     // Saída
