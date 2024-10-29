@@ -23,7 +23,7 @@ module interface_hcsr04_fd (
     output wire        fim_medida,
     output wire        trigger,
     output wire        fim,
-    output wire  [1:0] andar,
+    output wire  [1:0] andar
 );
 
     // Sinais internos
@@ -67,24 +67,24 @@ module interface_hcsr04_fd (
         .Q      (distancia)
     );
 
-    conversor_andarXcm andar(
-        unidades.(distancia[3:0]), 
-        dezenas.(distancia[7:4]),
-        centenas.(distancia[11:8]),
-        andar.(andar)
+    conversor_andarXcm acha_andar(
+        .unidades(s_medida[3:0]), 
+        .dezenas(s_medida[7:4]),
+        .centenas(s_medida[11:8]),
+        .andar(andar)
     );
 
     contador_m #(
         .M(50000000),
         .N(28)
     ) looper(
-        clock.(clock)
-        zera_as.()
-        zera_s.(zera)
-        conta.(inicia_loop)
-        Q.()
-        fim.(fim_loop)
-        meio.()
+        .clock(clock),
+        .zera_as(),
+        .zera_s(zera),
+        .conta(inicia_loop),
+        .Q(),
+        .fim(fim_loop),
+        .meio()
     );
 
 endmodule   

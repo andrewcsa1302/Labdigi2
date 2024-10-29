@@ -22,7 +22,7 @@ module interface_hcsr04_tb;
     reg         medir_in = 0;
     reg         echo_in = 0;
     wire        trigger_out;
-    wire [1:0] andar_out;
+    wire [1:0] medida_out;
     wire        pronto_out;
     wire [3:0]  db_estado_out;
 
@@ -30,10 +30,10 @@ module interface_hcsr04_tb;
     interface_hcsr04 dut (
         .clock    (clock_in     ),
         .reset    (reset_in     ),
-        .medir    (medir_in     ),
+        .ligado    (medir_in     ),
         .echo     (echo_in      ),
         .trigger  (trigger_out  ),
-        .medida   (medida_out   ),
+        .andar   (medida_out   ),
         .pronto   (pronto_out   ),
         .db_estado(db_estado_out)
     );
@@ -85,7 +85,6 @@ module interface_hcsr04_tb;
             @(negedge clock_in);
             medir_in = 1;
             #(5*clockPeriod);
-            medir_in = 0;
 
             // 3) Espera por 400us (tempo entre trigger e echo)
             #(400_000); // 400 us
@@ -99,8 +98,6 @@ module interface_hcsr04_tb;
             wait (pronto_out == 1'b1);
             $display("Fim do caso %0d", caso);
 
-            // 6) Espera entre casos de teste
-            #(100_000); // 100 us
         end
 
         // Fim da simulação

@@ -26,7 +26,7 @@ module interface_hcsr04 (
     wire        s_gera;
     wire        s_registra;
     wire        s_fim_medida;
-    wire        s_fim_loop
+    wire        s_fim_loop;
     wire [1:0]  s_medida;
 
     // Unidade de controle

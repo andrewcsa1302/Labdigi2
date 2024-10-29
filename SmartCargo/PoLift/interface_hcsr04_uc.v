@@ -30,14 +30,15 @@ module interface_hcsr04_uc (
     reg [2:0] Eatual, Eprox; // 3 bits são suficientes para 7 estados
 
     // Parâmetros para os estados
-    parameter inicial       = 3'b000;
-    parameter preparacao    = 3'b001;
-    parameter envia_trigger = 3'b010;
-    parameter espera_echo   = 3'b011;
-    parameter medida        = 3'b100;
-    parameter armazenamento = 3'b101;
-    parameter final_medida  = 3'b110;
-    parameter inicial_loop  = 3'b111;
+    parameter inicial       = 4'b0000;
+    parameter preparacao    = 4'b0001;
+    parameter envia_trigger = 4'b0010;
+    parameter espera_echo   = 4'b0011;
+    parameter medida        = 4'b0100;
+    parameter armazenamento = 4'b0101;
+    parameter final_medida  = 4'b0110;
+    parameter inicial_loop  = 4'b0111;
+	 parameter espera_loop   = 4'b1100;
 
     // Estado
     always @(posedge clock, posedge reset) begin
@@ -51,7 +52,8 @@ module interface_hcsr04_uc (
     always @(*) begin
         case (Eatual)
             inicial:        Eprox = ligado ? inicial_loop : inicial;
-            inicial_loop    Eprox = medir ? preparacao : inicial_loop;
+            inicial_loop:   Eprox = espera_loop;
+				espera_loop:	 Eprox = medir ? preparacao : inicial_loop;
             preparacao:     Eprox = envia_trigger;
             envia_trigger:  Eprox = espera_echo;
             espera_echo:    Eprox = medir ? envia_trigger : echo ? medida : espera_echo;
@@ -80,6 +82,8 @@ module interface_hcsr04_uc (
             medida:        db_estado = 4'b0100;
             armazenamento: db_estado = 4'b0101;
             final_medida:  db_estado = 4'b1111;
+				inicial_loop:  db_estado = 4'b1001;
+				espera_loop:   db_estado = 4'b1100;
             default:       db_estado = 4'b1110;
         endcase
     end

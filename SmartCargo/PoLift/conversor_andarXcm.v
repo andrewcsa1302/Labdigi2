@@ -5,9 +5,11 @@ module conversor_andarXcm (
     output reg [1:0] andar 
 );
 
+	 reg [9:0] altura;
+
 always @(*) begin
     
-    int altura = (centenas * 100) + (dezenas * 10) + unidades;
+    altura = (centenas * 100) + (dezenas * 10) + unidades;
     
     if (altura < 30) begin
         andar = 2'b00; 
