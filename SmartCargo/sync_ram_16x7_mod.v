@@ -2,6 +2,7 @@ module sync_ram_16x7_mod(
     input        clk,
     input        we, // write enable para escrita no addr dado
     input  [1:0] in_tipo_objeto,
+    input  [1:0] in_origem_objeto,
     input  [1:0] in_andar,
     input  [1:0] in_destino_objeto,
     input  [3:0] addrSecundarioAnterior,
@@ -22,8 +23,8 @@ module sync_ram_16x7_mod(
     // Formato do dado da RAM: eh_origem, tipo_objeto [1:0], origem_objeto [1:0], destino_objeto [1:0] -> 7 bits
     reg [6:0] ram[15:0];
     reg [6:0] data;
-    reg        eh_origem;
-    assign data = {eh_origem, in_tipo_objeto, in_origem_objeto, in_destino_objeto};
+    reg       in_eh_origem;
+    assign data = {in_eh_origem, in_tipo_objeto, in_origem_objeto, in_destino_objeto};
 
     // Registra endereco de acesso
     reg [3:0] addr_reg;
@@ -49,11 +50,11 @@ module sync_ram_16x7_mod(
     end
     always @ (posedge clk or posedge clear)
     begin
-        if (in_destino_objeto == andar) begin
-            eh_origem = 1'b0;
+        if (in_destino_objeto == in_origem_objeto) begin
+            in_eh_origem = 1'b1;
         end
         else begin
-            eh_origem = 1'b1;
+            in_eh_origem = 1'b0;
         end
 
         // Escrita da memoria

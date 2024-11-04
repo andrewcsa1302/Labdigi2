@@ -24,7 +24,7 @@ module smart_cargo(
 
 // NOVOS SINAIS SMARTCARGO
 
-wire coloca_objetos, coloca_objetos;
+wire coloca_objetos, tira_objetos;
 
 // SINAIS ANTIGOS
 
