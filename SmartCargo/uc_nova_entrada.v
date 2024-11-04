@@ -1,4 +1,4 @@
-module uc_novajogada(
+module uc_nova_entrada(
     input bordaNovoDestino,
     input clock,
     input iniciar,

@@ -1,4 +1,4 @@
-module circuito_final(
+module smart_cargo(
     input iniciar,
     input clock,
     input [3:0]origemBot,
@@ -22,6 +22,12 @@ module circuito_final(
 	output [3:0]db_sensores
 );
 
+// NOVOS SINAIS SMARTCARGO
+
+wire coloca_objetos, coloca_objetos;
+
+// SINAIS ANTIGOS
+
 wire enableAndarAtual, shift, enableRAM, enableTopRAM, select1, select2, select3, chegouDestino, fit, temDestino, sobe; 
 wire bordaNovoDestino, fimT, contaT, zeraT, clearAndarAtual, clearSuperRam, carona_origem, finalRam, enableRegOrigem, andarRepetidoDestino, andarRepetidoOrigem;
 wire enableRegDestino, contaAddrSecundario, zeraAddrSecundario, sentidoElevador, ramSecDifZero, bordaSensorAtivo, motorSubindo, motorDescendo;
@@ -39,7 +45,7 @@ assign db_sensores = sensoresNeg;
 assign motorSubindoF = motorSubindo | emergencia;
 assign motorDescendoF = motorDescendo | emergencia;
 
-FD fluxodeDados (
+smart_cargo_fd fluxodeDados (
 .clock                      (clock),
 .origemBot                  (origemBot), 
 .destinoBot                 (destinoBot),
@@ -75,11 +81,13 @@ FD fluxodeDados (
 .temDestino                 (temDestino),
 .sobe                       (sobe),
 .sensores                   (sensores),
-.bordaSensorAtivo           (bordaSensorAtivo)
+.bordaSensorAtivo           (bordaSensorAtivo),
+.tira_objetos               (tira_objetos),
+.coloca_objetos             (coloca_objetos)
 );
 
 
-unidade_controle UC (
+uc_movimento UC_MOVIMENTO (
 .clock                      (clock),
 .reset                      (reset),
 .iniciar                    (iniciar),
@@ -99,11 +107,14 @@ unidade_controle UC (
 .temDestino                 (temDestino),
 .Eatual1_db                 (Eatual1_db),
 .motorSubindo               (motorSubindo),
-.motorDescendo              (motorDescendo)
+.motorDescendo              (motorDescendo),
+.eh_origem                  (),
+.tira_objetos               (tira_objetos),
+.coloca_objetos             (coloca_objetos)
 );
 
 
-uc_novajogada UC_NOVAJOGADA (
+uc_nova_entrada UC_NOVA_ENTRADA (
 .bordaNovoDestino           (bordaNovoDestino),
 .select1                    (select1),
 .enableTopRAM               (enableTopRAM),
@@ -113,8 +124,8 @@ uc_novajogada UC_NOVAJOGADA (
 .clock                      (clock),
 .carona_origem              (carona_origem),
 .carona_destino             (carona_destino),
-.andarRepetidoDestino        (andarRepetidoDestino),
-.andarRepetidoOrigem         (andarRepetidoOrigem),
+.andarRepetidoDestino       (andarRepetidoDestino),
+.andarRepetidoOrigem        (andarRepetidoOrigem),
 .ramSecDifZero              (ramSecDifZero),
 .select3                    (select3),
 .enableRegOrigem            (enableRegOrigem),
