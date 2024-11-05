@@ -25,6 +25,9 @@ module sync_ram_16x7_mod(
     reg [6:0] data;
     reg       in_eh_origem;
 
+    assign in_eh_origem = ~(in_origem_objeto[0] ^ in_destino_objeto[0]) 
+                        & ~(in_origem_objeto[1] ^ in_destino_objeto[1]);
+
     // Registra endereco de acesso
     reg [3:0] addr_reg;
     integer i;
@@ -49,12 +52,6 @@ module sync_ram_16x7_mod(
     end
     always @ (posedge clk or posedge clear)
     begin
-        if (in_destino_objeto == in_origem_objeto) begin
-            in_eh_origem = 1'b1;
-        end
-        else begin
-            in_eh_origem = 1'b0;
-        end
         
         data = {in_eh_origem, in_tipo_objeto, in_origem_objeto, in_destino_objeto};
 
