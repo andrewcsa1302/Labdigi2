@@ -1,37 +1,36 @@
 module smart_cargo(
     input iniciar,
     input clock,
-    input [3:0]origemBot,
-    input [3:0]destinoBot,
-    input [3:0]sensoresNeg,
+    input [3:0] sensoresNeg,
     input reset, 
-	 input emergencia,
+    input emergencia,
+    input RX,
     output dbQuintoBitEstado,
     output db_iniciar,
-	output db_clock,
-	output db_reset,
+    output db_clock,
+    output db_reset,
     output motorDescendoF,
     output motorSubindoF,
     output [6:0] andarAtual_db,
-	output [6:0] proxParada_db,
-	output [6:0] Eatual_1,
-	output [6:0] Eatual_2,
-	output db_bordaSensorAtivo,
-	output db_motorSubindo,
-	output db_motorDescendo,
-	output [3:0]db_sensores
+    output [6:0] proxParada_db,
+    output [6:0] Eatual_1,
+    output [6:0] Eatual_2,
+    output db_bordaSensorAtivo,
+    output db_motorSubindo,
+    output db_motorDescendo,
+    output [3:0] db_sensores,
+    output [13:0] db_serial_hex
 );
 
 // NOVOS SINAIS SMARTCARGO
-
 wire coloca_objetos, tira_objetos;
 
 // SINAIS ANTIGOS
-
 wire enableAndarAtual, shift, enableRAM, enableTopRAM, select1, select2, select3, chegouDestino, fit, temDestino, sobe; 
 wire bordaNovoDestino, fimT, contaT, zeraT, clearAndarAtual, clearSuperRam, carona_origem, finalRam, enableRegOrigem, andarRepetidoDestino, andarRepetidoOrigem;
 wire enableRegDestino, contaAddrSecundario, zeraAddrSecundario, sentidoElevador, ramSecDifZero, bordaSensorAtivo, motorSubindo, motorDescendo;
-wire [3:0] proxParada, andarAtual, Eatual1_db,Eatual2_db, sesnsores ;
+wire [1:0] proxParada, andarAtual;
+wire [3:0] Eatual1_db, Eatual2_db, sensores;
 
 assign db_iniciar = iniciar;
 assign db_clock = clock;
@@ -47,8 +46,6 @@ assign motorDescendoF = motorDescendo | emergencia;
 
 smart_cargo_fd fluxodeDados (
 .clock                      (clock),
-.origemBot                  (origemBot), 
-.destinoBot                 (destinoBot),
 .enableAndarAtual           (enableAndarAtual), // enable da ram estado atual
 .shift                      (shift), //shift ram
 .fit                        (fit),
@@ -83,7 +80,9 @@ smart_cargo_fd fluxodeDados (
 .sensores                   (sensores),
 .bordaSensorAtivo           (bordaSensorAtivo),
 .tira_objetos               (tira_objetos),
-.coloca_objetos             (coloca_objetos)
+.coloca_objetos             (coloca_objetos),
+.RX                         (RX),
+.db_serial_hex              (db_serial_hex)
 );
 
 
@@ -137,7 +136,6 @@ uc_nova_entrada UC_NOVA_ENTRADA (
 );
 
 
-
 // displays 7 seg
 
 hexa7seg display_andarAtual(
@@ -163,8 +161,6 @@ hexa7seg display_estado2(
 .display                    (Eatual_2)
 
 );
-
-
 
 
 endmodule

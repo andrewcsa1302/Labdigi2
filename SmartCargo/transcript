@@ -167,3 +167,73 @@ run -all
 #    Time: 106 ns  Iteration: 0  Instance: /tb_ram_conteudo_elevador
 # 1
 # Break in Module tb_ram_conteudo_elevador at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_conteudo_elevador.v line 78
+# Compile of tb_ram_conteudo_elevador.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v failed with 2 errors.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of uc_movimento.v was successful.
+# 13 compiles, 1 failed with 2 errors.
+# Compile of tb_ram_conteudo_elevador.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v failed with 2 errors.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of uc_movimento.v was successful.
+# 13 compiles, 1 failed with 2 errors.
+# Compile of tb_ram_conteudo_elevador.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of uc_movimento.v was successful.
+# 13 compiles, 0 failed with no errors.
+# Compile of tb_ram_conteudo_elevador.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of uc_movimento.v was successful.
+# 13 compiles, 0 failed with no errors.
+# Compile of tb_ram_conteudo_elevador.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of uc_movimento.v was successful.
+# 13 compiles, 0 failed with no errors.

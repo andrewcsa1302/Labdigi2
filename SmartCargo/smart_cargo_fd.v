@@ -1,10 +1,6 @@
-// Modulo do fluxo de dados para o projeto "Gerenciador de Elevadores"
 module smart_cargo_fd (
  input clock,
- input [3:0] origemBot,
- input [3:0] destinoBot,
  input [3:0] sensores, 
- input novaEntrada,
  input shift,
  input enableRAM,
  input enableTopRAM,
@@ -24,12 +20,13 @@ module smart_cargo_fd (
  input fit,
  input coloca_objetos,
  input tira_objetos,
+ input RX,
  output chegouDestino,
  output bordaNovoDestino,
  output fimT,
  output ramSecDifZero,
- output [3:0] proxParada, // LAB2 - AGORA EH [1:0]DESTINO_OBJETO_DA_VEZ
- output [3:0] andarAtual, 
+ output [1:0] proxParada,
+ output [1:0] andarAtual, 
  output sentidoElevador,
  output carona_origem,
  output carona_destino,
@@ -38,16 +35,16 @@ module smart_cargo_fd (
  output sobe,
  output andarRepetidoOrigem,
  output andarRepetidoDestino,
- output bordaSensorAtivo
+ output bordaSensorAtivo,
+ output [13:0] db_serial_hex
 );
 //Declaração de fios gerais 
 wire [3:0] proxAndarD, proxAndarS ; // proximo andar caso suba e proximo andar caso desça
 wire [3:0] saidaRegDestino, saidaRegOrigem, saidaSecundaria;
-wire sentidoUsuario, elevadorSubindo, enderecoMaiorQueOrigem, novaOrigem, novoDestino, bordaNovaOrigem, mesmoAndar;
+wire sentidoUsuario, elevadorSubindo, enderecoMaiorQueOrigem, bordaNovaOrigem, mesmoAndar;
 wire [3:0] saidaSecundariaAnterior, addrSecundarioAnterior;
 wire objetivoMaiorAnterior, objetivoMenorAtual;
-wire [3:0] addrSecundario, caronaOrigem, origemCod, destinoCod;
-
+wire [3:0] addrSecundario, caronaOrigem;
 
 wire wire_eh_origem_objeto_da_vez;
 wire [1:0] wire_tipo_objeto_da_vez;
@@ -56,24 +53,19 @@ wire [1:0] wire_destino_objeto_da_vez;
 
 assign proxParada = wire_destino_objeto_da_vez;
 
-// codificador 
+// Recepcao serial : 2 bits: tipo_obj, 2 bits: destino_obj, 2 bits: origem_obj -> 2 bits mais significativos nao sao usados
 
-assign origemCod =      (origemBot == 4'b0001)? 4'b0001:
-                        (origemBot == 4'b0010)? 4'b0010:
-                        (origemBot == 4'b0100)? 4'b0011:
-                        (origemBot == 4'b1000)? 4'b0100:
-                                                4'b0000;
+wire serial_recebido;
+wire [7:0] dados_serial;
+wire [1:0] origemSerial, destinoSerial, tipoSerial;
 
-assign destinoCod =     (destinoBot == 4'b0001)? 4'b0001:
-                        (destinoBot == 4'b0010)? 4'b0010:
-                        (destinoBot == 4'b0100)? 4'b0011:
-                        (destinoBot == 4'b1000)? 4'b0100:
-                                                4'b0000;                                        
-
+assign origemSerial = dados_serial[1:0];
+assign destinoSerial = dados_serial[3:2];
+assign tipoSerial = dados_serial[5:4];
 
 // Multiplexadores
 wire [3:0] mux1, mux2, mux3;
-assign mux1 = select1? saidaRegOrigem : saidaRegDestino ; // (LABDIGI 2) MUDAR! - ERA fio que entrava da "data_in" da ram
+assign mux1 = select1? saidaRegOrigem : saidaRegDestino ; 
 assign mux2 = select2? proxAndarS : proxAndarD ;
 assign mux3 = select3? andarAtual : saidaSecundariaAnterior;
 // Portas lógicas
@@ -83,8 +75,7 @@ assign carona_origem            = (mesmoSentido & objetivoMaiorAnterior & objeti
 assign carona_destino           = (objetivoMaiorAnterior & objetivoMenorAtual & ramSecDifZero & enderecoMaiorQueOrigem);
 assign ramSecDifZero            = (saidaSecundaria[3] | saidaSecundaria[2] | saidaSecundaria[1] | saidaSecundaria[0]); 
 assign temDestino               = (proxParada[0] | proxParada[1] | proxParada[2] | proxParada[3]);
-assign novaOrigem               = (origemBot[0] | origemBot[1] | origemBot[2] | origemBot[3]);
-assign novoDestino              = (destinoBot[0] | destinoBot[1] | destinoBot[2] | destinoBot[3]);
+
 assign andarRepetidoOrigem      = (mesmoSentido & mesmoAndar);
 assign andarRepetidoDestino     = (mesmoAndar & enderecoMaiorQueOrigem);
 assign sensorAtivo              = (sensores[0] | sensores[1] | sensores[2] | sensores[3]);
@@ -110,7 +101,7 @@ registrador_4 reg_origem(
     .clock      (clock),
     .clear      (reset),
     .enable     (bordaNovaOrigem),
-    .D          (origemCod),
+    .D          (origemSerial),
     .Q          (saidaRegOrigem)
 );
 
@@ -118,7 +109,7 @@ registrador_4 reg_destino(
     .clock     (clock),
     .clear     (reset),
     .enable    (enableRegDestino),
-    .D         (destinoCod),
+    .D         (destinoSerial),
     .Q         (saidaRegDestino)
 );
 
@@ -132,15 +123,13 @@ registrador_4 reg_carona_origem(
 
 
 
-//RAM
-// ANTIGAMENTE ERA ASSIM A ATRIBUIÇÃO DE VALORES NA RAM
-// MAS AGORA O ENDEREÇO (QUE HOJE É DESTINO_OBJETO) É SÓ [1:0]
+// Fila 
 // GUARDA NESSA ORDEM: EH_ORIGEM, TIPO_OBJETO, ORIGEM_OBJETO, DESTINO_OBJETO
-// 
+
 sync_ram_16x7_mod fila_ram(
     .clk                        (clock),
     .we                         (enableRAM),
-    .in_tipo_objeto             (               ),
+    .in_tipo_objeto             (tipoSerial),
     .in_origem_objeto           (saidaRegOrigem),
     .in_destino_objeto          (saidaRegDestino),
     .addrSecundario             (addrSecundario), // usado para dar o fit na memória
@@ -166,8 +155,34 @@ ram_conteudo_elevador conteudo_elevador (
     .weT                (coloca_objetos),
     .tira_objetos       (tira_objetos),
     .andar_atual        (andarAtual),
-    .tipo_objeto        (), // desconectado
-    .destino_objeto     ()  // desconectado
+    .tipo_objeto        (), // desconectado - vai ser usado na transmissao serial
+    .destino_objeto     ()  // desconectado vai ser usado na transmissao serial
+);
+
+// Recepcao serial dos sinais
+
+rx_serial_8N1 serial (
+.clock                      (clock),
+.reset                      (reset),
+.RX                         (RX),
+.pronto                     (serial_recebido),
+.dados_ascii                (dados_serial),
+.db_clock                   ( ), // desconectado
+.db_tick                    ( ), // desconectado
+.db_dados                   ( ), // desconectado
+.db_estado                  ( ) // desconectado
+);
+
+// Depuracao da recepcao serial
+
+hexa7seg HEX_MENOS_SIGNIFICATIVO ( 
+.hexa    ( dados_serial [3:0] ), 
+.display ( db_serial_hex [6:0]      )
+);
+    
+hexa7seg HEX_MAIS_SIGNIFICATIVO ( 
+.hexa    ( dados_serial [7:4] ), 
+.display ( db_serial_hex [13:7]     )
 );
 
 // detector de bordas
@@ -175,14 +190,14 @@ ram_conteudo_elevador conteudo_elevador (
 edge_detector detectorDeDestino(
     .clock  (clock),
     .reset  (reset),
-    .sinal  (novoDestino),
+    .sinal  (serial_recebido),
     .pulso  (bordaNovoDestino)
 );
 
 edge_detector detectorDeOrigem(
     .clock  (clock),
     .reset  (reset),
-    .sinal  (novaOrigem),
+    .sinal  (serial_recebido),
     .pulso  (bordaNovaOrigem)
 );
 
@@ -285,7 +300,4 @@ contador_p endereco_secundario(
     .meio       ()
 );
 
-
-
-
- endmodule
+endmodule

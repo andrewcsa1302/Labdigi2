@@ -10,7 +10,7 @@ z2
 cModel Technology
 dC:/Users/Andrew/OneDrive/Documents/USP/PCS3645
 vcomparador_85
-Z0 !s110 1730808336
+Z0 !s110 1730813096
 !i10b 1
 !s100 eYzB9EJoAK`c4X6I@:;k02
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ Z3 dC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Simulation/simulat
 Z4 w1730689775
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v
-!i122 39
+!i122 103
 L0 1 14
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1730808336.000000
+Z6 !s108 1730813096.000000
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v|
 !i113 1
@@ -43,7 +43,7 @@ R3
 R4
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/contador_m .v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/contador_m .v
-!i122 40
+!i122 104
 L0 19 37
 R5
 r1
@@ -66,7 +66,7 @@ R3
 R4
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/contador_p.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/contador_p.v
-!i122 41
+!i122 105
 L0 1 37
 R5
 r1
@@ -79,7 +79,7 @@ R6
 R7
 R8
 vedge_detector
-R0
+Z9 !s110 1730813097
 !i10b 1
 !s100 b=6PQ:nFojW4z?d;AGW=D0
 R1
@@ -89,7 +89,7 @@ R3
 R4
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/edge_detector.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/edge_detector.v
-!i122 42
+!i122 106
 L0 21 23
 R5
 r1
@@ -102,7 +102,7 @@ R6
 R7
 R8
 vhexa7seg
-Z9 !s110 1730808337
+R9
 !i10b 1
 !s100 ^ldcN:Zl`^?4Tnh8I@Z332
 R1
@@ -112,36 +112,36 @@ R3
 R4
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v
-!i122 43
+!i122 107
 L0 23 38
 R5
 r1
 !s85 0
 31
-Z10 !s108 1730808337.000000
+Z10 !s108 1730813097.000000
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v|
 !i113 1
 R7
 R8
 vram_conteudo_elevador
-!s110 1730808506
+R0
 !i10b 1
-!s100 04Z8nzdKUo6ffEh8O8_9M1
+!s100 jT92EM>eWjjmREJ6YbhYk2
 R1
-I4^lBWS5A?`L>QJ>lP8d==0
+IZ<Hc2>>UMMb1Xe85W?a=d0
 R2
 R3
-w1730808499
+w1730811839
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/ram_conteudo_elevador.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/ram_conteudo_elevador.v
-!i122 50
-L0 1 89
+!i122 102
+L0 1 91
 R5
 r1
 !s85 0
 31
-!s108 1730808506.000000
+R6
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/ram_conteudo_elevador.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/ram_conteudo_elevador.v|
 !i113 1
@@ -158,7 +158,7 @@ R3
 w1730689776
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v
-!i122 45
+!i122 109
 L0 13 21
 R5
 r1
@@ -173,16 +173,16 @@ R8
 vsmart_cargo
 R9
 !i10b 1
-!s100 gnmm@4^hQYhQkK?:XR;3b3
+!s100 O:^7<YD5C9LLb51:cUhoV2
 R1
-I^kj;ehL0oTI`JdafL23UW1
+IVJFQD;4`SD7?ALjg_DT`l2
 R2
 R3
-w1730700507
+w1730813081
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v
-!i122 46
-L0 1 170
+!i122 110
+L0 1 166
 R5
 r1
 !s85 0
@@ -194,53 +194,53 @@ R10
 R7
 R8
 vsmart_cargo_fd
-Z11 !s110 1730808338
+R9
 !i10b 1
-!s100 S0Bc[lXk6lUh:bOPTH6Rm0
+!s100 eI8h1T:_a`X]4kAR_Bz6J1
 R1
-IYJ?48eK3Jm@kUk83CQS0F3
+I4Uh?Z?[fYmHT696UW>@570
 R2
 R3
-w1730807664
+w1730813007
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v
-!i122 47
-L0 2 290
+!i122 111
+L0 1 303
 R5
 r1
 !s85 0
 31
-Z12 !s108 1730808338.000000
+R10
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v|
 !i113 1
 R7
 R8
 vsync_ram_16x7_mod
-R11
+R9
 !i10b 1
-!s100 5MjahlH9[[1mJIQnGf1c01
+!s100 ZPFlfXc^A5I7def0LM4f>2
 R1
-ITU`]eZHVX39m=[ehhNz5A3
+I;LI;E4h28`:FXhfN3SI<U1
 R2
 R3
-w1730700766
+w1730811104
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v
-!i122 48
-L0 1 152
+!i122 112
+L0 1 153
 R5
 r1
 !s85 0
 31
-R12
+R10
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v|
 !i113 1
 R7
 R8
 vtb_ram_conteudo_elevador
-!s110 1730808335
+R0
 !i10b 1
 !s100 GUPezO>F>NReW31Qk6Ze81
 R1
@@ -250,20 +250,20 @@ R3
 w1730698803
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_conteudo_elevador.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_conteudo_elevador.v
-!i122 38
+!i122 101
 L0 3 81
 R5
 r1
 !s85 0
 31
-!s108 1730808335.000000
+R6
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_conteudo_elevador.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_conteudo_elevador.v|
 !i113 1
 R7
 R8
 vuc_movimento
-R11
+R9
 !i10b 1
 !s100 __ib5bPF<Dc?>RBeM_1Q^1
 R1
@@ -273,13 +273,13 @@ R3
 w1730700261
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/uc_movimento.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/uc_movimento.v
-!i122 49
+!i122 113
 L0 1 115
 R5
 r1
 !s85 0
 31
-R12
+R10
 !s107 C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/uc_movimento.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/uc_movimento.v|
 !i113 1
@@ -296,7 +296,7 @@ R3
 w1730690243
 8C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/uc_nova_entrada.v
 FC:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/uc_nova_entrada.v
-!i122 44
+!i122 108
 L0 1 101
 R5
 r1
