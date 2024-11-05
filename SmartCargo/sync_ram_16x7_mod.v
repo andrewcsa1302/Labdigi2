@@ -24,7 +24,6 @@ module sync_ram_16x7_mod(
     reg [6:0] ram[15:0];
     reg [6:0] data;
     reg       in_eh_origem;
-    assign data = {in_eh_origem, in_tipo_objeto, in_origem_objeto, in_destino_objeto};
 
     // Registra endereco de acesso
     reg [3:0] addr_reg;
@@ -56,6 +55,8 @@ module sync_ram_16x7_mod(
         else begin
             in_eh_origem = 1'b0;
         end
+        
+        data = {in_eh_origem, in_tipo_objeto, in_origem_objeto, in_destino_objeto};
 
         // Escrita da memoria
         if (clear) begin

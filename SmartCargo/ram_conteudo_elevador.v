@@ -38,7 +38,9 @@ module ram_conteudo_elevador(
                     ram[i] <= 4'b0;
                 end
 
-            end else begin
+            end 
+            
+            else begin
             // Atribuição procedural para a variável data
             data = {in_tipo_objeto, in_destino_objeto};       
             end
