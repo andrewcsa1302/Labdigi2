@@ -14,7 +14,7 @@ module ram_conteudo_elevador(
     // Formato do dado da RAM: tipo_objeto [1:0], destino_objeto [1:0] -> 4 bits
     reg [3:0] ram[7:0];
     reg [3:0] data;
-    assign data = {in_tipo_objeto, in_destino_objeto};
+    // assign data = {in_tipo_objeto, in_destino_objeto};
     integer i,j;
 
     // Registra endereco de acesso
@@ -37,7 +37,12 @@ module ram_conteudo_elevador(
                 for (i = 0; i < 8; i = i + 1) begin
                     ram[i] <= 4'b0;
                 end
+
             end else begin
+            // Atribuição procedural para a variável data
+            data = {in_tipo_objeto, in_destino_objeto};       
+            end
+
             if (weT) begin 
                 if(ram[0] == 4'b0000) ram[0] = data;
                 else if(ram[1] == 4'b0000) ram[1] = data;
@@ -74,7 +79,6 @@ module ram_conteudo_elevador(
                 end
             end
         end
-    end
 
     // Atribuicao continua
 

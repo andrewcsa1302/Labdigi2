@@ -1,113 +1,169 @@
 # Reading pref.tcl
 # vsim -gui . 
-# Start time: 15:48:31 on Oct 28,2024
+# Start time: 08:56:00 on Nov 05,2024
 # ** Error (suppressible): (vsim-19) Failed to access library '' at "".
 # Invalid argument. (errno = EINVAL)
 # Error loading design
-# End time: 15:48:31 on Oct 28,2024, Elapsed time: 0:00:00
+# End time: 08:56:01 on Nov 05,2024, Elapsed time: 0:00:01
 # Errors: 1, Warnings: 0
-# Loading project sim_ram_mod
-# Compile of sync_ram_16x4_mod.v was successful.
-# Compile of tb_ram_mod_fila.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.tb_ram_mod
-# vsim -gui work.tb_ram_mod 
-# Start time: 15:49:32 on Oct 28,2024
-# Loading work.tb_ram_mod
-# Loading work.sync_ram_16x4_mod
-add wave -position insertpoint  \
-sim:/tb_ram_mod/clk \
-sim:/tb_ram_mod/we \
-sim:/tb_ram_mod/in_eh_origem \
-sim:/tb_ram_mod/in_tipo_objeto \
-sim:/tb_ram_mod/in_origem_objeto \
-sim:/tb_ram_mod/in_destino_objeto \
-sim:/tb_ram_mod/addrSecAnt \
-sim:/tb_ram_mod/addrSec \
-sim:/tb_ram_mod/addr \
-sim:/tb_ram_mod/shift \
-sim:/tb_ram_mod/weT \
-sim:/tb_ram_mod/fit \
-sim:/tb_ram_mod/clear \
-sim:/tb_ram_mod/saidaSecundaria \
-sim:/tb_ram_mod/saidaSecundariaAnterior \
-sim:/tb_ram_mod/eh_origem \
-sim:/tb_ram_mod/tipo_objeto \
-sim:/tb_ram_mod/origem_objeto \
-sim:/tb_ram_mod/destino_objeto
+# Loading project teste_ram_conteudo_elevador
+# Compile of tb_ram_conteudo_elevador.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of uc_movimento.v was successful.
+# 13 compiles, 0 failed with no errors.
+vsim -gui work.tb_ram_conteudo_elevador
+# vsim -gui work.tb_ram_conteudo_elevador 
+# Start time: 08:58:02 on Nov 05,2024
+# Loading work.tb_ram_conteudo_elevador
+# Loading work.ram_conteudo_elevador
 run -all
-# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_mod_fila.v(110)
-#    Time: 83 ns  Iteration: 0  Instance: /tb_ram_mod
+# Teste de reset concluido.
+# RAM[0] = 0001
+# RAM[1] = 0110
+# RAM[2] = 1011
+# RAM[3] = 1100
+# RAM[4] = 0001
+# RAM[5] = 0110
+# RAM[6] = 1011
+# RAM[7] = 1100
+# Removendo objeto na posicao 3
+# Removendo objeto na posicao 6
+# Apos remover objetos do andar 0:
+# RAM[0] = 0001
+# RAM[1] = 0110
+# RAM[2] = 1011
+# RAM[3] = 0001
+# RAM[4] = 0110
+# RAM[5] = 1011
+# RAM[6] = 0000
+# RAM[7] = 0000
+# Removendo objeto na posicao 0
+# Removendo objeto na posicao 2
+# Apos remover objetos do andar 1:
+# RAM[0] = 0110
+# RAM[1] = 1011
+# RAM[2] = 0110
+# RAM[3] = 1011
+# RAM[4] = 0000
+# RAM[5] = 0000
+# RAM[6] = 0000
+# RAM[7] = 0000
+# Removendo objeto na posicao 0
+# Removendo objeto na posicao 1
+# Apos remover objetos do andar 2:
+# RAM[0] = 1011
+# RAM[1] = 1011
+# RAM[2] = 0000
+# RAM[3] = 0000
+# RAM[4] = 0000
+# RAM[5] = 0000
+# RAM[6] = 0000
+# RAM[7] = 0000
+# Removendo objeto na posicao 0
+# Removendo objeto na posicao 0
+# Apos remover objetos do andar 3:
+# RAM[0] = 0000
+# RAM[1] = 0000
+# RAM[2] = 0000
+# RAM[3] = 0000
+# RAM[4] = 0000
+# RAM[5] = 0000
+# RAM[6] = 0000
+# RAM[7] = 0000
+# Teste de remoção de objetos concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_conteudo_elevador.v(78)
+#    Time: 106 ns  Iteration: 0  Instance: /tb_ram_conteudo_elevador
 # 1
-# Break in Module tb_ram_mod at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_mod_fila.v line 110
-restart
-# Closing VCD file "tb_ram_mod.vcd"
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Compile of sync_ram_16x4_mod.v was successful.
-# Compile of tb_ram_mod_fila.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.tb_ram_mod
-# End time: 16:11:46 on Oct 28,2024, Elapsed time: 0:22:14
-# Errors: 0, Warnings: 2
-# vsim -gui work.tb_ram_mod 
-# Start time: 16:11:46 on Oct 28,2024
-# Loading work.tb_ram_mod
-# Loading work.sync_ram_16x4_mod
-add wave -position insertpoint  \
-sim:/tb_ram_mod/clk \
-sim:/tb_ram_mod/we \
-sim:/tb_ram_mod/in_eh_origem \
-sim:/tb_ram_mod/in_tipo_objeto \
-sim:/tb_ram_mod/in_origem_objeto \
-sim:/tb_ram_mod/in_destino_objeto \
-sim:/tb_ram_mod/addrSecAnt \
-sim:/tb_ram_mod/addrSec \
-sim:/tb_ram_mod/addr \
-sim:/tb_ram_mod/shift \
-sim:/tb_ram_mod/weT \
-sim:/tb_ram_mod/fit \
-sim:/tb_ram_mod/clear \
-sim:/tb_ram_mod/saidaSecundaria \
-sim:/tb_ram_mod/saidaSecundariaAnterior \
-sim:/tb_ram_mod/eh_origem \
-sim:/tb_ram_mod/tipo_objeto \
-sim:/tb_ram_mod/origem_objeto \
-sim:/tb_ram_mod/destino_objeto
+# Break in Module tb_ram_conteudo_elevador at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_conteudo_elevador.v line 78
+# Compile of tb_ram_conteudo_elevador.v was successful.
+# Compile of ram_conteudo_elevador.v failed with 2 errors.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of uc_movimento.v was successful.
+# 13 compiles, 1 failed with 2 errors.
+# Compile of ram_conteudo_elevador.v failed with 1 errors.
+# Compile of ram_conteudo_elevador.v was successful.
+vsim -gui work.tb_ram_conteudo_elevador
+# End time: 09:08:40 on Nov 05,2024, Elapsed time: 0:10:38
+# Errors: 0, Warnings: 5
+# vsim -gui work.tb_ram_conteudo_elevador 
+# Start time: 09:08:40 on Nov 05,2024
+# Loading work.tb_ram_conteudo_elevador
+# Loading work.ram_conteudo_elevador
 run -all
-# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_mod_fila.v(111)
-#    Time: 113 ns  Iteration: 0  Instance: /tb_ram_mod
+# Teste de reset concluido.
+# RAM[0] = 0001
+# RAM[1] = 0110
+# RAM[2] = 1011
+# RAM[3] = 1100
+# RAM[4] = 0001
+# RAM[5] = 0110
+# RAM[6] = 1011
+# RAM[7] = 1100
+# Removendo objeto na posicao 3
+# Removendo objeto na posicao 6
+# Apos remover objetos do andar 0:
+# RAM[0] = 0001
+# RAM[1] = 0110
+# RAM[2] = 1011
+# RAM[3] = 0001
+# RAM[4] = 0110
+# RAM[5] = 1011
+# RAM[6] = 0000
+# RAM[7] = 0000
+# Removendo objeto na posicao 0
+# Removendo objeto na posicao 2
+# Apos remover objetos do andar 1:
+# RAM[0] = 0110
+# RAM[1] = 1011
+# RAM[2] = 0110
+# RAM[3] = 1011
+# RAM[4] = 0000
+# RAM[5] = 0000
+# RAM[6] = 0000
+# RAM[7] = 0000
+# Removendo objeto na posicao 0
+# Removendo objeto na posicao 1
+# Apos remover objetos do andar 2:
+# RAM[0] = 1011
+# RAM[1] = 1011
+# RAM[2] = 0000
+# RAM[3] = 0000
+# RAM[4] = 0000
+# RAM[5] = 0000
+# RAM[6] = 0000
+# RAM[7] = 0000
+# Removendo objeto na posicao 0
+# Removendo objeto na posicao 0
+# Apos remover objetos do andar 3:
+# RAM[0] = 0000
+# RAM[1] = 0000
+# RAM[2] = 0000
+# RAM[3] = 0000
+# RAM[4] = 0000
+# RAM[5] = 0000
+# RAM[6] = 0000
+# RAM[7] = 0000
+# Teste de remoção de objetos concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_conteudo_elevador.v(78)
+#    Time: 106 ns  Iteration: 0  Instance: /tb_ram_conteudo_elevador
 # 1
-# Break in Module tb_ram_mod at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_mod_fila.v line 111
-# Compile of tb_ram_mod_fila.v was successful.
-vsim -gui work.tb_ram_mod
-# End time: 16:17:22 on Oct 28,2024, Elapsed time: 0:05:36
-# Errors: 0, Warnings: 2
-# vsim -gui work.tb_ram_mod 
-# Start time: 16:17:22 on Oct 28,2024
-# Loading work.tb_ram_mod
-# Loading work.sync_ram_16x4_mod
-add wave -position insertpoint  \
-sim:/tb_ram_mod/clk \
-sim:/tb_ram_mod/we \
-sim:/tb_ram_mod/in_eh_origem \
-sim:/tb_ram_mod/in_tipo_objeto \
-sim:/tb_ram_mod/in_origem_objeto \
-sim:/tb_ram_mod/in_destino_objeto \
-sim:/tb_ram_mod/addrSecAnt \
-sim:/tb_ram_mod/addrSec \
-sim:/tb_ram_mod/addr \
-sim:/tb_ram_mod/shift \
-sim:/tb_ram_mod/weT \
-sim:/tb_ram_mod/fit \
-sim:/tb_ram_mod/clear \
-sim:/tb_ram_mod/saidaSecundaria \
-sim:/tb_ram_mod/saidaSecundariaAnterior \
-sim:/tb_ram_mod/eh_origem \
-sim:/tb_ram_mod/tipo_objeto \
-sim:/tb_ram_mod/origem_objeto \
-sim:/tb_ram_mod/destino_objeto
-run -all
-# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_mod_fila.v(111)
-#    Time: 121 ns  Iteration: 0  Instance: /tb_ram_mod
-# 1
-# Break in Module tb_ram_mod at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_mod_fila.v line 111
+# Break in Module tb_ram_conteudo_elevador at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_ram_conteudo_elevador.v line 78
