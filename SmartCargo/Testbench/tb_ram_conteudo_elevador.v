@@ -11,6 +11,8 @@ module tb_ram_conteudo_elevador;
     reg [1:0] andar_atual;
     wire [1:0] tipo_objeto_da_vez;
     wire [1:0] destino_objeto_da_vez;
+    wire tem_vaga;
+    reg [3:0] addr;
 
     integer i;
 
@@ -25,7 +27,9 @@ module tb_ram_conteudo_elevador;
         .tira_objetos(tira_objetos),
         .andar_atual(andar_atual),
         .tipo_objeto(tipo_objeto_da_vez),
-        .destino_objeto(destino_objeto_da_vez)
+        .destino_objeto(destino_objeto_da_vez),
+        .tem_vaga(tem_vaga),
+        .addr(addr)
     );
 
     // gerador de clock
@@ -62,10 +66,12 @@ module tb_ram_conteudo_elevador;
         for (i = 0; i < 8; i = i + 1) begin
             $display("RAM[%0d] = %b", i, dut.ram[i]);
         end
+            $display("Tem vaga: %b", tem_vaga);
 
         // Remoção de objetos por andar
         for (andar_atual = 0; andar_atual < 4; andar_atual = andar_atual + 1) begin
             tira_objetos = 1;
+            addr = andar_atual + 1;
             #4;
             tira_objetos = 0;
             #4;
@@ -73,8 +79,11 @@ module tb_ram_conteudo_elevador;
             for (i = 0; i < 8; i = i + 1) begin
                 $display("RAM[%0d] = %b", i, dut.ram[i]);
             end
+                $display("Tem vaga: %b", tem_vaga);
+                $display("Tipo do addr %b: %b", addr, tipo_objeto_da_vez);
+                $display("Destino do addr %b: %b",addr, destino_objeto_da_vez);
             if (andar_atual == 3) begin
-                $display("Teste de remoção de objetos concluido.");
+                $display("Teste de remocao de objetos concluido.");
                 $finish;
             end
         end

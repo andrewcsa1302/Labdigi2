@@ -74,7 +74,7 @@ assign mesmoSentido             = ~(sentidoElevador ^ sentidoUsuario);
 assign carona_origem            = (mesmoSentido & objetivoMaiorAnterior & objetivoMenorAtual & ramSecDifZero);
 assign carona_destino           = (objetivoMaiorAnterior & objetivoMenorAtual & ramSecDifZero & enderecoMaiorQueOrigem);
 assign ramSecDifZero            = (saidaSecundaria[3] | saidaSecundaria[2] | saidaSecundaria[1] | saidaSecundaria[0]); 
-assign temDestino               = (proxParada[0] | proxParada[1] | proxParada[2] | proxParada[3]);
+assign temDestino               = (proxParada[0] | proxParada[1]);
 
 assign andarRepetidoOrigem      = (mesmoSentido & mesmoAndar);
 assign andarRepetidoDestino     = (mesmoAndar & enderecoMaiorQueOrigem);
