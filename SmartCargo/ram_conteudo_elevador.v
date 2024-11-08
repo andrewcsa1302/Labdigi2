@@ -35,11 +35,11 @@ module ram_conteudo_elevador(
             // Escrita da memoria
             if (clear) begin
                 for (i = 0; i < 8; i = i + 1) begin
-                    ram[i] <= 4'b0;
+                    ram[i] = 4'b0;
                 end
 
             end 
-            
+
             else begin
             // Atribuição procedural para a variável data
             data = {in_tipo_objeto, in_destino_objeto};       
@@ -56,7 +56,6 @@ module ram_conteudo_elevador(
                 else if(ram[7] == 4'b0000) ram[7] = data;
             end
             else if(shift) begin // no shift, o fim da fila fica com uma vaga sobrando
-                ram[0] = 15;
                 ram[0] = ram[1];
                 ram[1] = ram[2];
                 ram[2] = ram[3];

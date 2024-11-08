@@ -53,7 +53,7 @@ wire [1:0] wire_destino_objeto_da_vez;
 
 assign proxParada = wire_destino_objeto_da_vez;
 
-// Recepcao serial : 2 bits: tipo_obj, 2 bits: destino_obj, 2 bits: origem_obj -> 2 bits mais significativos nao sao usados
+// Recepcao serial : 2 bits mais significativos nao sao usados, 2 bits: tipo_obj, 2 bits: destino_obj, 2 bits: origem_obj
 
 wire serial_recebido;
 wire [7:0] dados_serial;
