@@ -8,6 +8,7 @@ module sync_ram_16x7_mod(
     input  [3:0] addrSecundarioAnterior,
     input  [3:0] addrSecundario,
     input  [3:0] addr,
+    input  [3:0] addrSerial,
     input        shift,
     input        weT, // write enable top (coloca o dado novo no fim da fila)
     input        fit, // insere o dado entre outros 2 dados
@@ -17,7 +18,9 @@ module sync_ram_16x7_mod(
     output       eh_origem,
     output [1:0] tipo_objeto,
     output [1:0] origem_objeto,
-    output [1:0] destino_objeto
+    output [1:0] destino_objeto,
+    output [5:0] dados_addrSerial,
+    output       eh_origem_addrSerial
 );
 
     // Formato do dado da RAM: eh_origem, tipo_objeto [1:0], origem_objeto [1:0], destino_objeto [1:0] -> 7 bits
@@ -25,11 +28,9 @@ module sync_ram_16x7_mod(
     reg [6:0] data;
     reg       in_eh_origem;
 
-    assign in_eh_origem = ~(in_origem_objeto[0] ^ in_destino_objeto[0]) 
-                        & ~(in_origem_objeto[1] ^ in_destino_objeto[1]);
-
     // Registra endereco de acesso
     reg [3:0] addr_reg;
+    reg [3:0] addrSerial_reg;
     integer i;
 
     initial begin
@@ -134,6 +135,7 @@ module sync_ram_16x7_mod(
         end
         
         addr_reg <= addr;
+        addrSerial_reg <= addrSerial;
         end
     end
 
@@ -143,6 +145,9 @@ module sync_ram_16x7_mod(
     assign tipo_objeto = ram[addr_reg][5:4];
     assign origem_objeto = ram[addr_reg][3:2];
     assign destino_objeto = ram[addr_reg][1:0];
+
+    assign dados_addrSerial = ram[addrSerial_reg][5:0];
+    assign eh_origem_addrSerial = ram[addrSerial_reg][6];
 
     assign saidaSecundaria = ram[addrSecundario]; 
     assign saidaSecundariaAnterior = ram[addrSecundarioAnterior];
