@@ -136,8 +136,8 @@ module tb_serial_automatico;
 
         // Teste de mudança de andar
         mudou_de_andar = 1;
-        #5;
-        #1000000;
+
+        #500000;
 
         $display("Teste de mudança de andar concluido.");
         $finish;

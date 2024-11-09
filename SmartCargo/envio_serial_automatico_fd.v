@@ -28,6 +28,10 @@ assign dados_conteudo_elevador_prontos = {3'b111, dados_conteudo_elevador};
 // Mux para selecionar qual dado será enviado
 assign dados_enviados = eh_conteudo_elevador ? dados_conteudo_elevador_prontos : dados_fila_elevador_prontos;
 
+// Adicionando depuração para exibir o conteúdo de dados_enviados quando envia_serial é acionado
+always @(posedge envia_serial) begin
+    $display("envia_serial acionado para conteudo = %b: dados_enviados = %b",eh_conteudo_elevador, dados_enviados);
+end
 
 tx_serial_7O1 serial (
     .clock           ( clock          ),
