@@ -1,8 +1,4 @@
-/*
- * tx_serial_7N2_fd.v
- */
- 
- module tx_serial_7O1_fd (
+  module tx_serial_7O1_fd (
     input        clock        ,
     input        reset        ,
     input        zera         ,

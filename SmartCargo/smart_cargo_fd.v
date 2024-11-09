@@ -38,6 +38,7 @@ module smart_cargo_fd (
  output bordaSensorAtivo,
  output [13:0] db_serial_hex
 );
+
 //Declaração de fios gerais 
 wire [3:0] proxAndarD, proxAndarS ; // proximo andar caso suba e proximo andar caso desça
 wire [3:0] saidaRegDestino, saidaRegOrigem, saidaSecundaria;

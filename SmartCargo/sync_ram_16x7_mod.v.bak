@@ -3,7 +3,6 @@ module sync_ram_16x7_mod(
     input        we, // write enable para escrita no addr dado
     input  [1:0] in_tipo_objeto,
     input  [1:0] in_origem_objeto,
-    input  [1:0] in_andar,
     input  [1:0] in_destino_objeto,
     input  [3:0] addrSecundarioAnterior,
     input  [3:0] addrSecundario,
@@ -149,7 +148,7 @@ module sync_ram_16x7_mod(
     assign dados_addrSerial = ram[addrSerial_reg][5:0];
     assign eh_origem_addrSerial = ram[addrSerial_reg][6];
 
-    assign saidaSecundaria = ram[addrSecundario][1:0]; 
-    assign saidaSecundariaAnterior = ram[addrSecundarioAnterior][1:0];
+    assign saidaSecundaria = ram[addrSecundario]; 
+    assign saidaSecundariaAnterior = ram[addrSecundarioAnterior];
 
 endmodule
