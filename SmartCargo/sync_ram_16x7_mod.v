@@ -3,7 +3,6 @@ module sync_ram_16x7_mod(
     input        we, // write enable para escrita no addr dado
     input  [1:0] in_tipo_objeto,
     input  [1:0] in_origem_objeto,
-    input  [1:0] in_andar,
     input  [1:0] in_destino_objeto,
     input  [3:0] addrSecundarioAnterior,
     input  [3:0] addrSecundario,
