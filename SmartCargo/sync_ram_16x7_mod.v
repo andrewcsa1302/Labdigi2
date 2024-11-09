@@ -52,7 +52,7 @@ module sync_ram_16x7_mod(
     end
     always @ (posedge clk or posedge clear)
     begin
-        
+        in_eh_origem = (in_origem_objeto == in_destino_objeto) ? 1'b1 : 1'b0;
         data = {in_eh_origem, in_tipo_objeto, in_origem_objeto, in_destino_objeto};
 
         // Escrita da memoria

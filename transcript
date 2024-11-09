@@ -115,3 +115,597 @@ vsim -gui work.tb_serial_automatico
 # Error loading design
 # End time: 21:37:22 on Nov 08,2024, Elapsed time: 0:00:01
 # Errors: 3, Warnings: 3
+# Compile of tb_serial_automatico.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of deslocador_n.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of envio_serial_automatico.v was successful.
+# Compile of envio_serial_automatico_fd.v was successful.
+# Compile of envio_serial_automatico_uc.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of tx_serial_7O1.v was successful.
+# Compile of tx_serial_7O1_fd.v was successful.
+# Compile of tx_serial_uc.v was successful.
+# Compile of hexa7seg.v was successful.
+# 16 compiles, 0 failed with no errors.
+vsim -gui work.tb_serial_automatico
+# vsim -gui work.tb_serial_automatico 
+# Start time: 21:41:57 on Nov 08,2024
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico
+# Loading work.envio_serial_automatico_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.contador_m
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.envio_serial_automatico_uc
+# Loading work.ram_conteudo_elevador
+# Loading work.sync_ram_16x7_mod
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (4) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/contador_m .v(25).
+#    Time: 0 us  Iteration: 0  Instance: /tb_serial_automatico/dut/fd/contador_addr_conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/envio_serial_automatico_fd.v Line: 49
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila'.  Expected 22, found 21.
+#    Time: 0 us  Iteration: 0  Instance: /tb_serial_automatico/fila File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v Line: 65
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v(65): [TFMPC] - Missing connection for port 'in_andar'.
+# Compile of tb_serial_automatico.v was successful.
+# Compile of envio_serial_automatico_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb_serial_automatico
+# End time: 21:47:15 on Nov 08,2024, Elapsed time: 0:05:18
+# Errors: 0, Warnings: 6
+# vsim -gui work.tb_serial_automatico 
+# Start time: 21:47:15 on Nov 08,2024
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico
+# Loading work.envio_serial_automatico_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.contador_m
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.envio_serial_automatico_uc
+# Loading work.ram_conteudo_elevador
+# Loading work.sync_ram_16x7_mod
+run =all
+# Invalid time value: =all
+run -all
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = x000110
+# RAM Fila[1] = x011011
+# RAM Fila[2] = x101100
+# RAM Fila[3] = x110001
+# RAM Fila[4] = x000110
+# RAM Fila[5] = x011011
+# RAM Fila[6] = x101100
+# RAM Fila[7] = x110001
+# RAM Fila[8] = x000110
+# RAM Fila[9] = x011011
+# RAM Fila[10] = x101100
+# RAM Fila[11] = x110001
+# RAM Fila[12] = x000110
+# RAM Fila[13] = x011011
+# RAM Fila[14] = x101100
+# RAM Fila[15] = x110001
+# Teste de mudança de andar concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v(142)
+#    Time: 307 us  Iteration: 0  Instance: /tb_serial_automatico
+# 1
+# Break in Module tb_serial_automatico at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v line 142
+# Compile of sync_ram_16x7_mod.v was successful.
+vsim -gui work.tb_serial_automatico
+# End time: 21:51:11 on Nov 08,2024, Elapsed time: 0:03:56
+# Errors: 0, Warnings: 2
+# vsim -gui work.tb_serial_automatico 
+# Start time: 21:51:11 on Nov 08,2024
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico
+# Loading work.envio_serial_automatico_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.contador_m
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.envio_serial_automatico_uc
+# Loading work.ram_conteudo_elevador
+# Loading work.sync_ram_16x7_mod
+run -all
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = 0000110
+# RAM Fila[1] = 0011011
+# RAM Fila[2] = 0101100
+# RAM Fila[3] = 0110001
+# RAM Fila[4] = 0000110
+# RAM Fila[5] = 0011011
+# RAM Fila[6] = 0101100
+# RAM Fila[7] = 0110001
+# RAM Fila[8] = 0000110
+# RAM Fila[9] = 0011011
+# RAM Fila[10] = 0101100
+# RAM Fila[11] = 0110001
+# RAM Fila[12] = 0000110
+# RAM Fila[13] = 0011011
+# RAM Fila[14] = 0101100
+# RAM Fila[15] = 0110001
+# Teste de mudança de andar concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v(142)
+#    Time: 307 us  Iteration: 0  Instance: /tb_serial_automatico
+# 1
+# Break in Module tb_serial_automatico at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v line 142
+# Compile of tb_serial_automatico.v was successful.
+vsim -gui work.tb_serial_automatico
+# End time: 21:53:49 on Nov 08,2024, Elapsed time: 0:02:38
+# Errors: 0, Warnings: 2
+# vsim -gui work.tb_serial_automatico 
+# Start time: 21:53:49 on Nov 08,2024
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico
+# Loading work.envio_serial_automatico_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.contador_m
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.envio_serial_automatico_uc
+# Loading work.ram_conteudo_elevador
+# Loading work.sync_ram_16x7_mod
+run -all
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = 1000101
+# RAM Fila[1] = 1011010
+# RAM Fila[2] = 1101111
+# RAM Fila[3] = 1110000
+# RAM Fila[4] = 1000101
+# RAM Fila[5] = 1011010
+# RAM Fila[6] = 1101111
+# RAM Fila[7] = 1110000
+# RAM Fila[8] = 0000110
+# RAM Fila[9] = 0011011
+# RAM Fila[10] = 0101100
+# RAM Fila[11] = 0110001
+# RAM Fila[12] = 0000110
+# RAM Fila[13] = 0011011
+# RAM Fila[14] = 0101100
+# RAM Fila[15] = 0110001
+# Teste de mudança de andar concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v(144)
+#    Time: 307 us  Iteration: 0  Instance: /tb_serial_automatico
+# 1
+# Break in Module tb_serial_automatico at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v line 144
+add wave -position insertpoint  \
+sim:/tb_serial_automatico/dut/clock \
+sim:/tb_serial_automatico/dut/reset \
+sim:/tb_serial_automatico/dut/mudou_de_andar \
+sim:/tb_serial_automatico/dut/dados_fila_elevador \
+sim:/tb_serial_automatico/dut/dados_conteudo_elevador \
+sim:/tb_serial_automatico/dut/eh_origem_fila_elevador \
+sim:/tb_serial_automatico/dut/addr_conteudo_elevador \
+sim:/tb_serial_automatico/dut/addr_fila_elevador \
+sim:/tb_serial_automatico/dut/RX \
+sim:/tb_serial_automatico/dut/s_eh_conteudo_elevador \
+sim:/tb_serial_automatico/dut/s_conta_conteudo_elevador \
+sim:/tb_serial_automatico/dut/s_conta_fila_elevador \
+sim:/tb_serial_automatico/dut/s_envia_serial \
+sim:/tb_serial_automatico/dut/s_enviado \
+sim:/tb_serial_automatico/dut/s_fim_transmissao_conteudo_elevador \
+sim:/tb_serial_automatico/dut/s_fim_transmissao_fila_elevador \
+sim:/tb_serial_automatico/dut/s_zera
+add wave -position insertpoint  \
+sim:/tb_serial_automatico/dut/fd/serial/s_tick
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = 1000101
+# RAM Fila[1] = 1011010
+# RAM Fila[2] = 1101111
+# RAM Fila[3] = 1110000
+# RAM Fila[4] = 1000101
+# RAM Fila[5] = 1011010
+# RAM Fila[6] = 1101111
+# RAM Fila[7] = 1110000
+# RAM Fila[8] = 0000110
+# RAM Fila[9] = 0011011
+# RAM Fila[10] = 0101100
+# RAM Fila[11] = 0110001
+# RAM Fila[12] = 0000110
+# RAM Fila[13] = 0011011
+# RAM Fila[14] = 0101100
+# RAM Fila[15] = 0110001
+# Teste de mudança de andar concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v(144)
+#    Time: 307 us  Iteration: 0  Instance: /tb_serial_automatico
+# 1
+# Break in Module tb_serial_automatico at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v line 144
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Simulation/simulation_serial_automatico/wave.do
+# Compile of tb_serial_automatico.v was successful.
+# Compile of envio_serial_automatico.v was successful.
+# Compile of envio_serial_automatico_fd.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb_serial_automatixo
+# End time: 22:01:57 on Nov 08,2024, Elapsed time: 0:08:08
+# Errors: 0, Warnings: 2
+# vsim -gui work.tb_serial_automatixo 
+# Start time: 22:01:57 on Nov 08,2024
+# ** Error: (vsim-3170) Could not find 'tb_serial_automatixo'.
+#         Searched libraries:
+#             C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Simulation/simulation_serial_automatico/work
+# Error loading design
+# End time: 22:01:58 on Nov 08,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 1
+vsim -gui work.tb_serial_automatico
+# vsim -gui work.tb_serial_automatico 
+# Start time: 22:02:03 on Nov 08,2024
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico
+# Loading work.envio_serial_automatico_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.contador_m
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.envio_serial_automatico_uc
+# Loading work.ram_conteudo_elevador
+# Loading work.sync_ram_16x7_mod
+do wave.do
+run -all
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = 1000101
+# RAM Fila[1] = 1011010
+# RAM Fila[2] = 1101111
+# RAM Fila[3] = 1110000
+# RAM Fila[4] = 1000101
+# RAM Fila[5] = 1011010
+# RAM Fila[6] = 1101111
+# RAM Fila[7] = 1110000
+# RAM Fila[8] = 0000110
+# RAM Fila[9] = 0011011
+# RAM Fila[10] = 0101100
+# RAM Fila[11] = 0110001
+# RAM Fila[12] = 0000110
+# RAM Fila[13] = 0011011
+# RAM Fila[14] = 0101100
+# RAM Fila[15] = 0110001
+add wave -position insertpoint  \
+sim:/tb_serial_automatico/TX
+restart 
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = 1000101
+# RAM Fila[1] = 1011010
+# RAM Fila[2] = 1101111
+# RAM Fila[3] = 1110000
+# RAM Fila[4] = 1000101
+# RAM Fila[5] = 1011010
+# RAM Fila[6] = 1101111
+# RAM Fila[7] = 1110000
+# RAM Fila[8] = 0000110
+# RAM Fila[9] = 0011011
+# RAM Fila[10] = 0101100
+# RAM Fila[11] = 0110001
+# RAM Fila[12] = 0000110
+# RAM Fila[13] = 0011011
+# RAM Fila[14] = 0101100
+# RAM Fila[15] = 0110001
+# Compile of tb_serial_automatico.v was successful.
+# Compile of envio_serial_automatico_fd.v was successful.
+# 2 compiles, 0 failed with no errors.
+run -all
+restart 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico_fd
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = 1000101
+# RAM Fila[1] = 1011010
+# RAM Fila[2] = 1101111
+# RAM Fila[3] = 1110000
+# RAM Fila[4] = 1000101
+# RAM Fila[5] = 1011010
+# RAM Fila[6] = 1101111
+# RAM Fila[7] = 1110000
+# RAM Fila[8] = 0000110
+# RAM Fila[9] = 0011011
+# RAM Fila[10] = 0101100
+# RAM Fila[11] = 0110001
+# RAM Fila[12] = 0000110
+# RAM Fila[13] = 0011011
+# RAM Fila[14] = 0101100
+# RAM Fila[15] = 0110001
+# Teste de mudança de andar concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v(143)
+#    Time: 50207 us  Iteration: 0  Instance: /tb_serial_automatico
+# 1
+# Break in Module tb_serial_automatico at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v line 143
+restart 
+# Compile of tb_serial_automatico.v was successful.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = 1000101
+# RAM Fila[1] = 1011010
+# RAM Fila[2] = 1101111
+# RAM Fila[3] = 1110000
+# RAM Fila[4] = 1000101
+# RAM Fila[5] = 1011010
+# RAM Fila[6] = 1101111
+# RAM Fila[7] = 1110000
+# RAM Fila[8] = 0000110
+# RAM Fila[9] = 0011011
+# RAM Fila[10] = 0101100
+# RAM Fila[11] = 0110001
+# RAM Fila[12] = 0000110
+# RAM Fila[13] = 0011011
+# RAM Fila[14] = 0101100
+# RAM Fila[15] = 0110001
+# Teste de mudança de andar concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v(143)
+#    Time: 50207 us  Iteration: 0  Instance: /tb_serial_automatico
+# 1
+# Break in Module tb_serial_automatico at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v line 143
+# Compile of tb_serial_automatico.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of deslocador_n.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of envio_serial_automatico.v was successful.
+# Compile of envio_serial_automatico_fd.v was successful.
+# Compile of envio_serial_automatico_uc.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of tx_serial_7O1.v was successful.
+# Compile of tx_serial_7O1_fd.v was successful.
+# Compile of tx_serial_uc.v was successful.
+# Compile of hexa7seg.v was successful.
+# 16 compiles, 0 failed with no errors.
+restart 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico
+# Loading work.envio_serial_automatico_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.contador_m
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.envio_serial_automatico_uc
+# Loading work.ram_conteudo_elevador
+# Loading work.sync_ram_16x7_mod
+vsim -gui work.tb_serial_automatico
+# End time: 22:12:40 on Nov 08,2024, Elapsed time: 0:10:37
+# Errors: 0, Warnings: 1
+# vsim -gui work.tb_serial_automatico 
+# Start time: 22:12:40 on Nov 08,2024
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico
+# Loading work.envio_serial_automatico_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.contador_m
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.envio_serial_automatico_uc
+# Loading work.ram_conteudo_elevador
+# Loading work.sync_ram_16x7_mod
+do wave.do
+add wave -position insertpoint  \
+sim:/tb_serial_automatico/TX
+run -all
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = 1000101
+# RAM Fila[1] = 1011010
+# RAM Fila[2] = 1101111
+# RAM Fila[3] = 1110000
+# RAM Fila[4] = 1000101
+# RAM Fila[5] = 1011010
+# RAM Fila[6] = 1101111
+# RAM Fila[7] = 1110000
+# RAM Fila[8] = 0000110
+# RAM Fila[9] = 0011011
+# RAM Fila[10] = 0101100
+# RAM Fila[11] = 0110001
+# RAM Fila[12] = 0000110
+# RAM Fila[13] = 0011011
+# RAM Fila[14] = 0101100
+# RAM Fila[15] = 0110001
+# Teste de mudança de andar concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v(143)
+#    Time: 1000207 us  Iteration: 0  Instance: /tb_serial_automatico
+# 1
+# Break in Module tb_serial_automatico at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v line 143
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Simulation/simulation_serial_automatico/wave.do
+# Compile of tb_serial_automatico.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of deslocador_n.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of envio_serial_automatico.v was successful.
+# Compile of envio_serial_automatico_fd.v was successful.
+# Compile of envio_serial_automatico_uc.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of tx_serial_7O1.v was successful.
+# Compile of tx_serial_7O1_fd.v was successful.
+# Compile of tx_serial_uc.v was successful.
+# Compile of hexa7seg.v was successful.
+# 16 compiles, 0 failed with no errors.
+restart 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico
+# Loading work.envio_serial_automatico_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.contador_m
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.envio_serial_automatico_uc
+# Loading work.ram_conteudo_elevador
+# Loading work.sync_ram_16x7_mod
+vsim -gui work.tb_serial_automatico
+# End time: 22:15:24 on Nov 08,2024, Elapsed time: 0:02:44
+# Errors: 0, Warnings: 1
+# vsim -gui work.tb_serial_automatico 
+# Start time: 22:15:24 on Nov 08,2024
+# Loading work.tb_serial_automatico
+# Loading work.envio_serial_automatico
+# Loading work.envio_serial_automatico_fd
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading work.deslocador_n
+# Loading work.contador_m
+# Loading work.tx_serial_uc
+# Loading work.edge_detector
+# Loading work.hexa7seg
+# Loading work.envio_serial_automatico_uc
+# Loading work.ram_conteudo_elevador
+# Loading work.sync_ram_16x7_mod
+do wave.do
+run -all
+# Reset concluido.
+# RAM Conteudo[0] = 0001
+# RAM Conteudo[1] = 0110
+# RAM Conteudo[2] = 1011
+# RAM Conteudo[3] = 1100
+# RAM Conteudo[4] = 0001
+# RAM Conteudo[5] = 0110
+# RAM Conteudo[6] = 1011
+# RAM Conteudo[7] = 1100
+# Tem vaga: 0
+# RAM Fila[0] = 1000101
+# RAM Fila[1] = 1011010
+# RAM Fila[2] = 1101111
+# RAM Fila[3] = 1110000
+# RAM Fila[4] = 1000101
+# RAM Fila[5] = 1011010
+# RAM Fila[6] = 1101111
+# RAM Fila[7] = 1110000
+# RAM Fila[8] = 0000110
+# RAM Fila[9] = 0011011
+# RAM Fila[10] = 0101100
+# RAM Fila[11] = 0110001
+# RAM Fila[12] = 0000110
+# RAM Fila[13] = 0011011
+# RAM Fila[14] = 0101100
+# RAM Fila[15] = 0110001
+# Teste de mudança de andar concluido.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v(143)
+#    Time: 1000207 us  Iteration: 0  Instance: /tb_serial_automatico
+# 1
+# Break in Module tb_serial_automatico at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v line 143

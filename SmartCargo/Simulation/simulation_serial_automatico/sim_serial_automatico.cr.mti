@@ -12,6 +12,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	envio_serial_automatico_uc
 
+} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/envio_serial_automatico.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/envio_serial_automatico.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module envio_serial_automatico
+
+Top level modules:
+	envio_serial_automatico
+
 } {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/deslocador_n.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/deslocador_n.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module deslocador_n
@@ -19,12 +26,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	deslocador_n
 
-} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/envio_serial_automatico.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/envio_serial_automatico.v
+} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module envio_serial_automatico
+-- Compiling module sync_ram_16x7_mod
 
 Top level modules:
-	envio_serial_automatico
+	sync_ram_16x7_mod
 
 } {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/tx_serial_7O1.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/tx_serial_7O1.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -54,6 +61,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	hexa7seg
 
+} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/envio_serial_automatico_fd.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/envio_serial_automatico_fd.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module envio_serial_automatico_fd
+
+Top level modules:
+	envio_serial_automatico_fd
+
 } {} {}} {C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/contador_m .v} {1 {vlog -work work -stats=none {C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/contador_m .v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module contador_m
@@ -67,20 +81,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	edge_detector
-
-} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/envio_serial_automatico_fd.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/envio_serial_automatico_fd.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module envio_serial_automatico_fd
-
-Top level modules:
-	envio_serial_automatico_fd
-
-} {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_serial_automatico.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module tb_serial_automatico
-
-Top level modules:
-	tb_serial_automatico
 
 } {} {}} C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/ram_conteudo_elevador.v {1 {vlog -work work -stats=none C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/ram_conteudo_elevador.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

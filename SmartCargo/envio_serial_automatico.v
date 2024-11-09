@@ -7,7 +7,7 @@ module envio_serial_automatico (
     input        eh_origem_fila_elevador,
     output [3:0] addr_conteudo_elevador,
     output [3:0] addr_fila_elevador,
-    output     RX
+    output     TX
 );
 
 wire s_eh_conteudo_elevador, s_conta_conteudo_elevador, s_conta_fila_elevador, s_envia_serial,
@@ -23,7 +23,7 @@ envio_serial_automatico_fd fd(
     .conta_conteudo_elevador(s_conta_conteudo_elevador),
     .conta_fila_elevador(s_conta_fila_elevador),
     .envia_serial(s_envia_serial),
-    .RX(RX),
+    .TX(TX),
     .enviado(s_enviado),
     .addr_conteudo_elevador(addr_conteudo_elevador),
     .addr_fila_elevador(addr_fila_elevador),

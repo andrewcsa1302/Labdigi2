@@ -7,7 +7,7 @@
     input        conta_conteudo_elevador,
     input        conta_fila_elevador,
     input        envia_serial,
-    output       RX,
+    output       TX,
     output       enviado,
     output [3:0] addr_conteudo_elevador,
     output [3:0] addr_fila_elevador,
@@ -34,7 +34,7 @@ tx_serial_7O1 serial (
     .reset           ( reset          ),
     .partida         ( envia_serial   ),
     .dados_ascii     ( dados_enviados ),
-    .saida_serial    ( RX             ),
+    .saida_serial    ( TX             ),
     .pronto          ( enviado        ),
     .db_clock        (                ), // Porta aberta (desconectada)
     .db_tick         (                ), // Porta aberta (desconectada)
@@ -45,7 +45,7 @@ tx_serial_7O1 serial (
 
 contador_m #(
     .M(7),
-    .N(3)
+    .N(4)
 ) contador_addr_conteudo_elevador (
     .clock   (clock),
     .zera_as (1'b0 ),

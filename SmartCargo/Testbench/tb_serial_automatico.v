@@ -9,7 +9,7 @@ module tb_serial_automatico;
     // sinais envio_serial_automatico
     wire [5:0] dados_fila_elevador;
     wire [3:0] dados_conteudo_elevador;
-    wire RX;
+    wire TX;
     wire [3:0] addr_conteudo_elevador;
     wire [3:0] addr_fila_elevador;
     wire       eh_origem_fila_elevador;
@@ -23,7 +23,7 @@ module tb_serial_automatico;
         .dados_conteudo_elevador(dados_conteudo_elevador),
         .addr_conteudo_elevador(addr_conteudo_elevador),
         .addr_fila_elevador(addr_fila_elevador),
-        .RX(RX),
+        .TX(TX),
         .eh_origem_fila_elevador(eh_origem_fila_elevador)
     );
 
@@ -86,7 +86,6 @@ module tb_serial_automatico;
         .eh_origem_addrSerial(eh_origem_fila_elevador)
     );
 
-
     // gerador de clock
     initial clock = 0;
     always #2 clock = ~clock;
@@ -121,7 +120,9 @@ module tb_serial_automatico;
         for (i = 0; i < 16; i = i + 1) begin
             in_tipo_objeto_fila = i[1:0];
             in_origem_objeto_fila = (i + 1) & 2'b11;
-            in_destino_objeto_fila = (i + 2) & 2'b11;
+            if (i<8) in_destino_objeto_fila = (i + 1) & 2'b11;
+            else in_destino_objeto_fila = (i + 2) & 2'b11;
+
             weT_fila = 1;
             #4;
             weT_fila = 0;
@@ -136,8 +137,7 @@ module tb_serial_automatico;
         // Teste de mudança de andar
         mudou_de_andar = 1;
         #5;
-        mudou_de_andar = 0;
-        #100;
+        #1000000;
 
         $display("Teste de mudança de andar concluido.");
         $finish;
