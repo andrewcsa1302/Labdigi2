@@ -32,7 +32,7 @@ assign s_display =     (sensores == 4'b1111)? s_saida_andar: compara[1:0];
 assign saida_andar = s_display;
 
 
-andar_ultrassonico andar_ultrassonico(
+andar_ultrassonico andar_ultrassonico_detec(
     .clock			(clock),
     .reset			(reset),
     .medir			(medir),
