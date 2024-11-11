@@ -21,6 +21,8 @@ module smart_cargo_fd (
  input coloca_objetos,
  input tira_objetos,
  input RX,
+ input echo,
+ input inicia_ultrasonico,
  output chegouDestino,
  output bordaNovoDestino,
  output fimT,
@@ -36,7 +38,9 @@ module smart_cargo_fd (
  output andarRepetidoOrigem,
  output andarRepetidoDestino,
  output bordaSensorAtivo,
- output [13:0] db_serial_hex
+ output [13:0] db_serial_hex,
+ output trigger_sensor_ultrasonico,
+ output [1:0] saida_andar
 );
 
 //Declaração de fios gerais 
@@ -46,6 +50,7 @@ wire sentidoUsuario, elevadorSubindo, enderecoMaiorQueOrigem, bordaNovaOrigem, m
 wire [3:0] saidaSecundariaAnterior, addrSecundarioAnterior;
 wire objetivoMaiorAnterior, objetivoMenorAtual;
 wire [3:0] addrSecundario, caronaOrigem;
+wire fim_ultrasonico;
 
 wire wire_eh_origem_objeto_da_vez;
 wire [1:0] wire_tipo_objeto_da_vez;
@@ -122,7 +127,32 @@ registrador_4 reg_carona_origem(
     .Q         (caronaOrigem)
 );
 
+// Mostra andar atual
 
+andar_atual( 
+    .clock(clock),
+    .reset(reset),
+    .medir(fim_ultrasonico),
+    .echo(echo),
+	.sensores(sensores),
+    .trigger(trigger_sensor_ultrasonico),
+    .hex0(),
+    .hex1(),
+    .hex2(),
+	.hex3(),
+	.[1:0] saida_andar(saida_andar),
+    .pronto()
+);
+
+contador_m #(1000,14) timer_ultrasonico(
+    .clock      (clock),
+    .zera_as    (),
+    .zera_s     (reset),
+    .conta      (inicia_ultrasonico),
+    .Q          (),
+    .fim        (fim_ultrasonico),
+    .meio       ()
+);
 
 // Fila 
 // GUARDA NESSA ORDEM: EH_ORIGEM, TIPO_OBJETO, ORIGEM_OBJETO, DESTINO_OBJETO
@@ -220,6 +250,8 @@ contador_m #(2000,14) timer_2seg(
     .fim        (fimT),
     .meio       ()
 );
+
+
 
 // Comparadores
 

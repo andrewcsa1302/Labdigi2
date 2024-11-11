@@ -5,6 +5,7 @@ module smart_cargo(
     input reset, 
     input emergencia,
     input RX,
+    input echo,
     output dbQuintoBitEstado,
     output db_iniciar,
     output db_clock,
@@ -19,7 +20,9 @@ module smart_cargo(
     output db_motorSubindo,
     output db_motorDescendo,
     output [3:0] db_sensores,
-    output [13:0] db_serial_hex
+    output [13:0] db_serial_hex,
+    output trigger_sensor_ultrasonico,
+    output [1:0] saida_andar
 );
 
 // NOVOS SINAIS SMARTCARGO
@@ -46,6 +49,8 @@ assign motorDescendoF = motorDescendo | emergencia;
 
 smart_cargo_fd fluxodeDados (
 .clock                      (clock),
+.echo                       (echo),
+.inicia_ultrasonico         (iniciar),
 .enableAndarAtual           (enableAndarAtual), // enable da ram estado atual
 .shift                      (shift), //shift ram
 .fit                        (fit),
@@ -82,7 +87,9 @@ smart_cargo_fd fluxodeDados (
 .tira_objetos               (tira_objetos),
 .coloca_objetos             (coloca_objetos),
 .RX                         (RX),
-.db_serial_hex              (db_serial_hex)
+.db_serial_hex              (db_serial_hex),
+.trigger_sensor_ultrasonico (trigger_sensor_ultrasonico),
+.saida_andar                (saida_andar)
 );
 
 
