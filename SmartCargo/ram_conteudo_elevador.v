@@ -52,12 +52,12 @@ module ram_conteudo_elevador (
         end
 
         // Verificação se algum slot da RAM está vazio
-        tem_vaga_reg = 0;
-        for (i = 0; i < 8; i = i + 1) begin
-            if (ram[i] == 4'b0000) begin
-                tem_vaga_reg = 1;
-            end
-        end
+        // tem_vaga_reg = 0;
+        // for (i = 0; i < 8; i = i + 1) begin
+        //     if (ram[i] == 4'b0000) begin
+        //         tem_vaga_reg = 1;
+        //     end
+        // end
 
         addr_reg <= addr;
 

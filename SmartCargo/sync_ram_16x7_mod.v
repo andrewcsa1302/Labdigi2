@@ -25,7 +25,10 @@ module sync_ram_16x7_mod(
     // Formato do dado da RAM: eh_origem, tipo_objeto [1:0], origem_objeto [1:0], destino_objeto [1:0] -> 7 bits
     reg [6:0] ram[15:0];
     reg [6:0] data;
-    reg       in_eh_origem;
+    wire       in_eh_origem;
+    // Comparação direta de 4 bits
+    assign in_eh_origem = (in_origem_objeto == in_destino_objeto) ? 1'b1 : 1'b0;
+
 
     // Registra endereco de acesso
     reg [3:0] addr_reg;
@@ -52,7 +55,6 @@ module sync_ram_16x7_mod(
     end
     always @ (posedge clk or posedge clear)
     begin
-        in_eh_origem = (in_origem_objeto == in_destino_objeto) ? 1'b1 : 1'b0;
         data = {in_eh_origem, in_tipo_objeto, in_origem_objeto, in_destino_objeto};
 
         // Escrita da memoria
