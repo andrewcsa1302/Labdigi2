@@ -6,9 +6,12 @@ module tb_smartcargo;
     reg [3:0] sensoresNeg;
     reg iniciar;
     reg emergencia;
+    reg echo;
 
     wire motorDescendoF;
     wire motorSubindoF;
+    wire trigger_sensor_ultrasonico; 
+    wire saida_andar;
 
     // Transmissao serial
     wire RX;
@@ -22,11 +25,12 @@ module tb_smartcargo;
     // dut
     smart_cargo dut (
         .iniciar            ( iniciar           ),
-        .clock              ( clk             ),
+        .clock              ( clk               ),
         .sensoresNeg        ( sensoresNeg       ),
         .reset              ( reset             ),
         .emergencia         ( emergencia        ),
         .RX                 ( RX                ),
+        .echo               ( echo              ),
         .dbQuintoBitEstado  (                   ),
         .db_iniciar         (                   ),
         .db_clock           (                   ),
@@ -41,22 +45,9 @@ module tb_smartcargo;
         .db_motorSubindo    (                   ),
         .db_motorDescendo   (                   ),
         .db_sensores        (                   ),
-        .db_serial_hex      (                   )
-    );
-    
-    // Modulo de transmissao serial
-    tx_serial_7O1 serial (
-        .clock           ( clk          ),
-        .reset           ( reset          ),
-        .partida         ( envia_serial ),
-        .dados_ascii     ( dados_enviados ),
-        .saida_serial    ( RX             ),
-        .pronto          (  ),
-        .db_clock        (                ), // Porta aberta (desconectada)
-        .db_tick         (                ), // Porta aberta (desconectada)
-        .db_partida      (                ), // Porta aberta (desconectada)
-        .db_saida_serial (                ), // Porta aberta (desconectada)
-        .db_estado       (                )  // Porta aberta (desconectada)
+        .db_serial_hex      (                   ),
+        .trigger_sensor_ultrasonico (trigger_sensor_ultrasonico ),
+        .saida_andar        (saida_andar        )
     );
 
     // gerador de clock
@@ -73,7 +64,7 @@ initial begin
     emergencia = 0;
     #10;
     iniciar = 1;
-    sensoresNeg = 4'b0000;
+    sensoresNeg = 4'b1111;
 
     // Transmissão serial de dados
     // Formato dos dados: {tipo_objeto, destino_objeto, origem_objeto}
@@ -86,7 +77,8 @@ initial begin
     #5;
     envia_serial = 0;
     #1000;
-
+    #4000;
+    #(4_000_000);
 
     $display("Teste concluído.");
     $finish;
