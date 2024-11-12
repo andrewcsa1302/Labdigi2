@@ -2,11 +2,12 @@ import tkinter as tk
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from tkinter import messagebox
+from bitarray import bitarray
 import serial
 
 # Configura a conexão serial (ajuste a porta COM e a taxa de baud conforme necessário)
 try:
-    ser = serial.Serial('COM8', 115200)  # Substitua 'COM8' pela porta correta
+    ser = serial.Serial(port='COM9', baudrate=115200, bytesize=serial.EIGHTBITS)  # Substitua 'COM8' pela porta correta
     serial_status = True
 except serial.SerialException:
     serial_status = False
@@ -38,10 +39,11 @@ def enviar_serial():
     
     # Envia dados se a conexão serial estiver ativa
     if serial_status:
-        dados_byte = int(dados_bin, 2).to_bytes(1, byteorder='big')
+        # dados_byte = int(dados_bin, 2).to_bytes(1, byteorder='big')
+        dados_byte = bitarray(dados_bin).tobytes()
         ser.write(dados_byte)
-        resposta_label.config(text=f"Dado enviado: {dados_bin} (binário)", bootstyle="success")
-        messagebox.showinfo("Envio Bem-sucedido", f"Dado enviado: {dados_bin} (binário)")
+        resposta_label.config(text=f"Dado enviado: {dados_bin} (binário).", bootstyle="success")
+        messagebox.showinfo("Envio Bem-sucedido", f"Dado enviado: {dados_byte} (binário)")
     else:
         resposta_label.config(text="Erro: Conexão serial não estabelecida.", bootstyle="danger")
         messagebox.showerror("Erro de Conexão", "A conexão serial não está ativa.")
