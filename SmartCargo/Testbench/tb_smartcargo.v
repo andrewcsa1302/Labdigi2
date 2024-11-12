@@ -1,4 +1,4 @@
-`timescale 1us / 1us
+`timescale 1ns / 1ns // Definindo a escala de tempo para 1 ns por unidade de tempo
 
 module tb_smartcargo;
     reg clk;
@@ -13,18 +13,22 @@ module tb_smartcargo;
     wire trigger_sensor_ultrasonico; 
     wire saida_andar;
 
-    // Transmissao serial
+    // Transmissão serial
     reg RX;
+    reg RX2;
 
     reg envia_serial;
-    reg [6:0] dados_enviados;
+    reg [7:0] dados_enviados;
     
     // Registrador para controlar a máquina de estados serial
     reg [3:0] bit_count; // Contador de bits para transmissão
-    reg [10:0] tx_data;   // Registrador de dados para transmissão (1 byte)
+    reg [7:0] tx_data;   // Registrador de dados para transmissão (1 byte)
     reg serial_busy;     // Flag de transmissão
 
     integer i;
+    
+    // Contador de ciclos para temporizar a transmissão serial
+    reg [24:0] ciclo_count;  // Contador de ciclos, precisa contar até 173 para cada bit
 
     // DUT (Design Under Test)
     smart_cargo dut (
@@ -33,7 +37,7 @@ module tb_smartcargo;
         .sensoresNeg        (sensoresNeg),
         .reset              (reset),
         .emergencia         (emergencia),
-        .RX                 (RX),
+        .RX                 (RX2),  // RX2 será utilizado como entrada para simular a recepção
         .echo               (echo),
         .motorDescendoF     (motorDescendoF),
         .motorSubindoF      (motorSubindoF),
@@ -41,32 +45,38 @@ module tb_smartcargo;
         .saida_andar        (saida_andar)
     );
 
-    // Gerador de clock
+    // Gerador de clock para 50 MHz (período de 20 ns)
     initial clk = 0;
-    always #2 clk = ~clk;
+    always #10 clk = ~clk; // Toggling a cada 10 ns -> 50 MHz
 
-    // Máquina de estados para a transmissão serial
+    // Contador de ciclos para temporizar a transmissão de bits a 115200 bauds
     always @(posedge clk or posedge reset) begin
         if (reset) begin
+            ciclo_count <= 0;
             bit_count <= 0;
-            serial_busy <= 0;
-            tx_data <= 11'b0;
-            RX <= 1;
-        end
-        else if (envia_serial && !serial_busy && dados_enviados!=0) begin
-            serial_busy <= 1;
-            tx_data <= {1'b1, ~^dados_enviados[6:0] , dados_enviados[6:0], 2'b10}; // 1 bit de stop + 7 bits de dados + 1 bit de start (0)
-            RX <= 0;  // Começar a enviar os dados
-        end
-        else if (serial_busy) begin
-            // Transmitir bit por bit (bit_count varia de 0 a 7)
-            if (bit_count < 12) begin
-                RX <= tx_data[bit_count];  // Enviar o bit de tx_data
-                bit_count <= bit_count + 1;
-            end
-            else begin
-                serial_busy <= 0;  // Terminar a transmissão
-                RX <= 1; // Linha de RX desativa
+            RX2 <= 1;  // Linha RX2 começa em nível alto (idle)
+	    
+        end else if (envia_serial) begin
+		tx_data <= dados_enviados;
+            if (ciclo_count < 434) begin
+                ciclo_count <= ciclo_count + 1;  // Incrementa o contador de ciclos
+            end else begin
+                ciclo_count <= 0;  // Reset o contador de ciclos para o próximo bit
+                
+                // Transmitir o próximo bit (0 para start, 1 para stop, dados entre 1 e 8)
+                if (bit_count < 10) begin
+                    if (bit_count == 0) begin
+                        RX2 <= 0;  // Start bit (1 bit)
+                    end else if (bit_count < 9) begin
+                        RX2 <= tx_data[bit_count - 1];  // Dados (bits de 0 a 7)
+                    end else if (bit_count == 9) begin
+                        RX2 <= 1;  // Stop bit (1 bit)
+                    end
+                    bit_count <= bit_count + 1;  // Avança para o próximo bit
+                end else begin
+                    envia_serial <= 0;  // Parar a transmissão depois de enviar todos os bits
+                    bit_count <= 0;  // Reset para a próxima transmissão
+                end
             end
         end
     end
@@ -74,30 +84,40 @@ module tb_smartcargo;
     // Testes
     initial begin
         reset = 1;
-        #10;
+	dados_enviados = 8'b00011100; // 7 bits de dados obj 01, dest 11, org 00 
+        #20;  // 20 ns de atraso (correspondente ao 1º ciclo de clock)
         reset = 0;
         iniciar = 0;
         emergencia = 0;
         sensoresNeg = 4'b1111;
         echo = 0;
+        RX2 = 1;
         
-        #10;
+        #20;  // 20 ns de atraso
         iniciar = 1;
+
+        // Dados a serem transmitidos via serial (em formato 8N1: 8 bits de dados + 1 start + 1 stop bit)
         
-        // Exemplo de dados a serem enviados via serial:
-        dados_enviados = 7'b0011100; // 7 bits de dados, representando tipo_objeto, destino_objeto, origem_objeto
-        #10
-         // Transmitir os dados
-        envia_serial = 1; // Começar a transmissão
-        #10
-        dados_enviados = 0;
-        #70; // Atraso para garantir que a transmissão seja completada
+        #20;
+        
+        // Começar a transmissão serial
+        envia_serial = 1; // Inicia a transmissão
+        #250000;
+        sensoresNeg = 4'b1110;
+        #50000;
+        sensoresNeg = 4'b1101;
+        #50000;
+        sensoresNeg = 4'b1011;
+        #50000;
+        sensoresNeg = 4'b0111;
+        dados_enviados = 8'b00011110;
+        envia_serial = 1;  // Atraso para garantir que 1 byte (10 bits) seja transmitido a 115200 bauds (8.68 us por bit)
+        #300000;
         envia_serial = 0;
-        
-        // Aguardar um tempo e então finalizar o teste
-        #1000;
-        #4000;
-        #(4_000);
+
+        // Aguardar a recepção e processamento
+        #1000;  // 1000 ns de espera
+        #4000;  // 4000 ns de espera
 
         $display("Teste concluído.");
         $finish;

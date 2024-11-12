@@ -73,7 +73,7 @@ assign tipoSerial = dados_serial[5:4];
 // Multiplexadores
 wire [3:0] mux1, mux2, mux3;
 assign mux1 = select1? saidaRegOrigem : saidaRegDestino ; 
-assign mux2 = select2? proxAndarS : proxAndarD ;
+assign mux2 = select2? proxAndarS : proxAndarD ; // nao esta sendo usado
 assign mux3 = select3? andarAtual : saidaSecundariaAnterior;
 // Portas lógicas
 
@@ -99,7 +99,7 @@ registrador_4 andarAtual_reg (
     .clock      (clock),
     .clear      (reset),
     .enable     (enableAndarAtual),
-    .D          (mux2),
+    .D          (saida_andar),
     .Q          (andarAtual) 
 );
 
@@ -130,7 +130,7 @@ registrador_4 reg_carona_origem(
 
 // Mostra andar atual
 
-andar_atual andar_atual( 
+interpretador_andar interpretador_andar_atual( 
     .clock(clock),
     .reset(reset),
     .medir(fim_ultrasonico),
