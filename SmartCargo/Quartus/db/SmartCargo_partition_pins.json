@@ -1,0 +1,269 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "db_iniciar",
+					"strict" : false
+				},
+				{
+					"name" : "db_clock",
+					"strict" : false
+				},
+				{
+					"name" : "db_reset",
+					"strict" : false
+				},
+				{
+					"name" : "motorDescendoF",
+					"strict" : false
+				},
+				{
+					"name" : "motorSubindoF",
+					"strict" : false
+				},
+				{
+					"name" : "andarAtual_db[0]",
+					"strict" : false
+				},
+				{
+					"name" : "andarAtual_db[2]",
+					"strict" : false
+				},
+				{
+					"name" : "andarAtual_db[3]",
+					"strict" : false
+				},
+				{
+					"name" : "andarAtual_db[4]",
+					"strict" : false
+				},
+				{
+					"name" : "andarAtual_db[5]",
+					"strict" : false
+				},
+				{
+					"name" : "andarAtual_db[6]",
+					"strict" : false
+				},
+				{
+					"name" : "proxParada_db[0]",
+					"strict" : false
+				},
+				{
+					"name" : "proxParada_db[2]",
+					"strict" : false
+				},
+				{
+					"name" : "proxParada_db[3]",
+					"strict" : false
+				},
+				{
+					"name" : "proxParada_db[4]",
+					"strict" : false
+				},
+				{
+					"name" : "proxParada_db[5]",
+					"strict" : false
+				},
+				{
+					"name" : "proxParada_db[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Eatual_2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "db_bordaSensorAtivo",
+					"strict" : false
+				},
+				{
+					"name" : "db_motorSubindo",
+					"strict" : false
+				},
+				{
+					"name" : "db_motorDescendo",
+					"strict" : false
+				},
+				{
+					"name" : "db_sensores[0]",
+					"strict" : false
+				},
+				{
+					"name" : "db_sensores[1]",
+					"strict" : false
+				},
+				{
+					"name" : "db_sensores[2]",
+					"strict" : false
+				},
+				{
+					"name" : "db_sensores[3]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[0]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[1]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[2]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[3]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[4]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[5]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[6]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[7]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[8]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[9]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[10]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[11]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[12]",
+					"strict" : false
+				},
+				{
+					"name" : "db_serial_hex[13]",
+					"strict" : false
+				},
+				{
+					"name" : "trigger_sensor_ultrasonico",
+					"strict" : false
+				},
+				{
+					"name" : "saida_andar[0]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_andar[1]",
+					"strict" : false
+				},
+				{
+					"name" : "iniciar",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "emergencia",
+					"strict" : false
+				},
+				{
+					"name" : "sensoresNeg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sensoresNeg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sensoresNeg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sensoresNeg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "echo",
+					"strict" : false
+				},
+				{
+					"name" : "RX",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

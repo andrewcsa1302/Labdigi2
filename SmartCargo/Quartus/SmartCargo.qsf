@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CEBA4F23C7
-set_global_assignment -name TOP_LEVEL_ENTITY SmartCargo
+set_global_assignment -name TOP_LEVEL_ENTITY smart_cargo
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:45:49  NOVEMBER 05, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -49,3 +49,69 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name VERILOG_FILE ../Testbench/tb_smartcargo.v
+set_global_assignment -name VERILOG_FILE ../Testbench/tb_serial_automatico.v
+set_global_assignment -name VERILOG_FILE ../Testbench/tb_ram_mod_fila.v
+set_global_assignment -name VERILOG_FILE ../Testbench/tb_ram_conteudo_elevador.v
+set_global_assignment -name VERILOG_FILE ../uc_nova_entrada.v
+set_global_assignment -name VERILOG_FILE ../uc_movimento.v
+set_global_assignment -name VERILOG_FILE ../tx_serial_uc.v
+set_global_assignment -name VERILOG_FILE ../tx_serial_7O1_fd.v
+set_global_assignment -name VERILOG_FILE ../tx_serial_7O1.v
+set_global_assignment -name VERILOG_FILE ../sync_ram_16x7_mod.v
+set_global_assignment -name VERILOG_FILE ../smart_cargo_fd.v
+set_global_assignment -name VERILOG_FILE ../smart_cargo.v
+set_global_assignment -name VERILOG_FILE ../rx_serial_uc.v
+set_global_assignment -name VERILOG_FILE ../rx_serial_8N1_fd.v
+set_global_assignment -name VERILOG_FILE ../rx_serial_8N1.v
+set_global_assignment -name VERILOG_FILE ../registrador_n.v
+set_global_assignment -name VERILOG_FILE ../registrador_4.v
+set_global_assignment -name VERILOG_FILE ../ram_conteudo_elevador.v
+set_global_assignment -name VERILOG_FILE ../interface_hcsr04_uc.v
+set_global_assignment -name VERILOG_FILE ../interface_hcsr04_tb.v
+set_global_assignment -name VERILOG_FILE ../interface_hcsr04_fd.v
+set_global_assignment -name VERILOG_FILE ../interface_hcsr04.v
+set_global_assignment -name VERILOG_FILE ../hexa7seg.v
+set_global_assignment -name VERILOG_FILE ../gerador_pulso.v
+set_global_assignment -name VERILOG_FILE ../envio_serial_automatico_uc.v
+set_global_assignment -name VERILOG_FILE ../envio_serial_automatico_fd.v
+set_global_assignment -name VERILOG_FILE ../envio_serial_automatico.v
+set_global_assignment -name VERILOG_FILE ../edge_detector.v
+set_global_assignment -name VERILOG_FILE ../deslocador_n.v
+set_global_assignment -name VERILOG_FILE ../conversor_andarXcm.v
+set_global_assignment -name VERILOG_FILE ../contador_p.v
+set_global_assignment -name VERILOG_FILE "../contador_m .v"
+set_global_assignment -name VERILOG_FILE ../contador_cm_uc.v
+set_global_assignment -name VERILOG_FILE ../contador_cm_tb.v
+set_global_assignment -name VERILOG_FILE ../contador_cm_fd.v
+set_global_assignment -name VERILOG_FILE ../contador_cm.v
+set_global_assignment -name VERILOG_FILE ../contador_bcd_3digitos.v
+set_global_assignment -name VERILOG_FILE ../comparador_85.v
+set_global_assignment -name VERILOG_FILE ../andar_ultrassonico.v
+set_global_assignment -name VERILOG_FILE ../andar_atual.v
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE ../PoLift/unidade_controle.v
+set_global_assignment -name VERILOG_FILE ../PoLift/uc_novajogada.v
+set_global_assignment -name VERILOG_FILE ../PoLift/sync_ram_16x4_mod.v
+set_global_assignment -name VERILOG_FILE ../PoLift/registrador_4.v
+set_global_assignment -name VERILOG_FILE ../PoLift/hexa7seg.v
+set_global_assignment -name VERILOG_FILE ../PoLift/FD.v
+set_global_assignment -name VERILOG_FILE ../PoLift/edge_detector.v
+set_global_assignment -name VERILOG_FILE ../PoLift/contador_p.v
+set_global_assignment -name VERILOG_FILE "../PoLift/contador_m .v"
+set_global_assignment -name VERILOG_FILE ../PoLift/comparador_85.v
+set_global_assignment -name VERILOG_FILE ../PoLift/circuito_final.v
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_smartcargo -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_smartcargo -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_smartcargo
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_smartcargo -section_id tb_smartcargo
+set_global_assignment -name EDA_TEST_BENCH_FILE ../Testbench/tb_smartcargo.v -section_id tb_smartcargo

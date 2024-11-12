@@ -1,0 +1,1296 @@
+Analysis & Synthesis report for SmartCargo
+Mon Nov 11 22:47:25 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC|Eatual
+ 10. State Machine - |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_uc:UC|Eatual
+ 11. State Machine - |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|gerador_pulso:U1|reg_estado
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_uc:U1
+ 17. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|gerador_pulso:U1
+ 18. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2
+ 19. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD
+ 20. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_m:U1
+ 21. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_uc:UC
+ 22. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|registrador_n:U3
+ 23. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|contador_m:timer_ultrasonico
+ 24. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL
+ 25. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|contador_m:CONT
+ 26. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|registrador_n:REG
+ 27. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC
+ 28. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|contador_m:U3_TICK
+ 29. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|contador_m:timer_2seg
+ 30. Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|contador_p:endereco_secundario
+ 31. Parameter Settings for User Entity Instance: uc_movimento:UC_MOVIMENTO
+ 32. Parameter Settings for User Entity Instance: uc_nova_entrada:UC_NOVA_ENTRADA
+ 33. Port Connectivity Checks: "hexa7seg:display_proxParada"
+ 34. Port Connectivity Checks: "hexa7seg:display_andarAtual"
+ 35. Port Connectivity Checks: "uc_movimento:UC_MOVIMENTO"
+ 36. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|contador_p:endereco_secundario"
+ 37. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:verifica_se_endereco_maior_que_origem"
+ 38. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:verifica_se_menor"
+ 39. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:verifica_se_maior"
+ 40. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:sentido_elevador"
+ 41. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:sentido_usuario"
+ 42. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:destino_comp"
+ 43. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|contador_m:timer_2seg"
+ 44. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|contador_m:U3_TICK"
+ 45. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|contador_m:CONT"
+ 46. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL"
+ 47. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial"
+ 48. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|ram_conteudo_elevador:conteudo_elevador"
+ 49. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram"
+ 50. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|contador_m:timer_ultrasonico"
+ 51. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|hexa7seg:H0"
+ 52. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|hexa7seg:H0"
+ 53. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_m:U1"
+ 54. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|gerador_pulso:U1"
+ 55. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2"
+ 56. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec"
+ 57. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual"
+ 58. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|registrador_4:reg_destino"
+ 59. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|registrador_4:reg_origem"
+ 60. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|registrador_4:andarAtual_reg"
+ 61. Port Connectivity Checks: "smart_cargo_fd:fluxodeDados"
+ 62. Post-Synthesis Netlist Statistics for Top Partition
+ 63. Elapsed Time Per Partition
+ 64. Analysis & Synthesis Messages
+ 65. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Nov 11 22:47:25 2024       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; SmartCargo                                  ;
+; Top-level Entity Name           ; smart_cargo                                 ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 279                                         ;
+; Total pins                      ; 68                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 1                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; smart_cargo        ; SmartCargo         ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; ../uc_nova_entrada.v             ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/uc_nova_entrada.v       ;         ;
+; ../uc_movimento.v                ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/uc_movimento.v          ;         ;
+; ../sync_ram_16x7_mod.v           ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v     ;         ;
+; ../smart_cargo_fd.v              ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v        ;         ;
+; ../smart_cargo.v                 ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v           ;         ;
+; ../rx_serial_uc.v                ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_uc.v          ;         ;
+; ../rx_serial_8N1_fd.v            ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1_fd.v      ;         ;
+; ../rx_serial_8N1.v               ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1.v         ;         ;
+; ../registrador_n.v               ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/registrador_n.v         ;         ;
+; ../registrador_4.v               ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/registrador_4.v         ;         ;
+; ../ram_conteudo_elevador.v       ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/ram_conteudo_elevador.v ;         ;
+; ../interface_hcsr04_uc.v         ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04_uc.v   ;         ;
+; ../interface_hcsr04_fd.v         ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04_fd.v   ;         ;
+; ../interface_hcsr04.v            ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04.v      ;         ;
+; ../hexa7seg.v                    ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/hexa7seg.v              ;         ;
+; ../gerador_pulso.v               ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/gerador_pulso.v         ;         ;
+; ../edge_detector.v               ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/edge_detector.v         ;         ;
+; ../deslocador_n.v                ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/deslocador_n.v          ;         ;
+; ../conversor_andarXcm.v          ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/conversor_andarXcm.v    ;         ;
+; ../contador_p.v                  ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/contador_p.v            ;         ;
+; ../contador_m .v                 ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/contador_m .v           ;         ;
+; ../contador_cm_uc.v              ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/contador_cm_uc.v        ;         ;
+; ../contador_cm_fd.v              ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/contador_cm_fd.v        ;         ;
+; ../contador_cm.v                 ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/contador_cm.v           ;         ;
+; ../contador_bcd_3digitos.v       ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/contador_bcd_3digitos.v ;         ;
+; ../comparador_85.v               ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v         ;         ;
+; ../andar_ultrassonico.v          ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/andar_ultrassonico.v    ;         ;
+; ../andar_atual.v                 ; yes             ; User Verilog HDL File  ; C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v           ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 412         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 646         ;
+;     -- 7 input functions                    ; 27          ;
+;     -- 6 input functions                    ; 148         ;
+;     -- 5 input functions                    ; 133         ;
+;     -- 4 input functions                    ; 167         ;
+;     -- <=3 input functions                  ; 171         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 279         ;
+;                                             ;             ;
+; I/O pins                                    ; 68          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 1           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 280         ;
+; Total fan-out                               ; 3822        ;
+; Average fan-out                             ; 3.60        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                         ;
++--------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                ; Entity Name           ; Library Name ;
++--------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |smart_cargo                                           ; 646 (2)             ; 279 (0)                   ; 0                 ; 1          ; 68   ; 0            ; |smart_cargo                                                                                                                                                                                                       ; smart_cargo           ; work         ;
+;    |hexa7seg:display_andarAtual|                       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|hexa7seg:display_andarAtual                                                                                                                                                                           ; hexa7seg              ; work         ;
+;    |hexa7seg:display_estado1|                          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|hexa7seg:display_estado1                                                                                                                                                                              ; hexa7seg              ; work         ;
+;    |hexa7seg:display_estado2|                          ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|hexa7seg:display_estado2                                                                                                                                                                              ; hexa7seg              ; work         ;
+;    |hexa7seg:display_proxParada|                       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|hexa7seg:display_proxParada                                                                                                                                                                           ; hexa7seg              ; work         ;
+;    |smart_cargo_fd:fluxodeDados|                       ; 600 (14)            ; 271 (0)                   ; 0                 ; 1          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados                                                                                                                                                                           ; smart_cargo_fd        ; work         ;
+;       |andar_atual:andar_atual|                        ; 142 (6)             ; 81 (0)                    ; 0                 ; 1          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual                                                                                                                                                   ; andar_atual           ; work         ;
+;          |andar_ultrassonico:andar_ultrassonico_detec| ; 136 (0)             ; 81 (0)                    ; 0                 ; 1          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec                                                                                                       ; andar_ultrassonico    ; work         ;
+;             |conversor_andarXcm:conversor|             ; 16 (16)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|conversor_andarXcm:conversor                                                                          ; conversor_andarXcm    ; work         ;
+;             |edge_detector:DB|                         ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|edge_detector:DB                                                                                      ; edge_detector         ; work         ;
+;             |interface_hcsr04:INT|                     ; 120 (0)             ; 79 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT                                                                                  ; interface_hcsr04      ; work         ;
+;                |interface_hcsr04_fd:U2|                ; 115 (0)             ; 76 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2                                                           ; interface_hcsr04_fd   ; work         ;
+;                   |contador_cm:U2|                     ; 39 (0)              ; 29 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2                                            ; contador_cm           ; work         ;
+;                      |contador_cm_fd:FD|               ; 34 (0)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD                          ; contador_cm_fd        ; work         ;
+;                         |contador_bcd_3digitos:U2|     ; 17 (17)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_bcd_3digitos:U2 ; contador_bcd_3digitos ; work         ;
+;                         |contador_m:U1|                ; 17 (17)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_m:U1            ; contador_m            ; work         ;
+;                      |contador_cm_uc:UC|               ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_uc:UC                          ; contador_cm_uc        ; work         ;
+;                   |gerador_pulso:U1|                   ; 76 (76)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|gerador_pulso:U1                                          ; gerador_pulso         ; work         ;
+;                   |registrador_n:U3|                   ; 0 (0)               ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|registrador_n:U3                                          ; registrador_n         ; work         ;
+;                |interface_hcsr04_uc:U1|                ; 5 (5)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_uc:U1                                                           ; interface_hcsr04_uc   ; work         ;
+;       |comparador_85:destino_comp|                     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|comparador_85:destino_comp                                                                                                                                                ; comparador_85         ; work         ;
+;       |comparador_85:sentido_elevador|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|comparador_85:sentido_elevador                                                                                                                                            ; comparador_85         ; work         ;
+;       |comparador_85:sentido_usuario|                  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|comparador_85:sentido_usuario                                                                                                                                             ; comparador_85         ; work         ;
+;       |contador_m:timer_2seg|                          ; 20 (20)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|contador_m:timer_2seg                                                                                                                                                     ; contador_m            ; work         ;
+;       |contador_m:timer_ultrasonico|                   ; 19 (19)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|contador_m:timer_ultrasonico                                                                                                                                              ; contador_m            ; work         ;
+;       |contador_p:endereco_secundario|                 ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|contador_p:endereco_secundario                                                                                                                                            ; contador_p            ; work         ;
+;       |edge_detector:detectorDeDestino|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|edge_detector:detectorDeDestino                                                                                                                                           ; edge_detector         ; work         ;
+;       |edge_detector:detectorDeOrigem|                 ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|edge_detector:detectorDeOrigem                                                                                                                                            ; edge_detector         ; work         ;
+;       |edge_detector:detectorDeSensores|               ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|edge_detector:detectorDeSensores                                                                                                                                          ; edge_detector         ; work         ;
+;       |hexa7seg:HEX_MAIS_SIGNIFICATIVO|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|hexa7seg:HEX_MAIS_SIGNIFICATIVO                                                                                                                                           ; hexa7seg              ; work         ;
+;       |hexa7seg:HEX_MENOS_SIGNIFICATIVO|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|hexa7seg:HEX_MENOS_SIGNIFICATIVO                                                                                                                                          ; hexa7seg              ; work         ;
+;       |registrador_4:andarAtual_reg|                   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|registrador_4:andarAtual_reg                                                                                                                                              ; registrador_4         ; work         ;
+;       |registrador_4:reg_destino|                      ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|registrador_4:reg_destino                                                                                                                                                 ; registrador_4         ; work         ;
+;       |registrador_4:reg_origem|                       ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|registrador_4:reg_origem                                                                                                                                                  ; registrador_4         ; work         ;
+;       |rx_serial_8N1:serial|                           ; 42 (0)              ; 36 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial                                                                                                                                                      ; rx_serial_8N1         ; work         ;
+;          |contador_m:U3_TICK|                          ; 13 (13)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|contador_m:U3_TICK                                                                                                                                   ; contador_m            ; work         ;
+;          |rx_serial_8N1_fd:U1_FD|                      ; 23 (0)              ; 21 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD                                                                                                                               ; rx_serial_8N1_fd      ; work         ;
+;             |contador_m:CONT|                          ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|contador_m:CONT                                                                                                               ; contador_m            ; work         ;
+;             |deslocador_n:DESL|                        ; 9 (9)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL                                                                                                             ; deslocador_n          ; work         ;
+;             |registrador_n:REG|                        ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|registrador_n:REG                                                                                                             ; registrador_n         ; work         ;
+;          |rx_serial_uc:U2_UC|                          ; 6 (6)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC                                                                                                                                   ; rx_serial_uc          ; work         ;
+;       |sync_ram_16x7_mod:fila_ram|                     ; 338 (338)           ; 112 (112)                 ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram                                                                                                                                                ; sync_ram_16x7_mod     ; work         ;
+;    |uc_movimento:UC_MOVIMENTO|                         ; 14 (14)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|uc_movimento:UC_MOVIMENTO                                                                                                                                                                             ; uc_movimento          ; work         ;
+;    |uc_nova_entrada:UC_NOVA_ENTRADA|                   ; 10 (10)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |smart_cargo|uc_nova_entrada:UC_NOVA_ENTRADA                                                                                                                                                                       ; uc_nova_entrada       ; work         ;
++--------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Independent 9x9                 ; 1           ;
+; Total number of DSP blocks      ; 1           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 1           ;
++---------------------------------+-------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC|Eatual                       ;
++-------------------+-----------------+------------------+-----------------+---------------+-------------------+----------------+
+; Name              ; Eatual.final_rx ; Eatual.registrar ; Eatual.recepcao ; Eatual.espera ; Eatual.preparacao ; Eatual.inicial ;
++-------------------+-----------------+------------------+-----------------+---------------+-------------------+----------------+
+; Eatual.inicial    ; 0               ; 0                ; 0               ; 0             ; 0                 ; 0              ;
+; Eatual.preparacao ; 0               ; 0                ; 0               ; 0             ; 1                 ; 1              ;
+; Eatual.espera     ; 0               ; 0                ; 0               ; 1             ; 0                 ; 1              ;
+; Eatual.recepcao   ; 0               ; 0                ; 1               ; 0             ; 0                 ; 1              ;
+; Eatual.registrar  ; 0               ; 1                ; 0               ; 0             ; 0                 ; 1              ;
+; Eatual.final_rx   ; 1               ; 0                ; 0               ; 0             ; 0                 ; 1              ;
++-------------------+-----------------+------------------+-----------------+---------------+-------------------+----------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_uc:UC|Eatual ;
++--------------------+--------------+--------------------+-------------------+----------------+--------------------------------------------------------------------------------------------------------------------+
+; Name               ; Eatual.conta ; Eatual.espera_tick ; Eatual.preparacao ; Eatual.inicial ; Eatual.fim                                                                                                         ;
++--------------------+--------------+--------------------+-------------------+----------------+--------------------------------------------------------------------------------------------------------------------+
+; Eatual.inicial     ; 0            ; 0                  ; 0                 ; 0              ; 0                                                                                                                  ;
+; Eatual.preparacao  ; 0            ; 0                  ; 1                 ; 1              ; 0                                                                                                                  ;
+; Eatual.espera_tick ; 0            ; 1                  ; 0                 ; 1              ; 0                                                                                                                  ;
+; Eatual.conta       ; 1            ; 0                  ; 0                 ; 1              ; 0                                                                                                                  ;
+; Eatual.fim         ; 0            ; 0                  ; 0                 ; 1              ; 1                                                                                                                  ;
++--------------------+--------------+--------------------+-------------------+----------------+--------------------------------------------------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|gerador_pulso:U1|reg_estado ;
++------------------------+-------------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+; Name                   ; reg_estado.parado ; reg_estado.final_pulso ; reg_estado.contagem                                                                                                            ;
++------------------------+-------------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+; reg_estado.parado      ; 0                 ; 0                      ; 0                                                                                                                              ;
+; reg_estado.contagem    ; 1                 ; 0                      ; 1                                                                                                                              ;
+; reg_estado.final_pulso ; 1                 ; 1                      ; 0                                                                                                                              ;
++------------------------+-------------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                  ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; Register name                                                                                                                                                                         ; Reason for Removal                                                          ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; uc_movimento:UC_MOVIMENTO|Eatual[4]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                      ;
+; smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|addr_reg[0..3]                                                                                                                 ; Stuck at GND due to stuck port data_in                                      ;
+; smart_cargo_fd:fluxodeDados|registrador_4:reg_carona_origem|IQ[0..3]                                                                                                                  ; Stuck at GND due to stuck port clock_enable                                 ;
+; smart_cargo_fd:fluxodeDados|registrador_4:reg_destino|IQ[2,3]                                                                                                                         ; Stuck at GND due to stuck port data_in                                      ;
+; smart_cargo_fd:fluxodeDados|registrador_4:reg_origem|IQ[2,3]                                                                                                                          ; Stuck at GND due to stuck port data_in                                      ;
+; smart_cargo_fd:fluxodeDados|edge_detector:detectorDeDestino|reg0                                                                                                                      ; Merged with smart_cargo_fd:fluxodeDados|edge_detector:detectorDeOrigem|reg0 ;
+; smart_cargo_fd:fluxodeDados|edge_detector:detectorDeDestino|reg1                                                                                                                      ; Merged with smart_cargo_fd:fluxodeDados|edge_detector:detectorDeOrigem|reg1 ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC|Eatual~4                                                                                                          ; Lost fanout                                                                 ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC|Eatual~5                                                                                                          ; Lost fanout                                                                 ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC|Eatual~6                                                                                                          ; Lost fanout                                                                 ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC|Eatual~7                                                                                                          ; Lost fanout                                                                 ;
+; smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_uc:UC|Eatual~4 ; Lost fanout                                                                 ;
+; smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_uc:UC|Eatual~5 ; Lost fanout                                                                 ;
+; Total Number of Removed Registers = 21                                                                                                                                                ;                                                                             ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 279   ;
+; Number of registers using Synchronous Clear  ; 49    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 214   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 95    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                               ;
++--------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                ; Fan out ;
++--------------------------------------------------------------------------------------------------+---------+
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[2]  ; 1       ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[3]  ; 2       ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[4]  ; 2       ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[5]  ; 2       ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[6]  ; 2       ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[7]  ; 2       ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[8]  ; 2       ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[9]  ; 2       ;
+; smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[10] ; 1       ;
+; Total number of inverted registers = 9                                                           ;         ;
++--------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|contador_m:U3_TICK|Q[0]                                                                                                                                        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|contador_m:CONT|Q[3]                                                                                                                    ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 0 LEs                ; 28 LEs                 ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|contador_m:timer_2seg|Q[2]                                                                                                                                                          ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_m:U1|Q[10]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[1][2]                                                                                                                                                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|contador_p:endereco_secundario|Q[1]                                                                                                                                                 ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 0 LEs                ; 28 LEs                 ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|contador_m:timer_ultrasonico|Q[10]                                                                                                                                                  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_bcd_3digitos:U2|s_dig1[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_bcd_3digitos:U2|s_dig0[2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_bcd_3digitos:U2|s_dig2[3] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[8][6]                                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[14][2]                                                                                                                                               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[12][5]                                                                                                                                               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[13][4]                                                                                                                                               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[10][1]                                                                                                                                               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[11][1]                                                                                                                                               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[9][2]                                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[6][3]                                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[7][4]                                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[4][5]                                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[5][0]                                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[2][1]                                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[3][5]                                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram[15][1]                                                                                                                                               ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |smart_cargo|smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL|IQ[6]                                                                                                                 ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|ram                                                                                                                                                      ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|Mux15                                                                                                                                                    ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |smart_cargo|smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram|Mux16                                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_uc:U1 ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                            ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; inicial        ; 000   ; Unsigned Binary                                                                                                                                                 ;
+; preparacao     ; 001   ; Unsigned Binary                                                                                                                                                 ;
+; envia_trigger  ; 010   ; Unsigned Binary                                                                                                                                                 ;
+; espera_echo    ; 011   ; Unsigned Binary                                                                                                                                                 ;
+; medida         ; 100   ; Unsigned Binary                                                                                                                                                 ;
+; armazenamento  ; 101   ; Unsigned Binary                                                                                                                                                 ;
+; final_medida   ; 110   ; Unsigned Binary                                                                                                                                                 ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|gerador_pulso:U1 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; largura        ; 500   ; Signed Integer                                                                                                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2 ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; R              ; 2941  ; Signed Integer                                                                                                                                                                 ;
+; N              ; 12    ; Signed Integer                                                                                                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; R              ; 2941  ; Signed Integer                                                                                                                                                                                   ;
+; N              ; 12    ; Signed Integer                                                                                                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_m:U1 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                                                           ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; M              ; 2941  ; Signed Integer                                                                                                                                                                                                 ;
+; N              ; 12    ; Signed Integer                                                                                                                                                                                                 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_uc:UC ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; inicial        ; 000   ; Unsigned Binary                                                                                                                                                                                  ;
+; preparacao     ; 001   ; Unsigned Binary                                                                                                                                                                                  ;
+; espera_tick    ; 010   ; Unsigned Binary                                                                                                                                                                                  ;
+; conta          ; 011   ; Unsigned Binary                                                                                                                                                                                  ;
+; fim            ; 100   ; Unsigned Binary                                                                                                                                                                                  ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|registrador_n:U3 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; N              ; 12    ; Signed Integer                                                                                                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|contador_m:timer_ultrasonico ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; M              ; 1000  ; Signed Integer                                                               ;
+; N              ; 14    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; N              ; 11    ; Signed Integer                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|contador_m:CONT ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------+
+; M              ; 11    ; Signed Integer                                                                                              ;
+; N              ; 4     ; Signed Integer                                                                                              ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|registrador_n:REG ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; inicial        ; 0000  ; Unsigned Binary                                                                         ;
+; preparacao     ; 0010  ; Unsigned Binary                                                                         ;
+; espera         ; 0011  ; Unsigned Binary                                                                         ;
+; recepcao       ; 0111  ; Unsigned Binary                                                                         ;
+; registrar      ; 1001  ; Unsigned Binary                                                                         ;
+; final_rx       ; 1111  ; Unsigned Binary                                                                         ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|contador_m:U3_TICK ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; M              ; 434   ; Signed Integer                                                                          ;
+; N              ; 9     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|contador_m:timer_2seg ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; M              ; 2000  ; Signed Integer                                                        ;
+; N              ; 14    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: smart_cargo_fd:fluxodeDados|contador_p:endereco_secundario ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; M              ; 16    ; Signed Integer                                                                 ;
+; N              ; 4     ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uc_movimento:UC_MOVIMENTO ;
++----------------------+-------+-----------------------------------------+
+; Parameter Name       ; Value ; Type                                    ;
++----------------------+-------+-----------------------------------------+
+; inicial              ; 00000 ; Unsigned Binary                         ;
+; inicializa_elementos ; 00001 ; Unsigned Binary                         ;
+; prox_pedido          ; 00010 ; Unsigned Binary                         ;
+; subindo              ; 00011 ; Unsigned Binary                         ;
+; descendo             ; 00100 ; Unsigned Binary                         ;
+; registra_subindo     ; 00101 ; Unsigned Binary                         ;
+; checa_subindo        ; 00110 ; Unsigned Binary                         ;
+; shift_fila           ; 00111 ; Unsigned Binary                         ;
+; aguarda_passageiro   ; 01000 ; Unsigned Binary                         ;
+; registra_descendo    ; 01001 ; Unsigned Binary                         ;
+; checa_descendo       ; 01010 ; Unsigned Binary                         ;
+; entra_elevador       ; 01011 ; Unsigned Binary                         ;
+; sai_elevador         ; 01100 ; Unsigned Binary                         ;
++----------------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uc_nova_entrada:UC_NOVA_ENTRADA ;
++-------------------------+-------+--------------------------------------------+
+; Parameter Name          ; Value ; Type                                       ;
++-------------------------+-------+--------------------------------------------+
+; espera_jogada           ; 0000  ; Unsigned Binary                            ;
+; registra_jogada         ; 0001  ; Unsigned Binary                            ;
+; compara_primeiro_origem ; 0010  ; Unsigned Binary                            ;
+; compara_origem          ; 0011  ; Unsigned Binary                            ;
+; proximo_origem          ; 0100  ; Unsigned Binary                            ;
+; encaixa_origem          ; 0101  ; Unsigned Binary                            ;
+; escreve_topo_origem     ; 0110  ; Unsigned Binary                            ;
+; escreve_topo_destino    ; 0111  ; Unsigned Binary                            ;
+; prepara_destino         ; 1000  ; Unsigned Binary                            ;
+; pula                    ; 1001  ; Unsigned Binary                            ;
+; proximo_destino         ; 1010  ; Unsigned Binary                            ;
+; compara_destino         ; 1011  ; Unsigned Binary                            ;
+; encaixa_destino         ; 1100  ; Unsigned Binary                            ;
+; descarta_origem         ; 1101  ; Unsigned Binary                            ;
+; descarta_destino        ; 1110  ; Unsigned Binary                            ;
++-------------------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hexa7seg:display_proxParada"                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hexa ; Input ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "hexa[3..2]" will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hexa7seg:display_andarAtual"                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hexa ; Input ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "hexa[3..2]" will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "uc_movimento:UC_MOVIMENTO" ;
++-----------+-------+----------+------------------------+
+; Port      ; Type  ; Severity ; Details                ;
++-----------+-------+----------+------------------------+
+; eh_origem ; Input ; Info     ; Explicitly unconnected ;
++-----------+-------+----------+------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|contador_p:endereco_secundario" ;
++---------+--------+----------+----------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                  ;
++---------+--------+----------+----------------------------------------------------------+
+; zera_as ; Input  ; Info     ; Explicitly unconnected                                   ;
+; fim     ; Output ; Info     ; Explicitly unconnected                                   ;
+; meio    ; Output ; Info     ; Explicitly unconnected                                   ;
++---------+--------+----------+----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:verifica_se_endereco_maior_que_origem"                                                                                                       ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ALBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AGBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; AGBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AEBi     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; ALBo     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
+; AEBo     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:verifica_se_menor"                                                                                                                           ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ALBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AGBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; AGBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AEBi     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; AGBo     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:verifica_se_maior"                                                                                                                           ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ALBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AGBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; AGBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AEBi     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; ALBo     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
+; AEBo     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:sentido_elevador"                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ALBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AGBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; AGBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AEBi     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; ALBo     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
+; AEBo     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:sentido_usuario"                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ALBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AGBi     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; AGBi[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; AEBi     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; ALBo     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
+; AEBo     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|comparador_85:destino_comp"                                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; ALBi ; Input  ; Info     ; Explicitly unconnected                                                                                                                    ;
+; AGBi ; Input  ; Info     ; Explicitly unconnected                                                                                                                    ;
+; AEBi ; Input  ; Info     ; Stuck at VCC                                                                                                                              ;
+; A    ; Input  ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "A[3..2]" will be connected to GND. ;
+; B    ; Input  ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "B[3..2]" will be connected to GND. ;
+; ALBo ; Output ; Info     ; Explicitly unconnected                                                                                                                    ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|contador_m:timer_2seg" ;
++---------+--------+----------+-------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                         ;
++---------+--------+----------+-------------------------------------------------+
+; zera_as ; Input  ; Info     ; Explicitly unconnected                          ;
+; Q       ; Output ; Info     ; Explicitly unconnected                          ;
+; meio    ; Output ; Info     ; Explicitly unconnected                          ;
++---------+--------+----------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|contador_m:U3_TICK" ;
++---------+--------+----------+-------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                           ;
++---------+--------+----------+-------------------------------------------------------------------+
+; zera_as ; Input  ; Info     ; Stuck at GND                                                      ;
+; conta   ; Input  ; Info     ; Stuck at VCC                                                      ;
+; Q       ; Output ; Info     ; Explicitly unconnected                                            ;
+; fim     ; Output ; Info     ; Explicitly unconnected                                            ;
++---------+--------+----------+-------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|contador_m:CONT" ;
++------+--------+----------+------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                  ;
++------+--------+----------+------------------------------------------------------------------------------------------+
+; Q    ; Output ; Info     ; Explicitly unconnected                                                                   ;
+; meio ; Output ; Info     ; Explicitly unconnected                                                                   ;
++------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL" ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; dados       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; saida[1..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saida[10]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial" ;
++-----------+--------+----------+----------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                      ;
++-----------+--------+----------+----------------------------------------------+
+; db_clock  ; Output ; Info     ; Explicitly unconnected                       ;
+; db_tick   ; Output ; Info     ; Explicitly unconnected                       ;
+; db_dados  ; Output ; Info     ; Explicitly unconnected                       ;
+; db_estado ; Output ; Info     ; Explicitly unconnected                       ;
++-----------+--------+----------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|ram_conteudo_elevador:conteudo_elevador"                                                                                   ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                                                      ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; shift          ; Input  ; Info     ; Explicitly unconnected                                                                                                                       ;
+; tipo_objeto    ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; destino_objeto ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; addr           ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; tem_vaga       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram"                                                                                                                                             ;
++-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                    ; Type   ; Severity ; Details                                                                                                                                                                          ;
++-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in_origem_objeto        ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (2 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; in_destino_objeto       ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (2 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; addr                    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; eh_origem               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; origem_objeto           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; saidaSecundaria         ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (4 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.            ;
+; saidaSecundariaAnterior ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (4 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.            ;
+; addrSerial              ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                                     ;
+; dados_addrSerial        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
+; eh_origem_addrSerial    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
++-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|contador_m:timer_ultrasonico" ;
++---------+--------+----------+--------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                ;
++---------+--------+----------+--------------------------------------------------------+
+; zera_as ; Input  ; Info     ; Explicitly unconnected                                 ;
+; Q       ; Output ; Info     ; Explicitly unconnected                                 ;
+; meio    ; Output ; Info     ; Explicitly unconnected                                 ;
++---------+--------+----------+--------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|hexa7seg:H0" ;
++------------+-------+----------+-------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                     ;
++------------+-------+----------+-------------------------------------------------------------+
+; hexa[3..2] ; Input ; Info     ; Stuck at GND                                                ;
++------------+-------+----------+-------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|hexa7seg:H0" ;
++------------+-------+----------+---------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                 ;
++------------+-------+----------+---------------------------------------------------------------------------------------------------------+
+; hexa[3..2] ; Input ; Info     ; Stuck at GND                                                                                            ;
++------------+-------+----------+---------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_m:U1" ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                                  ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; zera_as ; Input  ; Info     ; Stuck at GND                                                                                                                                                                             ;
+; Q       ; Output ; Info     ; Explicitly unconnected                                                                                                                                                                   ;
+; fim     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                                   ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|gerador_pulso:U1" ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                     ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; para   ; Input  ; Info     ; Stuck at GND                                                                                                                                                ;
+; pronto ; Output ; Info     ; Explicitly unconnected                                                                                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2" ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                      ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; fim  ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec"               ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; hex0       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; db_medir   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; db_echo    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; db_trigger ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; db_estado  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual" ;
++--------+--------+----------+----------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                            ;
++--------+--------+----------+----------------------------------------------------+
+; hex0   ; Output ; Info     ; Explicitly unconnected                             ;
+; hex1   ; Output ; Info     ; Explicitly unconnected                             ;
+; hex2   ; Output ; Info     ; Explicitly unconnected                             ;
+; hex3   ; Output ; Info     ; Explicitly unconnected                             ;
+; pronto ; Output ; Info     ; Explicitly unconnected                             ;
++--------+--------+----------+----------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|registrador_4:reg_destino"                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "D[3..2]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|registrador_4:reg_origem"                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; D    ; Input ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "D[3..2]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados|registrador_4:andarAtual_reg"                                                            ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                              ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------+
+; Q    ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (2 bits) it drives; bit(s) "Q[3..2]" have no fanouts ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "smart_cargo_fd:fluxodeDados"                                                                         ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                  ; Type   ; Severity ; Details                                                                             ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; enableRegCaronaOrigem ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; sentidoElevador       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 279                         ;
+;     CLR               ; 175                         ;
+;     ENA               ; 16                          ;
+;     ENA CLR           ; 39                          ;
+;     ENA SCLR          ; 40                          ;
+;     SCLR              ; 9                           ;
+; arriav_lcell_comb     ; 654                         ;
+;     arith             ; 81                          ;
+;         1 data inputs ; 81                          ;
+;     extend            ; 27                          ;
+;         7 data inputs ; 27                          ;
+;     normal            ; 536                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 43                          ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 165                         ;
+;         5 data inputs ; 133                         ;
+;         6 data inputs ; 148                         ;
+;     shared            ; 10                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 2                           ;
+; arriav_mac            ; 1                           ;
+; boundary_port         ; 68                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.83                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Nov 11 22:47:17 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SmartCargo -c SmartCargo
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/testbench/tb_smartcargo.v
+    Info (12023): Found entity 1: tb_smartcargo File: C:/Users/pptel/Labdigi2/SmartCargo/Testbench/tb_smartcargo.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/testbench/tb_serial_automatico.v
+    Info (12023): Found entity 1: tb_serial_automatico File: C:/Users/pptel/Labdigi2/SmartCargo/Testbench/tb_serial_automatico.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/testbench/tb_ram_mod_fila.v
+    Info (12023): Found entity 1: tb_ram_mod File: C:/Users/pptel/Labdigi2/SmartCargo/Testbench/tb_ram_mod_fila.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/testbench/tb_ram_conteudo_elevador.v
+    Info (12023): Found entity 1: tb_ram_conteudo_elevador File: C:/Users/pptel/Labdigi2/SmartCargo/Testbench/tb_ram_conteudo_elevador.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/uc_nova_entrada.v
+    Info (12023): Found entity 1: uc_nova_entrada File: C:/Users/pptel/Labdigi2/SmartCargo/uc_nova_entrada.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/uc_movimento.v
+    Info (12023): Found entity 1: uc_movimento File: C:/Users/pptel/Labdigi2/SmartCargo/uc_movimento.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/tx_serial_uc.v
+    Info (12023): Found entity 1: tx_serial_uc File: C:/Users/pptel/Labdigi2/SmartCargo/tx_serial_uc.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/tx_serial_7o1_fd.v
+    Info (12023): Found entity 1: tx_serial_7O1_fd File: C:/Users/pptel/Labdigi2/SmartCargo/tx_serial_7O1_fd.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/tx_serial_7o1.v
+    Info (12023): Found entity 1: tx_serial_7O1 File: C:/Users/pptel/Labdigi2/SmartCargo/tx_serial_7O1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/sync_ram_16x7_mod.v
+    Info (12023): Found entity 1: sync_ram_16x7_mod File: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/smart_cargo_fd.v
+    Info (12023): Found entity 1: smart_cargo_fd File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/smart_cargo.v
+    Info (12023): Found entity 1: smart_cargo File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/rx_serial_uc.v
+    Info (12023): Found entity 1: rx_serial_uc File: C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_uc.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/rx_serial_8n1_fd.v
+    Info (12023): Found entity 1: rx_serial_8N1_fd File: C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1_fd.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/rx_serial_8n1.v
+    Info (12023): Found entity 1: rx_serial_8N1 File: C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/registrador_n.v
+    Info (12023): Found entity 1: registrador_n File: C:/Users/pptel/Labdigi2/SmartCargo/registrador_n.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/registrador_4.v
+    Info (12023): Found entity 1: registrador_4 File: C:/Users/pptel/Labdigi2/SmartCargo/registrador_4.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/ram_conteudo_elevador.v
+    Info (12023): Found entity 1: ram_conteudo_elevador File: C:/Users/pptel/Labdigi2/SmartCargo/ram_conteudo_elevador.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/interface_hcsr04_uc.v
+    Info (12023): Found entity 1: interface_hcsr04_uc File: C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04_uc.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/interface_hcsr04_tb.v
+    Info (12023): Found entity 1: interface_hcsr04_tb File: C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04_tb.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/interface_hcsr04_fd.v
+    Info (12023): Found entity 1: interface_hcsr04_fd File: C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04_fd.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/interface_hcsr04.v
+    Info (12023): Found entity 1: interface_hcsr04 File: C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/hexa7seg.v
+    Info (12023): Found entity 1: hexa7seg File: C:/Users/pptel/Labdigi2/SmartCargo/hexa7seg.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/gerador_pulso.v
+    Info (12023): Found entity 1: gerador_pulso File: C:/Users/pptel/Labdigi2/SmartCargo/gerador_pulso.v Line: 14
+Warning (10463): Verilog HDL Declaration warning at envio_serial_automatico_uc.v(24): "final" is SystemVerilog-2005 keyword File: C:/Users/pptel/Labdigi2/SmartCargo/envio_serial_automatico_uc.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/envio_serial_automatico_uc.v
+    Info (12023): Found entity 1: envio_serial_automatico_uc File: C:/Users/pptel/Labdigi2/SmartCargo/envio_serial_automatico_uc.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/envio_serial_automatico_fd.v
+    Info (12023): Found entity 1: envio_serial_automatico_fd File: C:/Users/pptel/Labdigi2/SmartCargo/envio_serial_automatico_fd.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/envio_serial_automatico.v
+    Info (12023): Found entity 1: envio_serial_automatico File: C:/Users/pptel/Labdigi2/SmartCargo/envio_serial_automatico.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/edge_detector.v
+    Info (12023): Found entity 1: edge_detector File: C:/Users/pptel/Labdigi2/SmartCargo/edge_detector.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/deslocador_n.v
+    Info (12023): Found entity 1: deslocador_n File: C:/Users/pptel/Labdigi2/SmartCargo/deslocador_n.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/conversor_andarxcm.v
+    Info (12023): Found entity 1: conversor_andarXcm File: C:/Users/pptel/Labdigi2/SmartCargo/conversor_andarXcm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/contador_p.v
+    Info (12023): Found entity 1: contador_p File: C:/Users/pptel/Labdigi2/SmartCargo/contador_p.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/contador_m .v
+    Info (12023): Found entity 1: contador_m File: C:/Users/pptel/Labdigi2/SmartCargo/contador_m .v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/contador_cm_uc.v
+    Info (12023): Found entity 1: contador_cm_uc File: C:/Users/pptel/Labdigi2/SmartCargo/contador_cm_uc.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/contador_cm_tb.v
+    Info (12023): Found entity 1: contador_cm_tb File: C:/Users/pptel/Labdigi2/SmartCargo/contador_cm_tb.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/contador_cm_fd.v
+    Info (12023): Found entity 1: contador_cm_fd File: C:/Users/pptel/Labdigi2/SmartCargo/contador_cm_fd.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/contador_cm.v
+    Info (12023): Found entity 1: contador_cm File: C:/Users/pptel/Labdigi2/SmartCargo/contador_cm.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/contador_bcd_3digitos.v
+    Info (12023): Found entity 1: contador_bcd_3digitos File: C:/Users/pptel/Labdigi2/SmartCargo/contador_bcd_3digitos.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/comparador_85.v
+    Info (12023): Found entity 1: comparador_85 File: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/andar_ultrassonico.v
+    Info (12023): Found entity 1: andar_ultrassonico File: C:/Users/pptel/Labdigi2/SmartCargo/andar_ultrassonico.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/andar_atual.v
+    Info (12023): Found entity 1: andar_atual File: C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/polift/unidade_controle.v
+    Info (12023): Found entity 1: unidade_controle File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/unidade_controle.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/polift/uc_novajogada.v
+    Info (12023): Found entity 1: uc_novajogada File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/uc_novajogada.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/polift/sync_ram_16x4_mod.v
+    Info (12023): Found entity 1: sync_ram_16x4_mod File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/sync_ram_16x4_mod.v Line: 3
+Info (15248): File "C:/Users/pptel/Labdigi2/SmartCargo/PoLift/registrador_4.v" is a duplicate of already analyzed file "C:/Users/pptel/Labdigi2/SmartCargo/registrador_4.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file /users/pptel/labdigi2/smartcargo/polift/registrador_4.v
+Info (15248): File "C:/Users/pptel/Labdigi2/SmartCargo/PoLift/hexa7seg.v" is a duplicate of already analyzed file "C:/Users/pptel/Labdigi2/SmartCargo/hexa7seg.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file /users/pptel/labdigi2/smartcargo/polift/hexa7seg.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/polift/fd.v
+    Info (12023): Found entity 1: FD File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/FD.v Line: 2
+Info (15248): File "C:/Users/pptel/Labdigi2/SmartCargo/PoLift/edge_detector.v" is a duplicate of already analyzed file "C:/Users/pptel/Labdigi2/SmartCargo/edge_detector.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file /users/pptel/labdigi2/smartcargo/polift/edge_detector.v
+Info (15248): File "C:/Users/pptel/Labdigi2/SmartCargo/PoLift/contador_p.v" is a duplicate of already analyzed file "C:/Users/pptel/Labdigi2/SmartCargo/contador_p.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file /users/pptel/labdigi2/smartcargo/polift/contador_p.v
+Info (15248): File "C:/Users/pptel/Labdigi2/SmartCargo/PoLift/contador_m .v" is a duplicate of already analyzed file "C:/Users/pptel/Labdigi2/SmartCargo/contador_m .v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file /users/pptel/labdigi2/smartcargo/polift/contador_m .v
+Info (15248): File "C:/Users/pptel/Labdigi2/SmartCargo/PoLift/comparador_85.v" is a duplicate of already analyzed file "C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file /users/pptel/labdigi2/smartcargo/polift/comparador_85.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/pptel/labdigi2/smartcargo/polift/circuito_final.v
+    Info (12023): Found entity 1: circuito_final File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/circuito_final.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at smart_cargo_fd.v(80): created implicit net for "mesmoSentido" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 80
+Warning (10236): Verilog HDL Implicit Net warning at smart_cargo_fd.v(88): created implicit net for "sensorAtivo" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 88
+Warning (10236): Verilog HDL Implicit Net warning at smart_cargo.v(74): created implicit net for "enableRegCaronaOrigem" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 74
+Warning (10236): Verilog HDL Implicit Net warning at smart_cargo.v(78): created implicit net for "carona_destino" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 78
+Warning (10236): Verilog HDL Implicit Net warning at envio_serial_automatico.v(19): created implicit net for "s_zera" File: C:/Users/pptel/Labdigi2/SmartCargo/envio_serial_automatico.v Line: 19
+Warning (10236): Verilog HDL Implicit Net warning at FD.v(71): created implicit net for "mesmoSentido" File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/FD.v Line: 71
+Warning (10236): Verilog HDL Implicit Net warning at FD.v(80): created implicit net for "sensorAtivo" File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/FD.v Line: 80
+Warning (10236): Verilog HDL Implicit Net warning at circuito_final.v(34): created implicit net for "sensores" File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/circuito_final.v Line: 34
+Warning (10236): Verilog HDL Implicit Net warning at circuito_final.v(66): created implicit net for "enableRegCaronaOrigem" File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/circuito_final.v Line: 66
+Warning (10236): Verilog HDL Implicit Net warning at circuito_final.v(70): created implicit net for "carona_destino" File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/circuito_final.v Line: 70
+Info (12127): Elaborating entity "smart_cargo" for the top level hierarchy
+Info (12128): Elaborating entity "smart_cargo_fd" for hierarchy "smart_cargo_fd:fluxodeDados" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 93
+Warning (10230): Verilog HDL assignment warning at smart_cargo_fd.v(92): truncated value with size 32 to match size of target (4) File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 92
+Warning (10230): Verilog HDL assignment warning at smart_cargo_fd.v(93): truncated value with size 32 to match size of target (4) File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 93
+Warning (10230): Verilog HDL assignment warning at smart_cargo_fd.v(94): truncated value with size 32 to match size of target (4) File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 94
+Info (12128): Elaborating entity "registrador_4" for hierarchy "smart_cargo_fd:fluxodeDados|registrador_4:andarAtual_reg" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 104
+Info (12128): Elaborating entity "andar_atual" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 146
+Info (12128): Elaborating entity "andar_ultrassonico" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec" File: C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v Line: 46
+Info (12128): Elaborating entity "interface_hcsr04" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT" File: C:/Users/pptel/Labdigi2/SmartCargo/andar_ultrassonico.v Line: 52
+Info (12128): Elaborating entity "interface_hcsr04_uc" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_uc:U1" File: C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04.v Line: 43
+Info (12128): Elaborating entity "interface_hcsr04_fd" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2" File: C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04.v Line: 57
+Info (12128): Elaborating entity "gerador_pulso" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|gerador_pulso:U1" File: C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04_fd.v Line: 40
+Info (12128): Elaborating entity "contador_cm" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2" File: C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04_fd.v Line: 55
+Info (12128): Elaborating entity "contador_cm_fd" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD" File: C:/Users/pptel/Labdigi2/SmartCargo/contador_cm.v Line: 52
+Info (12128): Elaborating entity "contador_m" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_m:U1" File: C:/Users/pptel/Labdigi2/SmartCargo/contador_cm_fd.v Line: 44
+Warning (10230): Verilog HDL assignment warning at contador_m .v(40): truncated value with size 32 to match size of target (12) File: C:/Users/pptel/Labdigi2/SmartCargo/contador_m .v Line: 40
+Info (12128): Elaborating entity "contador_bcd_3digitos" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_fd:FD|contador_bcd_3digitos:U2" File: C:/Users/pptel/Labdigi2/SmartCargo/contador_cm_fd.v Line: 55
+Info (12128): Elaborating entity "contador_cm_uc" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|contador_cm:U2|contador_cm_uc:UC" File: C:/Users/pptel/Labdigi2/SmartCargo/contador_cm.v Line: 65
+Info (12128): Elaborating entity "registrador_n" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|interface_hcsr04:INT|interface_hcsr04_fd:U2|registrador_n:U3" File: C:/Users/pptel/Labdigi2/SmartCargo/interface_hcsr04_fd.v Line: 66
+Info (12128): Elaborating entity "hexa7seg" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|hexa7seg:H0" File: C:/Users/pptel/Labdigi2/SmartCargo/andar_ultrassonico.v Line: 58
+Info (12128): Elaborating entity "edge_detector" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|edge_detector:DB" File: C:/Users/pptel/Labdigi2/SmartCargo/andar_ultrassonico.v Line: 78
+Info (12128): Elaborating entity "conversor_andarXcm" for hierarchy "smart_cargo_fd:fluxodeDados|andar_atual:andar_atual|andar_ultrassonico:andar_ultrassonico_detec|conversor_andarXcm:conversor" File: C:/Users/pptel/Labdigi2/SmartCargo/andar_ultrassonico.v Line: 85
+Warning (10230): Verilog HDL assignment warning at conversor_andarXcm.v(12): truncated value with size 32 to match size of target (10) File: C:/Users/pptel/Labdigi2/SmartCargo/conversor_andarXcm.v Line: 12
+Info (12128): Elaborating entity "contador_m" for hierarchy "smart_cargo_fd:fluxodeDados|contador_m:timer_ultrasonico" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 156
+Warning (10230): Verilog HDL assignment warning at contador_m .v(40): truncated value with size 32 to match size of target (14) File: C:/Users/pptel/Labdigi2/SmartCargo/contador_m .v Line: 40
+Info (12128): Elaborating entity "sync_ram_16x7_mod" for hierarchy "smart_cargo_fd:fluxodeDados|sync_ram_16x7_mod:fila_ram" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 180
+Info (12128): Elaborating entity "ram_conteudo_elevador" for hierarchy "smart_cargo_fd:fluxodeDados|ram_conteudo_elevador:conteudo_elevador" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 192
+Warning (10858): Verilog HDL warning at ram_conteudo_elevador.v(21): object tem_vaga_reg used but never assigned File: C:/Users/pptel/Labdigi2/SmartCargo/ram_conteudo_elevador.v Line: 21
+Critical Warning (10237): Verilog HDL warning at ram_conteudo_elevador.v(62): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/pptel/Labdigi2/SmartCargo/ram_conteudo_elevador.v Line: 62
+Warning (10030): Net "tem_vaga_reg" at ram_conteudo_elevador.v(21) has no driver or initial value, using a default initial value '0' File: C:/Users/pptel/Labdigi2/SmartCargo/ram_conteudo_elevador.v Line: 21
+Info (12128): Elaborating entity "rx_serial_8N1" for hierarchy "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 206
+Info (12128): Elaborating entity "rx_serial_8N1_fd" for hierarchy "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD" File: C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1.v Line: 57
+Info (12128): Elaborating entity "deslocador_n" for hierarchy "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|deslocador_n:DESL" File: C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1_fd.v Line: 43
+Info (12128): Elaborating entity "contador_m" for hierarchy "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|contador_m:CONT" File: C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1_fd.v Line: 57
+Warning (10230): Verilog HDL assignment warning at contador_m .v(40): truncated value with size 32 to match size of target (4) File: C:/Users/pptel/Labdigi2/SmartCargo/contador_m .v Line: 40
+Info (12128): Elaborating entity "registrador_n" for hierarchy "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_8N1_fd:U1_FD|registrador_n:REG" File: C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1_fd.v Line: 67
+Info (12128): Elaborating entity "rx_serial_uc" for hierarchy "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|rx_serial_uc:U2_UC" File: C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1.v Line: 75
+Info (12128): Elaborating entity "contador_m" for hierarchy "smart_cargo_fd:fluxodeDados|rx_serial_8N1:serial|contador_m:U3_TICK" File: C:/Users/pptel/Labdigi2/SmartCargo/rx_serial_8N1.v Line: 93
+Warning (10230): Verilog HDL assignment warning at contador_m .v(40): truncated value with size 32 to match size of target (9) File: C:/Users/pptel/Labdigi2/SmartCargo/contador_m .v Line: 40
+Info (12128): Elaborating entity "contador_m" for hierarchy "smart_cargo_fd:fluxodeDados|contador_m:timer_2seg" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 253
+Warning (10230): Verilog HDL assignment warning at contador_m .v(40): truncated value with size 32 to match size of target (14) File: C:/Users/pptel/Labdigi2/SmartCargo/contador_m .v Line: 40
+Info (12128): Elaborating entity "comparador_85" for hierarchy "smart_cargo_fd:fluxodeDados|comparador_85:destino_comp" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 268
+Info (12128): Elaborating entity "contador_p" for hierarchy "smart_cargo_fd:fluxodeDados|contador_p:endereco_secundario" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 335
+Warning (10230): Verilog HDL assignment warning at contador_p.v(22): truncated value with size 32 to match size of target (4) File: C:/Users/pptel/Labdigi2/SmartCargo/contador_p.v Line: 22
+Info (12128): Elaborating entity "uc_movimento" for hierarchy "uc_movimento:UC_MOVIMENTO" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 120
+Warning (10034): Output port "dbQuintoBitEstado" at uc_movimento.v(11) has no driver File: C:/Users/pptel/Labdigi2/SmartCargo/uc_movimento.v Line: 11
+Warning (10034): Output port "enableRAM" at uc_movimento.v(13) has no driver File: C:/Users/pptel/Labdigi2/SmartCargo/uc_movimento.v Line: 13
+Warning (10034): Output port "clearAndarAtual" at uc_movimento.v(16) has no driver File: C:/Users/pptel/Labdigi2/SmartCargo/uc_movimento.v Line: 16
+Warning (10034): Output port "clearSuperRam" at uc_movimento.v(17) has no driver File: C:/Users/pptel/Labdigi2/SmartCargo/uc_movimento.v Line: 17
+Info (12128): Elaborating entity "uc_nova_entrada" for hierarchy "uc_nova_entrada:UC_NOVA_ENTRADA" File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 143
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "smart_cargo_fd:fluxodeDados|saidaSecundaria[3]" is missing source, defaulting to GND File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 48
+    Warning (12110): Net "smart_cargo_fd:fluxodeDados|saidaSecundaria[2]" is missing source, defaulting to GND File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 48
+    Warning (12110): Net "smart_cargo_fd:fluxodeDados|saidaSecundariaAnterior[3]" is missing source, defaulting to GND File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 50
+    Warning (12110): Net "smart_cargo_fd:fluxodeDados|saidaSecundariaAnterior[2]" is missing source, defaulting to GND File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 50
+Warning (12241): 14 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dbQuintoBitEstado" is stuck at GND File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 9
+    Warning (13410): Pin "andarAtual_db[1]" is stuck at GND File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 15
+    Warning (13410): Pin "proxParada_db[1]" is stuck at GND File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/pptel/Labdigi2/SmartCargo/Quartus/output_files/SmartCargo.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 736 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 667 logic cells
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4885 megabytes
+    Info: Processing ended: Mon Nov 11 22:47:25 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/pptel/Labdigi2/SmartCargo/Quartus/output_files/SmartCargo.map.smsg.
+
+

@@ -14,76 +14,93 @@ module tb_smartcargo;
     wire saida_andar;
 
     // Transmissao serial
-    wire RX;
+    reg RX;
 
     reg envia_serial;
-
     reg [6:0] dados_enviados;
+    
+    // Registrador para controlar a máquina de estados serial
+    reg [3:0] bit_count; // Contador de bits para transmissão
+    reg [10:0] tx_data;   // Registrador de dados para transmissão (1 byte)
+    reg serial_busy;     // Flag de transmissão
 
     integer i;
 
-    // dut
+    // DUT (Design Under Test)
     smart_cargo dut (
-        .iniciar            ( iniciar           ),
-        .clock              ( clk               ),
-        .sensoresNeg        ( sensoresNeg       ),
-        .reset              ( reset             ),
-        .emergencia         ( emergencia        ),
-        .RX                 ( RX                ),
-        .echo               ( echo              ),
-        .dbQuintoBitEstado  (                   ),
-        .db_iniciar         (                   ),
-        .db_clock           (                   ),
-        .db_reset           (                   ),
-        .motorDescendoF     ( motorDescendoF    ),
-        .motorSubindoF      ( motorSubindoF     ),
-        .andarAtual_db      (                   ),
-        .proxParada_db      (                   ),
-        .Eatual_1           (                   ),
-        .Eatual_2           (                   ),
-        .db_bordaSensorAtivo(                   ),
-        .db_motorSubindo    (                   ),
-        .db_motorDescendo   (                   ),
-        .db_sensores        (                   ),
-        .db_serial_hex      (                   ),
-        .trigger_sensor_ultrasonico (trigger_sensor_ultrasonico ),
-        .saida_andar        (saida_andar        )
+        .iniciar            (iniciar),
+        .clock              (clk),
+        .sensoresNeg        (sensoresNeg),
+        .reset              (reset),
+        .emergencia         (emergencia),
+        .RX                 (RX),
+        .echo               (echo),
+        .motorDescendoF     (motorDescendoF),
+        .motorSubindoF      (motorSubindoF),
+        .trigger_sensor_ultrasonico (trigger_sensor_ultrasonico),
+        .saida_andar        (saida_andar)
     );
 
-    // gerador de clock
+    // Gerador de clock
     initial clk = 0;
     always #2 clk = ~clk;
 
-    // testes
-initial begin
+    // Máquina de estados para a transmissão serial
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            bit_count <= 0;
+            serial_busy <= 0;
+            tx_data <= 11'b0;
+            RX <= 1;
+        end
+        else if (envia_serial && !serial_busy && dados_enviados!=0) begin
+            serial_busy <= 1;
+            tx_data <= {1'b1, ~^dados_enviados[6:0] , dados_enviados[6:0], 2'b10}; // 1 bit de stop + 7 bits de dados + 1 bit de start (0)
+            RX <= 0;  // Começar a enviar os dados
+        end
+        else if (serial_busy) begin
+            // Transmitir bit por bit (bit_count varia de 0 a 7)
+            if (bit_count < 12) begin
+                RX <= tx_data[bit_count];  // Enviar o bit de tx_data
+                bit_count <= bit_count + 1;
+            end
+            else begin
+                serial_busy <= 0;  // Terminar a transmissão
+                RX <= 1; // Linha de RX desativa
+            end
+        end
+    end
 
-    reset = 1;
-    #10;
-    reset = 0;
-    iniciar = 0;
-    emergencia = 0;
-    #10;
-    iniciar = 1;
-    sensoresNeg = 4'b1111;
+    // Testes
+    initial begin
+        reset = 1;
+        #10;
+        reset = 0;
+        iniciar = 0;
+        emergencia = 0;
+        sensoresNeg = 4'b1111;
+        echo = 0;
+        
+        #10;
+        iniciar = 1;
+        
+        // Exemplo de dados a serem enviados via serial:
+        dados_enviados = 7'b0011100; // 7 bits de dados, representando tipo_objeto, destino_objeto, origem_objeto
+        #10
+         // Transmitir os dados
+        envia_serial = 1; // Começar a transmissão
+        #10
+        dados_enviados = 0;
+        #70; // Atraso para garantir que a transmissão seja completada
+        envia_serial = 0;
+        
+        // Aguardar um tempo e então finalizar o teste
+        #1000;
+        #4000;
+        #(4_000);
 
-    // Transmissão serial de dados
-    // Formato dos dados: {tipo_objeto, destino_objeto, origem_objeto}
-    // Exemplo: tipo_objeto = 2'b01, destino_objeto = 2'b11, origem_objeto = 2'b00
-    // 1 bit sem uso | tipo_obj |destino_obj | origem_obj
-    dados_enviados = 7'b0011100; // tipo_objeto = 01, destino_objeto = 11, origem_objeto = 00
-    #10;
-
-    envia_serial = 1;
-    #5;
-    envia_serial = 0;
-    #1000;
-    #4000;
-    #(4_000_000);
-
-    $display("Teste concluído.");
-    $finish;
-
-end
-
+        $display("Teste concluído.");
+        $finish;
+    end
 
 endmodule

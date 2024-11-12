@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at sync_ram_16x7_mod.v(56): always construct contains both blocking and non-blocking assignments File: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v Line: 56
+Warning (10268): Verilog HDL information at ram_conteudo_elevador.v(30): always construct contains both blocking and non-blocking assignments File: C:/Users/pptel/Labdigi2/SmartCargo/ram_conteudo_elevador.v Line: 30
+Warning (10268): Verilog HDL information at sync_ram_16x4_mod.v(46): always construct contains both blocking and non-blocking assignments File: C:/Users/pptel/Labdigi2/SmartCargo/PoLift/sync_ram_16x4_mod.v Line: 46

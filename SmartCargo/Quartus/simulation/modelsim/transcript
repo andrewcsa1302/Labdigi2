@@ -1,0 +1,222 @@
+# Compile of tb_smartcargo.v was successful.
+# Compile of andar_atual.v was successful.
+# Compile of andar_ultrassonico.v was successful.
+# Compile of comparador_85.v was successful.
+# Compile of contador_bcd_3digitos.v was successful.
+# Compile of contador_cm.v was successful.
+# Compile of contador_cm_fd.v was successful.
+# Compile of contador_cm_tb.v was successful.
+# Compile of contador_cm_uc.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of conversor_andarXcm.v was successful.
+# Compile of deslocador_n.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of envio_serial_automatico.v was successful.
+# Compile of envio_serial_automatico_fd.v was successful.
+# Compile of envio_serial_automatico_uc.v was successful.
+# Compile of gerador_pulso.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of interface_hcsr04.v was successful.
+# Compile of interface_hcsr04_fd.v was successful.
+# Compile of interface_hcsr04_tb.v was successful.
+# Compile of interface_hcsr04_uc.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of registrador_n.v was successful.
+# Compile of rx_serial_8N1.v was successful.
+# Compile of rx_serial_8N1_fd.v was successful.
+# Compile of rx_serial_uc.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of tx_serial_7O1.v was successful.
+# Compile of tx_serial_7O1_fd.v was successful.
+# Compile of tx_serial_uc.v was successful.
+# Compile of uc_movimento.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# 37 compiles, 0 failed with no errors.
+# can't read "Startup(-Lf)": no such element in array
+# Load canceled
+run -all
+# No Design Loaded!
+vsim work.tb_smartcargo
+# vsim work.tb_smartcargo 
+# Start time: 23:31:52 on Nov 11,2024
+# Loading work.tb_smartcargo
+# Loading work.tx_serial_7O1
+# Loading work.tx_serial_7O1_fd
+# Loading rtl_work.deslocador_n
+# Loading rtl_work.contador_m
+# Loading work.tx_serial_uc
+# Loading rtl_work.edge_detector
+# Loading rtl_work.hexa7seg
+# Loading rtl_work.smart_cargo
+# Loading rtl_work.smart_cargo_fd
+# Loading rtl_work.registrador_4
+# Loading rtl_work.andar_atual
+# Loading rtl_work.andar_ultrassonico
+# Loading rtl_work.interface_hcsr04
+# Loading rtl_work.interface_hcsr04_uc
+# Loading rtl_work.interface_hcsr04_fd
+# Loading rtl_work.gerador_pulso
+# Loading rtl_work.contador_cm
+# Loading rtl_work.contador_cm_fd
+# Loading rtl_work.contador_bcd_3digitos
+# Loading rtl_work.contador_cm_uc
+# Loading rtl_work.registrador_n
+# Loading rtl_work.conversor_andarXcm
+# Loading rtl_work.sync_ram_16x7_mod
+# Loading rtl_work.ram_conteudo_elevador
+# Loading rtl_work.rx_serial_8N1
+# Loading rtl_work.rx_serial_8N1_fd
+# Loading rtl_work.rx_serial_uc
+# Loading rtl_work.comparador_85
+# Loading rtl_work.contador_p
+# Loading rtl_work.uc_movimento
+# Loading rtl_work.uc_nova_entrada
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'saida_andar'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v(25).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/pptel/Labdigi2/SmartCargo/Testbench/tb_smartcargo.v Line: 42
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/registrador_4.v(18).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/andarAtual_reg File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 98
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/registrador_4.v(17).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 107
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/registrador_4.v(17).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 115
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/andar_atual/andar_ultrassonico_detec File: C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (4) for port 'in_origem_objeto'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v(5).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (4) for port 'in_destino_objeto'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v(6).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (4) for port 'saidaSecundaria'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v(15).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (4) for port 'saidaSecundariaAnterior'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v(16).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(161): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(161): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(161): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 181
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(181): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(181): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 259
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 259
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 270
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 270
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 281
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 281
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 294
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 294
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 305
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 305
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 316
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 316
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/hexa7seg.v(23).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/hexa7seg.v(23).
+#    Time: 0 us  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 154
+add wave -position insertpoint  \
+sim:/tb_smartcargo/clk \
+sim:/tb_smartcargo/reset \
+sim:/tb_smartcargo/sensoresNeg \
+sim:/tb_smartcargo/iniciar \
+sim:/tb_smartcargo/emergencia \
+sim:/tb_smartcargo/echo \
+sim:/tb_smartcargo/motorDescendoF \
+sim:/tb_smartcargo/motorSubindoF \
+sim:/tb_smartcargo/trigger_sensor_ultrasonico \
+sim:/tb_smartcargo/saida_andar \
+sim:/tb_smartcargo/RX \
+sim:/tb_smartcargo/envia_serial \
+sim:/tb_smartcargo/dados_enviados \
+sim:/tb_smartcargo/i
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'saida_andar'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/pptel/Labdigi2/SmartCargo/Testbench/tb_smartcargo.v Line: 42
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/registrador_4.v(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/andarAtual_reg File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 98
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/registrador_4.v(17).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 107
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/registrador_4.v(17).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 115
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/andar_atual/andar_ultrassonico_detec File: C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/andar_atual.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (4) for port 'in_origem_objeto'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (4) for port 'in_destino_objeto'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (4) for port 'saidaSecundaria'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (4) for port 'saidaSecundariaAnterior'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/sync_ram_16x7_mod.v(16).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 161
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(161): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(161): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(161): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 181
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(181): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v(181): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 259
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 259
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 270
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 270
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 281
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 281
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 294
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 294
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 305
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 305
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 316
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/comparador_85.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo_fd.v Line: 316
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/pptel/Labdigi2/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/pptel/Labdigi2/SmartCargo/smart_cargo.v Line: 154
+run -all
+# Teste concluído.
+# ** Note: $finish    : C:/Users/pptel/Labdigi2/SmartCargo/Testbench/tb_smartcargo.v(99)
+#    Time: 9180 us  Iteration: 0  Instance: /tb_smartcargo
+# 1
+# Break in Module tb_smartcargo at C:/Users/pptel/Labdigi2/SmartCargo/Testbench/tb_smartcargo.v line 99
+# End time: 23:44:47 on Nov 11,2024, Elapsed time: 0:12:55
+# Errors: 0, Warnings: 36
