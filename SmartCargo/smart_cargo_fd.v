@@ -145,7 +145,7 @@ interpretador_andar interpretador_andar_atual(
     .pronto()
 );
 
-contador_m #(1000,14) timer_ultrasonico(
+contador_m #(5000,16) timer_ultrasonico(
     .clock      (clock),
     .zera_as    (),
     .zera_s     (reset),

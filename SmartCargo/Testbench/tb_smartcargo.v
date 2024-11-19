@@ -11,7 +11,7 @@ module tb_smartcargo;
     wire motorDescendoF;
     wire motorSubindoF;
     wire trigger_sensor_ultrasonico; 
-    wire saida_andar;
+    wire [1:0]saida_andar;
 
     // Transmissão serial
     reg RX;
@@ -84,12 +84,12 @@ module tb_smartcargo;
     // Testes
     initial begin
         reset = 1;
-	dados_enviados = 8'b00011100; // 7 bits de dados obj 01, dest 11, org 00 
+	    dados_enviados = 8'b00011100; // 7 bits de dados obj 01, dest 11, org 00 
         #20;  // 20 ns de atraso (correspondente ao 1º ciclo de clock)
         reset = 0;
         iniciar = 0;
         emergencia = 0;
-        sensoresNeg = 4'b1111;
+        sensoresNeg = 4'b1110;
         echo = 0;
         RX2 = 1;
         

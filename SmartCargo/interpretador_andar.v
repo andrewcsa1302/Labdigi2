@@ -21,13 +21,13 @@ wire [3:0] s_andar;
 wire [1:0] s_display;
 wire [1:0] andar;
 
-assign compara =        (sensores == 4'b1110)? 3'b000:
-                        (sensores == 4'b1101)? 3'b001:
-                        (sensores == 4'b1011)? 3'b010:
-                        (sensores == 4'b0111)? 3'b011:
+assign compara =        (sensores == 4'b0001)? 3'b000:
+                        (sensores == 4'b0010)? 3'b001:
+                        (sensores == 4'b0100)? 3'b010:
+                        (sensores == 4'b1000)? 3'b011:
                                                3'b111;
 															
-assign s_display =     (sensores == 4'b1111)? s_saida_andar: compara[1:0];
+assign s_display =     (sensores == 4'b0000)? s_saida_andar: compara[1:0];
 
 assign saida_andar = s_display;
 
