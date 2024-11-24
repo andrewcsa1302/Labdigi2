@@ -27,6 +27,7 @@ module smart_cargo(
 
 // NOVOS SINAIS SMARTCARGO
 wire coloca_objetos, tira_objetos;
+wire eh_origem_fila;
 
 // SINAIS ANTIGOS
 wire enableAndarAtual, shift, enableRAM, enableTopRAM, select1, select2, select3, chegouDestino, fit, temDestino, sobe; 
@@ -38,7 +39,7 @@ wire [3:0] Eatual1_db, Eatual2_db, sensores;
 assign db_iniciar = iniciar;
 assign db_clock = clock;
 assign db_reset = reset;
-assign db_bordaSensorAtivo = sensoresNeg[0];
+// assign db_bordaSensorAtivo = sensoresNeg[0];
 assign sensores = ~sensoresNeg;
 assign db_motorSubindo = motorSubindo;
 assign db_motorDescendo = motorDescendo;
@@ -89,7 +90,8 @@ smart_cargo_fd fluxodeDados (
 .RX                         (RX),
 .db_serial_hex              (db_serial_hex),
 .trigger_sensor_ultrasonico (trigger_sensor_ultrasonico),
-.saida_andar                (saida_andar)
+.saida_andar                (saida_andar),
+.eh_origem_fila             (eh_origem_fila)
 );
 
 
@@ -114,7 +116,7 @@ uc_movimento UC_MOVIMENTO (
 .Eatual1_db                 (Eatual1_db),
 .motorSubindo               (motorSubindo),
 .motorDescendo              (motorDescendo),
-.eh_origem                  (),
+.eh_origem                  (eh_origem_fila),
 .tira_objetos               (tira_objetos),
 .coloca_objetos             (coloca_objetos)
 );

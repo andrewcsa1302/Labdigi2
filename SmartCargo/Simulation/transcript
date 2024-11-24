@@ -1,8 +1,1574 @@
 # Reading pref.tcl
 # vsim -gui . 
-# Start time: 21:16:13 on Nov 08,2024
+# Start time: 00:01:28 on Nov 24,2024
 # ** Error (suppressible): (vsim-19) Failed to access library '' at "".
 # Invalid argument. (errno = EINVAL)
 # Error loading design
-# End time: 21:16:14 on Nov 08,2024, Elapsed time: 0:00:01
+# End time: 00:01:29 on Nov 24,2024, Elapsed time: 0:00:01
 # Errors: 1, Warnings: 0
+# Loading project sim_SmartCargo
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of deslocador_n.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of registrador_n.v was successful.
+# Compile of rx_serial_8N1.v was successful.
+# Compile of rx_serial_8N1_fd.v was successful.
+# Compile of rx_serial_uc.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of tx_serial_7O1.v was successful.
+# Compile of tx_serial_7O1_fd.v was successful.
+# Compile of tx_serial_uc.v was successful.
+# Compile of uc_movimento.v failed with 1 errors.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of tb_smartcargo.v was successful.
+# Compile of interpretador_andar.v was successful.
+# Compile of andar_atual.v was successful.
+# Compile of andar_ultrassonico.v was successful.
+# Compile of conversor_andarXcm.v was successful.
+# Compile of interface_hcsr04.v was successful.
+# Compile of interface_hcsr04_fd.v was successful.
+# Compile of interface_hcsr04_tb.v was successful.
+# Compile of interface_hcsr04_uc.v was successful.
+# Compile of contador_bcd_3digitos.v was successful.
+# Compile of contador_cm.v was successful.
+# Compile of contador_cm_fd.v was successful.
+# Compile of contador_cm_uc.v was successful.
+# Compile of gerador_pulso.v was successful.
+# 34 compiles, 1 failed with 1 error.
+# Compile of uc_movimento.v was successful.
+vsim -gui work.tb_smartcargo
+# vsim -gui work.tb_smartcargo 
+# Start time: 00:03:15 on Nov 24,2024
+# Loading work.tb_smartcargo
+# Loading work.smart_cargo
+# Loading work.smart_cargo_fd
+# Loading work.registrador_4
+# Loading work.interpretador_andar
+# Loading work.andar_ultrassonico
+# Loading work.interface_hcsr04
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+# Loading work.gerador_pulso
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+# Loading work.registrador_n
+# Loading work.hexa7seg
+# Loading work.edge_detector
+# Loading work.conversor_andarXcm
+# Loading work.sync_ram_16x7_mod
+# Loading work.ram_conteudo_elevador
+# Loading work.rx_serial_8N1
+# Loading work.rx_serial_8N1_fd
+# Loading work.deslocador_n
+# Loading work.rx_serial_uc
+# Loading work.comparador_85
+# Loading work.contador_p
+# Loading work.uc_movimento
+# Loading work.uc_nova_entrada
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'addrSecundarioAnterior'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v(7).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 184
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+do wave.do
+# Cannot open macro file: wave.do
+add wave -position insertpoint  \
+sim:/tb_smartcargo/clk \
+sim:/tb_smartcargo/reset \
+sim:/tb_smartcargo/sensoresNeg \
+sim:/tb_smartcargo/iniciar \
+sim:/tb_smartcargo/emergencia \
+sim:/tb_smartcargo/echo \
+sim:/tb_smartcargo/motorDescendoF \
+sim:/tb_smartcargo/motorSubindoF \
+sim:/tb_smartcargo/trigger_sensor_ultrasonico \
+sim:/tb_smartcargo/saida_andar \
+sim:/tb_smartcargo/RX2 \
+sim:/tb_smartcargo/envia_serial \
+sim:/tb_smartcargo/dados_enviados
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Andrew  Hostname: ANDREWCSA  ProcessID: 5160
+#           Attempting to use alternate WLF file "./wlftyem1k4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftyem1k4
+add wave -position insertpoint  \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/chegouDestino \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/bordaSensorAtivo \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/fimT \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/temDestino \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/sobe \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/eh_origem \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/dbQuintoBitEstado \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/shift \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/enableRAM \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/contaT \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/zeraT \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/clearAndarAtual \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/clearSuperRam \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/select2 \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/enableAndarAtual \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/Eatual1_db \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/motorSubindo \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/motorDescendo \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/tira_objetos \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/coloca_objetos \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/Eatual
+add wave -position insertpoint  \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/bordaNovoDestino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/clock \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/iniciar \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/reset \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/carona_origem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/carona_destino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/ramSecDifZero \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/andarRepetidoOrigem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/andarRepetidoDestino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/select1 \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableTopRAM \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/fit \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/select3 \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableRegDestino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableRegOrigem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableRegCaronaOrigem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/contaAddrSecundario \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/zeraAddrSecundario \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/Eatual2_db \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/Eatual
+run -all
+# Teste concluído.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(122)
+#    Time: 705060 ns  Iteration: 0  Instance: /tb_smartcargo
+# 1
+# Break in Module tb_smartcargo at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v line 122
+restart 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'addrSecundarioAnterior'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v(7).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 184
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+add wave -position insertpoint  \
+sim:/tb_smartcargo/dut/fluxodeDados/sensores \
+sim:/tb_smartcargo/dut/fluxodeDados/shift \
+sim:/tb_smartcargo/dut/fluxodeDados/enableRAM \
+sim:/tb_smartcargo/dut/fluxodeDados/enableTopRAM \
+sim:/tb_smartcargo/dut/fluxodeDados/select1 \
+sim:/tb_smartcargo/dut/fluxodeDados/select2 \
+sim:/tb_smartcargo/dut/fluxodeDados/select3 \
+sim:/tb_smartcargo/dut/fluxodeDados/zeraT \
+sim:/tb_smartcargo/dut/fluxodeDados/contaT \
+sim:/tb_smartcargo/dut/fluxodeDados/clearAndarAtual \
+sim:/tb_smartcargo/dut/fluxodeDados/clearSuperRam \
+sim:/tb_smartcargo/dut/fluxodeDados/enableAndarAtual \
+sim:/tb_smartcargo/dut/fluxodeDados/enableRegOrigem \
+sim:/tb_smartcargo/dut/fluxodeDados/enableRegDestino \
+sim:/tb_smartcargo/dut/fluxodeDados/zeraAddrSecundario \
+sim:/tb_smartcargo/dut/fluxodeDados/contaAddrSecundario \
+sim:/tb_smartcargo/dut/fluxodeDados/reset \
+sim:/tb_smartcargo/dut/fluxodeDados/fit \
+sim:/tb_smartcargo/dut/fluxodeDados/coloca_objetos \
+sim:/tb_smartcargo/dut/fluxodeDados/tira_objetos \
+sim:/tb_smartcargo/dut/fluxodeDados/RX \
+sim:/tb_smartcargo/dut/fluxodeDados/echo \
+sim:/tb_smartcargo/dut/fluxodeDados/inicia_ultrasonico \
+sim:/tb_smartcargo/dut/fluxodeDados/chegouDestino \
+sim:/tb_smartcargo/dut/fluxodeDados/bordaNovoDestino \
+sim:/tb_smartcargo/dut/fluxodeDados/fimT \
+sim:/tb_smartcargo/dut/fluxodeDados/ramSecDifZero \
+sim:/tb_smartcargo/dut/fluxodeDados/proxParada \
+sim:/tb_smartcargo/dut/fluxodeDados/andarAtual \
+sim:/tb_smartcargo/dut/fluxodeDados/sentidoElevador \
+sim:/tb_smartcargo/dut/fluxodeDados/carona_origem \
+sim:/tb_smartcargo/dut/fluxodeDados/carona_destino \
+sim:/tb_smartcargo/dut/fluxodeDados/enableRegCaronaOrigem \
+sim:/tb_smartcargo/dut/fluxodeDados/temDestino \
+sim:/tb_smartcargo/dut/fluxodeDados/sobe \
+sim:/tb_smartcargo/dut/fluxodeDados/andarRepetidoOrigem \
+sim:/tb_smartcargo/dut/fluxodeDados/andarRepetidoDestino \
+sim:/tb_smartcargo/dut/fluxodeDados/bordaSensorAtivo \
+sim:/tb_smartcargo/dut/fluxodeDados/db_serial_hex \
+sim:/tb_smartcargo/dut/fluxodeDados/trigger_sensor_ultrasonico \
+sim:/tb_smartcargo/dut/fluxodeDados/saida_andar \
+sim:/tb_smartcargo/dut/fluxodeDados/proxAndarD \
+sim:/tb_smartcargo/dut/fluxodeDados/proxAndarS \
+sim:/tb_smartcargo/dut/fluxodeDados/saidaRegDestino \
+sim:/tb_smartcargo/dut/fluxodeDados/saidaRegOrigem \
+sim:/tb_smartcargo/dut/fluxodeDados/saidaSecundaria \
+sim:/tb_smartcargo/dut/fluxodeDados/sentidoUsuario \
+sim:/tb_smartcargo/dut/fluxodeDados/enderecoMaiorQueOrigem \
+sim:/tb_smartcargo/dut/fluxodeDados/bordaNovaOrigem \
+sim:/tb_smartcargo/dut/fluxodeDados/mesmoAndar \
+sim:/tb_smartcargo/dut/fluxodeDados/saidaSecundariaAnterior \
+sim:/tb_smartcargo/dut/fluxodeDados/addrSecundarioAnterior \
+sim:/tb_smartcargo/dut/fluxodeDados/objetivoMaiorAnterior \
+sim:/tb_smartcargo/dut/fluxodeDados/objetivoMenorAtual \
+sim:/tb_smartcargo/dut/fluxodeDados/addrSecundario \
+sim:/tb_smartcargo/dut/fluxodeDados/caronaOrigem \
+sim:/tb_smartcargo/dut/fluxodeDados/fim_ultrasonico \
+sim:/tb_smartcargo/dut/fluxodeDados/eh_origem_fila \
+sim:/tb_smartcargo/dut/fluxodeDados/tipo_obj_fila \
+sim:/tb_smartcargo/dut/fluxodeDados/origem_fila \
+sim:/tb_smartcargo/dut/fluxodeDados/destino_fila \
+sim:/tb_smartcargo/dut/fluxodeDados/serial_recebido \
+sim:/tb_smartcargo/dut/fluxodeDados/dados_serial_recebido \
+sim:/tb_smartcargo/dut/fluxodeDados/origemSerial \
+sim:/tb_smartcargo/dut/fluxodeDados/destinoSerial \
+sim:/tb_smartcargo/dut/fluxodeDados/tipoSerial \
+sim:/tb_smartcargo/dut/fluxodeDados/mux1 \
+sim:/tb_smartcargo/dut/fluxodeDados/mux2 \
+sim:/tb_smartcargo/dut/fluxodeDados/mux3 \
+sim:/tb_smartcargo/dut/fluxodeDados/mesmoSentido \
+sim:/tb_smartcargo/dut/fluxodeDados/sensorAtivo
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Teste concluído.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(122)
+#    Time: 705060 ns  Iteration: 0  Instance: /tb_smartcargo
+# 1
+# Break in Module tb_smartcargo at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v line 122
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Simulation/simulation_smartcargo/wave.do
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of deslocador_n.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of registrador_n.v was successful.
+# Compile of rx_serial_8N1.v was successful.
+# Compile of rx_serial_8N1_fd.v was successful.
+# Compile of rx_serial_uc.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of tx_serial_7O1.v was successful.
+# Compile of tx_serial_7O1_fd.v was successful.
+# Compile of tx_serial_uc.v was successful.
+# Compile of uc_movimento.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of tb_smartcargo.v was successful.
+# Compile of interpretador_andar.v was successful.
+# Compile of andar_atual.v was successful.
+# Compile of andar_ultrassonico.v was successful.
+# Compile of conversor_andarXcm.v was successful.
+# Compile of interface_hcsr04.v was successful.
+# Compile of interface_hcsr04_fd.v was successful.
+# Compile of interface_hcsr04_tb.v was successful.
+# Compile of interface_hcsr04_uc.v was successful.
+# Compile of contador_bcd_3digitos.v was successful.
+# Compile of contador_cm.v was successful.
+# Compile of contador_cm_fd.v was successful.
+# Compile of contador_cm_uc.v was successful.
+# Compile of gerador_pulso.v was successful.
+# 34 compiles, 0 failed with no errors.
+vsim -gui work.tb_smartcargo
+# End time: 00:12:46 on Nov 24,2024, Elapsed time: 0:09:31
+# Errors: 0, Warnings: 56
+# vsim -gui work.tb_smartcargo 
+# Start time: 00:12:46 on Nov 24,2024
+# Loading work.tb_smartcargo
+# Loading work.smart_cargo
+# Loading work.smart_cargo_fd
+# Loading work.registrador_4
+# Loading work.interpretador_andar
+# Loading work.andar_ultrassonico
+# Loading work.interface_hcsr04
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+# Loading work.gerador_pulso
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+# Loading work.registrador_n
+# Loading work.hexa7seg
+# Loading work.edge_detector
+# Loading work.conversor_andarXcm
+# Loading work.sync_ram_16x7_mod
+# Loading work.ram_conteudo_elevador
+# Loading work.rx_serial_8N1
+# Loading work.rx_serial_8N1_fd
+# Loading work.deslocador_n
+# Loading work.rx_serial_uc
+# Loading work.comparador_85
+# Loading work.contador_p
+# Loading work.uc_movimento
+# Loading work.uc_nova_entrada
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'addrSecundarioAnterior'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v(7).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 184
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+do wave.do
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Andrew  Hostname: ANDREWCSA  ProcessID: 5160
+#           Attempting to use alternate WLF file "./wlft81nz69".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft81nz69
+run -all
+# Teste concluído.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(122)
+#    Time: 705060 ns  Iteration: 0  Instance: /tb_smartcargo
+# 1
+# Break in Module tb_smartcargo at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v line 122
+restart 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'addrSecundarioAnterior'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v(7).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 184
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+do wave.do
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Teste concluído.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(122)
+#    Time: 705060 ns  Iteration: 0  Instance: /tb_smartcargo
+# 1
+# Break in Module tb_smartcargo at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v line 122
+restart 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'addrSecundarioAnterior'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v(7).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 184
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'A'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+# Compile of comparador_85.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# 2 compiles, 0 failed with no errors.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Teste concluído.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(122)
+#    Time: 705060 ns  Iteration: 0  Instance: /tb_smartcargo
+# 1
+# Break in Module tb_smartcargo at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v line 122
+restart 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.smart_cargo_fd
+# Loading work.comparador_85
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'addrSecundarioAnterior'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v(7).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 184
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+# Compile of uc_movimento.v was successful.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Teste concluído.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(122)
+#    Time: 705060 ns  Iteration: 0  Instance: /tb_smartcargo
+# 1
+# Break in Module tb_smartcargo at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v line 122
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of deslocador_n.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of registrador_n.v was successful.
+# Compile of rx_serial_8N1.v was successful.
+# Compile of rx_serial_8N1_fd.v was successful.
+# Compile of rx_serial_uc.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of tx_serial_7O1.v was successful.
+# Compile of tx_serial_7O1_fd.v was successful.
+# Compile of tx_serial_uc.v was successful.
+# Compile of uc_movimento.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of tb_smartcargo.v was successful.
+# Compile of interpretador_andar.v was successful.
+# Compile of andar_atual.v was successful.
+# Compile of andar_ultrassonico.v was successful.
+# Compile of conversor_andarXcm.v was successful.
+# Compile of interface_hcsr04.v was successful.
+# Compile of interface_hcsr04_fd.v was successful.
+# Compile of interface_hcsr04_tb.v was successful.
+# Compile of interface_hcsr04_uc.v was successful.
+# Compile of contador_bcd_3digitos.v was successful.
+# Compile of contador_cm.v was successful.
+# Compile of contador_cm_fd.v was successful.
+# Compile of contador_cm_uc.v was successful.
+# Compile of gerador_pulso.v was successful.
+# 34 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_smartcargo
+# Loading work.smart_cargo
+# Loading work.smart_cargo_fd
+# Loading work.registrador_4
+# Loading work.interpretador_andar
+# Loading work.andar_ultrassonico
+# Loading work.interface_hcsr04
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+# Loading work.gerador_pulso
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+# Loading work.registrador_n
+# Loading work.hexa7seg
+# Loading work.edge_detector
+# Loading work.conversor_andarXcm
+# Loading work.sync_ram_16x7_mod
+# Loading work.ram_conteudo_elevador
+# Loading work.rx_serial_8N1
+# Loading work.rx_serial_8N1_fd
+# Loading work.deslocador_n
+# Loading work.rx_serial_uc
+# Loading work.comparador_85
+# Loading work.contador_p
+# Loading work.uc_movimento
+# Loading work.uc_nova_entrada
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'addrSecundarioAnterior'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/sync_ram_16x7_mod.v(7).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 184
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(184): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 262
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 273
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 284
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 297
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 308
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 319
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+# Compile of registrador_4.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb_smartcargo
+# End time: 00:49:55 on Nov 24,2024, Elapsed time: 0:37:09
+# Errors: 0, Warnings: 48
+# vsim -gui work.tb_smartcargo 
+# Start time: 00:49:55 on Nov 24,2024
+# Loading work.tb_smartcargo
+# Loading work.smart_cargo
+# Loading work.smart_cargo_fd
+# Loading work.registrador_4
+# Loading work.interpretador_andar
+# Loading work.andar_ultrassonico
+# Loading work.interface_hcsr04
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+# Loading work.gerador_pulso
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+# Loading work.registrador_n
+# Loading work.hexa7seg
+# Loading work.edge_detector
+# Loading work.conversor_andarXcm
+# Loading work.sync_ram_16x7_mod
+# Loading work.ram_conteudo_elevador
+# Loading work.rx_serial_8N1
+# Loading work.rx_serial_8N1_fd
+# Loading work.deslocador_n
+# Loading work.rx_serial_uc
+# Loading work.comparador_85
+# Loading work.contador_p
+# Loading work.uc_movimento
+# Loading work.uc_nova_entrada
+# ** Error (suppressible): (vsim-3006) Too many inherited module instance parameters.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 110
+# ** Error (suppressible): (vsim-3006) Too many inherited module instance parameters.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 118
+# ** Error (suppressible): (vsim-3006) Too many inherited module instance parameters.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 126
+# Error loading design
+# End time: 00:49:56 on Nov 24,2024, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 1
+# Compile of smart_cargo_fd.v was successful.
+# ** Error: Acs sdne.
+# � QBLA8juOx$JA�  \??\CONOUT$
+#        Unable to replace existing ini file (C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Simulation/simulation_smartcargo/sim_SmartCargo.mpf).  File can not be renamed.
+# Compile of comparador_85.v was successful.
+# Compile of contador_m .v was successful.
+# Compile of contador_p.v was successful.
+# Compile of deslocador_n.v was successful.
+# Compile of edge_detector.v was successful.
+# Compile of hexa7seg.v was successful.
+# Compile of ram_conteudo_elevador.v was successful.
+# Compile of registrador_4.v was successful.
+# Compile of registrador_n.v was successful.
+# Compile of rx_serial_8N1.v was successful.
+# Compile of rx_serial_8N1_fd.v was successful.
+# Compile of rx_serial_uc.v was successful.
+# Compile of smart_cargo.v was successful.
+# Compile of smart_cargo_fd.v was successful.
+# Compile of sync_ram_16x7_mod.v was successful.
+# Compile of tx_serial_7O1.v was successful.
+# Compile of tx_serial_7O1_fd.v was successful.
+# Compile of tx_serial_uc.v was successful.
+# Compile of uc_movimento.v was successful.
+# Compile of uc_nova_entrada.v was successful.
+# Compile of tb_smartcargo.v was successful.
+# Compile of interpretador_andar.v was successful.
+# Compile of andar_atual.v was successful.
+# Compile of andar_ultrassonico.v was successful.
+# Compile of conversor_andarXcm.v was successful.
+# Compile of interface_hcsr04.v was successful.
+# Compile of interface_hcsr04_fd.v was successful.
+# Compile of interface_hcsr04_tb.v was successful.
+# Compile of interface_hcsr04_uc.v was successful.
+# Compile of contador_bcd_3digitos.v was successful.
+# Compile of contador_cm.v was successful.
+# Compile of contador_cm_fd.v was successful.
+# Compile of contador_cm_uc.v was successful.
+# Compile of gerador_pulso.v was successful.
+# 34 compiles, 0 failed with no errors.
+vsim -gui work.tb_smartcargo
+# vsim -gui work.tb_smartcargo 
+# Start time: 00:52:08 on Nov 24,2024
+# Loading work.tb_smartcargo
+# Loading work.smart_cargo
+# Loading work.smart_cargo_fd
+# Loading work.registrador_N
+# Loading work.interpretador_andar
+# Loading work.andar_ultrassonico
+# Loading work.interface_hcsr04
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+# Loading work.gerador_pulso
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+# Loading work.registrador_n
+# Loading work.hexa7seg
+# Loading work.edge_detector
+# Loading work.conversor_andarXcm
+# Loading work.sync_ram_16x7_mod
+# Loading work.ram_conteudo_elevador
+# Loading work.rx_serial_8N1
+# Loading work.rx_serial_8N1_fd
+# Loading work.deslocador_n
+# Loading work.rx_serial_uc
+# Loading work.comparador_85
+# Loading work.contador_p
+# Loading work.uc_movimento
+# Loading work.uc_nova_entrada
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 111
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 111
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (2) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 119
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (2) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_destino File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 119
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (4) for port 'D'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(17).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_carona_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 127
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (4) for port 'Q'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/registrador_4.v(18).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/reg_carona_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 127
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 165
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(165): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(165): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(165): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 186
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(186): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(186): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 265
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 265
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 276
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 276
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 287
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 287
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 300
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 300
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 311
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 311
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 322
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 322
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+# Compile of registrador_4.v was successful.
+vsim -gui work.tb_smartcargo
+# End time: 00:53:47 on Nov 24,2024, Elapsed time: 0:01:39
+# Errors: 1, Warnings: 51
+# vsim -gui work.tb_smartcargo 
+# Start time: 00:53:47 on Nov 24,2024
+# Loading work.tb_smartcargo
+# Loading work.smart_cargo
+# Loading work.smart_cargo_fd
+# Loading work.registrador_N
+# Loading work.interpretador_andar
+# Loading work.andar_ultrassonico
+# Loading work.interface_hcsr04
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+# Loading work.gerador_pulso
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+# Loading work.registrador_n
+# Loading work.hexa7seg
+# Loading work.edge_detector
+# Loading work.conversor_andarXcm
+# Loading work.sync_ram_16x7_mod
+# Loading work.ram_conteudo_elevador
+# Loading work.rx_serial_8N1
+# Loading work.rx_serial_8N1_fd
+# Loading work.deslocador_n
+# Loading work.rx_serial_uc
+# Loading work.comparador_85
+# Loading work.contador_p
+# Loading work.uc_movimento
+# Loading work.uc_nova_entrada
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 165
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(165): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(165): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(165): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 186
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(186): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(186): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 265
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 265
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 276
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 276
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 287
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 287
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 300
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 300
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 311
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 311
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 322
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 322
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+do wav
+# Cannot open macro file: wav
+do wave.do
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Andrew  Hostname: ANDREWCSA  ProcessID: 5160
+#           Attempting to use alternate WLF file "./wlftacfi7s".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftacfi7s
+add wave -position insertpoint  \
+sim:/tb_smartcargo/clk \
+sim:/tb_smartcargo/reset \
+sim:/tb_smartcargo/sensoresNeg \
+sim:/tb_smartcargo/iniciar \
+sim:/tb_smartcargo/emergencia \
+sim:/tb_smartcargo/echo \
+sim:/tb_smartcargo/motorDescendoF \
+sim:/tb_smartcargo/motorSubindoF \
+sim:/tb_smartcargo/trigger_sensor_ultrasonico \
+sim:/tb_smartcargo/saida_andar \
+sim:/tb_smartcargo/RX2 \
+sim:/tb_smartcargo/envia_serial \
+sim:/tb_smartcargo/dados_enviados
+add wave -position insertpoint  \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/chegouDestino \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/bordaSensorAtivo \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/fimT \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/temDestino \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/sobe \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/eh_origem \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/dbQuintoBitEstado \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/shift \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/enableRAM \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/contaT \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/zeraT \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/clearAndarAtual \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/clearSuperRam \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/select2 \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/enableAndarAtual \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/Eatual1_db \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/motorSubindo \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/motorDescendo \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/tira_objetos \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/coloca_objetos \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/Eatual
+add wave -position insertpoint  \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/bordaNovoDestino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/clock \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/iniciar \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/reset \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/carona_origem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/carona_destino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/ramSecDifZero \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/andarRepetidoOrigem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/andarRepetidoDestino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/select1 \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableTopRAM \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/fit \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/select3 \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableRegDestino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableRegOrigem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableRegCaronaOrigem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/contaAddrSecundario \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/zeraAddrSecundario \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/Eatual2_db \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/Eatual
+run -all
+# Teste concluído.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(122)
+#    Time: 705060 ns  Iteration: 0  Instance: /tb_smartcargo
+# 1
+# Break in Module tb_smartcargo at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v line 122
+restart 
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 165
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(165): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(165): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(165): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 186
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(186): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(186): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 265
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 265
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 276
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 276
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 287
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 287
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 300
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 300
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 311
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 311
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 322
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 322
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 148
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 154
+# Compile of smart_cargo.v failed with 1 errors.
+# Compile of smart_cargo_fd.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of smart_cargo.v was successful.
+vsim -gui work.tb_smartcargo
+# End time: 01:07:52 on Nov 24,2024, Elapsed time: 0:14:05
+# Errors: 0, Warnings: 44
+# vsim -gui work.tb_smartcargo 
+# Start time: 01:07:52 on Nov 24,2024
+# Loading work.tb_smartcargo
+# Loading work.smart_cargo
+# Loading work.smart_cargo_fd
+# Loading work.registrador_N
+# Loading work.interpretador_andar
+# Loading work.andar_ultrassonico
+# Loading work.interface_hcsr04
+# Loading work.interface_hcsr04_uc
+# Loading work.interface_hcsr04_fd
+# Loading work.gerador_pulso
+# Loading work.contador_cm
+# Loading work.contador_cm_fd
+# Loading work.contador_m
+# Loading work.contador_bcd_3digitos
+# Loading work.contador_cm_uc
+# Loading work.registrador_n
+# Loading work.hexa7seg
+# Loading work.edge_detector
+# Loading work.conversor_andarXcm
+# Loading work.sync_ram_16x7_mod
+# Loading work.ram_conteudo_elevador
+# Loading work.rx_serial_8N1
+# Loading work.rx_serial_8N1_fd
+# Loading work.deslocador_n
+# Loading work.rx_serial_uc
+# Loading work.comparador_85
+# Loading work.contador_p
+# Loading work.uc_movimento
+# Loading work.uc_nova_entrada
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 24, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v Line: 33
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'dbQuintoBitEstado'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_iniciar'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_clock'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_reset'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'andarAtual_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'proxParada_db'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_1'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'Eatual_2'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_bordaSensorAtivo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorSubindo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_motorDescendo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_sensores'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(33): [TFMPC] - Missing connection for port 'db_serial_hex'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'andar_ultrassonico_detec'.  Expected 15, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/interpretador_andar_atual/andar_ultrassonico_detec File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v Line: 35
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_medir'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_echo'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_trigger'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/interpretador_andar.v(35): [TFMPC] - Missing connection for port 'db_estado'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'fila_ram'.  Expected 21, found 18.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/fila_ram File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 164
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'dados_addrSerial'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(164): [TFMPC] - Missing connection for port 'eh_origem_addrSerial'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'conteudo_elevador'.  Expected 12, found 10.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/conteudo_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 185
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(185): [TFMPC] - Missing connection for port 'addr'.
+# ** Warning: (vsim-3722) C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v(185): [TFMPC] - Missing connection for port 'tem_vaga'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 264
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/destino_comp File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 264
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 275
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_usuario File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 275
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 286
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/sentido_elevador File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 286
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 299
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_maior File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 299
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 310
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_menor File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 310
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'ALBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 321
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'AGBi'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/comparador_85.v(3).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/fluxodeDados/verifica_se_endereco_maior_que_origem File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo_fd.v Line: 321
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_andarAtual File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 150
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (2) for port 'hexa'. The port definition is at: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/hexa7seg.v(23).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_smartcargo/dut/display_proxParada File: C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/smart_cargo.v Line: 156
+do wave.do
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Andrew  Hostname: ANDREWCSA  ProcessID: 5160
+#           Attempting to use alternate WLF file "./wlftqr8kvz".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftqr8kvz
+add wave -position insertpoint  \
+sim:/tb_smartcargo/reset \
+sim:/tb_smartcargo/sensoresNeg \
+sim:/tb_smartcargo/iniciar \
+sim:/tb_smartcargo/emergencia \
+sim:/tb_smartcargo/echo \
+sim:/tb_smartcargo/motorDescendoF \
+sim:/tb_smartcargo/motorSubindoF \
+sim:/tb_smartcargo/trigger_sensor_ultrasonico \
+sim:/tb_smartcargo/saida_andar \
+sim:/tb_smartcargo/RX2 \
+sim:/tb_smartcargo/envia_serial \
+sim:/tb_smartcargo/dados_enviados
+add wave -position insertpoint  \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/chegouDestino \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/bordaSensorAtivo \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/fimT \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/temDestino \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/sobe \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/eh_origem \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/dbQuintoBitEstado \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/shift \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/enableRAM \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/contaT \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/zeraT \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/clearAndarAtual \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/clearSuperRam \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/select2 \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/enableAndarAtual \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/Eatual1_db \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/motorSubindo \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/motorDescendo \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/tira_objetos \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/coloca_objetos \
+sim:/tb_smartcargo/dut/UC_MOVIMENTO/Eatual
+add wave -position insertpoint  \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/bordaNovoDestino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/clock \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/iniciar \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/reset \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/carona_origem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/carona_destino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/ramSecDifZero \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/andarRepetidoOrigem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/andarRepetidoDestino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/select1 \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableTopRAM \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/fit \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/select3 \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableRegDestino \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableRegOrigem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/enableRegCaronaOrigem \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/contaAddrSecundario \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/zeraAddrSecundario \
+sim:/tb_smartcargo/dut/UC_NOVA_ENTRADA/Eatual2_db
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Simulation/simulation_smartcargo/wave.do
+run -all
+# Teste concluído.
+# ** Note: $finish    : C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v(122)
+#    Time: 705060 ns  Iteration: 0  Instance: /tb_smartcargo
+# 1
+# Break in Module tb_smartcargo at C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Testbench/tb_smartcargo.v line 122
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Andrew/OneDrive/Documents/USP/PCS3645/SmartCargo/Simulation/simulation_smartcargo/wave.do

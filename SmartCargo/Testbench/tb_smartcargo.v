@@ -14,7 +14,6 @@ module tb_smartcargo;
     wire [1:0]saida_andar;
 
     // Transmissão serial
-    reg RX;
     reg RX2;
 
     reg envia_serial;
@@ -84,9 +83,9 @@ module tb_smartcargo;
     // Testes
     initial begin
         reset = 1;
-	    dados_enviados = 8'b00011100; // 7 bits de dados obj 01, dest 11, org 00 
         #20;  // 20 ns de atraso (correspondente ao 1º ciclo de clock)
         reset = 0;
+        dados_enviados = 8'b00011100; //  bits de dados obj 01, dest 11, org 00 
         iniciar = 0;
         emergencia = 0;
         sensoresNeg = 4'b1110;
@@ -96,12 +95,15 @@ module tb_smartcargo;
         #20;  // 20 ns de atraso
         iniciar = 1;
 
-        // Dados a serem transmitidos via serial (em formato 8N1: 8 bits de dados + 1 start + 1 stop bit)
+        // Dados a serem transmitidos via serial (em formato 8N1: 1 start + 8 bits de dados + 1 stop bit)
         
         #20;
         
         // Começar a transmissão serial
         envia_serial = 1; // Inicia a transmissão
+
+        // DESATIVAR OS SENSORES (1111) APÓS X us E DEPOIS LIGAR NO OUTRO ANDAR 
+
         #250000;
         sensoresNeg = 4'b1110;
         #50000;
@@ -111,7 +113,7 @@ module tb_smartcargo;
         #50000;
         sensoresNeg = 4'b0111;
         dados_enviados = 8'b00011110;
-        envia_serial = 1;  // Atraso para garantir que 1 byte (10 bits) seja transmitido a 115200 bauds (8.68 us por bit)
+        envia_serial = 1;  // Atraso para garantir que 1 byte (8 bits) seja transmitido a 115200 bauds (8.68 us por bit)
         #300000;
         envia_serial = 0;
 

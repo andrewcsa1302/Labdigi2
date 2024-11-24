@@ -4,7 +4,7 @@ module sync_ram_16x7_mod(
     input  [1:0] in_tipo_objeto,
     input  [1:0] in_origem_objeto,
     input  [1:0] in_destino_objeto,
-    input  [3:0] addrSecundarioAnterior,
+    input  [1:0] addrSecundarioAnterior,
     input  [3:0] addrSecundario,
     input  [3:0] addr,
     input  [3:0] addrSerial,

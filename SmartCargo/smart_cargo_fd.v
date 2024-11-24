@@ -40,7 +40,8 @@ module smart_cargo_fd (
  output bordaSensorAtivo,
  output [13:0] db_serial_hex,
  output trigger_sensor_ultrasonico,
- output [1:0] saida_andar
+ output [1:0] saida_andar,
+ output eh_origem_fila
 );
 
 //Declaração de fios gerais 
@@ -51,8 +52,6 @@ wire [1:0] saidaSecundariaAnterior, addrSecundarioAnterior;
 wire objetivoMaiorAnterior, objetivoMenorAtual;
 wire [3:0] addrSecundario, caronaOrigem;
 wire fim_ultrasonico;
-
-wire eh_origem_fila;
 
 wire [1:0] tipo_obj_fila;
 wire [1:0] origem_fila;
@@ -97,8 +96,9 @@ assign proxAndarS = andarAtual + 1;
 // Registradores 
 
 assign andarAtual = saida_andar;
+
 // ENABLE ANDAR ATUAL NAO ESTA SENDO USADO MAIS
-// registrador_4 andarAtual_reg (
+// registrador_N andarAtual_reg (
 //     .clock      (clock),
 //     .clear      (reset),
 //     .enable     (enableAndarAtual),
@@ -107,7 +107,7 @@ assign andarAtual = saida_andar;
 // );
 
 
-registrador_4 reg_origem(
+registrador_N #(2) reg_origem(
     .clock      (clock),
     .clear      (reset),
     .enable     (bordaNovaOrigem),
@@ -115,7 +115,7 @@ registrador_4 reg_origem(
     .Q          (saidaRegOrigem)
 );
 
-registrador_4 reg_destino(
+registrador_N #(2) reg_destino(
     .clock     (clock),
     .clear     (reset),
     .enable    (enableRegDestino),
@@ -123,7 +123,7 @@ registrador_4 reg_destino(
     .Q         (saidaRegDestino)
 );
 
-registrador_4 reg_carona_origem(
+registrador_N #(4) reg_carona_origem(
     .clock     (clock),
     .clear     (reset),
     .enable    (enableRegCaronaOrigem),
@@ -180,6 +180,7 @@ sync_ram_16x7_mod fila_ram(
     .destino_objeto             (destino_fila),
     .saidaSecundaria            (saidaSecundaria),
     .saidaSecundariaAnterior    (saidaSecundariaAnterior)
+    // faltas os addrSerial, dados_addrSerial, eh_origem_addrSerial
 );
 ram_conteudo_elevador conteudo_elevador (
     .clk                (clock),
@@ -192,6 +193,7 @@ ram_conteudo_elevador conteudo_elevador (
     .andar_atual        (andarAtual),
     .tipo_objeto        (), // desconectado - vai ser usado na transmissao serial
     .destino_objeto     ()  // desconectado vai ser usado na transmissao serial
+    // falta addr e tem_vaga
 );
 
 // Recepcao serial dos sinais

@@ -10,14 +10,14 @@ module uc_movimento(
     input       eh_origem,  
     output reg  dbQuintoBitEstado, 
     output reg  shift,
-    output reg  enableRAM,
-    output reg  contaT,
+    output reg  enableRAM, // falta designacao
+    output reg  contaT, 
     output reg  zeraT,
-    output reg  clearAndarAtual,
+    output reg  clearAndarAtual, // falta designacao
     output reg  clearSuperRam,
     output reg  select2,
     output reg  enableAndarAtual,
-    output [3:0]Eatual1_db,
+    output [3:0] Eatual1_db,
     output reg motorSubindo,
     output reg motorDescendo,
     output reg tira_objetos,
@@ -27,7 +27,7 @@ module uc_movimento(
 
 // variaveis internas da UC
 
-reg [1:0] acaoElevador;  // 00 vazio, 01 subindo, 10 descendo, 11 parado
+// reg [1:0] acaoElevador;  // 00 vazio, 01 subindo, 10 descendo, 11 parado
 
 reg [4:0] Eatual, Eprox;
 
@@ -110,6 +110,10 @@ end
 
         motorDescendo       = (Eatual == registra_descendo || Eatual == descendo || Eatual == checa_descendo);
         motorSubindo        = (Eatual == registra_subindo || Eatual == subindo || Eatual == checa_subindo);
+
+        // inicializacoes
+        clearSuperRam       = (Eatual == inicializa_elementos);
+
     end
 
 endmodule
