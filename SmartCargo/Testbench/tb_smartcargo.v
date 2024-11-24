@@ -24,6 +24,9 @@ module tb_smartcargo;
     reg [7:0] tx_data;   // Registrador de dados para transmissão (1 byte)
     reg serial_busy;     // Flag de transmissão
 
+    reg [1:0] andar_atual_simulado;
+    reg [3:0] sensores_simulados;
+
     integer i;
     
     // Contador de ciclos para temporizar a transmissão serial
@@ -91,6 +94,7 @@ module tb_smartcargo;
         sensoresNeg = 4'b1110;
         echo = 0;
         RX2 = 1;
+        andar_atual_simulado = 2'b00;
         
         #20;  // 20 ns de atraso
         iniciar = 1;
@@ -105,17 +109,52 @@ module tb_smartcargo;
         // DESATIVAR OS SENSORES (1111) APÓS X us E DEPOIS LIGAR NO OUTRO ANDAR 
 
         #250000;
-        sensoresNeg = 4'b1110;
-        #50000;
-        sensoresNeg = 4'b1101;
-        #50000;
-        sensoresNeg = 4'b1011;
-        #50000;
-        sensoresNeg = 4'b0111;
+        // sensoresNeg = 4'b1110;
+        // #1000;
+        // sensoresNeg = 4'b1111;
+        // #50000;
+        // sensoresNeg = 4'b1101;
+        // #1000;
+        // sensoresNeg = 4'b1111;
+        // #50000;
+        // sensoresNeg = 4'b1011;
+        // #1000;
+        // sensoresNeg = 4'b1111;
+        // #50000;
+        // sensoresNeg = 4'b0111;
+        // #1000;
+        sensoresNeg = 4'b1111;
+
+        while (motorDescendoF || motorSubindoF) begin
+            sensoresNeg = 4'b1111;
+            #50000; // tempo entre andares (nenhum sensor ligado)
+            if (motorDescendoF == 1'b1) begin
+                andar_atual_simulado = andar_atual_simulado - 1;
+            end else if (motorSubindoF == 1'b1) begin
+                andar_atual_simulado = andar_atual_simulado + 1;
+            end
+            sensoresNeg <= sensores_simulados;
+            #1000; // tempo que os sensores estão ativados porque estão parados em um andar
+        end
+
+
         dados_enviados = 8'b00011110;
         envia_serial = 1;  // Atraso para garantir que 1 byte (8 bits) seja transmitido a 115200 bauds (8.68 us por bit)
-        #300000;
+        #1000;
         envia_serial = 0;
+
+        while (motorDescendoF || motorSubindoF) begin
+            sensoresNeg = 4'b1111;
+            #50000; // tempo entre andares (nenhum sensor ligado)
+            if (motorDescendoF == 1'b1) begin
+                andar_atual_simulado = andar_atual_simulado - 1;
+            end else if (motorSubindoF == 1'b1) begin
+                andar_atual_simulado = andar_atual_simulado + 1;
+            end
+            sensoresNeg <= sensores_simulados;
+            #1000; // tempo que os sensores estão ativados porque estão parados em um andar
+        end
+
 
         // Aguardar a recepção e processamento
         #1000;  // 1000 ns de espera
@@ -124,5 +163,24 @@ module tb_smartcargo;
         $display("Teste concluído.");
         $finish;
     end
+
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        sensores_simulados <= 4'b1111;
+    end else
+    if (iniciar) begin
+        if (andar_atual_simulado == 2'b00) begin
+            sensores_simulados <= 4'b1110;
+        end else if (andar_atual_simulado == 2'b01) begin
+            sensores_simulados <= 4'b1101;
+        end else if (andar_atual_simulado == 2'b10) begin
+            sensores_simulados <= 4'b1011;
+        end else if (andar_atual_simulado == 2'b11) begin
+            sensores_simulados <= 4'b0111;
+        end
+    end
+end
+
+
 
 endmodule

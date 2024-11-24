@@ -85,7 +85,7 @@ assign temDestino               = (tipo_obj_fila[1] | tipo_obj_fila[0]); // nao 
 
 assign andarRepetidoOrigem      = (mesmoSentido & mesmoAndar);
 assign andarRepetidoDestino     = (mesmoAndar & enderecoMaiorQueOrigem);
-assign sensorAtivo              = (sensores[0] | sensores[1] | sensores[2] | sensores[3]);
+assign sensorAtivo              = (sensores[0] || sensores[1] || sensores[2] || sensores[3]);
 
 //Somador e subtrator do registrador do andar atual
 
@@ -95,17 +95,13 @@ assign proxAndarS = andarAtual + 1;
 
 // Registradores 
 
-assign andarAtual = saida_andar;
-
-// ENABLE ANDAR ATUAL NAO ESTA SENDO USADO MAIS
-// registrador_N andarAtual_reg (
-//     .clock      (clock),
-//     .clear      (reset),
-//     .enable     (enableAndarAtual),
-//     .D          (saida_andar),
-//     .Q          (andarAtual) 
-// );
-
+registrador_N #(2) andarAtual_reg (
+    .clock      (clock),
+    .clear      (reset),
+    .enable     (enableAndarAtual),
+    .D          (saida_andar),
+    .Q          (andarAtual) 
+);
 
 registrador_N #(2) reg_origem(
     .clock      (clock),
@@ -262,8 +258,8 @@ contador_m #(2000,14) timer_2seg(
 // Comparadores
 
 comparador_85 #(2) destino_comp(
-    .ALBi   (0),
-    .AGBi   (0), 
+    .ALBi   (1'b0),
+    .AGBi   (1'b0), 
     .AEBi   (1'b1), 
     .A      (proxParada), 
     .B      (andarAtual), 
