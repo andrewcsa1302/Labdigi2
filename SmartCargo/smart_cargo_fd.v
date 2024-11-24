@@ -5,13 +5,13 @@ module smart_cargo_fd (
  input enableRAM,
  input enableTopRAM,
  input select1,
- input select2,
+ input select2, // nao esta sendo usado
  input select3,
  input zeraT,
  input contaT,
  input clearAndarAtual,
  input clearSuperRam, 
- input enableAndarAtual,
+ input enableAndarAtual, // NÃO ESTA SENDO USADO
  input enableRegOrigem,
  input enableRegDestino,
  input zeraAddrSecundario,
@@ -44,44 +44,45 @@ module smart_cargo_fd (
 );
 
 //Declaração de fios gerais 
-wire [3:0] proxAndarD, proxAndarS ; // proximo andar caso suba e proximo andar caso desça
-wire [3:0] saidaRegDestino, saidaRegOrigem, saidaSecundaria;
-wire sentidoUsuario, elevadorSubindo, enderecoMaiorQueOrigem, bordaNovaOrigem, mesmoAndar;
-wire [3:0] saidaSecundariaAnterior, addrSecundarioAnterior;
+wire [1:0] proxAndarD, proxAndarS ; // proximo andar caso suba e proximo andar caso desça
+wire [1:0] saidaRegDestino, saidaRegOrigem, saidaSecundaria;
+wire sentidoUsuario, enderecoMaiorQueOrigem, bordaNovaOrigem, mesmoAndar;
+wire [1:0] saidaSecundariaAnterior, addrSecundarioAnterior;
 wire objetivoMaiorAnterior, objetivoMenorAtual;
 wire [3:0] addrSecundario, caronaOrigem;
 wire fim_ultrasonico;
 
-wire wire_eh_origem_objeto_da_vez;
-wire [1:0] wire_tipo_objeto_da_vez;
-wire [1:0] wire_origem_objeto_da_vez;
-wire [1:0] wire_destino_objeto_da_vez;
+wire eh_origem_fila;
 
-assign proxParada = wire_destino_objeto_da_vez;
+wire [1:0] tipo_obj_fila;
+wire [1:0] origem_fila;
+wire [1:0] destino_fila;
+
+assign proxParada = destino_fila;
 
 // Recepcao serial : 2 bits mais significativos nao sao usados, 
 // 2 bits: tipo_obj, 2 bits: destino_obj, 2 bits: origem_obj
 
 wire serial_recebido;
-wire [7:0] dados_serial;
+wire [7:0] dados_serial_recebido;
 wire [1:0] origemSerial, destinoSerial, tipoSerial;
 
-assign origemSerial = dados_serial[1:0];
-assign destinoSerial = dados_serial[3:2];
-assign tipoSerial = dados_serial[5:4];
+assign origemSerial = dados_serial_recebido[1:0];
+assign destinoSerial = dados_serial_recebido[3:2];
+assign tipoSerial = dados_serial_recebido[5:4];
 
 // Multiplexadores
-wire [3:0] mux1, mux2, mux3;
+wire [1:0] mux1, mux2, mux3;
 assign mux1 = select1? saidaRegOrigem : saidaRegDestino ; 
-assign mux2 = select2? proxAndarS : proxAndarD ; // nao esta sendo usado
+// assign mux2 = select2? proxAndarS : proxAndarD ; // nao esta sendo usado
 assign mux3 = select3? andarAtual : saidaSecundariaAnterior;
 // Portas lógicas
 
 assign mesmoSentido             = ~(sentidoElevador ^ sentidoUsuario);
 assign carona_origem            = (mesmoSentido & objetivoMaiorAnterior & objetivoMenorAtual & ramSecDifZero);
 assign carona_destino           = (objetivoMaiorAnterior & objetivoMenorAtual & ramSecDifZero & enderecoMaiorQueOrigem);
-assign ramSecDifZero            = (saidaSecundaria[3] | saidaSecundaria[2] | saidaSecundaria[1] | saidaSecundaria[0]); 
-assign temDestino               = (proxParada[0] | proxParada[1]);
+assign ramSecDifZero            = (saidaSecundaria[1] | saidaSecundaria[0]); 
+assign temDestino               = (tipo_obj_fila[1] | tipo_obj_fila[0]); // nao tem destino se o tipo do objeto do prox da fila for 00
 
 assign andarRepetidoOrigem      = (mesmoSentido & mesmoAndar);
 assign andarRepetidoDestino     = (mesmoAndar & enderecoMaiorQueOrigem);
@@ -95,13 +96,15 @@ assign proxAndarS = andarAtual + 1;
 
 // Registradores 
 
-registrador_4 andarAtual_reg (
-    .clock      (clock),
-    .clear      (reset),
-    .enable     (enableAndarAtual),
-    .D          (saida_andar),
-    .Q          (andarAtual) 
-);
+assign andarAtual = saida_andar;
+// ENABLE ANDAR ATUAL NAO ESTA SENDO USADO MAIS
+// registrador_4 andarAtual_reg (
+//     .clock      (clock),
+//     .clear      (reset),
+//     .enable     (enableAndarAtual),
+//     .D          (saida_andar),
+//     .Q          (andarAtual) 
+// );
 
 
 registrador_4 reg_origem(
@@ -171,18 +174,18 @@ sync_ram_16x7_mod fila_ram(
     .weT                        (enableTopRAM),
     .fit                        (fit),
     .clear                      (reset),
-    .eh_origem                  (wire_eh_origem_objeto_da_vez),
-    .tipo_objeto                (wire_tipo_objeto_da_vez),
-    .origem_objeto              (wire_origem_objeto_da_vez),
-    .destino_objeto             (wire_destino_objeto_da_vez),
+    .eh_origem                  (eh_origem_fila),
+    .tipo_objeto                (tipo_obj_fila),
+    .origem_objeto              (origem_fila),
+    .destino_objeto             (destino_fila),
     .saidaSecundaria            (saidaSecundaria),
     .saidaSecundariaAnterior    (saidaSecundariaAnterior)
 );
 ram_conteudo_elevador conteudo_elevador (
     .clk                (clock),
     .clear              (reset),
-    .in_tipo_objeto     (wire_tipo_objeto_da_vez),
-    .in_destino_objeto  (wire_destino_objeto_da_vez),
+    .in_tipo_objeto     (tipo_obj_fila),
+    .in_destino_objeto  (destino_fila),
     .shift              (), // desconectado
     .weT                (coloca_objetos),
     .tira_objetos       (tira_objetos),
@@ -193,12 +196,12 @@ ram_conteudo_elevador conteudo_elevador (
 
 // Recepcao serial dos sinais
 
-rx_serial_8N1 serial (
+rx_serial_8N1 recepcao_serial (
 .clock                      (clock),
 .reset                      (reset),
 .RX                         (RX),
 .pronto                     (serial_recebido),
-.dados_ascii                (dados_serial),
+.dados_ascii                (dados_serial_recebido),
 .db_clock                   ( ), // desconectado
 .db_tick                    ( ), // desconectado
 .db_dados                   ( ), // desconectado
@@ -208,12 +211,12 @@ rx_serial_8N1 serial (
 // Depuracao da recepcao serial
 
 hexa7seg HEX_MENOS_SIGNIFICATIVO ( 
-.hexa    ( dados_serial [3:0] ), 
+.hexa    ( dados_serial_recebido [3:0] ), 
 .display ( db_serial_hex [6:0]      )
 );
     
 hexa7seg HEX_MAIS_SIGNIFICATIVO ( 
-.hexa    ( dados_serial [7:4] ), 
+.hexa    ( dados_serial_recebido [7:4] ), 
 .display ( db_serial_hex [13:7]     )
 );
 
@@ -256,9 +259,9 @@ contador_m #(2000,14) timer_2seg(
 
 // Comparadores
 
-comparador_85 destino_comp(
-    .ALBi   (),
-    .AGBi   (), 
+comparador_85 #(2) destino_comp(
+    .ALBi   (0),
+    .AGBi   (0), 
     .AEBi   (1'b1), 
     .A      (proxParada), 
     .B      (andarAtual), 
@@ -267,7 +270,7 @@ comparador_85 destino_comp(
     .AEBo   (chegouDestino)
 );
 
-comparador_85 sentido_usuario(
+comparador_85 #(2) sentido_usuario(
     .ALBi   (0),
     .AGBi   (0), 
     .AEBi   (1'b1), 
@@ -278,7 +281,7 @@ comparador_85 sentido_usuario(
     .AEBo   ()
 );
 
-comparador_85 sentido_elevador(
+comparador_85 #(2) sentido_elevador(
     .ALBi   (0),
     .AGBi   (0), 
     .AEBi   (1'b1), 
@@ -291,7 +294,7 @@ comparador_85 sentido_elevador(
 
 
 
-comparador_85 verifica_se_maior(
+comparador_85 #(2) verifica_se_maior(
     .ALBi   (0),
     .AGBi   (0), 
     .AEBi   (1'b1), 
@@ -302,7 +305,7 @@ comparador_85 verifica_se_maior(
     .AEBo   ()
 );
 
-comparador_85 verifica_se_menor(
+comparador_85 #(2) verifica_se_menor(
     .ALBi   (0),
     .AGBi   (0), 
     .AEBi   (1'b1), 
@@ -313,7 +316,7 @@ comparador_85 verifica_se_menor(
     .AEBo   (mesmoAndar)
 );
 
-comparador_85 verifica_se_endereco_maior_que_origem(
+comparador_85 #(4) verifica_se_endereco_maior_que_origem(
     .ALBi   (0),
     .AGBi   (0), 
     .AEBi   (1'b1), 
