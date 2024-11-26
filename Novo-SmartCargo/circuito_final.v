@@ -4,6 +4,7 @@ module circuito_final(
     input [3:0]sensoresNeg,
     input reset, 
     input emergencia,
+    input RX,
     output dbQuintoBitEstado,
     output db_iniciar,
 	output db_clock,
@@ -183,12 +184,12 @@ hexa7seg display_estado2(
 
 hexa7seg HEX_MENOS_SIGNIFICATIVO ( 
 .hexa    ( dados_serial_recebido [3:0] ), 
-.display ( db_serial_hex_menos [6:0]    )
+.display ( db_serial_hex_menos    )
 );
     
 hexa7seg HEX_MAIS_SIGNIFICATIVO ( 
 .hexa    ( dados_serial_recebido [7:4] ), 
-.display ( db_serial_hex_mais [13:7]    )
+.display ( db_serial_hex_mais     )
 );
 
 
