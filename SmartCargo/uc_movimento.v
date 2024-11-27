@@ -10,14 +10,14 @@ module uc_movimento(
     input       eh_origem,  
     output reg  dbQuintoBitEstado, 
     output reg  shift,
-    output reg  enableRAM, // falta designacao
+    output reg  enableRAM, 
     output reg  contaT, 
     output reg  zeraT,
-    output reg  clearAndarAtual, // falta designacao
+    output reg  clearAndarAtual,
     output reg  clearSuperRam,
     output reg  select2,
     output reg  enableAndarAtual,
-    output [3:0] Eatual1_db,
+    output reg [3:0] Eatual1_db,
     output reg motorSubindo,
     output reg motorDescendo,
     output reg tira_objetos,
@@ -30,11 +30,6 @@ module uc_movimento(
 // reg [1:0] acaoElevador;  // 00 vazio, 01 subindo, 10 descendo, 11 parado
 
 reg [4:0] Eatual, Eprox;
-
-
-
-assign Eatual1_db = Eatual[3:0];
-
 
 
 // estados da máquina de estados
@@ -54,15 +49,10 @@ parameter entra_elevador        = 5'b01011; // B
 parameter sai_elevador          = 5'b01100; // C
 
 
-
-
-initial Eatual = inicial;
-
 // Transicao de estado todo clock
 always @(posedge clock or posedge reset) begin
     if (reset)
         Eatual <= inicial;
-    
     else
         Eatual <= Eprox;
 end
@@ -74,7 +64,7 @@ always @* begin
         // Transicao usual 
         inicial:                    Eprox = iniciar? inicializa_elementos : inicial;
         inicializa_elementos:       Eprox = prox_pedido;
-        prox_pedido:                Eprox = (temDestino? (sobe? subindo : descendo) : prox_pedido);
+        prox_pedido:                Eprox = temDestino? (sobe? subindo : descendo) : prox_pedido;
         subindo:                    Eprox = bordaSensorAtivo? registra_subindo : subindo;
         descendo:                   Eprox = bordaSensorAtivo? registra_descendo : descendo;
         checa_subindo:              Eprox = chegouDestino ? (eh_origem? entra_elevador : sai_elevador) : subindo;
@@ -85,14 +75,12 @@ always @* begin
         sai_elevador:               Eprox = shift_fila;
         shift_fila:                 Eprox = aguarda_passageiro; 
         aguarda_passageiro:         Eprox = fimT? prox_pedido : aguarda_passageiro;
-
         default:                    Eprox = inicial;
     endcase
 end
 
     // Logica dos sinais de controle
     always @* begin
-
         shift               = (Eatual == shift_fila);
 
         contaT              = ((Eatual == descendo) || (Eatual == subindo) || (Eatual == aguarda_passageiro));
@@ -113,7 +101,27 @@ end
 
         // inicializacoes
         clearSuperRam       = (Eatual == inicializa_elementos);
+        clearAndarAtual     = (Eatual == inicializa_elementos);
 
+        enableRAM = 1'b0;
+
+        // Saida de depuracao (estado)
+        case (Eatual)
+            5'b00000: Eatual1_db = 5'b00000; // inicial
+            5'b00001: Eatual1_db = 5'b00001; // inicializa_elementos
+            5'b00010: Eatual1_db = 5'b00010; // prox_pedido
+            5'b00011: Eatual1_db = 5'b00011; // subindo
+            5'b00100: Eatual1_db = 5'b00100; // descendo
+            5'b00101: Eatual1_db = 5'b00101; // registra_subindo
+            5'b00110: Eatual1_db = 5'b00110; // checa_subindo
+            5'b00111: Eatual1_db = 5'b00111; // shift_fila
+            5'b01000: Eatual1_db = 5'b01000; // aguarda_passageiro
+            5'b01001: Eatual1_db = 5'b01001; // registra_descendo
+            5'b01010: Eatual1_db = 5'b01010; // checa_descendo
+            5'b01011: Eatual1_db = 5'b01011; // entra_elevador
+            5'b01100: Eatual1_db = 5'b01100; // sai_elevador
+            default:  Eatual1_db = 5'b00000; // valor padrão (caso não corresponda a nenhum estado)
+        endcase
     end
 
 endmodule

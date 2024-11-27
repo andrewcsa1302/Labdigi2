@@ -135,9 +135,13 @@ module sync_ram_16x7_mod(
             ram[addrSecundario] = data;
         end
         
+
+        end
+    end
+
+    always @(posedge clk) begin
         addr_reg <= addr;
         addrSerial_reg <= addrSerial;
-        end
     end
 
     // Atribuicao continua

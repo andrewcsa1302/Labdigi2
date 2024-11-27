@@ -17,13 +17,12 @@ module uc_nova_entrada(
     output reg enableRegCaronaOrigem,
     output reg contaAddrSecundario,
     output reg zeraAddrSecundario,
-    output [3:0]Eatual2_db
+    output reg [3:0] Eatual2_db
 );
 
 
 reg [3:0] Eatual, Eprox;
 
-assign Eatual2_db = Eatual[3:0];
 
 parameter espera_jogada             = 4'b0000; // 0
 parameter registra_jogada           = 4'b0001; // 1
@@ -54,7 +53,6 @@ end
     // Transição de Estados
 always @* begin
     case (Eatual)
-
         espera_jogada:              Eprox = bordaNovoDestino? registra_jogada : espera_jogada;
         registra_jogada:            Eprox = compara_primeiro_origem;
         compara_primeiro_origem:    Eprox = carona_origem? encaixa_origem : proximo_origem;
@@ -92,9 +90,25 @@ always @* begin
     // Muxs
     select3                 = (Eatual == registra_jogada);
     select1                 = ((Eatual == registra_jogada) || (Eatual == compara_origem) || (Eatual == compara_primeiro_origem) || (Eatual == proximo_origem) || (Eatual == encaixa_origem) || (Eatual == escreve_topo_origem) );
-
-
-
+           
+        case (Eatual)
+            4'b0000: Eatual2_db = 4'b0000; // espera_jogada
+            4'b0001: Eatual2_db = 4'b0001; // registra_jogada
+            4'b0010: Eatual2_db = 4'b0010; // compara_primeiro_origem
+            4'b0011: Eatual2_db = 4'b0011; // compara_origem
+            4'b0100: Eatual2_db = 4'b0100; // proximo_origem
+            4'b0101: Eatual2_db = 4'b0101; // encaixa_origem
+            4'b0110: Eatual2_db = 4'b0110; // escreve_topo_origem
+            4'b0111: Eatual2_db = 4'b0111; // escreve_topo_destino
+            4'b1000: Eatual2_db = 4'b1000; // prepara_destino
+            4'b1001: Eatual2_db = 4'b1001; // pula
+            4'b1010: Eatual2_db = 4'b1010; // proximo_destino
+            4'b1011: Eatual2_db = 4'b1011; // compara_destino
+            4'b1100: Eatual2_db = 4'b1100; // encaixa_destino
+            4'b1101: Eatual2_db = 4'b1101; // descarta_origem
+            4'b1110: Eatual2_db = 4'b1110; // descarta_destino
+            default: Eatual2_db = 4'b0000; // valor padrão (caso não corresponda a nenhum estado)
+        endcase
 end
 
 

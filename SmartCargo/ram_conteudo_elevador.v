@@ -59,9 +59,13 @@ module ram_conteudo_elevador (
         //     end
         // end
 
-        addr_reg <= addr;
 
     end
+	 
+    always @(posedge clk) begin
+    addr_reg <= addr;
+    end
+
 
     // Atribuição contínua
     assign tipo_objeto = ram[addr_reg][3:2];
