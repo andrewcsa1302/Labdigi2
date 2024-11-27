@@ -1,5 +1,4 @@
 module andar_atual(
-
     input        clock,
     input        reset,
     input        medir,
@@ -10,7 +9,7 @@ module andar_atual(
     output wire [6:0] hex1,
     output wire [6:0] hex2,
 	 output wire [6:0] hex3,
-	 output wire  [1:0] saida_andar,
+	 output wire [1:0] saida_andar,
     output       pronto
 
 );
@@ -38,12 +37,13 @@ andar_ultrassonico andar_ultrassonico_detec(
     .medir			(medir),
     .echo			(echo),
     .trigger		(trigger),
-	 .hex1			(hex1),
-	 .hex2			(hex2),
-	 .hex3			(hex3),
-	 .saida_andar  (s_saida_andar),
+    .hex1			(hex1),
+    .hex2			(hex2),
+    .hex3			(hex3),
+    .saida_andar  (s_saida_andar),
     .pronto			(pronto)
-);	 
+);
+
 assign s_andar = {2'b00, s_display};
 
     hexa7seg H0 (

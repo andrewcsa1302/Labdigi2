@@ -129,7 +129,6 @@ registrador_N #(4) reg_carona_origem(
     .Q         (caronaOrigem)
 );
 
-// Mostra andar atual
 
 interpretador_andar interpretador_andar_atual( 
     .clock(clock),
@@ -139,14 +138,14 @@ interpretador_andar interpretador_andar_atual(
 	.sensores(sensores),
     .trigger(trigger_sensor_ultrasonico),
     .hex0(),
-    .hex1(),
-    .hex2(),
+    .hex1(db_serial_hex [6:0]),
+    .hex2(db_serial_hex [13:7]),
     .hex3(),
     .saida_andar(saida_andar),
     .pronto()
 );
 
-contador_m #(5000,16) timer_ultrasonico(
+contador_m #(50000000,26) timer_ultrasonico(
     .clock      (clock),
     .zera_as    (),
     .zera_s     (reset),
@@ -212,12 +211,12 @@ rx_serial_8N1 recepcao_serial (
 
 hexa7seg HEX_MENOS_SIGNIFICATIVO ( 
 .hexa    ( dados_serial_recebido [3:0] ), 
-.display ( db_serial_hex [6:0]      )
+.display (       )
 );
     
 hexa7seg HEX_MAIS_SIGNIFICATIVO ( 
 .hexa    ( dados_serial_recebido [7:4] ), 
-.display ( db_serial_hex [13:7]     )
+.display (    )
 );
 
 // detector de bordas

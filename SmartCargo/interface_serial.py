@@ -9,7 +9,7 @@ from serial import SerialException
 
 # Configura a conexão serial (ajuste a porta COM e a taxa de baud conforme necessário)
 try:
-    ser = serial.Serial(port='COM3', baudrate=115200, bytesize=serial.EIGHTBITS)  # Substitua 'COM8' pela porta correta
+    ser = serial.Serial(port='COM19', baudrate=115200, bytesize=serial.EIGHTBITS)  # Substitua 'COM8' pela porta correta
     serial_status = True
 except serial.SerialException:
     serial_status = False

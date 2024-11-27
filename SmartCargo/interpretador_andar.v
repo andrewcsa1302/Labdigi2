@@ -4,7 +4,7 @@ module interpretador_andar(
     input        reset,
     input        medir,
     input        echo,
-	 input  [3:0] sensores,
+	input  [3:0] sensores,
     output       trigger,
     output wire [6:0] hex0,
     output wire [6:0] hex1,
@@ -32,16 +32,16 @@ assign s_display =     (sensores == 4'b0000)? s_saida_andar: compara[1:0];
 assign saida_andar = s_display;
 
 
-andar_ultrassonico andar_ultrassonico_detec(
+interface_ultrassonico andar_ultrassonico_detec(
     .clock			(clock),
     .reset			(reset),
     .medir			(medir),
     .echo			(echo),
     .trigger		(trigger),
-	 .hex1			(hex1),
-	 .hex2			(hex2),
-	 .hex3			(hex3),
-	 .saida_andar  (s_saida_andar),
+    .hex1			(hex1),
+    .hex2			(hex2),
+    .hex3			(hex3),
+    .saida_andar  (s_saida_andar),
     .pronto			(pronto)
 );	 
 assign s_andar = {2'b00, s_display};
