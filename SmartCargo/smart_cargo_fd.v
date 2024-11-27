@@ -23,6 +23,7 @@ module smart_cargo_fd (
  input RX,
  input echo,
  input inicia_ultrasonico,
+ input guarda_origem_ram, // para determinar o que será colocado no destino na fila
  output chegouDestino,
  output bordaNovoDestino,
  output fimT,
@@ -55,9 +56,7 @@ wire fim_ultrasonico;
 
 wire [1:0] tipo_obj_fila;
 wire [1:0] origem_fila;
-wire [1:0] destino_fila;
 
-assign proxParada = destino_fila;
 
 // Recepcao serial : 2 bits mais significativos nao sao usados, 
 // 2 bits: tipo_obj, 2 bits: destino_obj, 2 bits: origem_obj
@@ -71,10 +70,13 @@ assign destinoSerial = dados_serial_recebido[3:2];
 assign tipoSerial = dados_serial_recebido[5:4];
 
 // Multiplexadores
-wire [1:0] mux1, mux2, mux3;
+wire [1:0] mux1, mux2, mux3, destino_fila;
 assign mux1 = select1? saidaRegOrigem : saidaRegDestino ; 
 // assign mux2 = select2? proxAndarS : proxAndarD ; // nao esta sendo usado
 assign mux3 = select3? andarAtual : saidaSecundariaAnterior;
+
+assign destino_fila = guarda_origem_ram? saidaRegOrigem : saidaRegDestino; // se é para guardar uma origem ou um destino na RAM
+
 // Portas lógicas
 
 assign mesmoSentido             = ~(sentidoElevador ^ sentidoUsuario);
@@ -139,8 +141,8 @@ interpretador_andar interpretador_andar_atual(
     .hex0(),
     .hex1(),
     .hex2(),
-	 .hex3(),
-	 .saida_andar(saida_andar),
+    .hex3(),
+    .saida_andar(saida_andar),
     .pronto()
 );
 
@@ -162,7 +164,7 @@ sync_ram_16x7_mod fila_ram(
     .we                         (enableRAM),
     .in_tipo_objeto             (tipoSerial),
     .in_origem_objeto           (saidaRegOrigem),
-    .in_destino_objeto          (saidaRegDestino),
+    .in_destino_objeto          (destino_fila),
     .addrSecundario             (addrSecundario), // usado para dar o fit na memória
     .addrSecundarioAnterior     (addrSecundarioAnterior), // usado para a UC entender o sentido entre dois registros da memória
     .addr                       (4'b0000),
@@ -173,7 +175,7 @@ sync_ram_16x7_mod fila_ram(
     .eh_origem                  (eh_origem_fila),
     .tipo_objeto                (tipo_obj_fila),
     .origem_objeto              (origem_fila),
-    .destino_objeto             (destino_fila),
+    .destino_objeto             (proxParada),
     .saidaSecundaria            (saidaSecundaria),
     .saidaSecundariaAnterior    (saidaSecundariaAnterior)
     // faltas os addrSerial, dados_addrSerial, eh_origem_addrSerial
@@ -182,7 +184,7 @@ ram_conteudo_elevador conteudo_elevador (
     .clk                (clock),
     .clear              (reset),
     .in_tipo_objeto     (tipo_obj_fila),
-    .in_destino_objeto  (destino_fila),
+    .in_destino_objeto  (proxParada), // nao necessariamente pq pode estar levando outros- CORRIGIR 
     .shift              (), // desconectado
     .weT                (coloca_objetos),
     .tira_objetos       (tira_objetos),

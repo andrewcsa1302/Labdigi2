@@ -11,7 +11,7 @@ module tb_smartcargo;
     wire motorDescendoF;
     wire motorSubindoF;
     wire trigger_sensor_ultrasonico; 
-    wire [1:0]saida_andar;
+    wire [1:0] saida_andar;
 
     // Transmissão serial
     reg RX2;
@@ -25,7 +25,8 @@ module tb_smartcargo;
     reg serial_busy;     // Flag de transmissão
 
     reg [1:0] andar_atual_simulado;
-    reg [3:0] sensores_simulados;
+
+    reg imprima_memoria;
 
     integer i;
     
@@ -51,15 +52,97 @@ module tb_smartcargo;
     initial clk = 0;
     always #10 clk = ~clk; // Toggling a cada 10 ns -> 50 MHz
 
-    // Contador de ciclos para temporizar a transmissão de bits a 115200 bauds
+
+
+    // Testes
+    initial begin
+        reset = 1;
+        #20;  // 20 ns de atraso (correspondente ao 1º ciclo de clock)
+        reset = 0;
+        iniciar = 0;
+        emergencia = 0;
+        echo = 0;
+        imprima_memoria = 0;
+        #20;  // 20 ns de atraso
+        iniciar = 1;
+        // Primeira transmissao serial:
+        dados_enviados = 8'b00011101; //  bits de dados obj 01, dest 11, origem 01 
+
+        // Dados a serem transmitidos via serial (em formato 8N1: 1 start + 8 bits de dados + 1 stop bit)
+        
+        #20;
+        
+        // Começar a transmissão serial
+        envia_serial = 1; // Inicia a transmissão
+        #250000;
+
+
+        dados_enviados = 8'b00011110; // obj 01, dest 11, origem 10
+        envia_serial = 1; 
+        #800000;
+        envia_serial = 0;
+
+
+        $display("Teste concluido.");
+        $finish;
+    end
+
+    // Função para calcular os sensores simulados
+    function [3:0] calcula_sensores(input [1:0] andar_atual);
+        begin
+            case (andar_atual)
+                2'b00: calcula_sensores = 4'b1110;
+                2'b01: calcula_sensores = 4'b1101;
+                2'b10: calcula_sensores = 4'b1011;
+                2'b11: calcula_sensores = 4'b0111;
+                default: calcula_sensores = 4'b1111;
+            endcase
+        end
+    endfunction
+
+    // Lógica de simulação do elevador
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            andar_atual_simulado <= 2'b00;
+        end else begin
+            if (motorDescendoF || motorSubindoF) begin
+                sensoresNeg <= 4'b1111;
+                #50000; // tempo entre andares (nenhum sensor ligado)
+                if (motorDescendoF == 1'b1) begin
+                    if (andar_atual_simulado > 2'b00) begin
+                        andar_atual_simulado <= andar_atual_simulado - 1;
+                        imprima_memoria = 1;
+
+                    end
+                end else if (motorSubindoF == 1'b1) begin
+                    if (andar_atual_simulado < 2'b11) begin
+                        andar_atual_simulado <= andar_atual_simulado + 1;
+                        imprima_memoria = 1;
+                    end
+                end
+                imprima_memoria = 0;
+                sensoresNeg <= calcula_sensores(andar_atual_simulado);
+                #1000; // tempo que os sensores estão ativados porque estão parados em um andar
+            end
+        end
+    end
+
+        // Monitoramento de mudanças no andar_atual_simulado
+    always @(imprima_memoria) begin
+        $display("Conteudo da RAM (andar_atual_simulado = %0d):", andar_atual_simulado);
+        for (i = 0; i < 16; i = i + 1) begin
+            $display("RAM[%0d] = %b", i, dut.fluxodeDados.fila_ram.ram[i]);
+        end
+    end
+
+        // Contador de ciclos para temporizar a transmissão de bits a 115200 bauds
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             ciclo_count <= 0;
             bit_count <= 0;
             RX2 <= 1;  // Linha RX2 começa em nível alto (idle)
-	    
         end else if (envia_serial) begin
-		tx_data <= dados_enviados;
+            tx_data <= dados_enviados;
             if (ciclo_count < 434) begin
                 ciclo_count <= ciclo_count + 1;  // Incrementa o contador de ciclos
             end else begin
@@ -82,105 +165,5 @@ module tb_smartcargo;
             end
         end
     end
-
-    // Testes
-    initial begin
-        reset = 1;
-        #20;  // 20 ns de atraso (correspondente ao 1º ciclo de clock)
-        reset = 0;
-        dados_enviados = 8'b00011100; //  bits de dados obj 01, dest 11, org 00 
-        iniciar = 0;
-        emergencia = 0;
-        sensoresNeg = 4'b1110;
-        echo = 0;
-        RX2 = 1;
-        andar_atual_simulado = 2'b00;
-        
-        #20;  // 20 ns de atraso
-        iniciar = 1;
-
-        // Dados a serem transmitidos via serial (em formato 8N1: 1 start + 8 bits de dados + 1 stop bit)
-        
-        #20;
-        
-        // Começar a transmissão serial
-        envia_serial = 1; // Inicia a transmissão
-
-        // DESATIVAR OS SENSORES (1111) APÓS X us E DEPOIS LIGAR NO OUTRO ANDAR 
-
-        #250000;
-        // sensoresNeg = 4'b1110;
-        // #1000;
-        // sensoresNeg = 4'b1111;
-        // #50000;
-        // sensoresNeg = 4'b1101;
-        // #1000;
-        // sensoresNeg = 4'b1111;
-        // #50000;
-        // sensoresNeg = 4'b1011;
-        // #1000;
-        // sensoresNeg = 4'b1111;
-        // #50000;
-        // sensoresNeg = 4'b0111;
-        // #1000;
-        sensoresNeg = 4'b1111;
-
-        while (motorDescendoF || motorSubindoF) begin
-            sensoresNeg = 4'b1111;
-            #50000; // tempo entre andares (nenhum sensor ligado)
-            if (motorDescendoF == 1'b1) begin
-                andar_atual_simulado = andar_atual_simulado - 1;
-            end else if (motorSubindoF == 1'b1) begin
-                andar_atual_simulado = andar_atual_simulado + 1;
-            end
-            sensoresNeg <= sensores_simulados;
-            #1000; // tempo que os sensores estão ativados porque estão parados em um andar
-        end
-
-
-        dados_enviados = 8'b00011110;
-        envia_serial = 1;  // Atraso para garantir que 1 byte (8 bits) seja transmitido a 115200 bauds (8.68 us por bit)
-        #1000;
-        envia_serial = 0;
-
-        while (motorDescendoF || motorSubindoF) begin
-            sensoresNeg = 4'b1111;
-            #50000; // tempo entre andares (nenhum sensor ligado)
-            if (motorDescendoF == 1'b1) begin
-                andar_atual_simulado = andar_atual_simulado - 1;
-            end else if (motorSubindoF == 1'b1) begin
-                andar_atual_simulado = andar_atual_simulado + 1;
-            end
-            sensoresNeg <= sensores_simulados;
-            #1000; // tempo que os sensores estão ativados porque estão parados em um andar
-        end
-
-
-        // Aguardar a recepção e processamento
-        #1000;  // 1000 ns de espera
-        #4000;  // 4000 ns de espera
-
-        $display("Teste concluído.");
-        $finish;
-    end
-
-always @(posedge clk or posedge reset) begin
-    if (reset) begin
-        sensores_simulados <= 4'b1111;
-    end else
-    if (iniciar) begin
-        if (andar_atual_simulado == 2'b00) begin
-            sensores_simulados <= 4'b1110;
-        end else if (andar_atual_simulado == 2'b01) begin
-            sensores_simulados <= 4'b1101;
-        end else if (andar_atual_simulado == 2'b10) begin
-            sensores_simulados <= 4'b1011;
-        end else if (andar_atual_simulado == 2'b11) begin
-            sensores_simulados <= 4'b0111;
-        end
-    end
-end
-
-
 
 endmodule

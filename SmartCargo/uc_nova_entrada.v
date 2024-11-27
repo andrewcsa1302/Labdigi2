@@ -17,7 +17,8 @@ module uc_nova_entrada(
     output reg enableRegCaronaOrigem,
     output reg contaAddrSecundario,
     output reg zeraAddrSecundario,
-    output reg [3:0] Eatual2_db
+    output reg [3:0] Eatual2_db,
+    output reg guarda_origem_ram
 );
 
 
@@ -81,6 +82,7 @@ always @* begin
     // RAM
     enableTopRAM            = ((Eatual == escreve_topo_destino) || (Eatual == escreve_topo_origem));
     fit                     = ((Eatual == encaixa_origem) || (Eatual == encaixa_destino));
+    guarda_origem_ram       = ((Eatual == encaixa_origem) || (Eatual == escreve_topo_origem));
 
     // Loads
     enableRegDestino        = (Eatual == registra_jogada);

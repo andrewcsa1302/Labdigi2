@@ -2,7 +2,12 @@
 **/transcript
 **/transcript/*
 
+**/simulation/*
+**/Simulation/*
 
+**/SmartCargo/*
+
+SmartCargo-2611/*
 SmartCargo/Simulation/transcript
 SmartCargo/Simulation/simulation_smartcargo/work/_info
 SmartCargo/Simulation/simulation_smartcargo/work/_lib.qdb
@@ -16,3 +21,11 @@ SmartCargo/Simulation/simulation_serial_automatico/vsim.wlf
 SmartCargo/Simulation/simulation_serial_automatico/sim_serial_automatico.cr.mti
 SmartCargo/Simulation/simulation_smartcargo/sim_SmartCargo.cr.mti
 SmartCargo/Simulation/simulation_smartcargo/vsim.wlf
+Novo-SmartCargo/simulation/teste-novo-smartcargo.mpf
+SmartCargo/Simulation/transcript
+SmartCargo/Simulation/simulation_smartcargo/sim_SmartCargo.cr.mti
+SmartCargo/Simulation/simulation_smartcargo/sim_SmartCargo.mpf
+SmartCargo/Simulation/simulation_smartcargo/wave.do
+SmartCargo/Simulation/simulation_smartcargo/wlftqr8kvz
+SmartCargo/Simulation/simulation_smartcargo/work/_info
+SmartCargo/Simulation/simulation_smartcargo/work/_lib.qdb

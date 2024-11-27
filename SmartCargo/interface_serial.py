@@ -1,13 +1,15 @@
 import tkinter as tk
+from tkinter import messagebox
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
-from tkinter import messagebox
+# from tkinter import messagebox3
 from bitarray import bitarray
 import serial
+from serial import SerialException
 
 # Configura a conexão serial (ajuste a porta COM e a taxa de baud conforme necessário)
 try:
-    ser = serial.Serial(port='COM9', baudrate=115200, bytesize=serial.EIGHTBITS)  # Substitua 'COM8' pela porta correta
+    ser = serial.Serial(port='COM3', baudrate=115200, bytesize=serial.EIGHTBITS)  # Substitua 'COM8' pela porta correta
     serial_status = True
 except serial.SerialException:
     serial_status = False
