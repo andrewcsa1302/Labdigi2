@@ -20,7 +20,7 @@ module interface_ultrassonico (
     // Sinais internos
     wire        s_medir  ;
     wire        s_trigger;
-    wire [11:0] s_medida ;
+    wire [11:0] s_medida, s_medida_imediata ;
     wire [3:0]  s_estado ;
     wire [3:0]  s_andar  ;
     wire [1:0]  andar;
@@ -32,10 +32,19 @@ module interface_ultrassonico (
         .medir    (s_medir  ),
         .echo     (echo     ),
         .trigger  (s_trigger),
-        .medida   (s_medida ),
+        .medida   (s_medida_imediata ),
         .pronto   (pronto   ),
         .db_estado(s_estado )
     );
+
+    // Registrador das medidas para evitar flutuacoes
+    registrador_N #(12) reg_medida_ultrassonico(
+    .clock     (clock),
+    .clear     (reset),
+    .enable    (pronto),
+    .D         (s_medida_imediata),
+    .Q         (s_medida)
+);
 
     // Displays para medida (4 dígitos BCD)
     hexa7seg H0 (
