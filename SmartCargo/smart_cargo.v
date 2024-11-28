@@ -46,8 +46,8 @@ assign db_motorSubindo = motorSubindo;
 assign db_motorDescendo = motorDescendo;
 assign db_sensores = sensoresNeg;
 
-assign motorSubindoF = motorSubindo | emergencia;
-assign motorDescendoF = motorDescendo | emergencia;
+assign motorSubindoF = motorSubindo & ~emergencia;
+assign motorDescendoF = motorDescendo & ~emergencia;
 
 smart_cargo_fd fluxodeDados (
 .clock                      (clock),
