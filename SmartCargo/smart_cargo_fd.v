@@ -145,7 +145,7 @@ interpretador_andar interpretador_andar_atual(
     .pronto()
 );
 
-contador_m #(10000000,24) timer_ultrasonico( //  10_000_000 == 0.2s 10000000
+contador_m #(25000000,25) timer_ultrasonico( //  10_000_000 == 0.2s 10000000
     .clock      (clock),
     .zera_as    (),
     .zera_s     (reset),
@@ -244,7 +244,7 @@ edge_detector detectorDeSensores(
 
 // timer 
 
-contador_m #(2000,14) timer_2seg(
+contador_m #(50000000,26) timer_2seg(
     .clock      (clock),
     .zera_as    (),
     .zera_s     (zeraT),
