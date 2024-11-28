@@ -12,6 +12,7 @@ module tb_smartcargo;
     wire motorSubindoF;
     wire trigger_sensor_ultrasonico; 
     wire [1:0] saida_andar;
+    wire [6:0] andarAtual_db, proxParada_db;
 
     // Transmissão serial
     reg RX2;
@@ -45,9 +46,10 @@ module tb_smartcargo;
         .motorDescendoF     (motorDescendoF),
         .motorSubindoF      (motorSubindoF),
         .trigger_sensor_ultrasonico (trigger_sensor_ultrasonico),
-        .saida_andar        (saida_andar)
+        .saida_andar        (saida_andar),
+        .andarAtual_db      (andarAtual_db),
+        .proxParada_db      (proxParada_db)
     );
-
     // Gerador de clock para 50 MHz (período de 20 ns)
     initial clk = 0;
     always #10 clk = ~clk; // Toggling a cada 10 ns -> 50 MHz
@@ -57,8 +59,9 @@ module tb_smartcargo;
     // Testes
     initial begin
         reset = 1;
-        #20;  // 20 ns de atraso (correspondente ao 1º ciclo de clock)
+        #200;  // 20 ns de atraso
         reset = 0;
+        #40
         iniciar = 0;
         emergencia = 0;
         echo = 0;
@@ -104,6 +107,7 @@ module tb_smartcargo;
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             andar_atual_simulado <= 2'b00;
+            sensoresNeg <= 4'b1111;
         end else begin
             if (motorDescendoF || motorSubindoF) begin
                 sensoresNeg <= 4'b1111;
