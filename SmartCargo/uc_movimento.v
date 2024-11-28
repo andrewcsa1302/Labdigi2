@@ -87,7 +87,7 @@ end
         zeraT               = ((Eatual == prox_pedido) || (Eatual == shift_fila));
 
         select2             = (Eatual == registra_subindo);
-        enableAndarAtual    = ((Eatual == registra_subindo) || (Eatual == registra_descendo));
+        enableAndarAtual    = ((Eatual == registra_subindo) || (Eatual == registra_descendo) || (Eatual == prox_pedido));
 
         // Saídas do conteúdo do elevador
 
