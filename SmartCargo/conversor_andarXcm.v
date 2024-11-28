@@ -11,13 +11,13 @@ always @(*) begin
     
     altura = (centenas * 100) + (dezenas * 10) + unidades;
     
-    if (altura < 10) begin
+    if (altura < 6) begin
         andar = 2'b00; 
-    end else if (altura < 20) begin
+    end else if (altura < 18) begin
         andar = 2'b01; 
-    end else if (altura < 30) begin
+    end else if (altura < 35) begin
         andar = 2'b10; 
-    end else if (altura < 40) begin
+    end else if (altura < 50) begin
         andar = 2'b11; 
     end else begin
         andar = 2'b00;
