@@ -19,13 +19,12 @@ wire [2:0]  compara;
 wire [1:0] s_saida_andar;
 wire [3:0] s_andar;
 wire [1:0] s_display;
-wire [1:0] andar;
 
 assign compara =        (sensores == 4'b0001)? 3'b000:
                         (sensores == 4'b0010)? 3'b001:
                         (sensores == 4'b0100)? 3'b010:
                         (sensores == 4'b1000)? 3'b011:
-                                               3'b111;
+                                               3'b100;
 															
 assign s_display =     (sensores == 4'b0000)? s_saida_andar: compara[1:0];
 
@@ -46,9 +45,9 @@ interface_ultrassonico andar_ultrassonico_detec(
 );	 
 assign s_andar = {2'b00, s_display};
 
-    hexa7seg H0 (
-        .hexa   (s_andar ), 
-        .display(hex0)
+hexa7seg H0 (
+    .hexa   (s_andar ), 
+    .display(hex0)
 );
 
 

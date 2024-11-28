@@ -11,7 +11,7 @@ module smart_cargo_fd (
  input contaT,
  input clearAndarAtual,
  input clearSuperRam, 
- input enableAndarAtual, // NÃO ESTA SENDO USADO
+ input enableAndarAtual, 
  input enableRegOrigem,
  input enableRegDestino,
  input zeraAddrSecundario,
@@ -87,7 +87,7 @@ assign temDestino               = (tipo_obj_fila[1] | tipo_obj_fila[0]); // nao 
 
 assign andarRepetidoOrigem      = (mesmoSentido & mesmoAndar);
 assign andarRepetidoDestino     = (mesmoAndar & enderecoMaiorQueOrigem);
-assign sensorAtivo              = (sensores[0] || sensores[1] || sensores[2] || sensores[3]);
+assign sensorAtivo              = (saida_andar[0] || saida_andar[1]);
 
 //Somador e subtrator do registrador do andar atual
 
@@ -145,7 +145,7 @@ interpretador_andar interpretador_andar_atual(
     .pronto()
 );
 
-contador_m #(50000000,26) timer_ultrasonico(
+contador_m #(10000000,24) timer_ultrasonico( //  10_000_000 == 0.2s 10000000
     .clock      (clock),
     .zera_as    (),
     .zera_s     (reset),

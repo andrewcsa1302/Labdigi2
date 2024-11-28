@@ -5,7 +5,7 @@ module conversor_andarXcm (
     output reg [1:0] andar 
 );
 
-	 reg [9:0] altura;
+    reg [9:0] altura;
 
 always @(*) begin
     
