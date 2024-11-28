@@ -104,9 +104,6 @@ add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/tira_objetos
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/coloca_objetos
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/Eatual
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/bordaNovoDestino
-add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/clock
-add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/iniciar
-add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/reset
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/carona_origem
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/carona_destino
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/ramSecDifZero
@@ -139,4 +136,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits us
 update
-WaveRestoreZoom {287820 ns} {727020 ns}
+WaveRestoreZoom {0 ns} {1756800 ns}

@@ -151,13 +151,13 @@ uc_nova_entrada UC_NOVA_ENTRADA (
 // displays 7 seg
 
 hexa7seg display_andarAtual(
-.hexa                       (andarAtual),
+.hexa                       ({2'b0,andarAtual}),
 .display                    (andarAtual_db)
 );
 
 
 hexa7seg display_proxParada(
-.hexa                       (proxParada),
+.hexa                       ({2'b0,proxParada}),
 .display                    (proxParada_db)
 
 );
