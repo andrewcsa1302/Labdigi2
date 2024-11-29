@@ -63,7 +63,7 @@ module ram_conteudo_elevador (
     end
 	 
     always @(posedge clk) begin
-    addr_reg <= addr;
+        addr_reg <= addr;
     end
 
 

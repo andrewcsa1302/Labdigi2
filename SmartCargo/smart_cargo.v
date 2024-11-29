@@ -22,7 +22,8 @@ module smart_cargo(
     output [3:0] db_sensores,
     output [13:0] db_serial_hex,
     output trigger_sensor_ultrasonico,
-    output [1:0] saida_andar // o que esta vindo dos sensores nesse exato momento. Se 0, quer dizer que nao esta passando pelos sensores
+    output [1:0] saida_andar, // o que esta vindo dos sensores nesse exato momento. Se 0, quer dizer que nao esta passando pelos sensores
+    output TX
 );
 
 // NOVOS SINAIS SMARTCARGO
@@ -93,7 +94,8 @@ smart_cargo_fd fluxodeDados (
 .trigger_sensor_ultrasonico (trigger_sensor_ultrasonico),
 .saida_andar                (saida_andar),
 .eh_origem_fila             (eh_origem_fila),
-.guarda_origem_ram          (guarda_origem_ram)
+.guarda_origem_ram          (guarda_origem_ram),
+.TX                         (TX)
 );
 
 

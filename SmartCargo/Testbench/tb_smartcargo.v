@@ -15,6 +15,8 @@ module tb_smartcargo;
     wire [6:0] andarAtual_db, proxParada_db;
 
     wire [3:0] sensores;
+
+    wire TX;
     assign sensores = ~sensoresNeg;
 
     // Transmissão serial
@@ -51,7 +53,8 @@ module tb_smartcargo;
         .trigger_sensor_ultrasonico (trigger_sensor_ultrasonico),
         .saida_andar        (saida_andar),
         .andarAtual_db      (andarAtual_db),
-        .proxParada_db      (proxParada_db)
+        .proxParada_db      (proxParada_db),
+        .TX                 (TX)
     );
     // Gerador de clock para 50 MHz (período de 20 ns)
     initial clk = 0;

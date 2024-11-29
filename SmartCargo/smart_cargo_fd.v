@@ -42,7 +42,8 @@ module smart_cargo_fd (
  output [13:0] db_serial_hex,
  output trigger_sensor_ultrasonico,
  output [1:0] saida_andar,
- output eh_origem_fila
+ output eh_origem_fila,
+ output TX
 );
 
 //Declaração de fios gerais 
@@ -64,6 +65,10 @@ wire [1:0] origem_fila;
 wire serial_recebido;
 wire [7:0] dados_serial_recebido;
 wire [1:0] origemSerial, destinoSerial, tipoSerial;
+
+wire [5:0] s_dados_fila_elevador;
+wire [3:0] s_dados_conteudo_elevador, s_addr_conteudo_elevador, s_addr_fila_elevador;
+wire s_eh_origem_fila_elevador_addr_serial;
 
 assign origemSerial = dados_serial_recebido[1:0];
 assign destinoSerial = dados_serial_recebido[3:2];
@@ -155,6 +160,19 @@ contador_m #(25000000,25) timer_ultrasonico( //  10_000_000 == 0.2s 10000000
     .meio       ()
 );
 
+// Envio por serial dos dados das memorias
+envio_serial_automatico dut (
+    .clock(clock),
+    .reset(reset),
+    .mudou_de_andar(bordaSensorAtivo),
+    .dados_fila_elevador(s_dados_fila_elevador),
+    .addr_fila_elevador(s_addr_fila_elevador),
+    .dados_conteudo_elevador(s_dados_conteudo_elevador),
+    .addr_conteudo_elevador(s_addr_conteudo_elevador),
+    .TX(TX),
+    .eh_origem_fila_elevador(s_eh_origem_fila_elevador_addr_serial)
+);
+
 // Fila 
 // GUARDA NESSA ORDEM: EH_ORIGEM, TIPO_OBJETO, ORIGEM_OBJETO, DESTINO_OBJETO
 
@@ -176,8 +194,10 @@ sync_ram_16x7_mod fila_ram(
     .origem_objeto              (origem_fila),
     .destino_objeto             (proxParada),
     .saidaSecundaria            (saidaSecundaria),
-    .saidaSecundariaAnterior    (saidaSecundariaAnterior)
-    // faltas os addrSerial, dados_addrSerial, eh_origem_addrSerial
+    .saidaSecundariaAnterior    (saidaSecundariaAnterior),
+    .addrSerial                 (s_addr_fila_elevador),
+    .dados_addrSerial           (s_dados_fila_elevador),
+    .eh_origem_addrSerial       (s_eh_origem_fila_elevador_addr_serial)
 );
 ram_conteudo_elevador conteudo_elevador (
     .clk                (clock),
@@ -188,9 +208,10 @@ ram_conteudo_elevador conteudo_elevador (
     .weT                (coloca_objetos),
     .tira_objetos       (tira_objetos),
     .andar_atual        (andarAtual),
-    .tipo_objeto        (), // desconectado - vai ser usado na transmissao serial
-    .destino_objeto     ()  // desconectado vai ser usado na transmissao serial
-    // falta addr e tem_vaga
+    .tipo_objeto        (s_dados_conteudo_elevador [3:2]), // desconectado - vai ser usado na transmissao serial
+    .destino_objeto     (s_dados_conteudo_elevador [1:0]),  // desconectado vai ser usado na transmissao serial
+    .addr               (s_addr_conteudo_elevador),
+    .tem_vaga           ()
 );
 
 // Recepcao serial dos sinais
