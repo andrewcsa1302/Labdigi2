@@ -1,5 +1,9 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
+add wave -noupdate /tb_smartcargo/dut/fluxodeDados/andar_fusao_sensores
+add wave -noupdate /tb_smartcargo/dut/fluxodeDados/enableRegAndarAtual
+add wave -noupdate /tb_smartcargo/dut/fluxodeDados/andarAtualParaRegistro
+add wave -noupdate /tb_smartcargo/dut/fluxodeDados/inicializa_andar
 add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/sensores
 add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/shift
 add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/enableRAM
@@ -40,9 +44,6 @@ add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/andarRepetidoDesti
 add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/bordaSensorAtivo
 add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/db_serial_hex
 add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/trigger_sensor_ultrasonico
-add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/saida_andar
-add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/proxAndarD
-add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/proxAndarS
 add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/saidaRegDestino
 add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/saidaRegOrigem
 add wave -noupdate -height 30 /tb_smartcargo/dut/fluxodeDados/saidaSecundaria
@@ -88,7 +89,6 @@ add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/fimT
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/temDestino
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/sobe
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/eh_origem
-add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/dbQuintoBitEstado
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/shift
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/enableRAM
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_MOVIMENTO/contaT
@@ -120,7 +120,7 @@ add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/contaAddrSecund
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/zeraAddrSecundario
 add wave -noupdate -height 30 /tb_smartcargo/dut/UC_NOVA_ENTRADA/Eatual2_db
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {329589 ns} 0}
+WaveRestoreCursors {{Cursor 1} {312651 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 326
 configure wave -valuecolwidth 100

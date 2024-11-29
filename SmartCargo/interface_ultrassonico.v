@@ -1,5 +1,5 @@
 
-module interface_ultrassonico (
+module interface_ultrassonico #(parameter EPS = 2, h0 = 6, h1 = 15, h2 = 30, h3 = 40) (
     input wire        clock,
     input wire        reset,
     input wire        medir,
@@ -9,12 +9,13 @@ module interface_ultrassonico (
     output wire [6:0] hex1,
     output wire [6:0] hex2,
     output wire [6:0] hex3,
-    output wire [1:0] saida_andar,
     output wire       pronto,
     output wire       db_medir,
     output wire       db_echo,
     output wire       db_trigger,
-    output wire [6:0] db_estado
+    output wire [6:0] db_estado,
+    output wire [1:0] andar_aproximado,
+    output wire [1:0] andar_exato
 );
 
     // Sinais internos
@@ -72,21 +73,19 @@ module interface_ultrassonico (
         .pulso(s_medir)
     );
 	 //
-	 conversor_andarXcm conversor(
+	 conversor_andarXcm #(EPS, h0, h1, h2, h3) conversor(
+        .reset (reset),
 		.unidades(s_medida[3:0]),  
 		.dezenas(s_medida[7:4]),    
-		.centenas(s_medida[11:8]),   
-		.andar(andar) 
+		.centenas(s_medida[11:8]),
+        .andar_exato (andar_exato),   
+		.andar_aproximado (andar_aproximado) 
 	 );
 
     // Sinais de saída
     assign trigger = s_trigger;
 	 
-	 assign s_andar = {2'b00, andar};
-	 
-	 assign saida_andar = andar;
-	 
-	 
+    assign s_andar = {2'b00, andar_aproximado};
 
     // Sinal de depuração (estado da UC)
     hexa7seg H5 (

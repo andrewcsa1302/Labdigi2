@@ -38,7 +38,7 @@ module tb_smartcargo;
     reg [24:0] ciclo_count;  // Contador de ciclos, precisa contar até 173 para cada bit
 
     // DUT (Design Under Test)
-    smart_cargo dut (
+    smart_cargo #(5000, 2500) dut (
         .iniciar            (iniciar),
         .clock              (clk),
         .sensoresNeg        (sensores),
