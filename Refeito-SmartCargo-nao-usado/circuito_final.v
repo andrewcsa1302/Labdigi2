@@ -1,11 +1,10 @@
 module circuito_final(
     input iniciar,
     input clock,
-    input [3:0]origemBot,
-    input [3:0]destinoBot,
     input [3:0]sensoresNeg,
     input reset, 
-	input emergencia,
+    input emergencia,
+    input RX,
     output dbQuintoBitEstado,
     output db_iniciar,
 	output db_clock,
@@ -16,6 +15,8 @@ module circuito_final(
 	output [6:0] proxParada_db,
 	output [6:0] Eatual_1,
 	output [6:0] Eatual_2,
+    output [6:0] db_serial_hex_menos,
+    output [6:0] db_serial_hex_mais,
 	output db_bordaSensorAtivo,
 	output db_motorSubindo,
 	output db_motorDescendo,
@@ -26,6 +27,8 @@ wire enableAndarAtual, shift, enableRAM, enableTopRAM, select1, select2, select3
 wire bordaNovoDestino, fimT, contaT, zeraT, clearAndarAtual, clearSuperRam, carona_origem, finalRam, enableRegOrigem, andarRepetidoDestino, andarRepetidoOrigem;
 wire enableRegDestino, contaAddrSecundario, zeraAddrSecundario, sentidoElevador, ramSecDifZero, bordaSensorAtivo, motorSubindo, motorDescendo;
 wire [3:0] proxParada, andarAtual, Eatual1_db,Eatual2_db, sesnsores ;
+
+wire [3:0] origemBot, destinoBot, sensores;
 
 assign db_iniciar = iniciar;
 assign db_clock = clock;
@@ -38,6 +41,30 @@ assign db_sensores = sensoresNeg;
 
 assign motorSubindoF = motorSubindo | emergencia;
 assign motorDescendoF = motorDescendo | emergencia;
+
+wire [7:0] dados_serial_recebido;
+wire [1:0] origemSerial, destinoSerial, tipoSerial;
+
+assign origemSerial = dados_serial_recebido[1:0];
+assign destinoSerial = dados_serial_recebido[3:2];
+assign tipoSerial = dados_serial_recebido[5:4];
+
+assign origemBot = {2'b00, origemSerial};
+assign destinoBot = {2'b00, destinoSerial};
+
+wire pronto_serial_recebido;
+
+rx_serial_8N1 recepcao_serial (
+.clock                      (clock),
+.reset                      (reset),
+.RX                         (RX),
+.pronto                     (pronto_serial_recebido),
+.dados_ascii                (dados_serial_recebido),
+.db_clock                   ( ), // desconectado
+.db_tick                    ( ), // desconectado
+.db_dados                   ( ), // desconectado
+.db_estado                  ( ) // desconectado
+);
 
 FD fluxodeDados (
 .clock                      (clock),
@@ -75,7 +102,8 @@ FD fluxodeDados (
 .temDestino                 (temDestino),
 .sobe                       (sobe),
 .sensores                   (sensores),
-.bordaSensorAtivo           (bordaSensorAtivo)
+.bordaSensorAtivo           (bordaSensorAtivo),
+.pronto_serial_recebido     (pronto_serial_recebido)
 );
 
 
@@ -150,9 +178,19 @@ hexa7seg display_estado1(
 hexa7seg display_estado2(
 .hexa                       (Eatual2_db),
 .display                    (Eatual_2)
-
 );
 
+// Depuracao da recepcao serial
+
+hexa7seg HEX_MENOS_SIGNIFICATIVO ( 
+.hexa    ( dados_serial_recebido [3:0] ), 
+.display ( db_serial_hex_menos    )
+);
+    
+hexa7seg HEX_MAIS_SIGNIFICATIVO ( 
+.hexa    ( dados_serial_recebido [7:4] ), 
+.display ( db_serial_hex_mais     )
+);
 
 
 
