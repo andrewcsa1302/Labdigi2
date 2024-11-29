@@ -1,4 +1,4 @@
-module sonar #(parameter TIMER = 100000000)
+module sonar #(parameter TIMER = 100_000_000) // 2s
 (
     input wire        clock,
     input wire        reset,
