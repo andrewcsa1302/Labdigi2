@@ -93,12 +93,12 @@ assign temDestino               = (tipo_obj_fila[1] | tipo_obj_fila[0]); // nao 
 
 assign andarRepetidoOrigem      = (mesmoSentido & mesmoAndar);
 assign andarRepetidoDestino     = (mesmoAndar & enderecoMaiorQueOrigem);
-assign sensorAtivo              = (andar_fusao_sensores[0] || andar_fusao_sensores[1]);
+assign sensorAtivo              = s_mudou_andar_fusao;
 
 assign addrSecundarioAnterior = addrSecundario - 1;
 
 // Inicializacao dos andares
-wire enableRegAndarAtual;
+wire enableRegAndarAtual, s_mudou_andar_fusao;
 wire [1:0] andarAtualParaRegistro, s_andar_aproximado;
 assign enableRegAndarAtual      = (inicializa_andar || enableAndarAtual);
 assign andarAtualParaRegistro   = inicializa_andar? s_andar_aproximado : andar_fusao_sensores;
@@ -139,7 +139,7 @@ registrador_N #(4) reg_carona_origem(
 );
 
 // Fusao de Sensores 
-interpretador_andar #(2, 6, 15, 30, 40) interpretador_andar_atual( 
+interpretador_andar #(2, 8, 15, 26, 39) interpretador_andar_atual( 
     .clock(clock),
     .reset(reset),
     .medir(fim_ultrasonico),
@@ -152,7 +152,8 @@ interpretador_andar #(2, 6, 15, 30, 40) interpretador_andar_atual(
     .hex3(),
     .andar_fusao_sensores(andar_fusao_sensores),
     .andar_aproximado (s_andar_aproximado),
-    .pronto()
+    .pronto(),
+    .mudou_andar_fusao (s_mudou_andar_fusao)
 );
 
 

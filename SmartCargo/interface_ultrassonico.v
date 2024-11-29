@@ -15,7 +15,8 @@ module interface_ultrassonico #(parameter EPS = 2, h0 = 6, h1 = 15, h2 = 30, h3 
     output wire       db_trigger,
     output wire [6:0] db_estado,
     output wire [1:0] andar_aproximado,
-    output wire [1:0] andar_exato
+    output wire [1:0] andar_exato,
+    output wire       mudou_andar_edge
 );
 
     // Sinais internos
@@ -75,12 +76,21 @@ module interface_ultrassonico #(parameter EPS = 2, h0 = 6, h1 = 15, h2 = 30, h3 
 	 //
 	 conversor_andarXcm #(EPS, h0, h1, h2, h3) conversor(
         .reset (reset),
+        .clock (clock),
 		.unidades(s_medida[3:0]),  
 		.dezenas(s_medida[7:4]),    
 		.centenas(s_medida[11:8]),
         .andar_exato (andar_exato),   
-		.andar_aproximado (andar_aproximado) 
+		.andar_aproximado (andar_aproximado),
+        .mudou_andar (mudou_andar)
 	 );
+
+    edge_detector detector_mudou_andar(
+    .clock  (clock),
+    .reset  (reset),
+    .sinal  (mudou_andar),
+    .pulso  (mudou_andar_edge)
+);
 
     // Sinais de saída
     assign trigger = s_trigger;

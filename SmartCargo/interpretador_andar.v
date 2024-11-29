@@ -12,13 +12,14 @@ module interpretador_andar #(parameter EPS = 2, h0 = 6, h1 = 15, h2 = 30, h3 = 4
     output wire [6:0] hex3,
     output wire [1:0] andar_fusao_sensores,
     output wire [1:0] andar_aproximado,
-    output       pronto
-
+    output wire       pronto,
+    output wire       mudou_andar_fusao
 );
 
-wire [2:0]  compara;
+wire [2:0] compara;
 wire [1:0] s_andar_exato;
 wire [3:0] s_andar;
+wire       s_mudou_andar;
 
 assign compara =        (sensores == 4'b0001)? 3'b000:
                         (sensores == 4'b0010)? 3'b001:
@@ -28,6 +29,9 @@ assign compara =        (sensores == 4'b0001)? 3'b000:
 															
 assign andar_fusao_sensores = (sensores == 4'b0000)? s_andar_exato: compara[1:0];
 
+// tbm reconhece que o infra indica que mudou_andar
+
+assign mudou_andar_fusao = (sensores == 4'b0000)? s_mudou_andar : 1'b1;
 
 
 interface_ultrassonico #(EPS, h0, h1, h2, h3) andar_ultrassonico_detec(
@@ -41,7 +45,8 @@ interface_ultrassonico #(EPS, h0, h1, h2, h3) andar_ultrassonico_detec(
     .hex3			(hex3),
     .andar_exato    (s_andar_exato),
     .pronto			(pronto),
-    .andar_aproximado  (andar_aproximado)
+    .andar_aproximado (andar_aproximado),
+    .mudou_andar_edge (s_mudou_andar)
 );	 
 assign s_andar = {2'b00, andar_fusao_sensores};
 
