@@ -1,4 +1,4 @@
-module smart_cargo_fd (
+module smart_cargo_fd #(parameter TIMER_ANDAR = 50000000, TIMER_ULTRASSONICO = 25000000)(
  input clock,
  input [3:0] sensores, 
  input shift,
@@ -24,6 +24,7 @@ module smart_cargo_fd (
  input echo,
  input inicia_ultrasonico,
  input guarda_origem_ram, // para determinar o que será colocado no destino na fila
+ input inicializa_andar,
  output chegouDestino,
  output bordaNovoDestino,
  output fimT,
@@ -41,9 +42,9 @@ module smart_cargo_fd (
  output bordaSensorAtivo,
  output [13:0] db_serial_hex,
  output trigger_sensor_ultrasonico,
- output [1:0] saida_andar,
+ output [1:0] andar_fusao_sensores,
  output eh_origem_fila,
- output TX
+output TX
 );
 
 //Declaração de fios gerais 
@@ -92,21 +93,24 @@ assign temDestino               = (tipo_obj_fila[1] | tipo_obj_fila[0]); // nao 
 
 assign andarRepetidoOrigem      = (mesmoSentido & mesmoAndar);
 assign andarRepetidoDestino     = (mesmoAndar & enderecoMaiorQueOrigem);
-assign sensorAtivo              = (saida_andar[0] || saida_andar[1]);
-
-//Somador e subtrator do registrador do andar atual
+assign sensorAtivo              = (andar_fusao_sensores[0] || andar_fusao_sensores[1]);
 
 assign addrSecundarioAnterior = addrSecundario - 1;
-assign proxAndarD = andarAtual - 1;
-assign proxAndarS = andarAtual + 1;
+
+// Inicializacao dos andares
+wire enableRegAndarAtual;
+wire [1:0] andarAtualParaRegistro, s_andar_aproximado;
+assign enableRegAndarAtual      = (inicializa_andar || enableAndarAtual);
+assign andarAtualParaRegistro   = inicializa_andar? s_andar_aproximado : andar_fusao_sensores;
+
 
 // Registradores 
 
 registrador_N #(2) andarAtual_reg (
     .clock      (clock),
     .clear      (reset),
-    .enable     (enableAndarAtual),
-    .D          (saida_andar),
+    .enable     (enableRegAndarAtual),
+    .D          (andarAtualParaRegistro),
     .Q          (andarAtual) 
 );
 
@@ -134,8 +138,8 @@ registrador_N #(4) reg_carona_origem(
     .Q         (caronaOrigem)
 );
 
-
-interpretador_andar interpretador_andar_atual( 
+// Fusao de Sensores 
+interpretador_andar #(2, 6, 15, 30, 40) interpretador_andar_atual( 
     .clock(clock),
     .reset(reset),
     .medir(fim_ultrasonico),
@@ -146,11 +150,13 @@ interpretador_andar interpretador_andar_atual(
     .hex1(db_serial_hex [6:0]),
     .hex2(db_serial_hex [13:7]),
     .hex3(),
-    .saida_andar(saida_andar),
+    .andar_fusao_sensores(andar_fusao_sensores),
+    .andar_aproximado (s_andar_aproximado),
     .pronto()
 );
 
-contador_m #(25000000,25) timer_ultrasonico( //  10_000_000 == 0.2s 10000000
+
+contador_m #(TIMER_ULTRASSONICO,25) timer_entre_medidas_ultrassonico( //  10_000_000 == 0.2s 10000000
     .clock      (clock),
     .zera_as    (),
     .zera_s     (reset),
@@ -265,7 +271,7 @@ edge_detector detectorDeSensores(
 
 // timer 
 
-contador_m #(50000000,26) timer_2seg(
+contador_m #(TIMER_ANDAR,26) timer_2seg(
     .clock      (clock),
     .zera_as    (),
     .zera_s     (zeraT),
