@@ -84,7 +84,7 @@ end
         zeraT               = ((Eatual == prox_pedido) || (Eatual == shift_fila));
 
         select2             = (Eatual == registra_subindo);
-        enableAndarAtual    = ((Eatual == registra_subindo) || (Eatual == registra_descendo) || (Eatual == prox_pedido));
+        enableAndarAtual    = ((Eatual == registra_subindo) || (Eatual == registra_descendo));
 
         // Saídas do conteúdo do elevador
 
@@ -99,7 +99,7 @@ end
         // inicializacoes
         clearSuperRam       = (Eatual == inicializa_elementos);
         clearAndarAtual     = (Eatual == inicializa_elementos);
-        inicializa_andar    = (Eatual == inicializa_andar_atual);
+        inicializa_andar    = ((Eatual == inicializa_andar_atual) || (Eatual == prox_pedido));
 
         enableRAM = 1'b0;
 
