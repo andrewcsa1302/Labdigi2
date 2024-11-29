@@ -1,4 +1,4 @@
-module smart_cargo(
+module smart_cargo #(parameter TIMER_ANDAR = 50000000, TIMER_ULTRASSONICO = 25000000)(
     input iniciar,
     input clock,
     input [3:0] sensoresNeg,
@@ -6,7 +6,6 @@ module smart_cargo(
     input emergencia,
     input RX,
     input echo,
-    output dbQuintoBitEstado,
     output db_iniciar,
     output db_clock,
     output db_reset,
@@ -28,7 +27,7 @@ module smart_cargo(
 // NOVOS SINAIS SMARTCARGO
 wire coloca_objetos, tira_objetos;
 wire eh_origem_fila;
-wire guarda_origem_ram;
+wire guarda_origem_ram, s_inicializa_andar;
 
 // SINAIS ANTIGOS
 wire enableAndarAtual, shift, enableRAM, enableTopRAM, select1, select2, select3, chegouDestino, fit, temDestino, sobe; 
@@ -41,7 +40,7 @@ assign db_iniciar = iniciar;
 assign db_clock = clock;
 assign db_reset = reset;
 assign db_bordaSensorAtivo = bordaSensorAtivo;
-assign sensores = sensoresNeg;
+assign sensores = sensoresNeg; // MUDAR NA HORA DE SIMULAR
 assign db_motorSubindo = motorSubindo;
 assign db_motorDescendo = motorDescendo;
 assign db_sensores = sensoresNeg;
@@ -49,7 +48,7 @@ assign db_sensores = sensoresNeg;
 assign motorSubindoF = motorSubindo & ~emergencia;
 assign motorDescendoF = motorDescendo & ~emergencia;
 
-smart_cargo_fd fluxodeDados (
+smart_cargo_fd #(TIMER_ANDAR, TIMER_ULTRASSONICO) fluxodeDados (
 .clock                      (clock),
 .echo                       (echo),
 .inicia_ultrasonico         (iniciar),
@@ -91,9 +90,10 @@ smart_cargo_fd fluxodeDados (
 .RX                         (RX),
 .db_serial_hex              (db_serial_hex),
 .trigger_sensor_ultrasonico (trigger_sensor_ultrasonico),
-.saida_andar                (saida_andar),
+.andar_fusao_sensores       (saida_andar),
 .eh_origem_fila             (eh_origem_fila),
-.guarda_origem_ram          (guarda_origem_ram)
+.guarda_origem_ram          (guarda_origem_ram),
+.inicializa_andar           (s_inicializa_andar)
 );
 
 
@@ -112,7 +112,6 @@ uc_movimento UC_MOVIMENTO (
 .clearSuperRam              (clearSuperRam),
 .select2                    (select2),
 .enableAndarAtual           (enableAndarAtual),
-.dbQuintoBitEstado          (dbQuintoBitEstado),// quinto bit do estado sai em led
 .sobe                       (sobe),
 .temDestino                 (temDestino),
 .Eatual1_db                 (Eatual1_db),
@@ -120,7 +119,8 @@ uc_movimento UC_MOVIMENTO (
 .motorDescendo              (motorDescendo),
 .eh_origem                  (eh_origem_fila),
 .tira_objetos               (tira_objetos),
-.coloca_objetos             (coloca_objetos)
+.coloca_objetos             (coloca_objetos),
+.inicializa_andar           (s_inicializa_andar)
 );
 
 

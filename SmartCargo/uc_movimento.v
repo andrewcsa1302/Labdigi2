@@ -8,7 +8,6 @@ module uc_movimento(
     input       temDestino,
     input       sobe,
     input       eh_origem,  
-    output reg  dbQuintoBitEstado, 
     output reg  shift,
     output reg  enableRAM, 
     output reg  contaT, 
@@ -21,19 +20,15 @@ module uc_movimento(
     output reg motorSubindo,
     output reg motorDescendo,
     output reg tira_objetos,
-    output reg coloca_objetos
+    output reg coloca_objetos,
+    output reg inicializa_andar
 );
 
 
 // variaveis internas da UC
 
-// reg [1:0] acaoElevador;  // 00 vazio, 01 subindo, 10 descendo, 11 parado
-
 reg [4:0] Eatual, Eprox;
 
-
-// estados da máquina de estados
-// UNDERLINE para separar palavras somente aqui !!
 parameter inicial               = 5'b00000; // 0
 parameter inicializa_elementos  = 5'b00001; // 1
 parameter prox_pedido           = 5'b00010; // 2
@@ -47,6 +42,7 @@ parameter registra_descendo     = 5'b01001; // 9
 parameter checa_descendo        = 5'b01010; // A
 parameter entra_elevador        = 5'b01011; // B
 parameter sai_elevador          = 5'b01100; // C
+parameter inicializa_andar_atual =  5'b01101; // D
 
 
 // Transicao de estado todo clock
@@ -63,7 +59,8 @@ always @* begin
 
         // Transicao usual 
         inicial:                    Eprox = iniciar? inicializa_elementos : inicial;
-        inicializa_elementos:       Eprox = prox_pedido;
+        inicializa_elementos:       Eprox = inicializa_andar_atual;
+        inicializa_andar_atual:     Eprox = prox_pedido;
         prox_pedido:                Eprox = temDestino? (sobe? subindo : descendo) : prox_pedido;
         subindo:                    Eprox = bordaSensorAtivo? registra_subindo : subindo;
         descendo:                   Eprox = bordaSensorAtivo? registra_descendo : descendo;
@@ -102,6 +99,7 @@ end
         // inicializacoes
         clearSuperRam       = (Eatual == inicializa_elementos);
         clearAndarAtual     = (Eatual == inicializa_elementos);
+        inicializa_andar    = (Eatual == inicializa_andar_atual);
 
         enableRAM = 1'b0;
 
@@ -120,6 +118,7 @@ end
             5'b01010: Eatual1_db = 5'b01010; // checa_descendo
             5'b01011: Eatual1_db = 5'b01011; // entra_elevador
             5'b01100: Eatual1_db = 5'b01100; // sai_elevador
+            5'b01101: Eatual1_db = 5'b01101; // inicializa_andar_atual
             default:  Eatual1_db = 5'b00000; // valor padrão (caso não corresponda a nenhum estado)
         endcase
     end
