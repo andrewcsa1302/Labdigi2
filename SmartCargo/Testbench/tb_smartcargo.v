@@ -14,6 +14,9 @@ module tb_smartcargo;
     wire [1:0] saida_andar;
     wire [6:0] andarAtual_db, proxParada_db;
 
+    wire [3:0] sensores;
+    assign sensores = ~sensoresNeg;
+
     // Transmissão serial
     reg RX2;
 
@@ -38,7 +41,7 @@ module tb_smartcargo;
     smart_cargo dut (
         .iniciar            (iniciar),
         .clock              (clk),
-        .sensoresNeg        (sensoresNeg),
+        .sensoresNeg        (sensores),
         .reset              (reset),
         .emergencia         (emergencia),
         .RX                 (RX2),  // RX2 será utilizado como entrada para simular a recepção
