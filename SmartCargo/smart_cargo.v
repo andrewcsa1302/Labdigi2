@@ -5,6 +5,7 @@ module smart_cargo(
     input reset, 
     input emergencia,
     input RX,
+    input echo,
     output dbQuintoBitEstado,
     output db_iniciar,
     output db_clock,
@@ -19,11 +20,15 @@ module smart_cargo(
     output db_motorSubindo,
     output db_motorDescendo,
     output [3:0] db_sensores,
-    output [13:0] db_serial_hex
+    output [13:0] db_serial_hex,
+    output trigger_sensor_ultrasonico,
+    output [1:0] saida_andar // o que esta vindo dos sensores nesse exato momento. Se 0, quer dizer que nao esta passando pelos sensores
 );
 
 // NOVOS SINAIS SMARTCARGO
 wire coloca_objetos, tira_objetos;
+wire eh_origem_fila;
+wire guarda_origem_ram;
 
 // SINAIS ANTIGOS
 wire enableAndarAtual, shift, enableRAM, enableTopRAM, select1, select2, select3, chegouDestino, fit, temDestino, sobe; 
@@ -35,17 +40,19 @@ wire [3:0] Eatual1_db, Eatual2_db, sensores;
 assign db_iniciar = iniciar;
 assign db_clock = clock;
 assign db_reset = reset;
-assign db_bordaSensorAtivo = sensoresNeg[0];
-assign sensores = ~sensoresNeg;
+assign db_bordaSensorAtivo = bordaSensorAtivo;
+assign sensores = sensoresNeg;
 assign db_motorSubindo = motorSubindo;
 assign db_motorDescendo = motorDescendo;
 assign db_sensores = sensoresNeg;
 
-assign motorSubindoF = motorSubindo | emergencia;
-assign motorDescendoF = motorDescendo | emergencia;
+assign motorSubindoF = motorSubindo & ~emergencia;
+assign motorDescendoF = motorDescendo & ~emergencia;
 
 smart_cargo_fd fluxodeDados (
 .clock                      (clock),
+.echo                       (echo),
+.inicia_ultrasonico         (iniciar),
 .enableAndarAtual           (enableAndarAtual), // enable da ram estado atual
 .shift                      (shift), //shift ram
 .fit                        (fit),
@@ -82,7 +89,11 @@ smart_cargo_fd fluxodeDados (
 .tira_objetos               (tira_objetos),
 .coloca_objetos             (coloca_objetos),
 .RX                         (RX),
-.db_serial_hex              (db_serial_hex)
+.db_serial_hex              (db_serial_hex),
+.trigger_sensor_ultrasonico (trigger_sensor_ultrasonico),
+.saida_andar                (saida_andar),
+.eh_origem_fila             (eh_origem_fila),
+.guarda_origem_ram          (guarda_origem_ram)
 );
 
 
@@ -107,7 +118,7 @@ uc_movimento UC_MOVIMENTO (
 .Eatual1_db                 (Eatual1_db),
 .motorSubindo               (motorSubindo),
 .motorDescendo              (motorDescendo),
-.eh_origem                  (),
+.eh_origem                  (eh_origem_fila),
 .tira_objetos               (tira_objetos),
 .coloca_objetos             (coloca_objetos)
 );
@@ -132,20 +143,21 @@ uc_nova_entrada UC_NOVA_ENTRADA (
 .enableRegCaronaOrigem      (enableRegCaronaOrigem),
 .contaAddrSecundario        (contaAddrSecundario),
 .zeraAddrSecundario         (zeraAddrSecundario),
-.Eatual2_db                 (Eatual2_db)
+.Eatual2_db                 (Eatual2_db),
+.guarda_origem_ram          (guarda_origem_ram)  
 );
 
 
 // displays 7 seg
 
 hexa7seg display_andarAtual(
-.hexa                       (andarAtual),
+.hexa                       ({2'b0,andarAtual}),
 .display                    (andarAtual_db)
 );
 
 
 hexa7seg display_proxParada(
-.hexa                       (proxParada),
+.hexa                       ({2'b0,proxParada}),
 .display                    (proxParada_db)
 
 );
