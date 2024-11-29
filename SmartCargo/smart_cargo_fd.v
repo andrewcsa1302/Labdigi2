@@ -44,7 +44,7 @@ module smart_cargo_fd #(parameter TIMER_ANDAR = 50000000, TIMER_ULTRASSONICO = 2
  output trigger_sensor_ultrasonico,
  output [1:0] andar_fusao_sensores,
  output eh_origem_fila,
-output TX
+ output TX
 );
 
 //Declaração de fios gerais 

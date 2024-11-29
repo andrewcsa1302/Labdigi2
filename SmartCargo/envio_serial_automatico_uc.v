@@ -51,7 +51,7 @@ module envio_serial_automatico_uc (
 
     // Logica de saida (maquina de Moore)
     always @* begin
-        zera                    = (Eatual == preparacao) ? 1'b1 : 1'b0;
+        zera                    = (Eatual == preparacao || Eatual == inicial) ? 1'b1 : 1'b0;
         conta_conteudo_elevador = (Eatual == conta_addr_conteudo) ? 1'b1 : 1'b0;
         conta_fila_elevador     = (Eatual == conta_addr_fila) ? 1'b1 : 1'b0;
         envia_serial            = (Eatual == transmissao_conteudo || Eatual == transmissao_fila) ? 1'b1 : 1'b0;
