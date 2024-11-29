@@ -48,7 +48,7 @@ tx_serial_7O1 serial (
 );
 
 contador_m #(
-    .M(7),
+    .M(8),
     .N(4)
 ) contador_addr_conteudo_elevador (
     .clock   (clock),
@@ -61,8 +61,8 @@ contador_m #(
 );
 
 contador_m #(
-    .M(15),
-    .N(4)
+    .M(16),
+    .N(5)
 ) contador_addr_fila_elevador (
     .clock   (clock),
     .zera_as (1'b0 ),
