@@ -25,6 +25,7 @@ module smart_cargo_fd #(parameter TIMER_ANDAR = 50000000, TIMER_ULTRASSONICO = 2
  input inicia_ultrasonico,
  input guarda_origem_ram, // para determinar o que será colocado no destino na fila
  input inicializa_andar,
+ input reset_chaves,
  output chegouDestino,
  output bordaNovoDestino,
  output fimT,
@@ -84,7 +85,7 @@ wire [1:0] mux1, mux2, mux3, destino_fila;
 wire enableRegAndarAtual, s_mudou_andar_fusao;
 wire [1:0] andarAtualParaRegistro, s_andar_aproximado;
 
-wire sensorAtivo;
+wire sensorAtivo, s_chegou_sinal_controle;
 assign mux1 = select1? saidaRegOrigem : saidaRegDestino ; 
 // assign mux2 = select2? proxAndarS : proxAndarD ; // nao esta sendo usado
 assign mux3 = select3? andarAtual : saidaSecundariaAnterior;
@@ -232,7 +233,7 @@ ram_conteudo_elevador conteudo_elevador (
 
 rx_serial_8N1 recepcao_serial (
 .clock                      (clock),
-.reset                      (reset),
+.reset                      (reset_chaves),
 .RX                         (RX),
 .pronto                     (serial_recebido),
 .dados_ascii                (dados_serial_recebido), 
@@ -244,11 +245,12 @@ rx_serial_8N1 recepcao_serial (
 
 interpretador_serial interpretador_controle_serial (
     .clock(clock),
-    .reset(reset),
+    .reset(reset_chaves),
     .dados_serial_recebido(dados_serial_recebido),
     .iniciar_serial(iniciar_serial),
     .reset_serial(reset_serial),
-    .emergencia_serial(emergencia_serial)
+    .emergencia_serial(emergencia_serial),
+    .chegou_sinal_controle (s_chegou_sinal_controle)
 );
 // dados_serial_recebido[0] -> iniciar, dados_serial_recebido[2] -> reset, dados_serial_recebido[4] -> emergencia
 // dados_serial_recebido[7] -> se é sinal de controle
@@ -270,14 +272,14 @@ hexa7seg HEX_MAIS_SIGNIFICATIVO (
 edge_detector detectorDeDestino(
     .clock  (clock),
     .reset  (reset),
-    .sinal  (serial_recebido),
+    .sinal  ((serial_recebido & ~s_chegou_sinal_controle)),
     .pulso  (bordaNovoDestino)
 );
 
 edge_detector detectorDeOrigem(
     .clock  (clock),
     .reset  (reset),
-    .sinal  (serial_recebido),
+    .sinal  ((serial_recebido & ~s_chegou_sinal_controle)),
     .pulso  (bordaNovaOrigem)
 );
 

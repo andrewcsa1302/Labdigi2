@@ -100,7 +100,7 @@ smart_cargo_fd #(TIMER_ANDAR, TIMER_ULTRASSONICO) fluxodeDados (
 .andarRepetidoDestino       (andarRepetidoDestino),
 .andarRepetidoOrigem        (andarRepetidoOrigem),
 .sentidoElevador            (sentidoElevador),
-.reset                      (reset),
+.reset                      (reset_final),
 .temDestino                 (temDestino),
 .sobe                       (sobe),
 .sensores                   (sensores),
@@ -117,12 +117,13 @@ smart_cargo_fd #(TIMER_ANDAR, TIMER_ULTRASSONICO) fluxodeDados (
 .TX                         (TX),
 .iniciar_serial             (s_iniciar_serial),
 .reset_serial               (s_reset_serial),
-.emergencia_serial          (s_emergencia_serial)
+.emergencia_serial          (s_emergencia_serial),
+.reset_chaves               (reset)
 );
 
 uc_movimento UC_MOVIMENTO (
 .clock                      (clock),
-.reset                      (reset),
+.reset                      (reset_final),
 .iniciar                    (iniciar_final),
 .chegouDestino              (chegouDestino),// saida do comparador de andares
 .fimT                       (fimT),
@@ -153,7 +154,7 @@ uc_nova_entrada UC_NOVA_ENTRADA (
 .enableTopRAM               (enableTopRAM),
 .fit                        (fit),
 .iniciar                    (iniciar_final),
-.reset                      (reset),
+.reset                      (reset_final),
 .clock                      (clock),
 .carona_origem              (carona_origem),
 .carona_destino             (carona_destino),
