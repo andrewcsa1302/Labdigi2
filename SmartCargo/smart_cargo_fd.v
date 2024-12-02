@@ -44,7 +44,10 @@ module smart_cargo_fd #(parameter TIMER_ANDAR = 50000000, TIMER_ULTRASSONICO = 2
  output trigger_sensor_ultrasonico,
  output [1:0] andar_fusao_sensores,
  output eh_origem_fila,
- output TX
+ output TX,
+ output iniciar_serial,
+ output reset_serial,
+ output emergencia_serial
 );
 
 //Declaração de fios gerais 
@@ -77,6 +80,11 @@ assign tipoSerial = dados_serial_recebido[5:4];
 
 // Multiplexadores
 wire [1:0] mux1, mux2, mux3, destino_fila;
+
+wire enableRegAndarAtual, s_mudou_andar_fusao;
+wire [1:0] andarAtualParaRegistro, s_andar_aproximado;
+
+wire sensorAtivo;
 assign mux1 = select1? saidaRegOrigem : saidaRegDestino ; 
 // assign mux2 = select2? proxAndarS : proxAndarD ; // nao esta sendo usado
 assign mux3 = select3? andarAtual : saidaSecundariaAnterior;
@@ -95,14 +103,13 @@ assign andarRepetidoOrigem      = (mesmoSentido & mesmoAndar);
 assign andarRepetidoDestino     = (mesmoAndar & enderecoMaiorQueOrigem);
 assign sensorAtivo              = s_mudou_andar_fusao;
 
+
+
 assign addrSecundarioAnterior = addrSecundario - 1;
 
 // Inicializacao dos andares
-wire enableRegAndarAtual, s_mudou_andar_fusao;
-wire [1:0] andarAtualParaRegistro, s_andar_aproximado;
 assign enableRegAndarAtual      = (inicializa_andar || enableAndarAtual);
 assign andarAtualParaRegistro   = inicializa_andar? s_andar_aproximado : andar_fusao_sensores;
-
 
 // Registradores 
 
@@ -228,12 +235,23 @@ rx_serial_8N1 recepcao_serial (
 .reset                      (reset),
 .RX                         (RX),
 .pronto                     (serial_recebido),
-.dados_ascii                (dados_serial_recebido),
+.dados_ascii                (dados_serial_recebido), 
 .db_clock                   ( ), // desconectado
 .db_tick                    ( ), // desconectado
 .db_dados                   ( ), // desconectado
 .db_estado                  ( ) // desconectado
 );
+
+interpretador_serial interpretador_controle_serial (
+    .clock(clock),
+    .reset(reset),
+    .dados_serial_recebido(dados_serial_recebido),
+    .iniciar_serial(iniciar_serial),
+    .reset_serial(reset_serial),
+    .emergencia_serial(emergencia_serial)
+);
+// dados_serial_recebido[0] -> iniciar, dados_serial_recebido[2] -> reset, dados_serial_recebido[4] -> emergencia
+// dados_serial_recebido[7] -> se é sinal de controle
 
 // Depuracao da recepcao serial
 

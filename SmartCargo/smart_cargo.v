@@ -22,7 +22,10 @@ module smart_cargo #(parameter TIMER_ANDAR = 50000000, TIMER_ULTRASSONICO = 2500
     output [13:0] db_serial_hex,
     output trigger_sensor_ultrasonico,
     output [1:0] saida_andar, // o que esta vindo dos sensores nesse exato momento. Se 0, quer dizer que nao esta passando pelos sensores
-    output TX
+    output TX,
+    output db_iniciar_serial,
+    output db_reset_serial,
+    output db_emergencia_serial
 );
 
 // NOVOS SINAIS SMARTCARGO
@@ -36,23 +39,39 @@ wire bordaNovoDestino, fimT, contaT, zeraT, clearAndarAtual, clearSuperRam, caro
 wire enableRegDestino, contaAddrSecundario, zeraAddrSecundario, sentidoElevador, ramSecDifZero, bordaSensorAtivo, motorSubindo, motorDescendo;
 wire [1:0] proxParada, andarAtual;
 wire [3:0] Eatual1_db, Eatual2_db, sensores;
+wire s_iniciar_serial, s_reset_serial, s_emergencia_serial;
 
-assign db_iniciar = iniciar;
+
+
 assign db_clock = clock;
-assign db_reset = reset;
 assign db_bordaSensorAtivo = bordaSensorAtivo;
 assign sensores = sensoresNeg; // MUDAR NA HORA DE SIMULAR
 assign db_motorSubindo = motorSubindo;
 assign db_motorDescendo = motorDescendo;
 assign db_sensores = sensoresNeg;
 
-assign motorSubindoF = motorSubindo & ~emergencia;
-assign motorDescendoF = motorDescendo & ~emergencia;
+assign motorSubindoF = (motorSubindo & ~(s_emergencia_serial || emergencia));
+assign motorDescendoF = (motorDescendo & ~(s_emergencia_serial || emergencia));
+
+// Controle por serial
+
+wire iniciar_final, reset_final;
+
+// fusao dos sinais
+assign iniciar_final = (s_iniciar_serial || iniciar);
+assign reset_final = (s_reset_serial || reset);
+
+// depuracao
+assign db_iniciar_serial = iniciar_final;
+assign db_reset_serial = reset_final;
+assign db_emergencia_serial = (s_emergencia_serial || emergencia);
+assign db_iniciar = iniciar_final;
+assign db_reset = reset_final;
 
 smart_cargo_fd #(TIMER_ANDAR, TIMER_ULTRASSONICO) fluxodeDados (
 .clock                      (clock),
 .echo                       (echo),
-.inicia_ultrasonico         (iniciar),
+.inicia_ultrasonico         (iniciar_final),
 .enableAndarAtual           (enableAndarAtual), // enable da ram estado atual
 .shift                      (shift), //shift ram
 .fit                        (fit),
@@ -95,14 +114,16 @@ smart_cargo_fd #(TIMER_ANDAR, TIMER_ULTRASSONICO) fluxodeDados (
 .eh_origem_fila             (eh_origem_fila),
 .guarda_origem_ram          (guarda_origem_ram),
 .inicializa_andar           (s_inicializa_andar),
-.TX                         (TX)
+.TX                         (TX),
+.iniciar_serial             (s_iniciar_serial),
+.reset_serial               (s_reset_serial),
+.emergencia_serial          (s_emergencia_serial)
 );
-
 
 uc_movimento UC_MOVIMENTO (
 .clock                      (clock),
 .reset                      (reset),
-.iniciar                    (iniciar),
+.iniciar                    (iniciar_final),
 .chegouDestino              (chegouDestino),// saida do comparador de andares
 .fimT                       (fimT),
 .bordaSensorAtivo           (bordaSensorAtivo),// timer do elevador normal
@@ -131,7 +152,7 @@ uc_nova_entrada UC_NOVA_ENTRADA (
 .select1                    (select1),
 .enableTopRAM               (enableTopRAM),
 .fit                        (fit),
-.iniciar                    (iniciar),
+.iniciar                    (iniciar_final),
 .reset                      (reset),
 .clock                      (clock),
 .carona_origem              (carona_origem),
