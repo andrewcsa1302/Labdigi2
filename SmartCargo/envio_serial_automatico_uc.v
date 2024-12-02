@@ -38,7 +38,7 @@ module envio_serial_automatico_uc (
     always @* begin
         case (Eatual)
             inicial                : Eprox = mudou_de_andar ? preparacao : inicial;
-            preparacao             : Eprox = transmissao_conteudo;
+            preparacao             : Eprox = conta_addr_conteudo;
             transmissao_conteudo   : Eprox = enviado ? (fim_transmissao_conteudo_elevador ? eh_para_transmitir_fila : conta_addr_conteudo) : transmissao_conteudo;
             conta_addr_conteudo    : Eprox = transmissao_conteudo;
             eh_para_transmitir_fila : Eprox = eh_origem_fila_elevador? transmissao_fila : (fim_transmissao_fila_elevador ? final : conta_addr_fila);
