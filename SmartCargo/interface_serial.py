@@ -6,7 +6,7 @@ import serial
 
 # Configura a conexão serial
 try:
-    ser = serial.Serial(port='COM10', baudrate=115200, bytesize=serial.EIGHTBITS, timeout=1)
+    ser = serial.Serial(port='COM19', baudrate=115200, bytesize=serial.EIGHTBITS)
     serial_status = True
 except serial.SerialException:
     ser = None
