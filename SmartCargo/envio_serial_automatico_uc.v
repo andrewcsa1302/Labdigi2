@@ -38,10 +38,10 @@ module envio_serial_automatico_uc (
     always @* begin
         case (Eatual)
             inicial                : Eprox = mudou_de_andar ? preparacao : inicial;
-            preparacao             : Eprox = transmissao_conteudo;
-            transmissao_conteudo   : Eprox = enviado ? (fim_transmissao_conteudo_elevador ? transmissao_fila : conta_addr_conteudo) : transmissao_conteudo;
+            preparacao             : Eprox = conta_addr_conteudo;
+            transmissao_conteudo   : Eprox = enviado ? (fim_transmissao_conteudo_elevador ? eh_para_transmitir_fila : conta_addr_conteudo) : transmissao_conteudo;
             conta_addr_conteudo    : Eprox = transmissao_conteudo;
-            eh_para_transmitir_fila : Eprox = eh_origem_fila_elevador? transmissao_fila : conta_addr_fila;
+            eh_para_transmitir_fila : Eprox = eh_origem_fila_elevador? transmissao_fila : (fim_transmissao_fila_elevador ? final : conta_addr_fila);
             transmissao_fila       : Eprox = enviado ? (fim_transmissao_fila_elevador ? final : conta_addr_fila) : transmissao_fila;
             conta_addr_fila        : Eprox = eh_para_transmitir_fila;
             final                  : Eprox = inicial;
@@ -51,7 +51,7 @@ module envio_serial_automatico_uc (
 
     // Logica de saida (maquina de Moore)
     always @* begin
-        zera                    = (Eatual == preparacao) ? 1'b1 : 1'b0;
+        zera                    = (Eatual == preparacao || Eatual == inicial) ? 1'b1 : 1'b0;
         conta_conteudo_elevador = (Eatual == conta_addr_conteudo) ? 1'b1 : 1'b0;
         conta_fila_elevador     = (Eatual == conta_addr_fila) ? 1'b1 : 1'b0;
         envia_serial            = (Eatual == transmissao_conteudo || Eatual == transmissao_fila) ? 1'b1 : 1'b0;

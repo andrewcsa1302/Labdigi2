@@ -25,6 +25,7 @@ module smart_cargo_fd #(parameter TIMER_ANDAR = 50000000, TIMER_ULTRASSONICO = 2
  input inicia_ultrasonico,
  input guarda_origem_ram, // para determinar o que será colocado no destino na fila
  input inicializa_andar,
+ input reset_chaves,
  output chegouDestino,
  output bordaNovoDestino,
  output fimT,
@@ -43,7 +44,11 @@ module smart_cargo_fd #(parameter TIMER_ANDAR = 50000000, TIMER_ULTRASSONICO = 2
  output [13:0] db_serial_hex,
  output trigger_sensor_ultrasonico,
  output [1:0] andar_fusao_sensores,
- output eh_origem_fila
+ output eh_origem_fila,
+ output TX,
+ output iniciar_serial,
+ output reset_serial,
+ output emergencia_serial
 );
 
 //Declaração de fios gerais 
@@ -66,12 +71,21 @@ wire serial_recebido;
 wire [7:0] dados_serial_recebido;
 wire [1:0] origemSerial, destinoSerial, tipoSerial;
 
+wire [5:0] s_dados_fila_elevador;
+wire [3:0] s_dados_conteudo_elevador, s_addr_conteudo_elevador, s_addr_fila_elevador;
+wire s_eh_origem_fila_elevador_addr_serial;
+
 assign origemSerial = dados_serial_recebido[1:0];
 assign destinoSerial = dados_serial_recebido[3:2];
 assign tipoSerial = dados_serial_recebido[5:4];
 
 // Multiplexadores
 wire [1:0] mux1, mux2, mux3, destino_fila;
+
+wire enableRegAndarAtual, s_mudou_andar_fusao;
+wire [1:0] andarAtualParaRegistro, s_andar_aproximado;
+
+wire sensorAtivo, s_chegou_sinal_controle;
 assign mux1 = select1? saidaRegOrigem : saidaRegDestino ; 
 // assign mux2 = select2? proxAndarS : proxAndarD ; // nao esta sendo usado
 assign mux3 = select3? andarAtual : saidaSecundariaAnterior;
@@ -90,14 +104,13 @@ assign andarRepetidoOrigem      = (mesmoSentido & mesmoAndar);
 assign andarRepetidoDestino     = (mesmoAndar & enderecoMaiorQueOrigem);
 assign sensorAtivo              = s_mudou_andar_fusao;
 
+
+
 assign addrSecundarioAnterior = addrSecundario - 1;
 
 // Inicializacao dos andares
-wire enableRegAndarAtual, s_mudou_andar_fusao;
-wire [1:0] andarAtualParaRegistro, s_andar_aproximado;
 assign enableRegAndarAtual      = (inicializa_andar || enableAndarAtual);
 assign andarAtualParaRegistro   = inicializa_andar? s_andar_aproximado : andar_fusao_sensores;
-
 
 // Registradores 
 
@@ -162,6 +175,19 @@ contador_m #(TIMER_ULTRASSONICO,25) timer_entre_medidas_ultrassonico( //  10_000
     .meio       ()
 );
 
+// Envio por serial dos dados das memorias
+envio_serial_automatico dut (
+    .clock(clock),
+    .reset(reset),
+    .mudou_de_andar(bordaSensorAtivo),
+    .dados_fila_elevador(s_dados_fila_elevador),
+    .addr_fila_elevador(s_addr_fila_elevador),
+    .dados_conteudo_elevador(s_dados_conteudo_elevador),
+    .addr_conteudo_elevador(s_addr_conteudo_elevador),
+    .TX(TX),
+    .eh_origem_fila_elevador(s_eh_origem_fila_elevador_addr_serial)
+);
+
 // Fila 
 // GUARDA NESSA ORDEM: EH_ORIGEM, TIPO_OBJETO, ORIGEM_OBJETO, DESTINO_OBJETO
 
@@ -183,8 +209,10 @@ sync_ram_16x7_mod fila_ram(
     .origem_objeto              (origem_fila),
     .destino_objeto             (proxParada),
     .saidaSecundaria            (saidaSecundaria),
-    .saidaSecundariaAnterior    (saidaSecundariaAnterior)
-    // faltas os addrSerial, dados_addrSerial, eh_origem_addrSerial
+    .saidaSecundariaAnterior    (saidaSecundariaAnterior),
+    .addrSerial                 (s_addr_fila_elevador),
+    .dados_addrSerial           (s_dados_fila_elevador),
+    .eh_origem_addrSerial       (s_eh_origem_fila_elevador_addr_serial)
 );
 ram_conteudo_elevador conteudo_elevador (
     .clk                (clock),
@@ -195,24 +223,37 @@ ram_conteudo_elevador conteudo_elevador (
     .weT                (coloca_objetos),
     .tira_objetos       (tira_objetos),
     .andar_atual        (andarAtual),
-    .tipo_objeto        (), // desconectado - vai ser usado na transmissao serial
-    .destino_objeto     ()  // desconectado vai ser usado na transmissao serial
-    // falta addr e tem_vaga
+    .tipo_objeto        (s_dados_conteudo_elevador [3:2]), // desconectado - vai ser usado na transmissao serial
+    .destino_objeto     (s_dados_conteudo_elevador [1:0]),  // desconectado vai ser usado na transmissao serial
+    .addr               (s_addr_conteudo_elevador),
+    .tem_vaga           ()
 );
 
 // Recepcao serial dos sinais
 
 rx_serial_8N1 recepcao_serial (
 .clock                      (clock),
-.reset                      (reset),
+.reset                      (reset_chaves),
 .RX                         (RX),
 .pronto                     (serial_recebido),
-.dados_ascii                (dados_serial_recebido),
+.dados_ascii                (dados_serial_recebido), 
 .db_clock                   ( ), // desconectado
 .db_tick                    ( ), // desconectado
 .db_dados                   ( ), // desconectado
 .db_estado                  ( ) // desconectado
 );
+
+interpretador_serial interpretador_controle_serial (
+    .clock(clock),
+    .reset(reset_chaves),
+    .dados_serial_recebido(dados_serial_recebido),
+    .iniciar_serial(iniciar_serial),
+    .reset_serial(reset_serial),
+    .emergencia_serial(emergencia_serial),
+    .chegou_sinal_controle (s_chegou_sinal_controle)
+);
+// dados_serial_recebido[0] -> iniciar, dados_serial_recebido[2] -> reset, dados_serial_recebido[4] -> emergencia
+// dados_serial_recebido[7] -> se é sinal de controle
 
 // Depuracao da recepcao serial
 
@@ -231,14 +272,14 @@ hexa7seg HEX_MAIS_SIGNIFICATIVO (
 edge_detector detectorDeDestino(
     .clock  (clock),
     .reset  (reset),
-    .sinal  (serial_recebido),
+    .sinal  ((serial_recebido & ~s_chegou_sinal_controle)),
     .pulso  (bordaNovoDestino)
 );
 
 edge_detector detectorDeOrigem(
     .clock  (clock),
     .reset  (reset),
-    .sinal  (serial_recebido),
+    .sinal  ((serial_recebido & ~s_chegou_sinal_controle)),
     .pulso  (bordaNovaOrigem)
 );
 
